@@ -22,7 +22,7 @@ x2Pos[0] = 1.0  # Initial value for x2 as specified
 #def of the function
 
 def x2_prime(t):
-    return a2 * (x1Pos[t] - x2Pos[t]) 
+    return a2 * (x1Pos[t] - x2Pos[t])
 
 def x1_prime():
     return 130 * (1000 / 3600)
@@ -31,7 +31,7 @@ def x1_prime():
 for t in range(1, n_steps):
     
     x1Pos[t] = x1Pos[t-1] + x1_prime() * h
-    x2Pos[t] = x2Pos[t-1] + x2_prime(t-1,200) * h
+    x2Pos[t] = x2Pos[t-1] + x2_prime(t-1) * h
     time[t] = time[t-1] + h
 
 
