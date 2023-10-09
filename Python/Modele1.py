@@ -22,7 +22,6 @@ x2Pos[0] = 1.0  # Initial value for x2 as specified
 #def of the function
 
 def x2_prime(t):
-<<<<<<< HEAD
     return a2 * (x1Pos[t] - x2Pos[t]) 
 
 def x1_prime():
