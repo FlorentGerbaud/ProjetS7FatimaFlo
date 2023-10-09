@@ -31,7 +31,7 @@ def x1_prime():
 for t in range(1, n_steps):
     
     x1Pos[t] = x1Pos[t-1] + x1_prime() * h
-    x2Pos[t] = x2Pos[t-1] + x2_prime(t-1) * h
+    x2Pos[t] = x2Pos[t-1] + x2_prime(t-1,200) * h
     time[t] = time[t-1] + h
 
 
