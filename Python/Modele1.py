@@ -1,11 +1,19 @@
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Check if the correct number of command-line arguments is provided
+if len(sys.argv) != 3:
+    print("Usage: python your_script_name.py a2 h")
+    sys.exit(1)
 
+# Parse the command-line arguments
+a2 = float(sys.argv[1])
+h = float(sys.argv[2])
 
-# Define the parameters
-a2 = 2.0  #capacity of acceleration deceleration
-h = 1.0  # Time step
+# Rest of your script remains the same
+# ...
+
 T = 10.0  # Total simulation time
 n_steps = int(T / h)  # Number of time steps
 
