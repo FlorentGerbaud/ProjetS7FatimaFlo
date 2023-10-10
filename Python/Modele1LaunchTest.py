@@ -8,6 +8,7 @@ if len(sys.argv) != 3:
     sys.exit(1)
 
 # Parse the command-line arguments
+accident=False
 a2 = float(sys.argv[1])
 h = float(sys.argv[2])
 
@@ -41,16 +42,30 @@ for t in range(1, n_steps):
     x1Pos[t] = x1Pos[t-1] + x1_prime() * h
     x2Pos[t] = x2Pos[t-1] + x2_prime(t-1) * h
     time[t] = time[t-1] + h
+    if(x2Pos[t] >= x1Pos[t]):
+        accident=True
+        break;
+        
+print(t)
 
-
-
-# Plot the results
-plt.figure(figsize=(10, 6))
-plt.plot(time, x1Pos, label='x1(t)')
-plt.plot(time, x2Pos, label='x2(t)')
-plt.xlabel('Time')
-plt.ylabel('Values')
-plt.legend()
-plt.title('Euler Explicit Method for x2\' = a2(x1(t) - x2(t)) with Constant x1\'')
-plt.grid(True)
-plt.show()
+if(accident==True):
+    plt.figure(figsize=(10, 6))
+    plt.plot(time[0:t+1], x1Pos[0:t+1], label='x1(t)')
+    plt.plot(time[0:t+1], x2Pos[0:t+1], label='x2(t)')
+    plt.xlabel('Time')
+    plt.ylabel('Values')
+    plt.legend()
+    plt.title('Accident case')
+    plt.grid(True)
+    plt.show()
+else:
+    # Plot the results
+    plt.figure(figsize=(10, 6))
+    plt.plot(time, x1Pos, label='x1(t)')
+    plt.plot(time, x2Pos, label='x2(t)')
+    plt.xlabel('Time')
+    plt.ylabel('Values')
+    plt.legend()
+    plt.title('Euler Explicit Method for x2\' = a2(x1(t) - x2(t)) with Constant x1\'')
+    plt.grid(True)
+    plt.show()
