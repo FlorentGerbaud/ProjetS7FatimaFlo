@@ -1,0 +1,208 @@
+\documentclass{article}
+\usepackage[backend=biber, style=authoryear, sorting=nyt, style=numeric]{biblatex}
+\usepackage{url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+
+\usepackage{background}
+\usepackage{tikz}
+\usepackage{geometry}
+\usetikzlibrary{shapes, arrows, positioning}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{titletoc}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{caption}
+\usepackage{textcomp}
+\usepackage{subcaption}
+\usepackage[edges]{forest}
+%\usepackage[superscript,biblabel]{cite}
+\usepackage{fontawesome5}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage[simplified]{pgf-umlcd}
+\usepackage{enumitem}
+\usepackage{adjustbox}
+\usepackage{listings}
+\usetikzlibrary{shapes.geometric, arrows}
+%\usepackage[style=ext-authoryear, backend=biber]{biblatex}
+%\usepackage{url}
+%\usepackage[style=authoryear]{biblatex}
+%\addbibresource{biblio.bib}
+%\usepackage{cite}
+\usepackage[british]{datetime2} % Enhanced date and time.
+
+\addbibresource{rapport.bib}
+
+\definecolor{aerospaceblue}{RGB}{0, 128, 255} % Couleur bleu ciel pour l'aérospatiale
+\definecolor{myblue}{RGB}{0, 0, 255}
+
+% Define the theme colors
+\definecolor{blue}{RGB}{0,0,255}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{custompurple}{RGB}{128,0,128}
+
+% Set the lstset configuration
+\lstset{
+	language=C++,
+	basicstyle=\ttfamily\small,
+	keywordstyle=[1]\color{blue},
+	keywordstyle=[2]\color{black},
+	keywordstyle=[3]\color{green!60!black},
+	commentstyle=\color{green!60!black},
+	stringstyle=\color{red},
+	otherkeywords={CALL},
+	morekeywords=[1]{CALL},
+	morekeywords=[2]{FOPENSUBNODES},
+	numbers=left,
+	numberstyle=\tiny,
+	stepnumber=1,
+	numbersep=5pt,
+	frame=single,
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=4,
+	captionpos=b,
+	showstringspaces=false,
+	% Adjust the frame margins for a larger rectangle
+	xleftmargin=1em,
+	framexleftmargin=1em,
+	framexrightmargin=1em
+}
+
+
+\tikzset{
+	startstop/.style={
+		rectangle,
+		rounded corners,
+		minimum width=3cm,
+		minimum height=1cm,
+		text centered,
+		draw=black,
+		fill=red!30
+	},
+	io/.style={
+		trapezium,
+		trapezium stretches=true, % A later addition
+		trapezium left angle=70,
+		trapezium right angle=110,
+		minimum width=3cm,
+		minimum height=1cm,
+		text centered,
+		draw=black,
+		fill=blue!30
+	},
+	process/.style={
+		rectangle,
+		minimum width=3cm,
+		minimum height=1cm,
+		text centered,
+		text width=3cm,
+		draw=black,
+		fill=orange!30
+	},
+	decision/.style={
+		diamond,
+		minimum width=3cm,
+		minimum height=1cm,
+		text centered,
+		draw=black,
+		fill=green!30
+	},
+	arrow/.style={
+		thick,
+		->,
+		>=stealth
+	}
+}
+
+\newcommand{\coloredsquare}[1]{\textcolor{#1}{\rule{1em}{1em}}}
+
+\renewcommand{\cfttoctitlefont}{\hfill\large\bfseries\fontsize{20}{24}\selectfont}
+\renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
+
+\definecolor{mydarkyellow}{HTML}{87CEEB}
+\definecolor{lightblue}{RGB}{173,216,230}
+\definecolor{lightyellow}{RGB}{255,255,204}
+\definecolor{yellow}{RGB}{255,255,0}
+
+\backgroundsetup{
+	scale=1,
+	color=black,
+	opacity=0.5,
+	angle=0,
+	contents={
+		\ifnum\value{page}=1
+		\begin{tikzpicture}[remember picture,overlay]
+			\path [fill=mydarkyellow] (current page.south west) rectangle (current page.north east);
+		\end{tikzpicture}
+		\fi
+	}
+}
+
+\title{\textbf{\Huge Project Report}\\[1cm]
+	\textbf{\LARGE Polytech Nice}\\[2cm]
+	\hrule height 1pt
+	\vspace{0.5cm}
+	\textbf{\Large Simple Road Traffic Modeling}\\[0.5cm]
+	\hrule height 1pt
+	\vspace{3cm}
+	\small{\today{}}}
+
+\author{
+	\begin{tabular}{c}
+		Gerbaud Florent \\ \\
+		9-th october to 20-th December september 2023\\
+		\\ Academic tutor : Didier Auroux
+	\end{tabular}
+}
+
+\date{}
+\begin{document}
+	\maketitle
+	\hspace{2cm}
+	\begin{figure}[b]
+		\centering
+		\begin{minipage}[b]{0.45\linewidth}
+			\includegraphics[width=5cm]{logo.png} \\
+			%Company tutor : Vincent Vadez
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.45\linewidth}
+			\raggedleft
+			\vspace{-0.5cm}
+			\includegraphics[width=6cm]{Polytech.png} \\
+			%Academic tutor : Cédric Boulbe
+		\end{minipage}
+	\end{figure}
+	\newpage % ajout d'un saut de page
+	% Table des matières
+	\renewcommand{\contentsname}{
+		\hfill
+		\begin{tikzpicture}
+			\node[draw, fill=white, inner sep=20pt,line width=1.5pt] {\fontsize{30}{36}\selectfont\bfseries Table of Contents};
+		\end{tikzpicture}
+		\hfill
+	}
+	\tableofcontents
+	\newpage
+	\listoffigures % Add a listing of figures
+	
+	\listofalgorithms
+	\newpage
+	\section{Presentation of the Subject}
+
+	%\bibliographystyle{plain}
+	\printbibliography
+	%\bibliography{Rapport}
+\end{document}
