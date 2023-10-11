@@ -3,15 +3,17 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-
+isDebug=True
 #_________________________________________________ Defining the parameters  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
-a2 = 2.0  # Capacity of acceleration/deceleration for x2
+a2 = 1.2  # Capacity of acceleration/deceleration for x2
 a3 = 1.0  # Capacity of acceleration/deceleration for x3
 h = 1.0  # Time step
-T = 10.0  # Total simulation time
+T = 50.0  # Total simulation time
+V1max = 130 * (1000 / 3600)  # Maximum speed of x1
 n_steps = int(T / h)  # Number of time steps
+nameCaseToLaunch="Debug Version"
 
 #_________________________________________________ Initialise arrays to storing data  ___________________________________________________
 #______________________________________________________________________________________________________________________________
@@ -31,7 +33,7 @@ accident = False
 #______________________________________________________________________________________________________________________________
 
 time[0] = 0.0  # Initial time
-x1Pos[0] = 2.0  # Initial value for x1 as specified
+x1Pos[0] = 80.0  # Initial value for x1 as specified
 x2Pos[0] = 1.0  # Initial value for x2 as specified
 x3Pos[0] = 0.5  # Initial value for x2 as specified
 
@@ -42,7 +44,7 @@ x3Pos[0] = 0.5  # Initial value for x2 as specified
 # Return : This function returns the speed of x1
 
 def x1_prime():
-    return 130 * (1000 / 3600)
+    return V1max
 
 # x2_prime :
 #input : t : time
@@ -65,6 +67,37 @@ def x3_prime(t):
 def isAccident(t):
     return (x2Pos[t] >= x1Pos[t] ) or (x3Pos[t] >= x2Pos[t]) 
 
+def obstacle(t):
+    global a2
+    global a3
+    global V1max
+    if (t%10==0):
+        V1max=V1max*0.40
+    else:
+        V1max=130 * (1000 / 3600)
+
+def VariationsOfComportment(criticalDistance,boringDistance):
+    global a2
+    global a3
+    if(x1Pos[t] - x2Pos[t] <= criticalDistance):
+        a2 = a2*0.75
+        if(isDebug):
+            print("a2= ", a2)
+    elif(x1Pos[t] - x2Pos[t] >= boringDistance):
+        a2 = 1.5
+        if(isDebug):
+            print("a2= ", a2)
+    elif(x2Pos[t] - x3Pos[t] <= criticalDistance):
+        a3 = a3*0.75
+        if(isDebug):
+            print("a3= ",a3)
+    elif(x2Pos[t] - x3Pos[t] >= boringDistance):
+        a3 = a3*1.25
+        if(isDebug):
+            print("a3= ",a3)
+    if(isDebug):
+        print("d1= ", x1Pos[t] - x2Pos[t], "d2= ",x2Pos[t] - x3Pos[t])
+
 #_________________________________________________ Resolution of the position for each cars  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
@@ -72,6 +105,9 @@ for t in range(1, n_steps):
     x1Pos[t] = x1Pos[t-1] + x1_prime() * h
     x2Pos[t] = x2Pos[t-1] + x2_prime(t-1) * h
     x3Pos[t] = x3Pos[t-1] + x3_prime(t-1) * h
+    
+    VariationsOfComportment(1,300)
+    obstacle(t)
     
     v1[t] = x1_prime()
     v2[t] = x2_prime(t)
@@ -95,7 +131,7 @@ if accident:
     ax1.set_xlabel('Time')
     ax1.set_ylabel('Distance')
     ax1.legend()
-    ax1.set_title('Accident case')
+    ax1.set_title(nameCaseToLaunch)
     ax1.grid(True)
 
 else:
@@ -107,7 +143,7 @@ else:
     ax1.set_ylabel('Distance(m)')
     ax1.legend()
     ax1.grid()
-    ax1.set_title('position of the cars over time')
+    ax1.set_title(nameCaseToLaunch)
  
 
 if(accident):
