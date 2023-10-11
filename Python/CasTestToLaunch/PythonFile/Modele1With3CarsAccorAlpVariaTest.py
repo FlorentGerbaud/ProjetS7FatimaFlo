@@ -1,19 +1,28 @@
 #__________________________________________ Importing the required libraries __________________________________________
 #______________________________________________________________________________________________________________________
 
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
-isDebug=True
+isDebug=False
+# Check if the correct number of command-line arguments is provided
+if len(sys.argv) != 5:
+    print("Usage: python your_script_name.py a2 h")
+    sys.exit(1)
+
+
 #_________________________________________________ Defining the parameters  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
-a2 = 1.0  # Capacity of acceleration/deceleration for x2
-a3 = 1.0  # Capacity of acceleration/deceleration for x3
-h = 1.0  # Time step
+
+accident=False
+a2 = float(sys.argv[1])
+a3 = float(sys.argv[3])
+h = float(sys.argv[2])
+nameCaseToLaunch=sys.argv[4]
 T = 50.0  # Total simulation time
 V1max = 130 * (1000 / 3600)  # Maximum speed of x1
 n_steps = int(T / h)  # Number of time steps
-nameCaseToLaunch="Debug Version"
 
 #_________________________________________________ Initialise arrays to storing data  ___________________________________________________
 #______________________________________________________________________________________________________________________________
