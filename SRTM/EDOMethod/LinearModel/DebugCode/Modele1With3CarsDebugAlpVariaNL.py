@@ -2,6 +2,7 @@
 #______________________________________________________________________________________________________________________
 
 import numpy as np
+import random   
 import matplotlib.pyplot as plt
 isDebug=True
 #_________________________________________________ Defining the parameters  ___________________________________________________
@@ -72,13 +73,23 @@ def x3_prime(t):
 def isAccident(t):
     return (x2Pos[t] >= x1Pos[t] ) or (x3Pos[t] >= x2Pos[t]) 
 
+import random
+
 def obstacle(t):
-    V1max=0
-    if (t%10==0):
-        V1max=V1max*0.40
+    V1max_initial = 130 * (1000 / 3600)
+    base_interval = 10  # Durée de base entre les apparitions d'obstacles en secondes
+    reduction_factor = 0.4  # Facteur de réduction de la vitesse maximale
+
+    # Utiliser un générateur de nombres aléatoires pour introduire de l'aléatoire dans les intervalles
+    random.seed(t)  # Utilisez le temps actuel t comme graine
+
+    if random.random() < 0.2:  # 50% de chance d'avoir un obstacle
+        V1max = V1max_initial * reduction_factor
     else:
-        V1max=130 * (1000 / 3600)
+        V1max = V1max_initial
+
     return V1max
+
 
 def VariationsOfComportment(criticalDistance, boringDistance,t):
     W = 1.1  # Amplitude de la perturbation
@@ -124,8 +135,8 @@ for t in range(1, n_steps):
     
     if(isDebug):
         print("a2= ", a2, "a3= ", a3)
-    a2,a3=VariationsOfComportment(1,100,t)
-    #V1max=obstacle(t)
+    a2,a3=VariationsOfComportment(1,73,t)
+    V1max=obstacle(t)
     
     v1[t] = x1_prime()
     v2[t] = x2_prime(t)
