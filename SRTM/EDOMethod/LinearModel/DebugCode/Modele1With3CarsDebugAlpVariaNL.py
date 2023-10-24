@@ -53,6 +53,13 @@ a2Val[0] = a2
 def sinusoidal_model(W, omega, t, phi):
     return abs(W * np.sin(omega * t + phi) + np.random.normal(0, 0.1)) #random noise
 
+def stochastic_driver_model(mean, variance, t, threshold=None):
+    noise = abs(np.random.normal(mean, np.sqrt(variance)))
+    if threshold is not None:
+        noise = np.clip(noise, -threshold, threshold)
+    return noise
+
+
 # x1_prime :
 # Return : This function returns the speed of x1
 
@@ -129,7 +136,8 @@ def VariationsOfComportment(criticalDistance, boringDistance,t):
         a3 = 0
     elif d2 >= boringDistance:
         #a3=0.9
-        a3=sinusoidal_model(1.1, omega, t, phi) 
+        #a3=sinusoidal_model(1.1, omega, t, phi) 
+        a3=stochastic_driver_model(1.1, 0.5, t, 0.9)
 
     if isDebug:
         print("a2= ", a2)
