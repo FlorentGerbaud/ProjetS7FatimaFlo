@@ -2,7 +2,6 @@
 
 
 1. Vary lambda non-linearly.
-2. Implement non-linear variations for the obstacle.
 3. Simulate the cork moving backward (bouchon qui recule).
 4. Conduct simulations in various scenarios.
 5. Calculate equilibrium conditions.
