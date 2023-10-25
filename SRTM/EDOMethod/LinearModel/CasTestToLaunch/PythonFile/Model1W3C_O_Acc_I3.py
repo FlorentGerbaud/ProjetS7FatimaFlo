@@ -1,20 +1,30 @@
 #__________________________________________ Importing the required libraries __________________________________________
 #______________________________________________________________________________________________________________________
 
+import sys
 import numpy as np
 import random   
 import matplotlib.pyplot as plt
-isDebug=True
+isDebug=False
+# Check if the correct number of command-line arguments is provided
+if len(sys.argv) != 5:
+    print("Usage: python your_script_name.py a2 h")
+    sys.exit(1)
+
+
 #_________________________________________________ Defining the parameters  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
-a2 = 1.0  # Capacity of acceleration/deceleration for x2
-a3 = 1.0  # Capacity of acceleration/deceleration for x3
-h = 1.0  # Time step
+
+accident=False
+a2 = float(sys.argv[1])
+a3 = float(sys.argv[3])
+h = float(sys.argv[2])
+nameCaseToLaunch=sys.argv[4]
 T = 50.0  # Total simulation time
 V1max = 130 * (1000 / 3600)  # Maximum speed of x1
 n_steps = int(T / h)  # Number of time steps
-nameCaseToLaunch="Debug Version"
+
 
 #_________________________________________________ Initialise arrays to storing data  ___________________________________________________
 #______________________________________________________________________________________________________________________________
@@ -22,7 +32,7 @@ nameCaseToLaunch="Debug Version"
 x1Pos = np.zeros(n_steps)
 x2Pos = np.zeros(n_steps)
 x3Pos = np.zeros(n_steps)
-a2Val = np.zeros(n_steps)
+a3Val = np.zeros(n_steps)
 
 v1 = np.zeros(n_steps)
 v2 = np.zeros(n_steps)
@@ -38,27 +48,23 @@ time[0] = 0.0  # Initial time
 x1Pos[0] = 80.0  # Initial value for x1 as specified
 x2Pos[0] = 1.0  # Initial value for x2 as specified
 x3Pos[0] = 0.5  # Initial value for x2 as specified
-a2Val[0] = a2
+a3Val[0] = a2
 
 #_________________________________________________ Define the functions  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
-# sinusoidal_model :
-#input : W : Amplitude of the perturbation
-#        omega : Angular frequency
-#        t : time
-#        phi : Phase (in radians)
-# Return : This function return a value of acceleration which follows a sinusoidal model with random noise
-
-def sinusoidal_model(W, omega, t, phi):
-    return abs(W * np.sin(omega * t + phi) + np.random.normal(0, 0.1)) #random noise
+# stochastic_driver_model :
+# input : mean : mean of the acceleratio
+#         variance : variance of the acceleration
+#         t : time
+#         threshold : threshold of the acceleration
+# Return : This function returns the acceleration of the car
 
 def stochastic_driver_model(mean, variance, t, threshold=None):
     noise = abs(np.random.normal(mean, np.sqrt(variance)))
     if threshold is not None:
         noise = np.clip(noise, -threshold, threshold)
     return noise
-
 
 # x1_prime :
 # Return : This function returns the speed of x1
@@ -113,12 +119,9 @@ def obstacle(t):
 # Return : This function returns the new values of a2 and a3 according to the distance between the cars
 
 def VariationsOfComportment(criticalDistance, boringDistance,t):
-    W = 1.1  # Amplitude de la perturbation
-    omega = 2.0  # Fréquence angulaire
-    phi = np.pi / 4  # Phase (en radians)
+    
     a2 = 0
     a3 = 0
-    delta = 0.0008  # Calculate the increment per unit distance
 
     d1 = x1Pos[t] - x2Pos[t]
     d2 = x2Pos[t] - x3Pos[t]
@@ -126,19 +129,16 @@ def VariationsOfComportment(criticalDistance, boringDistance,t):
     if d1 <= criticalDistance:
         a2 = 0
     elif d1 >= boringDistance:
-        # model with constant acceleration :
-        #a2 = 0.9
-        a2=stochastic_driver_model(0.2, 0.5, t, 0.9)
-        #_______________________________________
+    
+        a2 = 1.1
+
         
-        #a2=sinusoidal_model(W, omega, t, phi) 
+        
 
     if d2 <= criticalDistance:
         a3 = 0
     elif d2 >= boringDistance:
-        a3=0.9
-        #a3=sinusoidal_model(1.1, omega, t, phi) 
-        #a3=stochastic_driver_model(1.1, 0.5, t, 0.9)
+        a3=stochastic_driver_model(0.2, 0.2, t, 1.0)
 
     if isDebug:
         print("a2= ", a2)
@@ -146,7 +146,7 @@ def VariationsOfComportment(criticalDistance, boringDistance,t):
 
     if isDebug:
         print("d1= ", d1, "d2= ", d2)
-    a2Val[t]=a2
+    a3Val[t]=a2
 
     return a2, a3
 
@@ -230,7 +230,7 @@ plt.show()
 
 # Create a line plot
 if accident:
-    plt.plot(time[0:t+1], a2Val[0:t+1], marker='o', linestyle='-', color='b', label='Alpha Values')
+    plt.plot(time[0:t+1], a3Val[0:t+1], marker='o', linestyle='-', color='b', label='Alpha Values')
     plt.xlabel('Time')
     plt.ylabel('Alpha Values')
     plt.title('Alpha Values Over Time')
@@ -238,7 +238,7 @@ if accident:
     plt.legend()
     plt.show()
 else:
-    plt.plot(time, a2Val, marker='o', linestyle='-', color='b', label='Alpha Values')
+    plt.plot(time, a3Val, marker='o', linestyle='-', color='b', label='Alpha Values')
     plt.xlabel('Time')
     plt.ylabel('Alpha Values')
     plt.title('Alpha Values Over Time')
