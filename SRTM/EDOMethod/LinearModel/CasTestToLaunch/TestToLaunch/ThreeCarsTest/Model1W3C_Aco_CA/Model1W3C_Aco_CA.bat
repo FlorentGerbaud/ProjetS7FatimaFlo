@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 :: Set default values for the arguments
-set "a2=2.0"
+set "a2=1.0"
 set "h=1.0"
 set "a3=1.0"
 set "CaseToLaunch="Simulation of the Accordion Phenomenon""
@@ -13,5 +13,5 @@ if not "%~3"=="" set "a3=%~3"
 if not "%~4"=="" set "CaseToLaunch=%~4"
 
 
-python ../../../PythonFile/Modele1Launch3Voitures.py %a2% %h% %a3% %CaseToLaunch%
+python ../../../PythonFile/Model1W3C_Aco_CA.py %a2% %h% %a3% %CaseToLaunch%
 exit /b

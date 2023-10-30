@@ -11,5 +11,5 @@ if not "%~1"=="" set "a2=%~1"
 if not "%~2"=="" set "h=%~2"
 if not "%~3"=="" set "a3=%~3"
 
-python ../../../PythonFile/Modele1Launch3Voitures.py %a2% %h% %a3% %CaseToLaunch%
+python ../../../PythonFile/Model1W3C_Acc.py %a2% %h% %a3% %CaseToLaunch%
 exit /b
