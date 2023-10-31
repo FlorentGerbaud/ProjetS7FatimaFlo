@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  24 OCT 2023 23:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  31 OCT 2023 17:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,7 +1490,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count508
-<logo.png, id=14, 353.32pt x 143.53625pt>
+<logo.png, id=18, 353.32pt x 143.53625pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 177.
@@ -1500,7 +1500,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
 
-<Polytech.png, id=16, 215.8464pt x 66.9702pt>
+<Polytech.png, id=20, 215.8464pt x 66.9702pt>
 File: Polytech.png Graphic file (type png)
 <use Polytech.png>
 Package pdftex.def Info: Polytech.png  used on input line 184.
@@ -1526,7 +1526,7 @@ LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <20> not available
 \openout9 = `Presentation.loa'.
 
  [3]
-<intro.jpg, id=46, 1003.75pt x 501.875pt>
+<intro.jpg, id=51, 1003.75pt x 501.875pt>
 File: intro.jpg Graphic file (type jpg)
 <use intro.jpg>
 Package pdftex.def Info: intro.jpg  used on input line 206.
@@ -1537,7 +1537,7 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 210.
 
 
-LaTeX Warning: Empty bibliography on input line 215.
+LaTeX Warning: Empty bibliography on input line 218.
 
 [4 <./intro.jpg>] (Presentation.aux)
 
@@ -1545,16 +1545,16 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: D13FA0A7FE94DF3E85C3E09F33BC9459;398.
+(rerunfilecheck)             Checksum: 0E286CAF3245F3FA41CC4CCE806B3E42;657.
 Package logreq Info: Writing requests to 'Presentation.run.xml'.
 \openout1 = `Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50860 strings out of 476331
- 1101913 string characters out of 5787765
+ 50862 strings out of 476331
+ 1102293 string characters out of 5787766
  1940361 words of memory out of 5000000
- 70615 multiletter control sequences out of 15000+600000
+ 70616 multiletter control sequences out of 15000+600000
  525412 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,12n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1567,9 +1567,9 @@ pen/ec/dpi600\ecrm1200.pk> <C:\Users\flore\AppData\Local\MiKTeX\fonts/pk/ljfour
 ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\flore\AppData\Local\MiKTeX\fon
 ts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\flore\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk>
-Output written on Presentation.pdf (4 pages, 254036 bytes).
+Output written on Presentation.pdf (4 pages, 257602 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
- 44 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 270 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
+ 52 words of extra memory for PDF output out of 10000 (max. 10000000)
 
