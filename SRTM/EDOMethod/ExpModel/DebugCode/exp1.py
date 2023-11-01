@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.linspace(0, 250, 10)  
+x = np.linspace(0, 250, 100)  
 
 def vitesse_exp(V_max, lambda_j, d_j, x):
     v_t = []
@@ -20,7 +20,7 @@ v2=vitesse_exp(100,0.5,20,x)
 plt.plot(x,v1)
 plt.plot(x,v2)
 plt.xlabel('x')
-plt.ylabel('vitesse')
+plt.ylabel('Speed')
 plt.title('Two cars')
 plt.grid(True)
 plt.show()
