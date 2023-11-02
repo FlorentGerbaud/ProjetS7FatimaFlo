@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 
 
 # Define the parameters
-lambda2 = 2.0  #capacity of acceleration deceleration
+lambda2 = 10.0  #capacity of acceleration deceleration
 h = 1.0  # Time step
-T = 10.0  # Total simulation time
+T = 50.0  # Total simulation time
 n_steps = int(T / h)  # Number of time steps
-d2=5.0 #security distance
-x2_prime_max=100*(1000/3600) #maximum speed of the second car
+d2=1.0 #security distance
+x2_prime_max=160*(1000/3600) #maximum speed of the second car
 accident= False
 
 # Initialize arrays to store the results
@@ -22,13 +22,13 @@ accident=False
 
 # Initial conditions
 time[0] = 0.0  # Initial time
-x1[0] = 15.0  # Initial value for x1 as specified
-x2[0] = 7.0  # Initial value for x2 as specified , we verify also that the security disstance is respected
+x1[0] = 3.0  # Initial value for x1 as specified
+x2[0] = 1.0  # Initial value for x2 as specified , we verify also that the security disstance is respected
 
 
 #def of the function
 def x1_prime():
-    return 130 *(1000/3600)
+    return 110 *(1000/3600)
 
 #def of the fucntion x2_prime with the special model of exp
 def x2_prime(t):
@@ -45,7 +45,7 @@ for t in range(1, n_steps):
     if(x1[t]-x2[t]<= d2 ):
         accident=True
         break;
-    print(t)
+    
 
 
         
@@ -70,7 +70,6 @@ axes[1].legend()
 axes[1].set_title('Velocities')
 axes[1].grid(True)
 
-plt.tight_layout()
 plt.show()
 
 
