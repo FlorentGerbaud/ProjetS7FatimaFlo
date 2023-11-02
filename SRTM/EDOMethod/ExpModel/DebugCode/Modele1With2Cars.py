@@ -16,12 +16,14 @@ accident= False
 x1= np.zeros(n_steps)
 x2= np.zeros(n_steps)
 time = np.zeros(n_steps)
+x1_prime_values = np.zeros(n_steps)
+x2_prime_values = np.zeros(n_steps)
 accident=False
 
 # Initial conditions
 time[0] = 0.0  # Initial time
 x1[0] = 15.0  # Initial value for x1 as specified
-x2[0] = 5.0  # Initial value for x2 as specified , we verify also that the security disstance is respected
+x2[0] = 7.0  # Initial value for x2 as specified , we verify also that the security disstance is respected
 
 
 #def of the function
@@ -35,40 +37,49 @@ def x2_prime(t):
 
 # Euler's explicit method
 for t in range(1, n_steps):
+    x1_prime_values[t] = x1_prime()  # Stocker les valeurs de vitesse de x1
+    x2_prime_values[t] = x2_prime(t-1)  # Stocker les valeurs de vitesse de x2
     x1[t] = x1[t-1] + x1_prime() * h
     x2[t] = x2[t-1] + x2_prime(t-1) * h
     time[t] = time[t-1] + h
-
-#Verify if we have an accident or not by respecting the security distance
-for t in range(0,n_steps):
-    if(x1[t]-x2[t]<= d2):
+    if(x1[t]-x2[t]<= d2 ):
         accident=True
-    else:
-        accident=False
-        
+        break;
+    print(t)
 
-#Plot the results
-if(accident==True):
-    plt.figure(figsize=(10, 6))
-    plt.plot(time[0:t+1], x1[0:t+1], label='x1(t)')
-    plt.plot(time[0:t+1], x2[0:t+1], label='x2(t)')
-    plt.xlabel('Time')
-    plt.ylabel('Values')
-    plt.legend()
-    plt.title('Accident case')
-    plt.grid(True)
-    plt.show()
-else:
-    # Plot the results
-    plt.figure(figsize=(10, 6))
-    plt.plot(time, x1, label='x1(t)')
-    plt.plot(time, x2, label='x2(t)')
-    plt.xlabel('Time')
-    plt.ylabel('Values')
-    plt.legend()
-    plt.title('Euler Explicit Method for x2')
-    plt.grid(True)
-    plt.show()
+
+        
+# Display the results in side-by-side subplots
+fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+
+# Subplot for positions
+axes[0].plot(time, x1, label='x1(t)')
+axes[0].plot(time, x2, label='x2(t)')
+axes[0].set_xlabel('Time (s)')
+axes[0].set_ylabel('Position (m)')
+axes[0].legend()
+axes[0].set_title('Positions')
+axes[0].grid(True)
+
+# Subplot for velocities
+axes[1].plot(time, x1_prime_values, label="x1'(t)")
+axes[1].plot(time, x2_prime_values, label="x2'(t)")
+axes[1].set_xlabel('Time (s)')
+axes[1].set_ylabel('Velocity (m/s)')
+axes[1].legend()
+axes[1].set_title('Velocities')
+axes[1].grid(True)
+
+plt.tight_layout()
+plt.show()
+
+
+
+
+
+
+
+   
     
         
 
