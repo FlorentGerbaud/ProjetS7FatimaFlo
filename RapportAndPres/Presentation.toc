@@ -1,5 +1,20 @@
 \babel@toc {british}{}\relax 
 \contentsline {section}{\numberline {1}Presentation of the Subject}{4}{section.1}%
-\contentsline {subsubsection}{\numberline {1.0.1}Simple Road Traffic Modeling}{4}{subsubsection.1.0.1}%
-\contentsline {subsubsection}{\numberline {1.0.2}Using GitHub for Project Management}{4}{subsubsection.1.0.2}%
+\contentsline {subsection}{\numberline {1.1}Useful Definition}{4}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Simple Road Traffic Modeling}{4}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Using GitHub for Project Management}{5}{subsubsection.1.1.2}%
+\contentsline {section}{\numberline {2}The equation for SMRT}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Differential Ordinary Equation }{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Linear Model}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Newell's Model}{5}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Partial Differential Equations}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Project Objectives}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problems Encountered}{5}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Types of Simulations Performed}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation with Drunk Drivers}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Simulation with Unpredictable Drivers}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{5}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{5}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Summary}{5}{section.5}%
+\contentsline {section}{\numberline {6}Annexe}{5}{section.6}%
 \contentsfinish 

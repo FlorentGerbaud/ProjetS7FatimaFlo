@@ -201,6 +201,14 @@
 	\listofalgorithms
 	\newpage
 	\section{Presentation of the Subject}
+	\subsection{Useful Definition}
+		\textbf{\underline{Ordinary Differential Equation (ODE):}} \newline\newline
+		An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables. ODEs are commonly represented given a function F of x, y, and derivatives of y. Then, an equation of the form
+		\begin{align*}
+			F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
+		\end{align*}
+		
+
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.8\textwidth]{intro.jpg}
@@ -213,6 +221,41 @@
 		The Road Traffic modeling  is the study of how vehicles behave on road networks, aiming to simulate and analyze various aspects of traffic flow, congestion, and driver behavior. This field involves creating mathematical and computer models to understand and predict traffic patterns, particularly in scenarios such as congestion, erratic driving, and other relevant factors affecting road transportation. Road traffic modeling plays a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (you could see an exemple on the \ref{fig:intro}).
 	
 	\subsubsection{Using GitHub for Project Management}
+	
+	\section{The equation for SMRT}
+		\subsection{Differential Ordinary Equation }
+		In this part, the idea is to resolve two types of systems of Ordinary Differential Equations (ODEs) that allow us to simulate traffic flow. To achieve this, we will use the Euler Explicit method to numerically solve the solutions.
+		The Euler Explicit method is given by the folowing eqution :
+		\begin{itemize}
+			\item EDO to solve: $\boxed{y'(t) = f{\bigl (}t, y(t){\bigr )}}$.
+			\item First step of the resolution: $\boxed{y_0 = y(t_0)}$.
+			\item Recursive process to find the n-th solution of the EDO: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
+		\end{itemize}
+		
+		
+		
+		
+		
+		\subsubsection{Linear Model}
+			\textbf{\underline{Mathematical Theory : }} \newline \newline
+			\textbf{\underline{Implementation : }}
+		\subsubsection{Newell's Model}
+		\subsection{Partial Differential Equations}
+		
+	\section{Project Objectives}
+	\subsection{Problems Encountered}
+	
+	\section{Types of Simulations Performed}
+		\subsection{Simulation with Drunk Drivers}
+		\subsection{Simulation with Unpredictable Drivers}
+		\subsection{Simulation with Drivers Reacting Similarly}
+		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
+		
+	\section{Summary}
+	
+	\section{Annexe}
+	
+		
 	
 	%\bibliographystyle{plain}
 	\printbibliography
