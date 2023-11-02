@@ -140,7 +140,7 @@ plt.plot(t, x1_prime()/a2 * np.ones_like(t), 'r', label=f'f(t) = V1/a2 = {x1_pri
 
 plt.xlabel('time')
 plt.ylabel('f(t)')
-plt.title("Vector Field for f' = V1 - a2*f")
+plt.title('V$_{{set}} = \dot{d}_1\' = V_1$ ')
 plt.legend()
 plt.grid()
 plt.show()
