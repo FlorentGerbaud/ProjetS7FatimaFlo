@@ -1,15 +1,16 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Set default values for the arguments
-set "a2=2.0"
+
+set "lambda2=10.0"
 set "h=1.0"
+set "d2=1.0"
 
-:: Check if the first argument is provided and use it if available
-if not "%~1"=="" set "a2=%~1"
-
-:: Check if the second argument is provided and use it if available
+if not "%~1"=="" set "lambda2=%~1"
 if not "%~2"=="" set "h=%~2"
+if not "%~3"=="" set "d2=%~3"
 
-:: Run the Python script with the provided or default arguments
-python ../../../PythonFile/Modele1W2C_Aco.py %a2% %h%
+python ../../../PythonFile/Modele2W2C_Aco.py %lambda2% %h% %d2%
+
+exit /b
+::pause
