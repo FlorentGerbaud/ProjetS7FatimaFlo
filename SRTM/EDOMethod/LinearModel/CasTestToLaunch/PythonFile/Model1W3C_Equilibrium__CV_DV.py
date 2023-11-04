@@ -1,17 +1,26 @@
 #__________________________________________ Importing the required libraries __________________________________________
 #______________________________________________________________________________________________________________________
 
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
-import math
-isDebug=True
+isDebug=False
+
+# Check if the correct number of command-line arguments is provided
+if len(sys.argv) != 5:
+    print("Usage: python your_script_name.py a2 h")
+    sys.exit(1)
+
 
 #_________________________________________________ Defining the parameters  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
-a2 = 2.0  # Capacity of acceleration/deceleration for x2
-a3 = 1.0  # Capacity of acceleration/deceleration for x3
-h = 1.0  # Time step
+
+accident=False
+a2 = float(sys.argv[1])
+a3 = float(sys.argv[3])
+h = float(sys.argv[2])
+nameCaseToLaunch=sys.argv[4]
 T = 10.0  # Total simulation time
 n_steps = int(T / h)  # Number of time steps
 

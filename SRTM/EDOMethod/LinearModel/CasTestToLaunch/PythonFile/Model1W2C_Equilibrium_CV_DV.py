@@ -6,15 +6,17 @@ from matplotlib import rc
 
 isDebug=False
 
+
 #______________________________________________________ Parameters ______________________________________________________
 #________________________________________________________________________________________________________________________
 
-if len(sys.argv) != 3:
+if len(sys.argv) != 4:
     print("Usage: python your_script_name.py a2 h")
     sys.exit(1)
 
 
 accident=False
+isRealisitic=bool(int(sys.argv[3]))
 a2 = float(sys.argv[1])
 h = float(sys.argv[2])
 
@@ -107,50 +109,50 @@ else:
 
 #___________________________________ Plotting the analytical solutions ______________________________________________________
 
+if isRealisitic:
+    a=-2
+    t=np.linspace(0,n_steps,10000)
+    y_values=np.zeros((10, 10000))
 
-a=-2
-t=np.linspace(0,n_steps,10000)
-y_values=np.zeros((10, 10000))
-
-if isDebug:
-    print("taile : ",len(t))
-for i in range(0,10):
-    y_values[i] = AnalitycalSolution(0, t, a, 1)
-    a=a+0.5
-a=-2.0
-# Plot the figure with all ten graphs
-plt.figure(figsize=(8, 6))  # Optional: Set the figure size
-for i in range(5):
-    plt.plot(t, y_values[i], label=f'x2(t) with a={a}')
-    a=a+0.5
     if isDebug:
-        print("valeur de a : ", a)
+        print("taile : ",len(t))
+    for i in range(0,10):
+        y_values[i] = AnalitycalSolution(0, t, a, 1)
+        a=a+0.5
+    a=-2.0
+    # Plot the figure with all ten graphs
+    plt.figure(figsize=(8, 6))  # Optional: Set the figure size
+    for i in range(5):
+        plt.plot(t, y_values[i], label=f'x2(t) with a={a}')
+        a=a+0.5
+        if isDebug:
+            print("valeur de a : ", a)
 
-plt.xlabel('Time (s)')
-plt.ylabel('Distance (m)')
-plt.legend()
-rc('text', usetex=True)
-plt.title('Analytical solutions of the equilibrium for different ' + r"$\alpha$" + ' values')
-rc('text', usetex=False)
-plt.grid(True)
-plt.yscale('log')
-plt.show()
+    plt.xlabel('Time (s)')
+    plt.ylabel('Distance (m)')
+    plt.legend()
+    rc('text', usetex=True)
+    plt.title('Analytical solutions of the equilibrium for different ' + r"$\alpha$" + ' values')
+    rc('text', usetex=False)
+    plt.grid(True)
+    plt.yscale('log')
+    plt.show()
 
-for i in range(5,10):
-    plt.plot(t, y_values[i], label=f'x2(t) with a={a}')
-    #plt.xlim(0, 5)
-    a=a+0.5
-    if isDebug:
-        print("valeur de a : ", a)
-    
-plt.xlabel('Time (s)')
-plt.ylabel('Distance (m)')
-plt.legend()
-rc('text', usetex=True)
-plt.title('Analytical solutions of the equilibrium for different ' + r"$\alpha$" + ' values')
-rc('text', usetex=False)
-plt.grid(True)
-plt.show()
+    for i in range(5,10):
+        plt.plot(t, y_values[i], label=f'x2(t) with a={a}')
+        #plt.xlim(0, 5)
+        a=a+0.5
+        if isDebug:
+            print("valeur de a : ", a)
+        
+    plt.xlabel('Time (s)')
+    plt.ylabel('Distance (m)')
+    plt.legend()
+    rc('text', usetex=True)
+    plt.title('Analytical solutions of the equilibrium for different ' + r"$\alpha$" + ' values')
+    rc('text', usetex=False)
+    plt.grid(True)
+    plt.show()
 
 #___________________________________ Plotting the vector field ______________________________________________________
 #____________________________________________________________________________________________________________________
