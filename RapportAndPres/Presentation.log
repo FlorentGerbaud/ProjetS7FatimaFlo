@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  5 NOV 2023 22:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  5 NOV 2023 23:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1377,7 +1377,14 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count500
 \@quotereset=\count501
-(Presentation.aux)
+(Presentation.aux
+
+LaTeX Warning: Label `fig:OV' multiply defined.
+
+
+LaTeX Warning: Label `fig:NV' multiply defined.
+
+)
 \openout1 = `Presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
@@ -1536,12 +1543,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-<intro.jpg, id=145, 1003.75pt x 501.875pt>
+<intro.jpg, id=151, 1003.75pt x 501.875pt>
 File: intro.jpg Graphic file (type jpg)
 <use intro.jpg>
 Package pdftex.def Info: intro.jpg  used on input line 216.
 (pdftex.def)             Requested size: 344.005pt x 172.00601pt.
-<GitHub.jpg, id=146, 584.93532pt x 215.30438pt>
+<GitHub.jpg, id=152, 584.93532pt x 215.30438pt>
 File: GitHub.jpg Graphic file (type jpg)
 <use GitHub.jpg>
 Package pdftex.def Info: GitHub.jpg  used on input line 229.
@@ -1590,13 +1597,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--406
  []
 
 [8]
+<RealisticCase.png, id=180, 722.7pt x 433.62pt>
+File: RealisticCase.png Graphic file (type png)
+<use RealisticCase.png>
+Package pdftex.def Info: RealisticCase.png  used on input line 433.
+(pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
 
-LaTeX Warning: Empty bibliography on input line 435.
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 433--434
+ [][] 
+ []
 
-[9] (Presentation.aux)
+<RealSolCase.png, id=181, 722.7pt x 433.62pt>
+File: RealSolCase.png Graphic file (type png)
+<use RealSolCase.png>
+Package pdftex.def Info: RealSolCase.png  used on input line 440.
+(pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
+
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 440--441
+ [][] 
+ []
+
+<Stability.png, id=182, 462.528pt x 346.896pt>
+File: Stability.png Graphic file (type png)
+<use Stability.png>
+Package pdftex.def Info: Stability.png  used on input line 450.
+(pdftex.def)             Requested size: 301.0019pt x 225.76025pt.
+
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 450--451
+ [][] 
+ []
+
+<Unstability.png, id=183, 578.16pt x 433.62pt>
+File: Unstability.png Graphic file (type png)
+<use Unstability.png>
+Package pdftex.def Info: Unstability.png  used on input line 457.
+(pdftex.def)             Requested size: 301.0019pt x 225.74835pt.
+
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 457--458
+ [][] 
+ []
+
+[9 <./RealisticCase.png> <./RealSolCase.png>]
+<FieldOfVector_CV.png, id=190, 578.16pt x 433.62pt>
+File: FieldOfVector_CV.png Graphic file (type png)
+<use FieldOfVector_CV.png>
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 465.
+(pdftex.def)             Requested size: 344.005pt x 258.0038pt.
+ [10 <./Stability.png> <./Unstability.png>]
+
+LaTeX Warning: Empty bibliography on input line 477.
+
+[11 <./FieldOfVector_CV.png>] (Presentation.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 44BEEF3B6493D7011470C92156B0A863;3817.
@@ -1605,10 +1662,10 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50948 strings out of 476331
- 1103575 string characters out of 5787766
- 1950847 words of memory out of 5000000
- 70671 multiletter control sequences out of 15000+600000
+ 50994 strings out of 476331
+ 1104454 string characters out of 5787766
+ 1951114 words of memory out of 5000000
+ 70707 multiletter control sequences out of 15000+600000
  527281 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,15n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1631,9 +1688,9 @@ ublic/cm-super/sfbx2488.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts
 eX/fonts/type1/public/cm-super/sfrm0900.pfb><C:/Users/flore/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/flore/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Presentation.pdf (9 pages, 533414 bytes).
+Output written on Presentation.pdf (11 pages, 756277 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 35 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 289 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 210 words of extra memory for PDF output out of 10000 (max. 10000000)
 

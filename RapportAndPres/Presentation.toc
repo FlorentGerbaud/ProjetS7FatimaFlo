@@ -16,6 +16,6 @@
 \contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{8}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{8}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{8}{subsubsection.4.4.1}%
-\contentsline {section}{\numberline {5}Summary}{9}{section.5}%
-\contentsline {section}{\numberline {6}Annexe}{9}{section.6}%
+\contentsline {section}{\numberline {5}Summary}{11}{section.5}%
+\contentsline {section}{\numberline {6}Annexe}{11}{section.6}%
 \contentsfinish 
