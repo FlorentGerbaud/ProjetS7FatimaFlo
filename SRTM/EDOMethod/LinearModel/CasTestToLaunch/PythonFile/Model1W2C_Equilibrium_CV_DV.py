@@ -97,7 +97,7 @@ else:
     plt.xlabel('Time (s)')
     plt.ylabel('Distance (m)')
     plt.legend()
-    plt.title('Position of the cars')
+    plt.title('Position of the cars Over the time')
     plt.grid(True)
     plt.show()
 
@@ -123,7 +123,9 @@ if isRealisitic:
     # Plot the figure with all ten graphs
     plt.figure(figsize=(8, 6))  # Optional: Set the figure size
     for i in range(5):
-        plt.plot(t, y_values[i], label=f'x2(t) with a={a}')
+        rc('text', usetex=True)
+        plt.plot(t, y_values[i], label=r'$d_1(t)$ with $\alpha={}$'.format(a))
+        rc('text', usetex=False)
         a=a+0.5
         if isDebug:
             print("valeur de a : ", a)
@@ -139,7 +141,9 @@ if isRealisitic:
     plt.show()
 
     for i in range(5,10):
-        plt.plot(t, y_values[i], label=f'x2(t) with a={a}')
+        rc('text', usetex=True)
+        plt.plot(t, y_values[i], label=r'$d_1(t)$ with $\alpha={}$'.format(a))
+        rc('text', usetex=False)
         #plt.xlim(0, 5)
         a=a+0.5
         if isDebug:
@@ -149,7 +153,7 @@ if isRealisitic:
     plt.ylabel('Distance (m)')
     plt.legend()
     rc('text', usetex=True)
-    plt.title('Analytical solutions of the equilibrium for different ' + r"$\alpha$" + ' values')
+    plt.title("Analytical solutions of the equilibrium for different " + r"$\alpha$" + ' values')
     rc('text', usetex=False)
     plt.grid(True)
     plt.show()
@@ -181,14 +185,14 @@ plt.quiver(T, F, dt, df, angles='xy', scale=30, color='blue')
 
 # Add the red line f(t) = V1/a2
 rc('text', usetex=True)
-plt.plot(t, x1_prime() / a2 * np.ones_like(t), 'r', label=f'f(t) = $\\frac{{V_1}}{{\\alpha_2}}$ = {x1_prime() / a2}')
+plt.plot(t, x1_prime() / a2 * np.ones_like(t), 'r', label=f'$d_1(t)$ = $\\frac{{V_1}}{{\\alpha_2}}$ = {x1_prime() / a2}')
 rc('text', usetex=False)
 
 plt.xlabel('time (s)')
 plt.ylabel('distance (m)')
 
 rc('text', usetex=True)
-plt.title('Vector Field for ' + r"$\dot{d}_1 = V_1 - \alpha_2 \cdot f$")
+plt.title('Vector Field for ' + r"$\dot{d}_1 = V_1 - \alpha_2 \cdot d_1$")
 rc('text', usetex=False)
 plt.legend()
 plt.grid()
