@@ -352,6 +352,31 @@
 			
 			This algorithm allows to define an orthonormed local reference frame and we delete the lines to eliminate for reducing matrix
 			
+			\begin{algorithm}[H]
+				\caption{sinusoidal\_model}\label{alg:sinusoidal_model}
+				\begin{algorithmic}
+					\State \textbf{Input:} \\
+					\begin{itemize}
+						\State $W := \text{"Amplitude of the perturbation"}$
+						\State $\omega := \text{"Angular frequency"}$
+						\State $t := \text{"time"}$
+						\State $\phi := \text{"Phase (in radians)"}$
+					\end{itemize}
+					\State \textbf{Output:} \\
+					\begin{itemize}
+						\item This function returns a value of acceleration $(\alpha_i(t))$ following a sinusoidal model with random noise.
+					\end{itemize}
+					
+					\State \textbf{Algorithm:} \\
+					\begin{itemize}
+						\State $ \alpha_i(t) = \left| W \cdot \sin(\omega \cdot t + \phi) + N \right|$ 
+						\State \text{$N$:="random noise such as N $\sim$ $\mathcal{N}(0,0.01)$"}
+						\State \Return $\alpha_i(t)$
+					\end{itemize}
+				\end{algorithmic}
+			\end{algorithm}
+			
+			
 		\subsubsection{Newell's Model}
 		\subsection{Partial Differential Equations}
 		
@@ -363,6 +388,44 @@
 		\subsection{Simulation with Unpredictable Drivers}
 		\subsection{Simulation with Drivers Reacting Similarly}
 		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
+		\subsubsection{System Stability and Equilibrium for the Linear Model}
+		In this part, the idea is to study the distance difference between two cars in order to determine in which case the solutions is stable and if there is an equilibrium for the solution.
+		For doing that, we studied the solutions of the following  system of equation : 
+		\begin{align*}
+			\begin{cases}
+				\dot{d_1} &= V_1 - \alpha_2 \cdot d_1 \\
+				&\vdots \\
+				\dot{d_n} &= \alpha_n \cdot d_{n-1} - \alpha_{n+1} \cdot d_n
+			\end{cases}
+		\end{align*}
+		
+		So, In our context, for the two cars, we have a 1D system. With 3 cars, we have a 2D system of equations.
+		
+		Now talk about the system stability and equilibrium : 
+		\newline \newline \textbf{\underline{With 2 cars}} : \newline\newline
+	
+		So, the equation to study is the following one : 
+		
+		\begin{align*}
+			\dot{d_1} &= V_1 - \alpha_2 \cdot d_1
+		\end{align*}
+		
+		
+		After the resolution (cf Annexe clique figure ) we obtain the next equation for $d_1(t)$ : 
+		\begin{align*}
+			\boxed{d_1(t) = \frac{{V_1 - V_1 \cdot e^{-\alpha_2(t-t_0)} + \alpha_2 \cdot d_1(t_0) \cdot e^{-\alpha_2(t-t_0)}}}{\alpha_2}}
+		\end{align*}
+		
+		The first intuition before seeing the equation was to think that when the $\alpha_2 < 0 $, the solution is divergent because one car is go back and the other go forward. Now, if we study the Equation,
+		
+		the terms $V_1$ and $\alpha_2 \cdot d_1(t_0)$ are constant so they are not interesting.
+		
+		However, it's important to note that both terms, $e^{-\alpha_2(t-t_0)}$, are exponential functions of time. If the value of $\alpha_2$ is negative, these exponentials will increase exponentially over time.
+		
+		So we could easily see that the equation is stable and converge onto the equilibrium $d_1(t)=\frac{V_1}{\alpha_2}$.
+		
+		graphically  we can see it by : 
+		
 		
 	\section{Summary}
 	

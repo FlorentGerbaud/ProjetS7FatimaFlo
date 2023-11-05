@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  5 NOV 2023 01:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  5 NOV 2023 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,7 +1490,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count508
-<logo.png, id=78, 353.32pt x 143.53625pt>
+<logo.png, id=82, 353.32pt x 143.53625pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 177.
@@ -1500,7 +1500,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
 
-<Polytech.png, id=80, 215.8464pt x 66.9702pt>
+<Polytech.png, id=84, 215.8464pt x 66.9702pt>
 File: Polytech.png Graphic file (type png)
 <use Polytech.png>
 Package pdftex.def Info: Polytech.png  used on input line 184.
@@ -1536,12 +1536,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-<intro.jpg, id=138, 1003.75pt x 501.875pt>
+<intro.jpg, id=145, 1003.75pt x 501.875pt>
 File: intro.jpg Graphic file (type jpg)
 <use intro.jpg>
 Package pdftex.def Info: intro.jpg  used on input line 216.
 (pdftex.def)             Requested size: 344.005pt x 172.00601pt.
-<GitHub.jpg, id=139, 584.93532pt x 215.30438pt>
+<GitHub.jpg, id=146, 584.93532pt x 215.30438pt>
 File: GitHub.jpg Graphic file (type jpg)
 <use GitHub.jpg>
 Package pdftex.def Info: GitHub.jpg  used on input line 229.
@@ -1574,26 +1574,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 308--309
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 314.
-[6]
+[6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
 
-LaTeX Warning: Empty bibliography on input line 374.
+ []
 
-[7] (Presentation.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 404--406
+
+ []
+
+[8]
+
+LaTeX Warning: Empty bibliography on input line 435.
+
+[9] (Presentation.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 66FEF00E385C9780F326EF783E76DC73;3463.
+(rerunfilecheck)             Checksum: 44BEEF3B6493D7011470C92156B0A863;3817.
 Package logreq Info: Writing requests to 'Presentation.run.xml'.
 \openout1 = `Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50938 strings out of 476331
- 1103404 string characters out of 5787766
- 1947710 words of memory out of 5000000
- 70665 multiletter control sequences out of 15000+600000
+ 50948 strings out of 476331
+ 1103575 string characters out of 5787766
+ 1950847 words of memory out of 5000000
+ 70671 multiletter control sequences out of 15000+600000
  527281 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,15n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1602,22 +1617,23 @@ cmex10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmmi7.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmr10.pfb><C:/Users/flore/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/flore/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/flore/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/flore/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/f
-lore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfbx1200.pfb><C:
-/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfbx1440
-.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/
-sfbx1728.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/c
-m-super/sfbx2488.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/cm-super/sfbx2986.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/font
-s/type1/public/cm-super/sfrm0900.pfb><C:/Users/flore/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/flore/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Presentation.pdf (7 pages, 516080 bytes).
+eX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/flore/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/flore/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/flore/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/fl
+ore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfbx1000.pfb><C:/
+Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfbx1200.
+pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/s
+fbx1440.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm
+-super/sfbx1728.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/cm-super/sfbx2488.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/cm-super/sfbx2986.pfb><C:/Users/flore/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/cm-super/sfrm0900.pfb><C:/Users/flore/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/cm-super/sfrm1000.pfb><C:/Users/flore/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on Presentation.pdf (9 pages, 533414 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 185 words of extra memory for PDF output out of 10000 (max. 10000000)
 
