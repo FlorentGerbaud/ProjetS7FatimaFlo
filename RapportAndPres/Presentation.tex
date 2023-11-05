@@ -208,6 +208,8 @@
 			F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
 		\end{align*}
 		
+		\textbf{\underline{What is Road Traffic Modeling}} \newline\newline
+		The Road Traffic modeling  is the study of how vehicles behave on road networks, aiming to simulate and analyze various aspects of traffic flow, congestion, and driver behavior. This field involves creating mathematical and computer models to understand and predict traffic patterns, particularly in scenarios such as congestion, erratic driving, and other relevant factors affecting road transportation. Road traffic modeling plays a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (you could see an exemple on the \ref{fig:intro}).
 
 	\begin{figure}[H]
 		\centering
@@ -215,12 +217,19 @@
 		\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
 		\label{fig:intro}
 	\end{figure}
+	
 	\subsubsection{Simple Road Traffic Modeling}
 	
-		\textbf{\underline{What is Road Traffic Modeling}}
-		The Road Traffic modeling  is the study of how vehicles behave on road networks, aiming to simulate and analyze various aspects of traffic flow, congestion, and driver behavior. This field involves creating mathematical and computer models to understand and predict traffic patterns, particularly in scenarios such as congestion, erratic driving, and other relevant factors affecting road transportation. Road traffic modeling plays a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (you could see an exemple on the \ref{fig:intro}).
+		Here explain what is the objective how we are going to do the study and so on
 	
 	\subsubsection{Using GitHub for Project Management}
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{GitHub.jpg}
+		\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
+		\label{fig:GitHub}
+	\end{figure}
 	
 	\section{The equation for SMRT}
 		\subsection{Differential Ordinary Equation }
@@ -237,8 +246,112 @@
 		
 		
 		\subsubsection{Linear Model}
-			\textbf{\underline{Mathematical Theory : }} \newline \newline
+			\textbf{\underline{Mathematical Theory:}}
+			\newline
+			
+			In this section, we're going to explain the math behind our model for understanding how cars behave in traffic. To make things simple, we use a discrete model, which means we look at cars one at a time and how they interact on the road.
+			
+			Each car's movement is governed by a basic equation:
+			
+			\begin{align*}
+				\dot{x_i}(t) = V_i = \alpha_i(x_{i-1} - x_i)
+			\end{align*}
+			
+			In this equation, \(x_i(t)\) represents where the \(i\)-th car is at a given time, \(V_i\) is how fast the \(i\)-th car is going, and \(\alpha_i\) is a number that describes how that car behaves. The right side of the equation, \(\alpha_i(x_{i-1} - x_i)\), tells us how the car's speed changes based on how close it is to the car in front.
+			
+			When we put this equation to work for all the cars, we end up with a bunch of equations (one for each car), which helps us understand how they all move together in traffic. These equations give us a dynamic view of how cars influence each other as they drive.
+			
+			The system of equations is written like this for each car, where \(i\) can be 1, 2, and so on, up to the number of cars:
+			
+			\begin{align*}
+				\left\{
+				\begin{array}{ll}
+					\dot{x}_1 &= V_1 \\
+					\dot{x}_2(t) &= \alpha_2(x_1 - x_2) \\
+					&\vdots \\
+					\dot{x}_n(t) &= \alpha_n(x_{n-1} - x_n)
+				\end{array}
+				\right.
+			\end{align*}
+			
+			These equations help us understand how traffic flows and how individual cars influence one another on the road.
+			
+			In the first part of the study, we consider $\alpha_i$ as a constant. However, in the next part of the simulation, we define some functions $\alpha_i(t)$.
+			
+			In fact, we have three types of simulations:
+			
+			1. \textbf{\underline{Constant value:}}
+			\[
+			\alpha_i(t) = C_i
+			\]
+			
+			2. \textbf{\underline{Sinusoidal with noise:}}
+			\[
+			\alpha_i(t) = \left| W \cdot \sin(\omega t + \phi) + \mathcal{N}(0, 0.1) \right|
+			\]
+			
+			3. \textbf{\underline{Stochastic Driver Model:}} \newline \newline
+			Consider a random driver model with an output labeled as \( \alpha_i(t) \), which relies on various factors like the average, spread, and time \( t \). This model produces a random noise part from a usual distribution with an average and spread of \( \sqrt{\text{spread}} \). If a limit is given, the generated noise is confined within the interval \([- \text{limit}, \text{limit}]\). \newline \newline
+			
+			\textbf{Mathematically, we can express this as:}
+		
+			
+			\[
+			\alpha_i(t) =
+			\begin{cases}
+				\left| \mathcal{N}(\text{average}, \sqrt{\text{spread}}) \right|, & \text{if } -\text{limit} \leq \alpha_i(t) \leq \text{limit}, \\
+				-\text{limit}, & \text{if } \alpha_i(t) < -\text{limit}, \\
+				\text{limit}, & \text{if } \alpha_i(t) > \text{limit}.
+			\end{cases}
+			\]
+			
+			Here, \( \text{average} \) signifies the mean of the acceleration, and \( \text{spread} \) stands for the acceleration's spread. The limit is defined to prevent or create specific situations, like accidents, depending on the desired result. \\
+			
+			
 			\textbf{\underline{Implementation : }}
+			
+			\begin{algorithm}[H]
+				\caption{$\dot{x_1}$}\label{alg:x1_dot}
+				\begin{algorithmic}
+					%\State \textbf{Input:} \\
+					%\begin{itemize}
+						%\State $P_1,P_2,P_3,:=\text{"the 3 first vertex of the 2D mesh"}$
+					%\end{itemize}
+					\State \textbf{Output:} \\
+					\begin{itemize}[]
+						\item $\dot{x_1}=V_1$
+					\end{itemize}
+					\State \textbf{Algorithm:} \\
+					\begin{itemize}[]
+						\State $\dot{x_1}=130 \times \frac{1000}{3600}$ 
+						\State \Return $\dot{x_1}$ 
+					\end{itemize}		
+				\end{algorithmic}
+			\end{algorithm}
+			
+			\begin{algorithm}[H]
+				\caption{$\dot{x_i}$}\label{alg:xi_dot}
+				\begin{algorithmic}
+					\State \textbf{Input:} \\
+					\begin{itemize}
+					\State $t:=\text{"time  step"}$
+					\State$x_i:=\text{Table of position for the i-th Car}$
+					\State$x_{i-1}:=\text{Table of position for the (i-1)-th Car}$
+					\end{itemize}
+					\State \textbf{Output:} \\
+					\begin{itemize}[]
+						\item $\dot{x_i}=V_i$
+					\end{itemize}
+					\State \textbf{Algorithm:} \\
+					\begin{itemize}[]
+						\State $\dot{x_i}(t) = V_i = \alpha_i(x_{i-1}[t] - x_i[t])$ 
+						\State \Return $\dot{x_i}$ 
+					\end{itemize}		
+				\end{algorithmic}
+			\end{algorithm}
+			
+			This algorithm allows to define an orthonormed local reference frame and we delete the lines to eliminate for reducing matrix
+			
 		\subsubsection{Newell's Model}
 		\subsection{Partial Differential Equations}
 		
