@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 #__________________________________________Definition and initialization of parameters_____________________________________________#
 
 h=1.0 #Time step
-T=50.0 #Total simulation steps
+T=100.0 #Total simulation steps
 n_steps=int(T/h) #Tumber of time steps
 accident=False
 
@@ -61,6 +61,18 @@ for t in range(1, n_steps):
     x2[t] = x2[t-1] + x2_prime(t-1) * h
     x3[t] = x3[t-1] + x3_prime(t-1) * h
     time[t] = time[t-1] + h
+
+# Check if there is an accident or not
+for t in range(n_steps):
+    if (x1[t] - x2[t] <= d2) or (x2[t] - x3[t] <= d3):
+        accident = True
+        t_accident = t
+        print("There is an accident in this simulation.")
+        print("The moment of the accident is:", t_accident)
+        break;
+    accident=False
+    
+
     
     
 
@@ -87,10 +99,5 @@ axes[1].legend()
 axes[1].set_title('Velocities')
 axes[1].grid(True)
 
+#Display the plots
 plt.show()
-
-
-
-
-
-

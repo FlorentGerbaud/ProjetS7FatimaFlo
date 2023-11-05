@@ -9,7 +9,7 @@ lambda2 = 10.0  #Acceleration/Deceleration capacity
 h = 1.0  # Time step
 T = 50.0  # Total simulation time
 n_steps = int(T / h)  # Number of time steps
-d2=3.0 #Security distance
+d2=1.0 #Security distance
 x2_prime_max=160*(1000/3600) #Maximum speed of the second car
 accident=False #Flag to indicate if an accident has occurred
 
@@ -44,10 +44,16 @@ for t in range(1, n_steps):
     x1[t] = x1[t-1] + x1_prime() * h
     x2[t] = x2[t-1] + x2_prime(t-1) * h
     time[t] = time[t-1] + h
-    if(x1[t-1]-x2[t-1]<= d2 ): #Verify if the security distance is respected 
-        accident=True
-        print(t)
-        print(accident)
+    
+# Check if there is an accident or not
+for t in range(n_steps):
+    if (x1[t] - x2[t] <= d2):
+        accident = True
+        t_accident = t
+        print("There is an accident in this simulation.")
+        print("The moment of the accident is:", t_accident)
+        break;
+    accident=False
         
     
 
