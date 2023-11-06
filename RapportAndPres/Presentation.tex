@@ -411,7 +411,7 @@
 		\end{align*}
 		
 		
-		After the resolution (cf Annexe clique figure ) we obtain the next equation for $d_1(t)$ : 
+		After the resolution (\ref{eq:EDO1}) we obtain the next equation for $d_1(t)$ : 
 		\begin{align*}
 			\boxed{d_1(t) = \frac{{V_1 - V_1 \cdot e^{-\alpha_2(t-t_0)} + \alpha_2 \cdot d_1(t_0) \cdot e^{-\alpha_2(t-t_0)}}}{\alpha_2}}
 		\end{align*}
@@ -470,6 +470,32 @@
 	\section{Summary}
 	
 	\section{Annexe}
+	
+	\subsection{Calculation of the Analytical solutions}
+	
+	\subsubsection{Linear Model for Two Cars}
+	
+	\label{eq:EDO1}
+	\begin{align*} 
+		\dot{d_1}(t) = V_1 - \alpha_2 \cdot d_1
+	\end{align*}
+	We use the variable separation method to Solve this EDO, so we obtain : 
+	\begin{align*} 
+		&\int_{x(t_0)}^{x(t_f)} \frac{1}{V_1 - \alpha_2 \cdot d_1(t)} d \ d_1(t) = \int_{t_0}^{t_f} dt \\
+		&-\frac{1}{\lambda_2} \left[ \ln\left| V_1 - \alpha_2 \cdot d_1(t) \right| \right]_{x(t_0)}^{x(t_f)} = t_f-t_0 \\
+		&-\frac{1}{\lambda_2} \ln\left| \frac{V_1 - \alpha_2 \cdot d_1(t_f)}{V_1 - \alpha_2 \cdot d_1(t_0)} \right| = t_f-t_0
+	\end{align*}
+	We could remove the |.| because the sign is always the same. And we get : 
+	
+	\begin{align*}
+		&\ln\left( \frac{V_1 - \alpha_2 \cdot d_1(t_f)}{V_1 - \alpha_2 \cdot d_1(t_0)} \right)  = -\lambda_2( t_f-t_0)\\
+		&\frac{V_1 - \alpha_2 \cdot d_1(t_f)}{V_1 - \alpha_2 \cdot d_1(t_0)}  = e^{-\lambda_2( t_f-t_0)} \\
+		&V_1 - \alpha_2 \cdot d_1(t_f)   = (V_1 - \alpha_2 \cdot d_1(t_0))e^{-\lambda_2( t_f-t_0)} \\
+		&\boxed{
+			d_1(t) = \frac{V_1 - [V_1 - \alpha_2 \cdot d_1(t_0)]e^{-\lambda_2( t_f-t_0)}}{\alpha_2}
+		}
+	\end{align*}
+
 	
 		
 	
