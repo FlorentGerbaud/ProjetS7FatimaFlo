@@ -467,6 +467,38 @@
 			\label{fig:GitHub}
 		\end{figure}
 		
+		\textbf{\underline{With 3 cars}} : \newline\newline
+		
+		After the resolution (\ref{eq:EDO2}) we obtain the next equation for $d_1(t)$ and $d_2(t)$ : 
+		
+	\subsubsection{System Stability and Equilibrium for the Newell's Model}
+	
+	\textbf{\underline{The Study of the equilibrium for two cars : }} \newline\newline
+	
+	
+	Here the objectif is like before it ean study the stbility of the model. The equation in 1D is the folowing one : 
+	
+	\begin{align*}
+		&\dot{d_1}(t) = \dot{x_1}(t) - \dot{x_2}(t) = V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}=f(d_1,t), \\
+		&\left\{
+		\begin{aligned}
+			V_1 &:= \text{Maximum speed for car number 1}, \\
+			V_2 &:= \text{Maximum speed for car number 2}, \\
+			\alpha_2 &:= \text{capacity of acceleration for car number 2}, \\
+			d_{2}^{sec} &:= \text{security distance that car number 2 maintains}.
+		\end{aligned}
+		\right.
+	\end{align*}
+
+	
+	The problem with this equation is that the Anaytical solution is impossible to find. So to Study the equilibrium we are going to use the indirect Theorem of Lyupanov.
+	The first step in 1D is to calculate $f'(d_1,t)$. XWe find easily : 
+	\begin{align*}
+		f'(d_1,t)=-\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}
+	\end{align*}
+	
+	We could easily see that $f'(d_1,t)<0 \forall \alpha_2>0$. So the equilibrium is in our context everytime stable because we never take acceleration negative
+	
 	\section{Summary}
 	
 	\section{Annexe}
@@ -496,8 +528,124 @@
 		}
 	\end{align*}
 
+	\subsubsection{Linear Model for Three Cars}
+	\label{eq:EDO2}
+	The system under matricial form coul be write like that :
 	
-		
+	\begin{align*}
+		\dot{D}=(t)\begin{pmatrix}
+			-\alpha_2 & 0 \\
+			\alpha_2 & -\alpha_3
+		\end{pmatrix}
+		\begin{pmatrix}
+			d_1 \\
+			d_2
+		\end{pmatrix} + 
+		\begin{pmatrix}
+			V_1 \\
+			0
+		\end{pmatrix}
+	\end{align*}
+	
+	The first step is to perfom the eigenvectors of the matrix:
+	
+	\begin{align*}
+		\begin{vmatrix}
+			X+\alpha_2 & 0 \\
+			\alpha_2 & X+\alpha_3
+		\end{vmatrix} = (X+\alpha_2)(X+\alpha_3=X^2+X(\alpha_3+\alpha_2)+\alpha_2\alpha_3
+	\end{align*}
+	by simple resolution of the second order polynomial, we could fin two eigenvalues: \newline
+	$\lambda_1=-\alpha_2, \lambda_2 = -\alpha_3$
+	we looking for the two eigen vectors : 
+	
+	\[
+	\begin{cases}
+		\begin{bmatrix}
+			0 & 0 & | & 0 \\
+			\alpha_2 & -\alpha_3 + \alpha_2 & | & 0
+		\end{bmatrix} \\ \\
+		\begin{bmatrix}
+			-\alpha_2 + \alpha_3 & 0 & | & 0 \\
+			\alpha_2 & 0 & | & 0
+		\end{bmatrix}
+	\end{cases}
+	\]
+	
+	It is easy to see that the two following vector are vector that verify the condition : 
+	
+	\[
+	\begin{cases}
+		u_1=\begin{pmatrix}
+			1 \\
+			\frac{\alpha_3-\alpha_2}{\alpha_2}
+		\end{pmatrix} \\ \\
+		u_2=\begin{pmatrix}
+			0 \\
+			1
+		\end{pmatrix}
+	\end{cases}
+	\]
+	
+	Then, we know that a general solution of the equation is : 
+	\begin{align*}
+		&\bar{D}
+		(t) = \sum_{i=1}^2 X_i \\
+		&\text{where } X_i = C_i e^{\lambda_it} u_i, \\
+		&\text{with } C_i \text{ being constants to be determined, and } u_i \text{ as the eigenvectors}, \textbf{and} \lambda_i \textbf{the eigenvalues}.
+	\end{align*}
+	
+	So : 
+	\begin{align*}
+		X_1=\begin{pmatrix}
+			\frac{C_1(\alpha_3-\alpha_2)}{\alpha_2e^{\alpha_2t}} \\ \\
+			\frac{C_1}{e^{\alpha_2t}}
+		\end{pmatrix} \\ \\ 
+		X_2=\begin{pmatrix}
+			0 \\
+			\frac{C_2}{e^{\alpha_3 \cdot t}}
+		\end{pmatrix}
+	\end{align*}
+	
+	Finally the general solution is given by : 
+	
+	\begin{align*}
+		\bar{X}
+		=\begin{pmatrix}
+			\frac{C_1(\alpha_3-\alpha_2)}{\alpha_2e^{\alpha_2t}} \\ \\
+			\frac{C_1}{e^{\alpha_2t}} + \frac{C_2}{e^{\alpha_3 \cdot t}}
+		\end{pmatrix} \\ \\ 
+	\end{align*}
+	
+	Then we are going to find for particular solution : 
+	
+	
+	\begin{align*}
+		\begin{cases}
+			\dot{d_1} &= 0 \\
+			\dot{d_2} &= 0
+		\end{cases} \iff 
+		\begin{cases}
+			d_1^* &= \frac{V_1}{\alpha_2} \\
+			d_2^* &= \frac{V_1}{\alpha_3}
+		\end{cases}
+	\end{align*}
+	
+	In clear, we have : 
+	\begin{align*}
+		\begin{cases}
+			\dot{d_1}(t) &= \frac{C_1(\alpha_3-\alpha_2)}{\alpha_2e^{\alpha_2t}}+ \frac{V_1}{\alpha_2}\\
+			\dot{d_2}(t) &= \frac{C_1}{e^{\alpha_2t}} + \frac{C_2}{e^{\alpha_3 \cdot t}} + \frac{V_1}{\alpha_3}
+		\end{cases}
+	\end{align*}
+	
+	we set the initial condition to \newline 
+	$d_1(0)=m, d_2(0)=n$ So we find easily $C_1 and C_2$ : 
+	\begin{align*}
+		&C_1=\frac{m\alpha_2-V_1}{\alpha_3-\alpha_2} \\
+		&C_2=n-\frac{V_1}{\alpha_3} - C_1
+	\end{align*}
+	
 	
 	%\bibliographystyle{plain}
 	\printbibliography
