@@ -476,10 +476,10 @@
 	\textbf{\underline{The Study of the equilibrium for two cars : }} \newline\newline
 	
 	
-	Here the objectif is like before it ean study the stbility of the model. The equation in 1D is the folowing one : 
+	The objective here, as before, is to study the stability of the model. The 1D equation is as follows:
 	
 	\begin{align*}
-		&\dot{d_1}(t) = \dot{x_1}(t) - \dot{x_2}(t) = V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}=f(d_1,t), \\
+		&\dot{d_1}(t) = \dot{x_1}(t) - \dot{x_2}(t) = V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} = f(d_1, t), \\
 		&\left\{
 		\begin{aligned}
 			V_1 &:= \text{Maximum speed for car number 1}, \\
@@ -489,16 +489,76 @@
 		\end{aligned}
 		\right.
 	\end{align*}
-
 	
-	The problem with this equation is that the Anaytical solution is impossible to find. So to Study the equilibrium we are going to use the indirect Theorem of Lyupanov.
-	The first step in 1D is to calculate $f'(d_1,t)$. XWe find easily : 
+	Firstly, let's determine the equilibrium:
+	
 	\begin{align*}
-		f'(d_1,t)=-\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}
+		V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= 0 \\
+		e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= \frac{V_2-V_1}{V_2} \\
+		e^{-\frac{\alpha_2}{V_2}d_1} &= \frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \\
+		-\frac{\lambda_2}{V_2}d_1 &= \ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right) \\
+		d_1^* &= -\frac{V_2}{\lambda_2}\ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right)
 	\end{align*}
 	
-	We could easily see that $f'(d_1,t)<0 \forall \alpha_2>0$. So the equilibrium is in our context everytime stable because we never take acceleration negative
+	The challenge with this equation is the inability to find an analytical solution. Consequently, we apply Lyapunov's Indirect Theorem to investigate the equilibrium.
 	
+	In the context of 1D analysis, we begin by calculating $f'(d_1, t)$, which results in:
+	
+	\[
+	f'(d_1, t) = -\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}
+	\]
+	
+	It is evident that $f'(d_1, t)$ is negative for all values of $\alpha_2$ greater than zero. Therefore, in our specific scenario, the equilibrium remains stable at all times, as negative acceleration is not considered.
+	
+	From the equilibrium, we also observe that the equilibrium exists if and only if $V_2 > V_1$.
+	
+	Clearly, the condition for a stable equilibrium is $\alpha_2 > 0$ and $V_2 > V_1$.
+	
+	
+	\textbf{\underline{The Study of the equilibrium for three cars : }} \newline\newline
+	
+	\begin{align*}
+		&\begin{cases}
+			\begin{aligned}
+				&\dot{d_1}(t) = \dot{x_1}(t) - \dot{x_2}(t) = V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} = f(d_1, t), \\
+				&\dot{d_2}(t) = \dot{x_2}(t)-\dot{x_3}(t) = V_2 - V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} - V_3 + V_3 \cdot e^{-\frac{\alpha_3}{V_3}(d_2 - d_{3}^{sec})}
+			\end{aligned}
+		\end{cases}
+		 \\
+		&\left\{
+		\begin{aligned}
+			V_1 &:= \text{Maximum speed for car number 1}, \\
+			V_2 &:= \text{Maximum speed for car number 2}, \\
+			\alpha_2 &:= \text{capacity of acceleration for car number 2}, \\
+			d_{2}^{sec} &:= \text{security distance that car number 2 maintains}.
+		\end{aligned}
+		\right.
+	\end{align*}
+	
+	again, we apply Lyapunov's Indirect Theorem to investigate the equilibrium.
+	
+	
+	We are going to calculkate the Jacobienne matrix : 
+	
+	\begin{align*}
+		J_{\bar{x}}=\begin{pmatrix}
+			-\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} & 0 & \\
+			\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} & -\alpha_3e^{-\frac{\alpha_3}{V_3}(d_2 - d_{3}^{sec})} &
+		\end{pmatrix}
+	\end{align*}
+	
+	However, in the 2D case, Lyapunov tells us that the equilibrium is stable if:
+	
+	\[
+	\boxed{
+		\begin{aligned}
+			Tr(J_{\bar{x}}) &< 0 \\
+			\det(J_{\bar{x}}) &> 0
+		\end{aligned}
+	}
+	\]
+
+	The both condition are respected iff $\lambda_2>0, \lambda_3>0$
 	\section{Summary}
 	
 	\section{Annexe}
