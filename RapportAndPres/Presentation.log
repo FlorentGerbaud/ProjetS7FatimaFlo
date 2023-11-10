@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  11 NOV 2023 00:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  11 NOV 2023 00:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1545,13 +1545,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-<intro.jpg, id=213, 1003.75pt x 501.875pt>
+<intro.jpg, id=206, 1003.75pt x 501.875pt>
 File: intro.jpg Graphic file (type jpg)
 <use intro.jpg>
 Package pdftex.def Info: intro.jpg  used on input line 220.
 (pdftex.def)             Requested size: 344.005pt x 172.00601pt.
 [4 <./intro.jpg>]
-<GitHub.jpg, id=222, 584.93532pt x 215.30438pt>
+<GitHub.jpg, id=215, 584.93532pt x 215.30438pt>
 File: GitHub.jpg Graphic file (type jpg)
 <use GitHub.jpg>
 Package pdftex.def Info: GitHub.jpg  used on input line 239.
@@ -1584,112 +1584,112 @@ Underfull \hbox (badness 10000) in paragraph at lines 318--319
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 324.
 [7] [8] [9]
-<Accordeon1.png, id=248, 722.7pt x 433.62pt>
+<Accordeon1.png, id=241, 722.7pt x 433.62pt>
 File: Accordeon1.png Graphic file (type png)
 <use Accordeon1.png>
 Package pdftex.def Info: Accordeon1.png  used on input line 457.
 (pdftex.def)             Requested size: 344.005pt x 206.4017pt.
  [10]
-<Acc1.png, id=256, 722.7pt x 433.62pt>
+<Acc1.png, id=249, 722.7pt x 433.62pt>
 File: Acc1.png Graphic file (type png)
 <use Acc1.png>
-Package pdftex.def Info: Acc1.png  used on input line 471.
+Package pdftex.def Info: Acc1.png  used on input line 472.
 (pdftex.def)             Requested size: 344.005pt x 206.4017pt.
  [11 <./Accordeon1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 489--491
+Underfull \hbox (badness 10000) in paragraph at lines 491--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 489--491
+Underfull \hbox (badness 10000) in paragraph at lines 491--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 489--491
+Underfull \hbox (badness 10000) in paragraph at lines 491--493
 
  []
 
 [12 <./Acc1.png>]
-<RealisticCase.png, id=268, 722.7pt x 433.62pt>
+<RealisticCase.png, id=261, 722.7pt x 433.62pt>
 File: RealisticCase.png Graphic file (type png)
 <use RealisticCase.png>
-Package pdftex.def Info: RealisticCase.png  used on input line 518.
+Package pdftex.def Info: RealisticCase.png  used on input line 520.
 (pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 518--519
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 520--521
  [][] 
  []
 
-<RealSolCase.png, id=269, 722.7pt x 433.62pt>
+<RealSolCase.png, id=262, 722.7pt x 433.62pt>
 File: RealSolCase.png Graphic file (type png)
 <use RealSolCase.png>
-Package pdftex.def Info: RealSolCase.png  used on input line 525.
+Package pdftex.def Info: RealSolCase.png  used on input line 527.
 (pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 525--526
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 527--528
  [][] 
  []
 
-<Stability.png, id=270, 462.528pt x 346.896pt>
+<Stability.png, id=263, 462.528pt x 346.896pt>
 File: Stability.png Graphic file (type png)
 <use Stability.png>
-Package pdftex.def Info: Stability.png  used on input line 535.
+Package pdftex.def Info: Stability.png  used on input line 537.
 (pdftex.def)             Requested size: 301.0019pt x 225.76025pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 535--536
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 537--538
  [][] 
  []
 
-<Unstability.png, id=271, 578.16pt x 433.62pt>
+<Unstability.png, id=264, 578.16pt x 433.62pt>
 File: Unstability.png Graphic file (type png)
 <use Unstability.png>
-Package pdftex.def Info: Unstability.png  used on input line 542.
+Package pdftex.def Info: Unstability.png  used on input line 544.
 (pdftex.def)             Requested size: 301.0019pt x 225.74835pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 542--543
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 544--545
  [][] 
  []
 
 [13 <./RealisticCase.png> <./RealSolCase.png>]
-<FieldOfVector_CV.png, id=280, 578.16pt x 433.62pt>
+<FieldOfVector_CV.png, id=273, 578.16pt x 433.62pt>
 File: FieldOfVector_CV.png Graphic file (type png)
 <use FieldOfVector_CV.png>
-Package pdftex.def Info: FieldOfVector_CV.png  used on input line 550.
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 552.
 (pdftex.def)             Requested size: 344.005pt x 258.0038pt.
  [14 <./Stability.png> <./Unstability.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 555--556
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 561--562
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
 
  []
 
 [15 <./FieldOfVector_CV.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 603--604
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 603--604
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
 
  []
 
 [16] [17] [18] [19]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
-97.
+99.
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
@@ -1711,7 +1711,7 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 Here is how much of TeX's memory you used:
  51322 strings out of 476331
  1110699 string characters out of 5787765
- 1959808 words of memory out of 5000000
+ 1958210 words of memory out of 5000000
  71005 multiletter control sequences out of 15000+600000
  530513 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1742,9 +1742,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/flo
 re/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/U
 sers/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb>
-Output written on Presentation.pdf (20 pages, 837231 bytes).
+Output written on Presentation.pdf (20 pages, 835370 bytes).
 PDF statistics:
- 759 PDF objects out of 1000 (max. 8388607)
+ 752 PDF objects out of 1000 (max. 8388607)
  62 named destinations out of 1000 (max. 500000)
  292 words of extra memory for PDF output out of 10000 (max. 10000000)
 
