@@ -37,7 +37,7 @@
 %\usepackage[style=ext-authoryear, backend=biber]{biblatex}
 %\usepackage{url}
 %\usepackage[style=authoryear]{biblatex}
-%\addbibresource{biblio.bib}
+\addbibresource{rapport.bib}
 %\usepackage{cite}
 \usepackage[british]{datetime2} % Enhanced date and time.
 
@@ -210,17 +210,27 @@
 		
 		\textbf{\underline{What is Road Traffic Modeling}} \newline\newline
 		The Road Traffic modeling  is the study of how vehicles behave on road networks, aiming to simulate and analyze various aspects of traffic flow, congestion, and driver behavior. This field involves creating mathematical and computer models to understand and predict traffic patterns, particularly in scenarios such as congestion, erratic driving, and other relevant factors affecting road transportation. Road traffic modeling plays a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (you could see an exemple on the \ref{fig:intro}).
-
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.8\textwidth]{intro.jpg}
-		\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
-		\label{fig:intro}
-	\end{figure}
 	
-	\subsubsection{Simple Road Traffic Modeling}
+	\subsection{Simple Road Traffic Modeling}
 	
-		Here explain what is the objective how we are going to do the study and so on
+		Here explain what is the objective how we are going to do the study and so on \cite{JEIHANI2017164}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{intro.jpg}
+			\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
+			\label{fig:intro}
+		\end{figure}
+	
+		
+		\subsubsection{The objective of SMRT}
+		The primary objective of simple road simulation is to analyze and understand the behavior of vehicles in a controlled and reproducible environment. By simulating basic road conditions, researchers and engineers can study the impact of various factors on traffic flow, safety, and efficiency. This helps in the development and testing of traffic management strategies and vehicle control systems. Simple road simulations provide a valuable tool for investigating the dynamic interactions between vehicles and the road environment, contributing to advancements in transportation research and technology.
+		
+		\subsubsection{Use case to explain the interest of these simulations}
+		Simple road simulations find applications in various fields, such as urban planning, transportation engineering, and autonomous vehicle development. For instance, they can be used to assess the effectiveness of new traffic signal timings, study the implications of road design changes, or test the performance of autonomous vehicles in different traffic scenarios. These simulations provide a cost-effective and risk-free way to evaluate potential real-world interventions and innovations. The ability to model and analyze diverse road scenarios enhances decision-making processes and supports the development of sustainable and efficient transportation systems.
+		
+		\subsubsection{Field of application}
+		Simple road simulation is applied across a wide range of fields, including but not limited to transportation research, traffic engineering, and urban planning. Additionally, it plays a crucial role in the development and validation of autonomous vehicle technologies. The ability to model and simulate various road conditions helps researchers and practitioners make informed decisions and improvements in the design and management of transportation systems. Simple road simulation serves as a powerful tool for enhancing our understanding of traffic dynamics and contributes to the ongoing evolution of smart and adaptive transportation systems.
 	
 	\subsubsection{Using GitHub for Project Management}
 	
@@ -375,6 +385,49 @@
 					\end{itemize}
 				\end{algorithmic}
 			\end{algorithm}
+			
+			\begin{algorithm}[H]
+				\caption{Update Positions and Velocities}\label{alg:update_positions}
+				\begin{algorithmic}
+					\State \textbf{Input:} \\
+					\begin{itemize}
+						\State $t:=\text{time step}$
+						\State $x_1Pos:=\text{Table of position for the 1st Car}$
+						\State $x_2Pos:=\text{Table of position for the 2nd Car}$
+						\State $v_1:=\text{Table of velocity for the 1st Car}$
+						\State $v_2:=\text{Table of velocity for the 2nd Car}$
+						\State $time:=\text{Table of time values}$
+						\State $h:=\text{time step size}$
+					\end{itemize}
+					\State \textbf{Output:} \\
+					\begin{itemize}
+						\item $x_1Pos$ \\
+						\item $x_2Pos$
+					\end{itemize}
+					\begin{itemize}[]
+						\item $accident:=\text{Flag indicating whether an accident occurred}$
+					\end{itemize}
+					\State \textbf{Algorithm:} \\
+					\begin{itemize}[]
+						\For{$t$ in range(1, $n\_steps$)}
+						\State $x_1Pos[t] = x_1Pos[t-1] + \dot{x_1}() \times h$
+						\State $x_2Pos[t] = x_2Pos[t-1] + \dot{x_2}(t-1) \times h$
+						
+						\State $v_1[t] = \dot{x_1}()$
+						\State $v_2[t] = \dot{x_2}(t)$
+						
+						\State $time[t] = time[t-1] + h$
+						
+						\If{isAccident($t$)}
+						\State $accident = \text{True}$
+						\State \textbf{break}
+						\EndIf
+						\EndFor
+					\end{itemize}
+					\State \textbf{Return} $x_1Pos$, $x_2Pos$
+				\end{algorithmic}
+			\end{algorithm}
+			
 			
 			
 		\subsubsection{Newell's Model}
@@ -706,6 +759,7 @@
 		&C_2=n-\frac{V_1}{\alpha_3} - C_1
 	\end{align*}
 	
+	\newpage
 	
 	%\bibliographystyle{plain}
 	\printbibliography

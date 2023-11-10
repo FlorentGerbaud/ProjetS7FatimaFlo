@@ -1,25 +1,28 @@
 \babel@toc {british}{}\relax 
 \contentsline {section}{\numberline {1}Presentation of the Subject}{4}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Useful Definition}{4}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Simple Road Traffic Modeling}{4}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}Using GitHub for Project Management}{5}{subsubsection.1.1.2}%
-\contentsline {section}{\numberline {2}The equation for SMRT}{5}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Differential Ordinary Equation }{5}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Linear Model}{5}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Newell's Model}{8}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Partial Differential Equations}{8}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Project Objectives}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Problems Encountered}{8}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Types of Simulations Performed}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Simulation with Drunk Drivers}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Simulation with Unpredictable Drivers}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{8}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{8}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{8}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{11}{subsubsection.4.4.2}%
-\contentsline {section}{\numberline {5}Summary}{13}{section.5}%
-\contentsline {section}{\numberline {6}Annexe}{13}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Calculation of the Analytical solutions}{13}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Linear Model for Two Cars}{13}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Linear Model for Three Cars}{13}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {1.2}Simple Road Traffic Modeling}{4}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}The objective of SMRT}{4}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Use case to explain the interest of these simulations}{5}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Field of application}{5}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.4}Using GitHub for Project Management}{5}{subsubsection.1.2.4}%
+\contentsline {section}{\numberline {2}The equation for SMRT}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Differential Ordinary Equation }{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Linear Model}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Newell's Model}{10}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Partial Differential Equations}{10}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Project Objectives}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problems Encountered}{10}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Types of Simulations Performed}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation with Drunk Drivers}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Simulation with Unpredictable Drivers}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{10}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{10}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{13}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Summary}{15}{section.5}%
+\contentsline {section}{\numberline {6}Annexe}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Calculation of the Analytical solutions}{15}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Linear Model for Two Cars}{15}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Linear Model for Three Cars}{15}{subsubsection.6.1.2}%
 \contentsfinish 
