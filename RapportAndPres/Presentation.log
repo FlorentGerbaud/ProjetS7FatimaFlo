@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  10 NOV 2023 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  11 NOV 2023 00:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1500,7 +1500,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count508
-<logo.png, id=110, 353.32pt x 143.53625pt>
+<logo.png, id=118, 353.32pt x 143.53625pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 177.
@@ -1510,7 +1510,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
 
-<Polytech.png, id=112, 215.8464pt x 66.9702pt>
+<Polytech.png, id=120, 215.8464pt x 66.9702pt>
 File: Polytech.png Graphic file (type png)
 <use Polytech.png>
 Package pdftex.def Info: Polytech.png  used on input line 184.
@@ -1545,13 +1545,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 211--213
 
  []
 
-<intro.jpg, id=192, 1003.75pt x 501.875pt>
+<intro.jpg, id=213, 1003.75pt x 501.875pt>
 File: intro.jpg Graphic file (type jpg)
 <use intro.jpg>
 Package pdftex.def Info: intro.jpg  used on input line 220.
 (pdftex.def)             Requested size: 344.005pt x 172.00601pt.
 [4 <./intro.jpg>]
-<GitHub.jpg, id=201, 584.93532pt x 215.30438pt>
+<GitHub.jpg, id=222, 584.93532pt x 215.30438pt>
 File: GitHub.jpg Graphic file (type jpg)
 <use GitHub.jpg>
 Package pdftex.def Info: GitHub.jpg  used on input line 239.
@@ -1584,105 +1584,117 @@ Underfull \hbox (badness 10000) in paragraph at lines 318--319
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 324.
 [7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 457--459
+<Accordeon1.png, id=248, 722.7pt x 433.62pt>
+File: Accordeon1.png Graphic file (type png)
+<use Accordeon1.png>
+Package pdftex.def Info: Accordeon1.png  used on input line 457.
+(pdftex.def)             Requested size: 344.005pt x 206.4017pt.
+ [10]
+<Acc1.png, id=256, 722.7pt x 433.62pt>
+File: Acc1.png Graphic file (type png)
+<use Acc1.png>
+Package pdftex.def Info: Acc1.png  used on input line 471.
+(pdftex.def)             Requested size: 344.005pt x 206.4017pt.
+ [11 <./Accordeon1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 489--491
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--459
+Underfull \hbox (badness 10000) in paragraph at lines 489--491
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--459
+Underfull \hbox (badness 10000) in paragraph at lines 489--491
 
  []
 
-[10]
-<RealisticCase.png, id=231, 722.7pt x 433.62pt>
+[12 <./Acc1.png>]
+<RealisticCase.png, id=268, 722.7pt x 433.62pt>
 File: RealisticCase.png Graphic file (type png)
 <use RealisticCase.png>
-Package pdftex.def Info: RealisticCase.png  used on input line 486.
+Package pdftex.def Info: RealisticCase.png  used on input line 518.
 (pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 486--487
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 518--519
  [][] 
  []
 
-<RealSolCase.png, id=232, 722.7pt x 433.62pt>
+<RealSolCase.png, id=269, 722.7pt x 433.62pt>
 File: RealSolCase.png Graphic file (type png)
 <use RealSolCase.png>
-Package pdftex.def Info: RealSolCase.png  used on input line 493.
+Package pdftex.def Info: RealSolCase.png  used on input line 525.
 (pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 493--494
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 525--526
  [][] 
  []
 
-<Stability.png, id=233, 462.528pt x 346.896pt>
+<Stability.png, id=270, 462.528pt x 346.896pt>
 File: Stability.png Graphic file (type png)
 <use Stability.png>
-Package pdftex.def Info: Stability.png  used on input line 503.
+Package pdftex.def Info: Stability.png  used on input line 535.
 (pdftex.def)             Requested size: 301.0019pt x 225.76025pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 503--504
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 535--536
  [][] 
  []
 
-<Unstability.png, id=234, 578.16pt x 433.62pt>
+<Unstability.png, id=271, 578.16pt x 433.62pt>
 File: Unstability.png Graphic file (type png)
 <use Unstability.png>
-Package pdftex.def Info: Unstability.png  used on input line 510.
+Package pdftex.def Info: Unstability.png  used on input line 542.
 (pdftex.def)             Requested size: 301.0019pt x 225.74835pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 510--511
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 542--543
  [][] 
  []
 
-[11 <./RealisticCase.png> <./RealSolCase.png>]
-<FieldOfVector_CV.png, id=241, 578.16pt x 433.62pt>
+[13 <./RealisticCase.png> <./RealSolCase.png>]
+<FieldOfVector_CV.png, id=280, 578.16pt x 433.62pt>
 File: FieldOfVector_CV.png Graphic file (type png)
 <use FieldOfVector_CV.png>
-Package pdftex.def Info: FieldOfVector_CV.png  used on input line 518.
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 550.
 (pdftex.def)             Requested size: 344.005pt x 258.0038pt.
- [12 <./Stability.png> <./Unstability.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 523--524
+ [14 <./Stability.png> <./Unstability.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 523--524
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
 
  []
 
-[13 <./FieldOfVector_CV.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+[15 <./FieldOfVector_CV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 571--572
+Underfull \hbox (badness 10000) in paragraph at lines 603--604
 
  []
 
-[14] [15] [16] [17]
+[16] [17] [18] [19]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
-65.
+97.
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-[18] (Presentation.aux)
+[20] (Presentation.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -1691,16 +1703,16 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: F0A44A206D741A1FDCF8E14F133BD29B;5569.
+(rerunfilecheck)             Checksum: DEA808A958E4067303820756F4992032;5906.
 Package logreq Info: Writing requests to 'Presentation.run.xml'.
 \openout1 = `Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51294 strings out of 476331
- 1110251 string characters out of 5787765
- 1957931 words of memory out of 5000000
- 70985 multiletter control sequences out of 15000+600000
+ 51322 strings out of 476331
+ 1110699 string characters out of 5787765
+ 1959808 words of memory out of 5000000
+ 71005 multiletter control sequences out of 15000+600000
  530513 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,21n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1730,9 +1742,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/flo
 re/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/U
 sers/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb>
-Output written on Presentation.pdf (18 pages, 760645 bytes).
+Output written on Presentation.pdf (20 pages, 837231 bytes).
 PDF statistics:
- 718 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 266 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 759 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 292 words of extra memory for PDF output out of 10000 (max. 10000000)
 

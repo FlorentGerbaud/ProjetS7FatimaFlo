@@ -440,6 +440,38 @@
 		\subsection{Simulation with Drunk Drivers}
 		\subsection{Simulation with Unpredictable Drivers}
 		\subsection{Simulation with Drivers Reacting Similarly}
+		\subsubsection{Accordion Phenomenon}
+		
+		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we make the following assumptions:
+		
+		\begin{itemize}
+			\item The first car maintains a constant speed over time.
+			\item The second car reaction is based on the behavior of the first one.
+			\item The acceleration of the second car is governed by a constant function, denoted as alpha, which remains fixed. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=2.0$
+		\end{itemize}
+		
+		Similar to real-life situations, we observe that if the second car is too far behind the first one, it decelerates. Conversely, when it is adequately distant from the first car, it increases its speed.
+		
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.8\textwidth]{Accordeon1.png}
+				\caption{\textbf{\underline{Simulation of accordion phenomenon : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see that orange graph behaves like a periodic accordion with respect to time }
+				\label{fig:Aco1}
+			\end{figure}
+			
+		\subsubsection{Accident Phenomenon}
+		
+		For this case, the objectif is to show that if one driver have a bigger time reaction capacity, there is an accident.
+		Onto this case, we took the same assumptions than before, but with a capacity of accelleration a little bit lower and a highter time reaction. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=1.75$ and in the algorithm \ref{alg:update_positions} we took $h=1.5$
+		
+		On the figure \ref{fig:Acc1} accident is confirmed because there is a curve intersection (the position of the car number two (orange) is greater than the first car (blue)) So it means that the second car is crashed into the first car.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{Acc1.png}
+			\caption{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see on The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars }
+			\label{fig:Acc1}
+		\end{figure}
 		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
 		\subsubsection{System Stability and Equilibrium for the Linear Model}
 		In this part, the idea is to study the distance difference between two cars in order to determine in which case the solutions is stable and if there is an equilibrium for the solution.
