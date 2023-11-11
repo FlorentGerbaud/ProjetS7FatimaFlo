@@ -16,7 +16,7 @@ if not "%~4"=="" set "nameCase=%~4"
 if not "%~5"=="" set "lambda3=%~5"
 if not "%~6"=="" set "d3=%~6"
 
-python ../../../PythonFile/Model1W3C_Equilibrium_Aco.py %lambda2% %h% %d2% %nameCase% %lambda3% %d3%
+python ../../../PythonFile/Model1W3C_Acc_Aco.py %lambda2% %h% %d2% %nameCase% %lambda3% %d3%
 
 exit /b
 ::pause

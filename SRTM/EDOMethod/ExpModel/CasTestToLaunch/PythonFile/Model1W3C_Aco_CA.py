@@ -7,25 +7,26 @@ import matplotlib.pyplot as plt
 isDebug=False
 #______________________________________________________ Parameters ______________________________________________________
 #________________________________________________________________________________________________________________________
-
+print("ici")
 if len(sys.argv) != 7:
     print("Usage: python your_script_name.py a2 h a3")
     sys.exit(1)
 
 
 accident=False
-lambda_2 = float(sys.argv[1])
-lambda_3 = float(sys.argv[5])
+a2 = float(sys.argv[1])
+a3 = float(sys.argv[5])
 h = float(sys.argv[2])
 d2 = float(sys.argv[3])
 d3= float(sys.argv[6])
-x2_prime_max=160*(1000/3600) #maximum speed of the second car #maximum speed of the second car
-x3_prime_max=140*(1000/3600) #maximum speed of the third car #maximum speed of the second car
+V1max=120*(1000/3600) #maximum speed of the first car
+V2max=160*(1000/3600) #maximum speed of the second car #maximum speed of the second car
+V3max=180*(1000/3600) #maximum speed of the third car #maximum speed of the second car
 nameCaseToLaunch=sys.argv[4]
 
 
 
-T = 10.0  # Total simulation time
+T = 100.0  # Total simulation time
 n_steps = int(T / h)  # Number of time steps
 
 #_________________________________________________ Initialise arrays to storing data  ___________________________________________________
@@ -46,9 +47,9 @@ accident = False
 #______________________________________________________________________________________________________________________________
 
 time[0] = 0.0  # Initial time
-x1Pos[0] = 80.0  # Initial value for x1 as specified
-x2Pos[0] = 1.0  # Initial value for x2 as specified
-x3Pos[0] = 0.5  # Initial value for x2 as specified
+x1Pos[0] = 6.0  # Initial value for x1 as specified
+x2Pos[0] = 4.0  # Initial value for x2 as specified
+x3Pos[0] = 1.0  # Initial value for x2 as specified
 
 #_________________________________________________ Define the functions  ___________________________________________________
 #______________________________________________________________________________________________________________________________
@@ -59,19 +60,13 @@ x3Pos[0] = 0.5  # Initial value for x2 as specified
 def x1_prime():
     return V1max
 
-# x2_prime :
-#input : t : time
-# Return : This function returns the speed of x2 at time t
-
+# Definition of x2's speed function using a special exponential model
 def x2_prime(t):
-    return a2 * (x1Pos[t] - x2Pos[t])
+    return V2max*(1-np.exp((-a2/V2max)*(x1Pos[t]-x2Pos[t]-d2)))
 
-# x3_prime :
-#input : t : time
-# Return : This function returns the speed of x3 at time t
-
+# Definition of x3's speed function using a special exponential model
 def x3_prime(t):
-    return a3 * (x2Pos[t] - x3Pos[t])
+    return V3max*(1-np.exp((-a3/V3max)*(x2Pos[t]-x3Pos[t]-d3)))
 
 # isAccident :
 #input : t : time
@@ -92,19 +87,19 @@ def VariationsOfComportment(criticalDistance,boringDistance):
     a2=0
     a3=0
     if(x1Pos[t] - x2Pos[t] <= criticalDistance):
-        a2 = 1.0
+        a2 = 15.0
         if(isDebug):
             print("a2= ", a2)
     elif(x1Pos[t] - x2Pos[t] >= boringDistance):
-        a2 = 1.1
+        a2 = 16.0
         if(isDebug):
             print("a2= ", a2)
     elif(x2Pos[t] - x3Pos[t] <= criticalDistance):
-        a3 = 0.5
+        a3 = 3.5
         if(isDebug):
             print("a3= ",a3)
     elif(x2Pos[t] - x3Pos[t] >= boringDistance):
-        a3 = 0.9
+        a3 = 4.0
         if(isDebug):
             print("a3= ",a3)
     if(isDebug):
@@ -121,8 +116,8 @@ for t in range(1, n_steps):
     
     if(isDebug):
         print("a2= ", a2, "a3= ", a3)
-    a2,a3=VariationsOfComportment(1,300)
-    V1max=obstacle(t)
+    a2,a3=VariationsOfComportment(1,20)
+    #V1max=obstacle(t)
     
     v1[t] = x1_prime()
     v2[t] = x2_prime(t)
