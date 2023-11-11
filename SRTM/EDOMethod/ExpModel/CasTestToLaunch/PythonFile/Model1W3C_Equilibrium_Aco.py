@@ -90,27 +90,52 @@ for t in range(n_steps):
     
 
 #__________________________________________Plot of solutions____________________________________________#
-fig, axes = plt.subplots(1, 2, figsize=(12, 4))
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
 
-# Subplot for positions
-axes[0].plot(time, x1, label='x1(t)')
-axes[0].plot(time, x2, label='x2(t)')
-axes[0].plot(time, x3, label='x3(t)')
-axes[0].set_xlabel('Time (s)')
-axes[0].set_ylabel('Position (m)')
-axes[0].legend()
-axes[0].set_title('Positions')
-axes[0].grid(True)
+if accident:
+    # Plot the distance in the first subplot
+    ax1.plot(time[0:t+1], x1[0:t+1], label='x1(t)')
+    ax1.plot(time[0:t+1], x2[0:t+1], label='x2(t)')
+    ax1.plot(time[0:t+1], x3[0:t+1], label='x3(t)')
+    ax1.set_xlabel('Time')
+    ax1.set_ylabel('Distance')
+    ax1.legend()
+    ax1.set_title('Accident case')
+    ax1.grid(True)
 
-# Subplot for velocities
-axes[1].plot(time, x1_prime_values, label="x1'(t)")
-axes[1].plot(time, x2_prime_values, label="x2'(t)")
-axes[1].plot(time, x3_prime_values, label="x3'(t)")
-axes[1].set_xlabel('Time (s)')
-axes[1].set_ylabel('Velocity (m/s)')
-axes[1].legend()
-axes[1].set_title('Velocities')
-axes[1].grid(True)
+else:
+    # Plot the distance in the first subplot
+    ax1.plot(time, x1, label='x1(t)')
+    ax1.plot(time, x2, label='x2(t)')
+    ax1.plot(time, x3, label='x3(t)')
+    ax1.set_xlabel('Time(s)')
+    ax1.set_ylabel('Distance(m)')
+    ax1.legend()
+    ax1.grid()
+    ax1.set_title('Simulation of the Accordion phenomenon')
+ 
+
+if(accident):
+    #print("There is an accident at time t = ", t*h, "s")
+    # Plot the speeds in the second subplot
+    ax2.plot(time[0:t+1], x1_prime_values[0:t+1], label='Speed of x1(t)')
+    ax2.plot(time[0:t+1], x2_prime_values[0:t+1], label='Speed of x2(t)')
+    ax2.plot(time[0:t+1], x3_prime_values[0:t+1], label='Speed of x3(t)')
+    ax2.set_xlabel('Time(s)')
+    ax2.set_ylabel('Speed(m/s)')
+    ax2.legend()
+    ax2.set_title('Speed of Cars Over Time')
+    ax2.grid()
+else:
+    # Plot the speeds in the second subplot
+    ax2.plot(time, x1_prime_values, label='Speed of x1(t)')
+    ax2.plot(time, x2_prime_values, label='Speed of x2(t)')
+    ax2.plot(time, x3_prime_values, label='Speed of x3(t)')
+    ax2.set_xlabel('Time')
+    ax2.set_ylabel('Speed(m/s)')
+    ax2.legend()
+    ax2.set_title('Simulation of the Accordion phenomenon')
+    ax2.grid(True)
 
 #Display the plots
 plt.show()
@@ -118,69 +143,3 @@ plt.show()
 print(x1[-1]-x2[-1])
 print("sitance entre x2 et x3 : ",x2[-1]-x3[-1])
 
-
-#_________________________________________________ Stability study  ___________________________________________________
-#
-
-
-def d1_equilibrium():
-       return -(x2_prime_max/lambda_2)*np.log(((x2_prime_max-x1_prime())/x2_prime_max)*np.exp(-(lambda_2*d2/x2_prime_max)))
-
-
-def d2_equilibrium():
-    result = - (x3_prime_max / lambda_3) * np.log(
-    (-x3_prime_max + x2_prime_max - x2_prime_max * np.exp((-lambda_2 / x2_prime_max) * d1_equilibrium()) * np.exp((lambda_2 / x2_prime_max) * d2))
-    / (-x3_prime_max) * np.exp((-lambda_3 / x3_prime_max) * d3)
-    )
-    return result
-
-print("e1 : ",d1_equilibrium())
-print("e2 : ", d2_equilibrium())
-
-
-#_________________________________________________ Plotting the vector field  ___________________________________________________
-#______________________________________________________________________________________________________________________________
-
-v1=x1_prime()
-
-# Define the vector field function
-def system(x2_prime_max, x3_prime_max, lambda_2, lambda_3, d2, D1, D2, d3):
-    d1_dot = x1_prime() - x2_prime_max + x2_prime_max * np.exp((-lambda_2 * (D1 - d2)) / x2_prime_max)
-    d2_dot = x2_prime_max - x2_prime_max * np.exp((-lambda_2 * (D1 - d2)) / x2_prime_max) - x3_prime_max + x3_prime_max * np.exp((-lambda_3 * (D2 - d3)) / x3_prime_max)
-    return d1_dot, d2_dot
-
-
-# Equilibrium point
-equilibrium_x = d1_equilibrium()
-equilibrium_y = d2_equilibrium()
-
-# Create a grid of (x, y) values
-x = np.linspace(equilibrium_x - 5, equilibrium_x + 5, 20)
-y = np.linspace(equilibrium_y - 5, equilibrium_y + 5, 20)
-X, Y = np.meshgrid(x, y)
-
-# Initialize arrays for vector field components
-U = np.zeros_like(X)
-V = np.zeros_like(Y)
-
-# Calculate vector field values at each point in the grid
-for i in range(X.shape[0]):
-    for j in range(X.shape[1]):
-        d1_dot, d2_dot = system(x2_prime_max, x3_prime_max, lambda_2, lambda_3, d2, X[i, j], Y[i, j], d3)
-        U[i, j] = d1_dot
-        V[i, j] = d2_dot
-
-# Create a figure with adjusted size
-fig, ax = plt.subplots(figsize=(8, 8))
-ax.set_facecolor('white')
-
-# Plot the vector field with a higher scale value for better visualization
-ax.quiver(X, Y, U, V, color='blue', angles='xy', scale_units='xy', scale=40)
-ax.plot(equilibrium_x, equilibrium_y, 'ro', label='Equilibrium Point')
-ax.set_xlabel('d1')
-ax.set_ylabel('d2')
-ax.set_title('Vector Field for ODE System with Equilibrium Point')
-ax.legend()
-ax.grid(True)
-
-plt.show()
