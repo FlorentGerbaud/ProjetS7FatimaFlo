@@ -4,6 +4,8 @@
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
+import random
+
 isDebug=False
 #______________________________________________________ Parameters ______________________________________________________
 #________________________________________________________________________________________________________________________
@@ -12,7 +14,7 @@ if len(sys.argv) != 7:
     print("Usage: python your_script_name.py a2 h a3")
     sys.exit(1)
 
-
+print("coucou")
 accident=False
 a2 = float(sys.argv[1])
 a3 = float(sys.argv[5])
@@ -35,6 +37,7 @@ n_steps = int(T / h)  # Number of time steps
 x1Pos = np.zeros(n_steps)
 x2Pos = np.zeros(n_steps)
 x3Pos = np.zeros(n_steps)
+a2Val = np.zeros(n_steps)
 
 v1 = np.zeros(n_steps)
 v2 = np.zeros(n_steps)
@@ -50,9 +53,20 @@ time[0] = 0.0  # Initial time
 x1Pos[0] = 6.0  # Initial value for x1 as specified
 x2Pos[0] = 4.0  # Initial value for x2 as specified
 x3Pos[0] = 1.0  # Initial value for x2 as specified
+a2Val[0] = a2
 
 #_________________________________________________ Define the functions  ___________________________________________________
 #______________________________________________________________________________________________________________________________
+
+# sinusoidal_model :
+#input : W : Amplitude of the perturbation
+#        omega : Angular frequency
+#        t : time
+#        phi : Phase (in radians)
+# Return : This function return a value of acceleration which follows a sinusoidal model with random noise
+
+def sinusoidal_model(W, omega, t, phi):
+    return abs(W * np.sin(omega * t + phi) + np.random.normal(0, 0.1)) #random noise
 
 # x1_prime :
 # Return : This function returns the speed of x1
@@ -75,36 +89,60 @@ def x3_prime(t):
 def isAccident(t):
     return (x2Pos[t] >= x1Pos[t] ) or (x3Pos[t] >= x2Pos[t]) 
 
+# obstacle :
+#input : t : time
+# Return : This function returns the new speed of x1 if there is an obstacle where the obstacle appears randomly
+
 def obstacle(t):
-    V1max=0
-    if (t%10==0):
-        V1max=V1max*0.40
+    V1max_initial = 130 * (1000 / 3600)
+    base_interval = 10  # Durée de base entre les apparitions d'obstacles en secondes
+    reduction_factor = 0.4  # Facteur de réduction de la vitesse maximale
+
+    # Utiliser un générateur de nombres aléatoires pour introduire de l'aléatoire dans les intervalles
+    random.seed(t)  # Utilisez le temps actuel t comme graine
+
+    if random.random() < 0.2:  # 50% de chance d'avoir un obstacle
+        V1max = V1max_initial * reduction_factor
     else:
-        V1max=130 * (1000 / 3600)
+        V1max = V1max_initial
+
     return V1max
 
-def VariationsOfComportment(criticalDistance,boringDistance):
-    a2=0
-    a3=0
-    if(x1Pos[t] - x2Pos[t] <= criticalDistance):
-        a2 = 15.0
-        if(isDebug):
-            print("a2= ", a2)
-    elif(x1Pos[t] - x2Pos[t] >= boringDistance):
-        a2 = 16.0
-        if(isDebug):
-            print("a2= ", a2)
-    elif(x2Pos[t] - x3Pos[t] <= criticalDistance):
-        a3 = 3.5
-        if(isDebug):
-            print("a3= ",a3)
-    elif(x2Pos[t] - x3Pos[t] >= boringDistance):
-        a3 = 4.0
-        if(isDebug):
-            print("a3= ",a3)
-    if(isDebug):
-        print("d1= ", x1Pos[t] - x2Pos[t], "d2= ",x2Pos[t] - x3Pos[t])
-    return a2,a3
+def VariationsOfComportment(criticalDistance, boringDistance,t):
+    W = 15.0  # Amplitude de la perturbation
+    omega = 2.0  # Fréquence angulaire
+    phi = np.pi / 4  # Phase (en radians)
+    a2 = 0
+    a3 = 0
+    delta = 0.0008  # Calculate the increment per unit distance
+
+    d1 = x1Pos[t] - x2Pos[t]
+    d2 = x2Pos[t] - x3Pos[t]
+
+    if d1 <= criticalDistance:
+        a2 = 0
+    elif d1 >= boringDistance:
+        # model with constant acceleration :
+        #a2 = 0.5
+        #_______________________________________
+        
+        a2=sinusoidal_model(W, omega, t, phi) 
+
+    if d2 <= criticalDistance:
+        a3 = 0
+    elif d2 >= boringDistance:
+        a3=4.0
+        #a3=sinusoidal_model(0.9, omega, t, phi) 
+
+    if isDebug:
+        print("a2= ", a2)
+        print("a3= ", a3)
+
+    if isDebug:
+        print("d1= ", d1, "d2= ", d2)
+    a2Val[t]=a2
+
+    return a2, a3
 
 #_________________________________________________ Resolution of the position for each cars  ___________________________________________________
 #______________________________________________________________________________________________________________________________
@@ -116,7 +154,7 @@ for t in range(1, n_steps):
     
     if(isDebug):
         print("a2= ", a2, "a3= ", a3)
-    a2,a3=VariationsOfComportment(1,20)
+    a2,a3=VariationsOfComportment(1,73,t)
     V1max=obstacle(t)
     
     v1[t] = x1_prime()
