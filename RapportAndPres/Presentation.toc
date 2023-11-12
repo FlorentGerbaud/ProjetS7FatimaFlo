@@ -2,29 +2,29 @@
 \contentsline {section}{\numberline {1}Presentation of the Subject}{4}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Useful Definition}{4}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Simple Road Traffic Modeling}{4}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}The objective of SMRT}{4}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Use case to explain the interest of these simulations}{5}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}Field of application}{5}{subsubsection.1.2.3}%
+\contentsline {subsubsection}{\numberline {1.2.1}The Objective of SMRT}{5}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Use Case to Explain the Interest of These Simulations}{5}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Field of Application}{5}{subsubsection.1.2.3}%
 \contentsline {subsubsection}{\numberline {1.2.4}Using GitHub for Project Management}{5}{subsubsection.1.2.4}%
-\contentsline {section}{\numberline {2}The equation for SMRT}{6}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Differential Ordinary Equation }{6}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Linear Model}{6}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Newell's Model}{10}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Partial Differential Equations}{10}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Project Objectives}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Problems Encountered}{10}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Types of Simulations Performed}{10}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Simulation with Drunk Drivers}{10}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Simulation with Unpredictable Drivers}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{10}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Accordion Phenomenon}{10}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Accident Phenomenon For The Linear Model}{11}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{12}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{12}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{16}{subsubsection.4.4.2}%
-\contentsline {section}{\numberline {5}Summary}{18}{section.5}%
-\contentsline {section}{\numberline {6}Annexe}{18}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Calculation of the Analytical solutions}{18}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Linear Model for Two Cars}{18}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Linear Model for Three Cars}{18}{subsubsection.6.1.2}%
+\contentsline {section}{\numberline {2}Project Objectives}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problems Encountered}{6}{subsection.2.1}%
+\contentsline {section}{\numberline {3}The equation for SMRT}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Differential Ordinary Equation }{6}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Linear Model}{6}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Newell's Model}{9}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Partial Differential Equations}{11}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Types of Simulations Performed}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation with Drunk Drivers}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Simulation with Unpredictable Drivers}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{11}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Accordion Phenomenon}{11}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Accident Phenomenon For The Linear Model }{13}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{16}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{16}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{19}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Summary}{21}{section.5}%
+\contentsline {section}{\numberline {6}Annexe}{21}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Calculation of the Analytical solutions}{21}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Linear Model for Two Cars}{21}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Linear Model for Three Cars}{21}{subsubsection.6.1.2}%
 \contentsfinish 

@@ -208,38 +208,52 @@
 			F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
 		\end{align*}
 		
-		\textbf{\underline{What is Road Traffic Modeling}} \newline\newline
-		The Road Traffic modeling  is the study of how vehicles behave on road networks, aiming to simulate and analyze various aspects of traffic flow, congestion, and driver behavior. This field involves creating mathematical and computer models to understand and predict traffic patterns, particularly in scenarios such as congestion, erratic driving, and other relevant factors affecting road transportation. Road traffic modeling plays a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (you could see an exemple on the \ref{fig:intro}).
+		\textbf{\underline{SMRT}} \newline\newline
+		SMRT means Simple road traffic simulation
 	
 	\subsection{Simple Road Traffic Modeling}
 	
-		Here explain what is the objective how we are going to do the study and so on \cite{JEIHANI2017164}
+		Road traffic modeling involves studying how vehicles behave on road networks, with the aim of simulating and analyzing aspects such as traffic flow, congestion, and driver behavior. This field employs mathematical and computer models to understand and predict traffic patterns, playing a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (as shown in Figure \ref{fig:intro}). 
+		
+		Explore the integration of a driving simulator with a traffic simulator in Jeihani et al.'s study \cite{JEIHANI2017164}, revealing enhanced traffic density and Variable Message Sign (VMS) reliability. The findings suggest that integration positively influences compliance behavior and factors affecting route diversion.
+		
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{intro.jpg}
-			\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
+			\caption{\textbf{\underline{Road Traffic:}} An illustrative example of a road traffic phenomenon, which is the focus of our study.}
 			\label{fig:intro}
 		\end{figure}
 	
 		
-		\subsubsection{The objective of SMRT}
-		The primary objective of simple road simulation is to analyze and understand the behavior of vehicles in a controlled and reproducible environment. By simulating basic road conditions, researchers and engineers can study the impact of various factors on traffic flow, safety, and efficiency. This helps in the development and testing of traffic management strategies and vehicle control systems. Simple road simulations provide a valuable tool for investigating the dynamic interactions between vehicles and the road environment, contributing to advancements in transportation research and technology.
+		\subsubsection{The Objective of SMRT}
+		The primary goal of simple road simulation is to analyze and understand vehicle behavior in a controlled and reproducible environment. Researchers and engineers use these simulations to study the impact of various factors on traffic flow, safety, and efficiency. This contributes to the development and testing of traffic management strategies and vehicle control systems, providing insights into the dynamic interactions between vehicles and the road environment.
 		
-		\subsubsection{Use case to explain the interest of these simulations}
-		Simple road simulations find applications in various fields, such as urban planning, transportation engineering, and autonomous vehicle development. For instance, they can be used to assess the effectiveness of new traffic signal timings, study the implications of road design changes, or test the performance of autonomous vehicles in different traffic scenarios. These simulations provide a cost-effective and risk-free way to evaluate potential real-world interventions and innovations. The ability to model and analyze diverse road scenarios enhances decision-making processes and supports the development of sustainable and efficient transportation systems.
+		\subsubsection{Use Case to Explain the Interest of These Simulations}
+		Simple road simulations find applications in various fields, including urban planning, transportation engineering, and autonomous vehicle development. For instance, they can assess the effectiveness of new traffic signal timings, study the implications of road design changes, or test the performance of autonomous vehicles in different traffic scenarios. These simulations offer a cost-effective and risk-free way to evaluate real-world interventions and innovations, enhancing decision-making processes and supporting the development of sustainable and efficient transportation systems.
 		
-		\subsubsection{Field of application}
-		Simple road simulation is applied across a wide range of fields, including but not limited to transportation research, traffic engineering, and urban planning. Additionally, it plays a crucial role in the development and validation of autonomous vehicle technologies. The ability to model and simulate various road conditions helps researchers and practitioners make informed decisions and improvements in the design and management of transportation systems. Simple road simulation serves as a powerful tool for enhancing our understanding of traffic dynamics and contributes to the ongoing evolution of smart and adaptive transportation systems.
+		\subsubsection{Field of Application}
+		Simple road simulation is applied across a wide range of fields, including transportation research, traffic engineering, and urban planning. It plays a crucial role in the development and validation of autonomous vehicle technologies. The ability to model and simulate various road conditions helps researchers and practitioners make informed decisions, improving the design and management of transportation systems. Simple road simulation serves as a powerful tool for enhancing our understanding of traffic dynamics and contributes to the ongoing evolution of smart and adaptive transportation systems.
+		
 	
 	\subsubsection{Using GitHub for Project Management}
-	
+	In this project, we selected GitHub as the primary management tool to facilitate our collaboration, track changes, and manage the source code. The following representation provides an overview of our collaborative use of GitHub as a pair throughout the project.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.8\textwidth]{GitHub.jpg}
 		\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
 		\label{fig:GitHub}
 	\end{figure}
+	
+	\section{Project Objectives}
+	In this modeling, we will focus on the position and velocity of multiple vehicles following each other in a single lane. We will assume that vehicles accelerate when they have open space, do nothing when they are close to the vehicle in front, and brake more strongly as they get very close. We will arrange two and then three vehicles, one behind the other, with the first vehicle maintaining a constant velocity, and observe the behavior of the following vehicles.\newline
+	So, the main objectives of the project are: 
+	\begin{itemize}
+		\item Modeling the behavior using coupled ordinary differential equations.
+		\item Implementing this simplistic modeling.
+		\item Studying the outcomes based on different parameters.
+	\end{itemize}
+	\subsection{Problems Encountered}
 	
 	\section{The equation for SMRT}
 		\subsection{Differential Ordinary Equation }
@@ -431,10 +445,70 @@
 			
 			
 		\subsubsection{Newell's Model}
+		\textbf{\underline{Mathematical Theory:}}
+		In this section, we model the velocity using an exponential model, so the movement of each car is given by:
+		\begin{align*}
+			\dot{x_i}(t) =V_i(1-e^{-\frac{\lambda_i}{V_i}(x_{i-1}(t) - x_i(t) - d_i})
+		\end{align*} 
+		$V_i$, $\lambda_i$, $d_i$ parameters associated with the ith car:
+		\begin{itemize}
+			\item $V_i$ : the maximum velocity of the ith car.
+			\item $\lambda_i$ : the capacity of acceleration/decelaration.
+			\item $d_i$ : the minimum headway(safe following distance). 
+		\end{itemize}
+		By using this equation for each car, we get a bunch of equations—one for each car. This helps us grasp how they all move together in traffic. These equations give us a dynamic picture of how cars affect each other as they drive.\newline
+		
+		The set of equations is written like this for each car, where $i$ can be 1, 2, and so on, up to the total number of cars:
+		\begin{align*}
+			\left\{
+			\begin{array}{ll}
+				\dot{x}_1 &= V_1 \\
+				\dot{x}_2(t) &= V_2(1-e^{-\frac{\lambda_2}{V_2}(x_{1}(t) - x_2(t) - d_2}) \\
+				&\vdots \\
+				\dot{x}_n(t) &= V_n(1-e^{-\frac{\lambda_n}{V_n}(x_{n-1}(t) - x_n(t) - d_n})
+			\end{array}
+			\right.
+		\end{align*}
+		\newline
+		And so, the position of each vehicle is:
+		\begin{align*}
+			\left\{
+			\begin{array}{ll}
+				x_1(t + \Delta t) &= x_1(t) + \Delta t   V_1\\
+				x_2(t + \Delta t) &= x_2(t) + \Delta t  V_2(1-e^{-\frac{\lambda_2}{V_2}(x_{1}(t) - x_2(t) - d_2}) \\
+				&\vdots \\
+				x_n(t + \Delta t) &= x_n(t) + \Delta t  V_n(1-e^{-\frac{\lambda_n}{V_n}(x_{n-1}(t) - x_n(t) - d_n})
+			\end{array}
+			\right.
+		\end{align*}
+		\textbf{\underline{Implementation:}} \newline\newline
+		
+		for $\dot{x_1}$, we use the same algorithm than for the Linear model., However, to calculate the $\dot{x_i}$ values we use the following algorithm.
+		
+		\begin{algorithm}[H]
+			\caption{$\dot{x_i}$}\label{alg:xi_dot}
+			\begin{algorithmic}
+				\State \textbf{Input:} \\
+				\begin{itemize}
+					\State $t:=\text{"time  step"}$
+					\State$x_i:=\text{Table of position for the (i)th Car}$
+					\State$x_{i-1}:=\text{Table of position for the (i-1)th Car}$
+					\State$d_{i}:=\text{Safe following distance the (i)th Car}$
+				\end{itemize}
+				\State \textbf{Output:} \\
+				\begin{itemize}[]
+					\item $\dot{x_i}:=V_i$
+				\end{itemize}
+				\State \textbf{Algorithm:} \\
+				\begin{itemize}[]
+					\State $\dot{x_i}(t):=V_i(1-e^{-\frac{\lambda_i}{V_i}(x_{i-1}(t) - x_i(t) - d_i})$ 
+					\State \Return $\dot{x_i}$ 
+				\end{itemize}		
+			\end{algorithmic}
+		\end{algorithm}
+		This algorithm determines the derivative of $x_i$ with respect to time, $\dot{x_i}$, based on the positions of the $i$th and $(i-1)$th cars, the safe following distance $d_i$, and the time step $t$. The result represents the velocity $V_i$ of the $i$th car.
 		\subsection{Partial Differential Equations}
 		
-	\section{Project Objectives}
-	\subsection{Problems Encountered}
 	
 	\section{Types of Simulations Performed}
 		\subsection{Simulation with Drunk Drivers}
@@ -442,14 +516,16 @@
 		\subsection{Simulation with Drivers Reacting Similarly}
 		\subsubsection{Accordion Phenomenon}
 		
-		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
-		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we make the following assumptions:
+		For this parts, we make the following assumptions:
 		
 		\begin{itemize}
 			\item The first car maintains a constant speed over time.
 			\item The second car reaction is based on the behavior of the first one.
 			\item The acceleration of the second car is governed by a constant function, denoted as alpha, which remains fixed. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=2.0$
-		\end{itemize}
+		\end{itemize} 
+		
+		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
+		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we 
 		
 		Similar to real-life situations, we observe that if the second car is too far behind the first one, it decelerates. Conversely, when it is adequately distant from the first car, it increases its speed.
 		
@@ -462,12 +538,19 @@
 			
 		\textbf{\underline{Simulation with the Newell's Model For Two cars}} \newline\newline
 		
+		Similar to the previous case, applying Newell's method yields identical results. As depicted in Figure \ref{fig:1W2_ACCORD}, the graph illustrates the accordion phenomenon, featuring distinct periods of acceleration followed by deceleration.
+		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{1W2_Accord.png}
+			\caption[Simulation of accordion phenomenon]{\textbf{\underline{Simulation of accordion phenomenon : }} In this picture, you can observe the positional evolutions of two cars. The first one (blue) maintains a constant speed, while the second one (orange) follows behind the first. It is evident that the orange graph behaves like a periodic accordion with respect to time. In the right figure, we can also see the evolutions of the car speeds, respectively represented by the same colors.}
+			\label{fig:1W2_ACCORD}
 		\end{figure}
+		
 			
-		\subsubsection{Accident Phenomenon For The Linear Model}
+		\subsubsection{Accident Phenomenon For The Linear Model }
+		
+		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
 		
 		For this case, the objectif is to show that if one driver have a bigger time reaction capacity, there is an accident.
 		Onto this case, we took the same assumptions than before, but with a capacity of accelleration a little bit lower and a highter time reaction. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=1.75$ and in the algorithm \ref{alg:update_positions} we took $h=1.5$
@@ -481,7 +564,32 @@
 			\label{fig:Acc1}
 		\end{figure}
 		
-		\textbf{\underline{For Three cars}}
+		\textbf{\underline{Simulation with the Newell's Model For Two cars}} \newline\newline
+		
+		In the three subsequent figures \ref{fig:1W2_ACC_1}, \ref{fig:1W2_ACC_2}, and \ref{fig:1W2_ACC_3}, we can observe a similar graph pattern to that of the linear model. However, in this scenario, we have the flexibility to vary additional parameters, such as the maximum speed of the cars (for instance, introducing a new car with a more powerful motor) and the safety distance, which is an inherent aspect of the Newell model. This variation allows us to witness accidents occurring at each curve intersection on the graph.
+		
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{1W2_Acc1.png}
+			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see on The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
+			\label{fig:1W2_ACC_1}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{1W2_Acc2.png}
+			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the low reaction time of driver 2 implies an accident between two cars.}
+			\label{fig:1W2_ACC_2}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{1W2_Acc3.png}
+			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the increasing of the maximum speed of car 2 implies an accident between two cars.}
+			\label{fig:1W2_ACC_3}
+		\end{figure}
+		
 		
 		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
 		\subsubsection{System Stability and Equilibrium for the Linear Model}
