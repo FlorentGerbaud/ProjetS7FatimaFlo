@@ -442,6 +442,7 @@
 		\subsection{Simulation with Drivers Reacting Similarly}
 		\subsubsection{Accordion Phenomenon}
 		
+		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
 		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we make the following assumptions:
 		
 		\begin{itemize}
@@ -459,8 +460,14 @@
 				\label{fig:Aco1}
 			\end{figure}
 			
+		\textbf{\underline{Simulation with the Newell's Model For Two cars}} \newline\newline
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{1W2_Accord.png}
+		\end{figure}
 			
-		\subsubsection{Accident Phenomenon}
+		\subsubsection{Accident Phenomenon For The Linear Model}
 		
 		For this case, the objectif is to show that if one driver have a bigger time reaction capacity, there is an accident.
 		Onto this case, we took the same assumptions than before, but with a capacity of accelleration a little bit lower and a highter time reaction. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=1.75$ and in the algorithm \ref{alg:update_positions} we took $h=1.5$
@@ -473,6 +480,8 @@
 			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see on The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
 			\label{fig:Acc1}
 		\end{figure}
+		
+		\textbf{\underline{For Three cars}}
 		
 		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
 		\subsubsection{System Stability and Equilibrium for the Linear Model}

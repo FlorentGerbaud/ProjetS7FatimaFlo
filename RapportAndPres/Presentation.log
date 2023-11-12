@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  11 NOV 2023 00:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  12 NOV 2023 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1583,118 +1583,139 @@ Underfull \hbox (badness 10000) in paragraph at lines 318--319
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 324.
-[7] [8] [9]
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 445--447
+
+ []
+
+[9]
 <Accordeon1.png, id=241, 722.7pt x 433.62pt>
 File: Accordeon1.png Graphic file (type png)
 <use Accordeon1.png>
-Package pdftex.def Info: Accordeon1.png  used on input line 457.
+Package pdftex.def Info: Accordeon1.png  used on input line 458.
 (pdftex.def)             Requested size: 344.005pt x 206.4017pt.
  [10]
-<Acc1.png, id=249, 722.7pt x 433.62pt>
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
+
+ []
+
+<1W2_Accord.png, id=246, 1084.05pt x 433.62pt>
+File: 1W2_Accord.png Graphic file (type png)
+<use 1W2_Accord.png>
+Package pdftex.def Info: 1W2_Accord.png  used on input line 467.
+(pdftex.def)             Requested size: 344.005pt x 137.60335pt.
+[11 <./Accordeon1.png> <./1W2_Accord.png>]
+<Acc1.png, id=256, 722.7pt x 433.62pt>
 File: Acc1.png Graphic file (type png)
 <use Acc1.png>
-Package pdftex.def Info: Acc1.png  used on input line 472.
+Package pdftex.def Info: Acc1.png  used on input line 479.
 (pdftex.def)             Requested size: 344.005pt x 206.4017pt.
- [11 <./Accordeon1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 491--493
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--493
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--493
+Underfull \hbox (badness 10000) in paragraph at lines 500--502
 
  []
 
 [12 <./Acc1.png>]
-<RealisticCase.png, id=261, 722.7pt x 433.62pt>
+<RealisticCase.png, id=263, 722.7pt x 433.62pt>
 File: RealisticCase.png Graphic file (type png)
 <use RealisticCase.png>
-Package pdftex.def Info: RealisticCase.png  used on input line 520.
+Package pdftex.def Info: RealisticCase.png  used on input line 529.
 (pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 520--521
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 529--530
  [][] 
  []
 
-<RealSolCase.png, id=262, 722.7pt x 433.62pt>
+<RealSolCase.png, id=264, 722.7pt x 433.62pt>
 File: RealSolCase.png Graphic file (type png)
 <use RealSolCase.png>
-Package pdftex.def Info: RealSolCase.png  used on input line 527.
+Package pdftex.def Info: RealSolCase.png  used on input line 536.
 (pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 527--528
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 536--537
  [][] 
  []
 
-<Stability.png, id=263, 462.528pt x 346.896pt>
+[13]
+<Stability.png, id=271, 462.528pt x 346.896pt>
 File: Stability.png Graphic file (type png)
 <use Stability.png>
-Package pdftex.def Info: Stability.png  used on input line 537.
+Package pdftex.def Info: Stability.png  used on input line 546.
 (pdftex.def)             Requested size: 301.0019pt x 225.76025pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 537--538
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 546--547
  [][] 
  []
 
-<Unstability.png, id=264, 578.16pt x 433.62pt>
+<Unstability.png, id=272, 578.16pt x 433.62pt>
 File: Unstability.png Graphic file (type png)
 <use Unstability.png>
-Package pdftex.def Info: Unstability.png  used on input line 544.
+Package pdftex.def Info: Unstability.png  used on input line 553.
 (pdftex.def)             Requested size: 301.0019pt x 225.74835pt.
 
-Overfull \hbox (85.9996pt too wide) in paragraph at lines 544--545
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 553--554
  [][] 
  []
 
-[13 <./RealisticCase.png> <./RealSolCase.png>]
-<FieldOfVector_CV.png, id=273, 578.16pt x 433.62pt>
+[14 <./RealisticCase.png> <./RealSolCase.png>]
+<FieldOfVector_CV.png, id=279, 578.16pt x 433.62pt>
 File: FieldOfVector_CV.png Graphic file (type png)
 <use FieldOfVector_CV.png>
-Package pdftex.def Info: FieldOfVector_CV.png  used on input line 552.
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 561.
 (pdftex.def)             Requested size: 344.005pt x 258.0038pt.
- [14 <./Stability.png> <./Unstability.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+ [15 <./Stability.png> <./Unstability.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
+Underfull \hbox (badness 10000) in paragraph at lines 572--573
 
  []
 
-[15 <./FieldOfVector_CV.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
+[16 <./FieldOfVector_CV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
+Underfull \hbox (badness 10000) in paragraph at lines 614--615
 
  []
 
-[16] [17] [18] [19]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
-99.
+[17] [18] [19] [20]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
+08.
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-[20] (Presentation.aux)
+[21] (Presentation.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -1702,17 +1723,23 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: DEA808A958E4067303820756F4992032;5906.
+
+Package rerunfilecheck Warning: File `Presentation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Presentation.out':
+(rerunfilecheck)             Before: 92ACE237F6E38A6C2F2D297E824676A7;5934
+(rerunfilecheck)             After:  3A1A3C68346A153A33D3F13FEC88571D;6023.
 Package logreq Info: Writing requests to 'Presentation.run.xml'.
 \openout1 = `Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51322 strings out of 476331
- 1110699 string characters out of 5787765
- 1958210 words of memory out of 5000000
- 71005 multiletter control sequences out of 15000+600000
+ 51333 strings out of 476331
+ 1110894 string characters out of 5787765
+ 1958212 words of memory out of 5000000
+ 71013 multiletter control sequences out of 15000+600000
  530513 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,21n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1742,9 +1769,9 @@ a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/flo
 re/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/U
 sers/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
 fb>
-Output written on Presentation.pdf (20 pages, 835370 bytes).
+Output written on Presentation.pdf (21 pages, 954083 bytes).
 PDF statistics:
- 752 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 292 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 759 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 297 words of extra memory for PDF output out of 10000 (max. 10000000)
 

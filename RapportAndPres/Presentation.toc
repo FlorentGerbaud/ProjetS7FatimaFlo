@@ -18,13 +18,13 @@
 \contentsline {subsection}{\numberline {4.2}Simulation with Unpredictable Drivers}{10}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{10}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1}Accordion Phenomenon}{10}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Accident Phenomenon}{11}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2}Accident Phenomenon For The Linear Model}{11}{subsubsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{12}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{12}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{15}{subsubsection.4.4.2}%
-\contentsline {section}{\numberline {5}Summary}{17}{section.5}%
-\contentsline {section}{\numberline {6}Annexe}{17}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Calculation of the Analytical solutions}{17}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Linear Model for Two Cars}{17}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Linear Model for Three Cars}{17}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{16}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Summary}{18}{section.5}%
+\contentsline {section}{\numberline {6}Annexe}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Calculation of the Analytical solutions}{18}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Linear Model for Two Cars}{18}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Linear Model for Three Cars}{18}{subsubsection.6.1.2}%
 \contentsfinish 
