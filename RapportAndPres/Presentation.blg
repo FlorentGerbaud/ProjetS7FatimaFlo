@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'Presentation.blg'
-[125] biber-MSWIN64:340> INFO - === 
-[163] Biber.pm:419> INFO - Reading 'Presentation.bcf'
-[293] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
-[310] Biber.pm:4419> INFO - Processing section 0
-[335] Biber.pm:4610> INFO - Looking for bibtex file 'rapport.bib' for section 0
-[383] bibtex.pm:1713> INFO - LaTeX decoding ...
-[396] bibtex.pm:1519> INFO - Found BibTeX data source 'rapport.bib'
-[466] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[466] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[466] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
-[466] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
-[496] bbl.pm:660> INFO - Writing 'Presentation.bbl' with encoding 'UTF-8'
-[498] bbl.pm:763> INFO - Output to Presentation.bbl
+[272] biber-MSWIN64:340> INFO - === 
+[353] Biber.pm:419> INFO - Reading 'Presentation.bcf'
+[511] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
+[536] Biber.pm:4419> INFO - Processing section 0
+[557] Biber.pm:4610> INFO - Looking for bibtex file 'rapport.bib' for section 0
+[652] bibtex.pm:1713> INFO - LaTeX decoding ...
+[679] bibtex.pm:1519> INFO - Found BibTeX data source 'rapport.bib'
+[760] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[760] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[760] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
+[760] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
+[779] bbl.pm:660> INFO - Writing 'Presentation.bbl' with encoding 'UTF-8'
+[783] bbl.pm:763> INFO - Output to Presentation.bbl
