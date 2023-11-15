@@ -1,18 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
+import random
 
 def u_0_x(x):
-    return 0.2 * np.sin(2 * np.pi * x / 10.0) + 0.5
+    return 0.2 * np.sin(2 * np.pi * x / 100.0) + 0.5  # Changement de fréquence dans le sinus
 
+# Fonction pour définir la condition périodique a(t) = valeur de la solution à x=0
+def a(t, U):
+    return U[t, 0]
 
-# Function to set boundary condition a(t)
-def a(t):
-    return 0.5
-
-# Function to set boundary condition b(t)
-def b(t):
-    return 0.7
+# Fonction pour définir la condition périodique b(t) = valeur de la solution à x=1
+def b(t, U):
+    return U[t, -1]
 
 # Euler Explicit Traffic Flow simulation function
 def EulerExplicitTrafficFlow(a, b, u_0_x, deltaX, deltaT, T, L, Vmax, R):
@@ -23,15 +23,13 @@ def EulerExplicitTrafficFlow(a, b, u_0_x, deltaX, deltaT, T, L, Vmax, R):
     U[0, :] = [u_0_x(x) for x in np.linspace(0, L, maxL)]
     
     for t in range(1, maxT):
-        # Update boundary conditions based on time
-        U[t, 0] = a(t * deltaT)
-        U[t, -1] = b(t * deltaT)
+        # Update boundary conditions based on the solution values at x=0 or x=1
+        U[t, 0] = a(t, U)
+        U[t, -1] = b(t, U)
         
-    for t in range(1, maxT):
         for j in range(1, maxL - 1):
             rho_i_n = U[t-1, j]
             rho_i_minus_1_n = U[t-1, j-1]
-            
             
             # Calculate v_i_n and v_i_minus_1_n using the given formula
             v_i_n = (1 - 2 * rho_i_n / R) * Vmax
@@ -75,7 +73,7 @@ ax.set_xlabel('Position (x)')
 ax.set_ylabel('Density (rho)')
 ax.set_title('Traffic Flow Simulation')
 
-x = np.linspace(0, 1, U.shape[1])  # Assuming the x-axis range is from 0 to 1
+#x = np.linspace(0, 1, U.shape[1])  # Assuming the x-axis range is from 0 to 1
 
 # Define time_steps array (you may have this defined in your code)
 time_steps = np.linspace(0, T, maxT + 1)  # Replace maxT with your actual value
@@ -94,6 +92,6 @@ num_frames = len(time_steps)
 ani = FuncAnimation(fig, update, frames=num_frames, blit=False, interval=100)
 
 # Save the animation as a GIF using Pillow
-#ani.save('traffic_flow_animation.gif', writer='pillow', fps=30)
+ani.save('traffic_flow_animation.gif', writer='pillow', fps=30)
 
 plt.show()
