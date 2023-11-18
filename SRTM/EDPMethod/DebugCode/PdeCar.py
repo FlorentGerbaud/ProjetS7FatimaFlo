@@ -3,14 +3,17 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import random 
 
-isBOundaryCOnd=False
+isBOundaryCOnd=True
 
 # Parameters for the simulation
 deltaX = 1.0   # Spatial step
-deltaT = 0.1  # Time step
-T = 100.0       # Total simulation time
+deltaT = 0.01  # Time step
+T = 10.0       # Total simulation time
 L = 100.0     # Length of the domain
-Vmax = 40.0 # Maximum velocity
+#to first model
+#Vmax = 4.0 # Maximum velocity
+#R = 2.0   
+Vmax=40.0
 R = 1.0       # Some constant value
 V_ref = 30.0  # Given reference velocity
 
@@ -20,7 +23,10 @@ def u_0_x(x):
     #     return 0.8
     # else:
     #     return 0.2
-    return 0.2 * np.sin(2 * np.pi *x / L) + 0.5
+    #________________________________________________
+    #return 0.2 * np.sin(2 * np.pi *x / L) + 0.5
+    #________________________________________________
+    return np.where(x < L/2, 0.8, 0.2)
 
 
 # Functions for velocity and pressure
@@ -105,6 +111,6 @@ def update(frame):
 num_frames = len(time_steps)
 ani = FuncAnimation(fig, update, frames=num_frames, blit=False, interval=100)
 
-#ani.save('traffic_flow_animation.gif', writer='pillow', fps=30)
+ani.save('traffic_flow_animation.gif', writer='pillow', fps=30)
 
 plt.show()
