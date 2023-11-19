@@ -510,7 +510,7 @@
 		\subsection{Partial Differential Equations}
 		
 	
-	\section{Types of Simulations Performed}
+	\section{Types of Simulations Performed with ODE models}
 		\subsection{Simulation with Drunk Drivers}
 		\subsection{Simulation with Unpredictable Drivers}
 		\subsection{Simulation with Drivers Reacting Similarly}
@@ -763,6 +763,53 @@
 	\]
 
 	The both condition are respected iff $\lambda_2>0, \lambda_3>0$
+	
+	\section{Types of Simulations Performed with PDE models}
+	
+	In the second part, the objective was to simulate the phenomenon of car traffic as a fluid. It means that instead of studying each car independently of the others, we focus on analyzing the density of the cars. To conduct this study, we need to employ a Partial Differential Equation (PDE) model.
+	
+	The PDE model used is the LWR (Lighthill-Whitham-Richards) equation system. This system allows us to simulate car traffic using more or less complex equations. The equation is defined exactly as follows:
+	
+	\begin{align*}
+		\boxed{\partial_t\rho + \partial_xF(\rho)=0}
+	\end{align*}
+	
+	\textbf{Where:}
+	\begin{align*}
+		& \rho(x,t) \text{ represents the traffic density at position } x \text{ and time } t. \\
+		& F(\rho) \text{ denotes the traffic flux as a function of density.} \\
+		& F(\rho) \text{ is often represented by a function modeling the relationship between traffic density and traffic velocity.} \\
+		& F(\rho) = V(\rho) \cdot \rho \text{, where } V(\rho) \text{ is the traffic velocity as a function of density.}
+	\end{align*}
+	
+	For the study, we choose two types of equations for LWR:
+	\begin{align}
+		\partial_t\rho + \partial_x\left[ \rho\left( 1-\frac{\rho}{\rho_{\text{max}}}\right) \cdot V_{\text{max}}\right] = 0 
+	\end{align}
+	Also known as the Free Flow model, it's a model that allows the simulation of systems with lower density.
+	
+	\begin{align}
+		\partial_t\rho + \partial_x\left[ \rho\left( 1-\frac{\rho}{\rho_{\text{max}}} + V_{\text{ref}} \cdot \log\left(\frac{\rho}{\rho_{\text{max}}} \right) \right) \cdot V_{\text{max}}\right] = 0
+	\end{align}
+	On the contrary, equation (2) represents a type of model called congested models. It allows simulating higher flows of cars.
+	
+	\subsection{Simulation Performed with Free Flow Model}
+	
+	The first step to doing some simulation was to define a numerical model to calculate the appoximation of the solution.
+	We choose the mzthod the most usual. Euler excplit method.
+	So for the Free Flow model, the shem is given by : 
+	\begin{align*}
+		\boxed{\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right)
+			=0}
+	\end{align*}
+	\textbf{\underline{Where : }}
+	\begin{align*}
+		\boxed{v_i^n = \left( 1 - \frac{\rho_i^n}{\rho_{max}}\right)  \times V_{max}}
+	\end{align*}
+	
+	\subsection{Simulation Performed with Congested Flow Model}
+
+	
 	\section{Summary}
 	
 	\section{Annexe}
