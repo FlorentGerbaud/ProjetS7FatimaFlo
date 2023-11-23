@@ -89,7 +89,7 @@ else:
     plt.xlabel('Time (s)')
     plt.ylabel('Distance (m)')
     plt.legend()
-    plt.title('Position of the cars')
+    plt.title('Simulation of the accordeon effect ')
     plt.grid(True)
     plt.show()
 

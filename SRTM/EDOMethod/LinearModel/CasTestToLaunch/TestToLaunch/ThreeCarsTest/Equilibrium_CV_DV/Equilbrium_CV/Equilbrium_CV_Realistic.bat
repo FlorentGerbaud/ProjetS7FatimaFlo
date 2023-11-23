@@ -14,5 +14,5 @@ if not "%~4"=="" set "CaseToLaunch=%~4"
 
 
 python ../../../../PythonFile/Model1W3C_Equilibrium__CV_DV.py %a2% %h% %a3% %CaseToLaunch%
-::exit /b
-pause
+exit /b
+::pause
