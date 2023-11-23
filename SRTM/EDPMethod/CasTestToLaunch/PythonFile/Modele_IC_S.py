@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import random 
 import sys
+from tkinter import Tk, filedialog
 
 
 #______________________________________________________ Parameters ______________________________________________________
@@ -106,6 +107,11 @@ def update(frame):
 #_________________________________________________ Plotting the results  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
+if isSave:
+    root = Tk()
+    root.withdraw()
+    folder_selected = filedialog.askdirectory()
+
 #_________________________________________________ Plotting the density map  ___________________________________________________
 U = EulerExplicitTrafficFlow(u_0_x, deltaX, deltaT, T, L, Vmax, R)
 
@@ -134,7 +140,12 @@ cbar = plt.colorbar(im)
 cbar.set_label('Density (rho)')
 
 if isSave:
-    plt.savefig('traffic_flow_density_map.png')
+    if folder_selected:  # If a directory is selected
+        file_path = folder_selected + '/traffic_flow_density_map.png'
+        plt.savefig(file_path)
+        print(f"Animation saved to: {file_path}")
+    else:
+        print("Directory selection cancelled. Animation not saved.")
 
 plt.show()
 
@@ -161,7 +172,12 @@ num_frames = len(time_steps)
 ani = FuncAnimation(fig, update, frames=num_frames, blit=False, interval=100)
 
 if isSave:
-    ani.save('traffic_flow_animation.gif', writer='pillow', fps=30)
+    if folder_selected:  # If a directory is selected
+        file_path = folder_selected + '/traffic_flow_animation.gif'
+        ani.save(file_path, writer='pillow', fps=30)
+        print(f"Animation saved to: {file_path}")
+    else:
+        print("Directory selection cancelled. Animation not saved.")
 
 plt.show()
 

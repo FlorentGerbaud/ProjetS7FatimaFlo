@@ -24,7 +24,7 @@ def u_0_x(x):
     # else:
     #     return 0.998
     #________________________________________________
-    return 0.2 * np.sin(2 * np.pi *x / L) + 0.80 #mettre 0.3 pour modèle pourri
+    #return 0.2 * np.sin(2 * np.pi *x / L) + 0.80 #mettre 0.3 pour modèle pourri
     #________________________________________________
     #return np.where(x < L/2, 0.8, 0.2)
     #________________________________________________
@@ -33,13 +33,13 @@ def u_0_x(x):
     #return max(0.01,0.8*np.exp(-((x - center) ** 2) / (2 * sigma ** 2))) #intéressente pour montre le pb de pente
     #return 0.5 * max(0.01, 0.8 * np.exp(-((x - center) ** 2) / (2 * sigma ** 2))) modèle pourri
     #________________________________________________
-    #return np.where(x < L / 2, 1.0, 0.5)
+    #return np.where(x < L / 2, 0.5, 0.2)
     #________________________________________________
     #return np.maximum(0, 1 - 0.2*np.abs((x - L / 2)) * 4 / L)
     #return np.maximum(0, 1 - 0.5*np.abs((x - L / 2)) * 4 / L) * 0.5 #modèle pourri
     #________________________________________________
     #center = L / 2  # Centre du pic
-    #return np.where(np.abs(x - center) < L / 10, 0.5, 0.2) #mettre 0.5 pour modèle pourri
+    #return np.where(np.abs(x - center) < L / 10, 0.3, 0.2) #mettre 0.5 pour modèle pourri
     
 
 
@@ -87,11 +87,11 @@ def EulerExplicitTrafficFlow(u_0_x, deltaX, deltaT, T, L, Vmax, R):
                 v_i_minus_1_n = vf(rho_i_minus_1_n)
                 
                 # Calculate rho_i_n_plus_1 using the explicit Euler method
-                U[t, j] = rho_i_n - (deltaT / deltaX) * (rho_i_n * (v_i_n + p(rho_i_n)) - rho_i_minus_1_n * (v_i_minus_1_n + p(rho_i_minus_1_n)))
+                #U[t, j] = rho_i_n - (deltaT / deltaX) * (rho_i_n * (v_i_n + p(rho_i_n)) - rho_i_minus_1_n * (v_i_minus_1_n + p(rho_i_minus_1_n)))
                 # if(U[t, j]>=1):
                 #     print("t ",t,", j",j)
                 #     print("U[t, j]",U[t, j])
-                #U[t, j] = rho_i_n - ((deltaT / deltaX) * (rho_i_n * (v_i_n ) - rho_i_minus_1_n * (v_i_minus_1_n )))
+                U[t, j] = rho_i_n - ((deltaT / deltaX) * (rho_i_n * (v_i_n ) - rho_i_minus_1_n * (v_i_minus_1_n )))
                 # if(U[t, j]>=1):
                 #     print("t ",t,", j",j)
                 #     print("U[t, j]",U[t, j])

@@ -1,8 +1,0 @@
-- **Model1WXC_O_Aco_Acc_D**
-  - **WXC:** With X car
-  - **O:** Obstacle variations
-  - **Aco:** Accordeon phenomenon
-  - **Acc:** Accident phenomenon
-  - **D:** Drunk drivers (if Dx, it's for drivers x is drunk)
-  - **I:** Impossible behavior to predict but with reactions extremely dangerous as fast deceleration/acceleration (if Ix, it's for drivers x is unpredictable)
-  - **CA:** Constant variations for the acceleration
