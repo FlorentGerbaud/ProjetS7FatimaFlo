@@ -165,8 +165,8 @@ plt.quiver(T, F, dt, df, angles='xy', scale=100, color='blue')  # Adjust the sca
 plt.plot(t, x1_prime() / lambda2 * np.ones_like(t), 'r', label=f'$d_1^*$ = $-\\frac{{V_2}}{{\\lambda_2}}\\ln \\left(\\frac{{V_2-V_1}}{{V_2}}e^{{-\\frac{{\\alpha_2}}{{V_2}}d_2}} \\right)$ = {d1_equilibrium()}')
 
 
-plt.xlabel('time (s)')
-plt.ylabel('distance (m)')
+plt.xlabel('Time (s)')
+plt.ylabel('Distance (m)')
 
 plt.title('Vector Field for ' + r"$\dot{d}_1 = V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha \cdot (d_1 - d_2)}{V_2}}$")
 plt.legend()
