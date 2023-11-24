@@ -67,6 +67,48 @@
       \endverb
       \keyw{Integration,Variable message sign,Compliance behavior,Driving simulator,Traffic simulator,Discrete choice analysis}
     \endentry
+    \entry{article}{article}{}
+      \name{author}{4}{}{%
+        {{hash=508f0a4e80af71a1970f575437811489}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=19a4f2f3d51172063bcb4c6f543ee061}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Qian-Yong},
+           giveni={Q\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=e4cfde36f6c77ee05bbbd48cbd7d1522}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Haizhong},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c7dab6d626060307c36fbd797a700e1f}{%
+           family={Ni},
+           familyi={N\bibinitperiod},
+           given={Daiheng},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{fullhash}{b03c8a3e6d8aca777b1fd03fe15e888b}
+      \strng{bibnamehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{authorbibnamehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{authornamehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{authorfullhash}{b03c8a3e6d8aca777b1fd03fe15e888b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transportmetrica}
+      \field{month}{01}
+      \field{title}{Analysis of LWR model with fundamental diagram subject to uncertainties}
+      \field{volume}{8}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1080/18128602.2010.521532
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

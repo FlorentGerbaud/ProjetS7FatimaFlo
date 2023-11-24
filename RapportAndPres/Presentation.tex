@@ -509,6 +509,120 @@
 		This algorithm determines the derivative of $x_i$ with respect to time, $\dot{x_i}$, based on the positions of the $i$th and $(i-1)$th cars, the safe following distance $d_i$, and the time step $t$. The result represents the velocity $V_i$ of the $i$th car.
 		\subsection{Partial Differential Equations}
 		
+		\subsubsection{Euler Explicit}
+		
+		\textbf{\underline{Mathematical Theory:}} \newline\newline
+		
+		In the second part, the objective was to simulate the phenomenon of car traffic as a fluid. It means that instead of studying each car independently of the others, we focus on analyzing the density of the cars. To conduct this study, we need to employ a Partial Differential Equation (PDE) model.
+		
+		The PDE model used is the LWR  (Lighthill-Whitham-Richards) equation system. This system allows us to simulate car traffic using more or less complex equations For further insights on this topic, explore how uncertainty in the LWR traffic model's fundamental diagram affects prediction reliability, showcasing increased location uncertainty over time while accurately predicting disturbance magnitude. \cite{article}. The equation is defined exactly as follows:
+		
+		\begin{align*}
+			\boxed{\partial_t\rho + \partial_xF(\rho)=0}
+		\end{align*}
+		
+		\textbf{Where:}
+		\begin{align*}
+			& \rho(x,t) \text{ represents the traffic density at position } x \text{ and time } t. \\
+			& F(\rho) \text{ denotes the traffic flux as a function of density.} \\
+			& F(\rho) \text{ is often represented by a function modeling the relationship between traffic density and traffic velocity.} \\
+			& F(\rho) = V(\rho) \cdot \rho \text{, where } V(\rho) \text{ is the traffic velocity as a function of density.}
+		\end{align*}
+		
+		For the study, we choose two types of equations for LWR:
+		\begin{align}
+			\partial_t\rho + \partial_x\left[ \rho\left( 1-\frac{\rho}{\rho_{\text{max}}}\right) \cdot V_{\text{max}}\right] = 0 
+		\end{align}
+		Also known as the Free Flow model, it's a model that allows the simulation of systems with lower density.
+		
+		
+		
+		The first step to doing some simulation was to define a numerical model to calculate the appoximation of the solution.
+		We choose the mzthod the most usual. Euler excplit method.
+		So for the Free Flow model, the shem is given by : 
+		\begin{align*}
+			\boxed{\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right)
+				=0}
+		\end{align*}
+		\textbf{\underline{Where : }}
+		\begin{align*}
+			\boxed{v_i^n = \left( 1 - \frac{\rho_i^n}{\rho_{max}}\right)  \times V_{max}}
+		\end{align*}
+		\newpage
+		The approach for calculating density involves creating a matrix where each row represents a time step and each column represents a spatial point. Initially, this matrix is populated with zeros, except for the first row, which holds the initial conditions.
+		
+		This matrix structure appears as follows:
+		
+		\begin{align*}
+			\bordermatrix { 
+				& \Delta_x & 2\cdot \Delta_x & \hdots & L \cr 
+				\Delta_t & \rho_1^1 & \rho_2^1 & \hdots & \rho_L^1 \cr \cr
+				2\cdot \Delta_t & \rho_1^2 & \rho_2^2 & \hdots & \rho_L^2\cr
+				\vdots & \vdots & \vdots & \hdots & \vdots \cr
+				T & \rho_1^T & \rho_2^T & \hdots & \rho_L^T}
+		\end{align*}
+		
+
+		Initially, the matrix is filled with zeros except for the first row, which contains the initial density conditions:
+
+		\begin{align*}
+			\bordermatrix { 
+				& \Delta_x & 2\cdot \Delta_x & \hdots & L \cr 
+				\Delta_t & u_{0_{(\Delta_x)}} & u_{0_{(2 \cdot \Delta_x)}} & \hdots & u_{0_{(L)}} \cr 
+				2\cdot \Delta_t & 0 & 0 & 0 & 0\cr
+				0 & 0 & 0 & 0 & 0 \cr
+				T & 0 & 0 & 0 & 0}
+		\end{align*}
+
+		 
+	
+		Subsequent values in the matrix are calculated based on the previous values using the formula:
+		
+		\[
+		\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right) = 0
+		\]
+		
+		This calculation employs all values from the spatial step at the preceding time step. The boundary conditions for time steps are specified only for time step 0. The boundary condition at the last time step is determined using the Euler Explicit method.
+		
+		The boundary condition for \(t=0\) is redefined iteratively during the process as it considers the density performing by Euler Explicit from the previous time step for the first spatial time.
+
+	
+		
+		\textbf{\underline{Implementation:}} \newline\newline
+		
+		\begin{algorithm}[H]
+			\caption{EulerExplicitTrafficFlow}\label{alg:euler_traffic_flow}
+			\begin{algorithmic}
+				\State \textbf{Input:}
+				\State $u_{0_x}$: Initial condition function for $x$
+				\State $\Delta_x$: Spatial step size
+				\State $\Delta_t$: Time step size
+				\State $T$: Total time of Simulation
+				\State $L$: TOtal space for the Simulation
+				\State $V_{\text{max}}$: Maximum velocity
+				\State $R$: Maximal density of the simulation
+				\State \textbf{Output:}
+				\State $U$: Matrix storing the density for each time step and time space 
+				\State \textbf{Algorithm:}
+				\State $\text{maxT} \gets \lfloor  \frac{T}{\Delta_t} \rfloor  + 1$ \newline
+				\State $\text{maxL} \gets \lfloor  \frac{T}{\Delta_x} \rfloor  + 1$ \newline
+				\State $U \gets \text{Matrix of size}(\text{maxT}, \text{maxL})$
+				\State $U[0, :] \gets \left[ \text{compute } u_{0_x}(x) \text{ for } x \text{ in } \text{range}(0, L) \right]$
+				\For{$t$ \textbf{in} $\text{range}(1, \text{maxT})$}
+				\For{$j$ \textbf{in} $\text{range}(0, \text{maxL})$}
+				\State $\rho_i^n \gets U[t-1, j]$
+				\State $\rho_{i-1}^n \gets U[t-1, j-1]$
+				\State $v_i^n \gets \left( 1 - \frac{\rho_i^n}{R}\right)  \times V_{max}$ \newline
+				\State $v_{i-1}^n \gets \left( 1 - \frac{\rho_{i-1}^n}{R}\right)  \times V_{max}$
+				\State $U[t, j] \gets \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n\right)$
+				\EndFor
+				\EndFor
+				\State \textbf{return} $U$
+			\end{algorithmic}
+		\end{algorithm}
+
+		
+		
 	
 	\section{Types of Simulations Performed with ODE models}
 		\subsection{Simulation with Drunk Drivers}
@@ -593,8 +707,9 @@
 		
 		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
 		\subsubsection{System Stability and Equilibrium for the Linear Model}
-		In this part, the idea is to study the distance difference between two cars in order to determine in which case the solutions is stable and if there is an equilibrium for the solution.
-		For doing that, we studied the solutions of the following  system of equation : 
+		In this section, the goal is to investigate the difference in distance between two cars to determine the stability of solutions and ascertain whether an equilibrium exists.
+		
+		To achieve this, we analyze the solutions of the following system of equations:
 		\begin{align*}
 			\begin{cases}
 				\dot{d_1} &= V_1 - \alpha_2 \cdot d_1 \\
@@ -603,77 +718,135 @@
 			\end{cases}
 		\end{align*}
 		
-		So, In our context, for the two cars, we have a 1D system. With 3 cars, we have a 2D system of equations.
+		In our context, two cars constitute a 1D system, whereas with 3 cars, we encounter a 2D system of equations.
 		
-		Now talk about the system stability and equilibrium : 
-		\newline \newline \textbf{\underline{With 2 cars}} : \newline\newline
-	
-		So, the equation to study is the following one : 
+		Now, let's delve into the system's stability and equilibrium:
 		
+		\textbf{\underline{With 2 Cars}}:
+		
+		The equation of interest for analysis is:
 		\begin{align*}
 			\dot{d_1} &= V_1 - \alpha_2 \cdot d_1
 		\end{align*}
 		
-		
-		After the resolution (\ref{eq:EDO1}) we obtain the next equation for $d_1(t)$ : 
+		Upon solving (\ref{eq:EDO1}), we obtain the following equation for \(d_1(t)\):
 		\begin{align*}
 			\boxed{d_1(t) = \frac{{V_1 - V_1 \cdot e^{-\alpha_2(t-t_0)} + \alpha_2 \cdot d_1(t_0) \cdot e^{-\alpha_2(t-t_0)}}}{\alpha_2}}
 		\end{align*}
 		
-		The first intuition before seeing the equation was to think that when the $\alpha_2 < 0 $, the solution is divergent because one car is go back and the other go forward. Now, if we study the Equation,
+		Initially, the intuition was that if \(\alpha_2 < 0\), the solution would diverge as one car moves backward and the other forward. However, upon studying the equation, we observe that the terms \(V_1\) and \(\alpha_2 \cdot d_1(t_0)\) are constant and less significant.
 		
-		the terms $V_1$ and $\alpha_2 \cdot d_1(t_0)$ are constant so they are not interesting.
+		Nevertheless, both terms, \(e^{-\alpha_2(t-t_0)}\), represent exponential functions of time. For negative \(\alpha_2\), these exponentials grow exponentially over time.
 		
-		However, it's important to note that both terms, $e^{-\alpha_2(t-t_0)}$, are exponential functions of time. If the value of $\alpha_2$ is negative, these exponentials will increase exponentially over time.
+		Thus, the equation is stable and converges to the equilibrium \(\boxed{d_1(t)=\frac{V_1}{\alpha_2}}\) if \(\alpha_2 > 0\).
 		
-		So we could easily see that the equation is stable and converge onto the equilibrium $d_1(t)=\frac{V_1}{\alpha_2}$.
-		
-		graphically  we can see it by : 
+		Graphically, these observations are depicted in figures \ref{fig:RC1} and \ref{fig:RS1}. Notably, across all figures, there's no occurrence of solution explosion. Specifically, in figure \ref{fig:RC1}, the car's position exhibits periodic behavior concerning time. Meanwhile, in figure \ref{fig:RS1}, the depiction illustrates the convergence of the distance between two cars towards an equilibrium state.
 		
 		\begin{figure}[H]
 			\centering
-			\begin{minipage}[t]{0.50\linewidth}
-				\centering
-				\includegraphics[width=1.4\linewidth]{RealisticCase.png}
-				\caption{View of the old window of temrec3D}
-				\label{fig:OV}
-			\end{minipage}
-			\hfill
-			\begin{minipage}[t]{0.50\linewidth}
-				\centering
-				\includegraphics[width=1.4\linewidth]{RealSolCase.png}
-				\caption{View of the new window of temrec3D}
-				\label{fig:NV}
-			\end{minipage}
+			\includegraphics[width=0.8\linewidth]{RealisticCase.png}
+			\caption[Realistic Case for the Linear Model with Two Cars]{\textbf{\underline{Realistic Case for the Linear Model with Two Cars: }}This simulation illustrates real-life behavior, characterized by a reaction time of approximately 1 second, achieved using a time step of 1 second instead of smaller increments in the algorithm.}
+			\label{fig:RC1}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
-			\begin{minipage}[t]{0.50\linewidth}
-				\centering
-				\includegraphics[width=1.4\linewidth]{Stability.png}
-				\caption{View of the old window of temrec3D}
-				\label{fig:OV}
-			\end{minipage}
-			\hfill
-			\begin{minipage}[t]{0.50\linewidth}
-				\centering
-				\includegraphics[width=1.4\linewidth]{Unstability.png}
-				\caption{View of the new window of temrec3D}
-				\label{fig:NV}
-			\end{minipage}
+			\includegraphics[width=0.8\linewidth]{RealSolCase.png}
+			\caption[Real Solution for the Linear Model with Two Cars]{\textbf{\underline{Real Solution for the Linear Model with Two Cars: }}This simulation depicts the accurate solution of the ODE (Ordinary Differential Equation), portraying an infinitesimally small reaction time through the use of smaller time increments in the algorithm, rather than representing real-life scenarios.}
+			\label{fig:RS1}
 		\end{figure}
+		
+		The subsequent part of our study aims to emphasize the impact of \(\alpha_2\) values on the stability of the system. For \(\alpha_2 > 0\), the distance between two cars converges, while for \(\alpha_2 < 0\), the ODE becomes unstable.
+		
+		To visualize this, Figure \ref{fig:AS1} showcases different analytical solutions of the ODE with \(\alpha_2\) values greater than 0. Conversely, Figure \ref{fig:AS2} displays analytical solutions for \(\alpha_2\) values lower than 0. These plots align with theoretical predictions, demonstrating stable solutions in Figure \ref{fig:AS1}, which converge to equilibrium, while unstable solutions are evident in Figure \ref{fig:AS2}.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\linewidth]{Stability.png}
+			\caption[Analytical Solutions for the Linear Model with Two Cars]{\textbf{\underline{Analytical Solutions for the Linear Model with Two Cars (Stability): }}Different plots displaying the Analytical Solutions for various acceleration values.}
+			\label{fig:AS1}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\linewidth]{Unstability.png}
+			\caption[Analytical Solutions for the Linear Model with Two Cars]{\textbf{\underline{Analytical Solutions for the Linear Model with Two Cars (Instability): }}Different plots displaying the Analytical Solutions for various acceleration values.}
+			\label{fig:AS2}
+		\end{figure}
+		
+		Finally, the last step was to show how the solution behaves. On Figure \ref{fig:FV1}, for a given acceleration greater than 0, the field of vectors converges onto the equilibrium. However, for negative acceleration, the field of vectors on Figure \ref{fig:FV2} diverges from the equilibrium.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{FieldOfVector_CV.png}
-			\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
-			\label{fig:GitHub}
+			\caption{\textbf{\underline{Field Of Vector for the Linear Model (Stability): }} On this figure, you could see the field of vectors that converges to the equilibrium.}
+			\label{fig:FV1}
+		\end{figure}
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{FieldOfVector_DV.png}
+			\caption{\textbf{\underline{Field Of Vector for the Linear Model (Instability): }} On this figure, you could see the field of vectors that diverges from the equilibrium.}
+			\label{fig:FV2}
 		\end{figure}
 		
 		\textbf{\underline{With 3 cars}} : \newline\newline
 		
 		After the resolution (\ref{eq:EDO2}) we obtain the next equation for $d_1(t)$ and $d_2(t)$ : 
+		
+		\begin{align*}
+			\begin{cases}
+				d_1(t) &= \frac{C_1(\alpha_3-\alpha_2)}{\alpha_2e^{\alpha_2t}}+ \frac{V_1}{\alpha_2}\\
+				d_2(t) &= \frac{C_1}{e^{\alpha_2t}} + \frac{C_2}{e^{\alpha_3 \cdot t}} + \frac{V_1}{\alpha_3}
+			\end{cases}
+		\end{align*}
+		
+		we set the initial condition to $d_1(0)=m, d_2(0)=n$ So we find easily $C_1$ and $C_2$ : 
+		\begin{align*}
+			&C_1=\frac{m\alpha_2-V_1}{\alpha_3-\alpha_2} \\
+			&C_2=n-\frac{V_1}{\alpha_3} - C_1
+		\end{align*}
+		
+		In the scenario involving just three cars, our analysis of the formula's terms leads us to a critical observation: divergence occurs if the value of $\alpha_2$ is less than zero. This finding confirms our initial intuition. This phenomenon is rooted in the constancy of equations over time and the unchanged hypotheses, allowing us to extend this analytical process to a scenario involving 'n' cars.
+		
+		The visual representation in Figure \ref{fig:SE1} elucidates the equilibrium dynamics. In the left subfigure, the vector field demonstrates convergence towards the equilibrium point. Simultaneously, the right subfigure presents the Analytical Solutions derived from the system of Ordinary Differential Equations (ODEs).
+		
+		\begin{figure}[H]
+			\centering
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{FieldOfVector_CV2.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{AnalyticalSolution.png}
+			\end{subfigure}
+			\caption{\textbf{\underline{Visualisation of the equilibrium:}} On the left figure, you could see the vector field that converges onto the equilibrium point. On the right, the Analytical Solutions of the system of ODEs.}
+			\label{fig:SE1}
+		\end{figure}
+		
+		Examining Figure \ref{fig:SE1}, it's evident that for positive acceleration, the vector field directs towards equilibrium. The distances between car 1 and 2, as well as between car 2 and 3, converge toward the equilibrium as indicated by the vector field.
+		
+		Contrarily, in Figure \ref{fig:SE2}, representing a scenario with negative acceleration, similar to the case of two cars, divergence is observed. Consequently, this divergence implies the absence of a feasible solution.
+		
+		\begin{figure}[H]
+			\centering
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{FieldOfVector_DV2.png}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{0.45\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{AnalyticalSolution2.png}
+			\end{subfigure}
+			\caption{\textbf{\underline{Visualisation of the Divergence:}} On the left figure, you could see the vector field that diverges from the theoretical equilibrium. On the right, the Analytical Solutions of the system of ODEs that completely diverge to infinity.}
+			\label{fig:SE2}
+		\end{figure}
+		
+		Figure \ref{fig:SE2} visually portrays this divergence phenomenon. The left subfigure illustrates the vector field diverging from the theoretical equilibrium point. Meanwhile, the right subfigure showcases the Analytical Solutions derived from the set of ODEs, demonstrating a complete divergence leading to infinity. This divergence pattern is consistent with the negative acceleration scenario, echoing the lack of attainable solutions, akin to the three-car case.
+		
 		
 	\subsubsection{System Stability and Equilibrium for the Newell's Model}
 	
@@ -766,48 +939,8 @@
 	
 	\section{Types of Simulations Performed with PDE models}
 	
-	In the second part, the objective was to simulate the phenomenon of car traffic as a fluid. It means that instead of studying each car independently of the others, we focus on analyzing the density of the cars. To conduct this study, we need to employ a Partial Differential Equation (PDE) model.
-	
-	The PDE model used is the LWR (Lighthill-Whitham-Richards) equation system. This system allows us to simulate car traffic using more or less complex equations. The equation is defined exactly as follows:
-	
-	\begin{align*}
-		\boxed{\partial_t\rho + \partial_xF(\rho)=0}
-	\end{align*}
-	
-	\textbf{Where:}
-	\begin{align*}
-		& \rho(x,t) \text{ represents the traffic density at position } x \text{ and time } t. \\
-		& F(\rho) \text{ denotes the traffic flux as a function of density.} \\
-		& F(\rho) \text{ is often represented by a function modeling the relationship between traffic density and traffic velocity.} \\
-		& F(\rho) = V(\rho) \cdot \rho \text{, where } V(\rho) \text{ is the traffic velocity as a function of density.}
-	\end{align*}
-	
-	For the study, we choose two types of equations for LWR:
-	\begin{align}
-		\partial_t\rho + \partial_x\left[ \rho\left( 1-\frac{\rho}{\rho_{\text{max}}}\right) \cdot V_{\text{max}}\right] = 0 
-	\end{align}
-	Also known as the Free Flow model, it's a model that allows the simulation of systems with lower density.
-	
-	\begin{align}
-		\partial_t\rho + \partial_x\left[ \rho\left( 1-\frac{\rho}{\rho_{\text{max}}} + V_{\text{ref}} \cdot \log\left(\frac{\rho}{\rho_{\text{max}}} \right) \right) \cdot V_{\text{max}}\right] = 0
-	\end{align}
-	On the contrary, equation (2) represents a type of model called congested models. It allows simulating higher flows of cars.
 	
 	\subsection{Simulation Performed with Free Flow Model}
-	
-	The first step to doing some simulation was to define a numerical model to calculate the appoximation of the solution.
-	We choose the mzthod the most usual. Euler excplit method.
-	So for the Free Flow model, the shem is given by : 
-	\begin{align*}
-		\boxed{\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right)
-			=0}
-	\end{align*}
-	\textbf{\underline{Where : }}
-	\begin{align*}
-		\boxed{v_i^n = \left( 1 - \frac{\rho_i^n}{\rho_{max}}\right)  \times V_{max}}
-	\end{align*}
-	
-	\subsection{Simulation Performed with Congested Flow Model}
 
 	
 	\section{Summary}
@@ -945,8 +1078,8 @@
 	In clear, we have : 
 	\begin{align*}
 		\begin{cases}
-			\dot{d_1}(t) &= \frac{C_1(\alpha_3-\alpha_2)}{\alpha_2e^{\alpha_2t}}+ \frac{V_1}{\alpha_2}\\
-			\dot{d_2}(t) &= \frac{C_1}{e^{\alpha_2t}} + \frac{C_2}{e^{\alpha_3 \cdot t}} + \frac{V_1}{\alpha_3}
+			d_1(t) &= \frac{C_1(\alpha_3-\alpha_2)}{\alpha_2e^{\alpha_2t}}+ \frac{V_1}{\alpha_2}\\
+			d_2(t) &= \frac{C_1}{e^{\alpha_2t}} + \frac{C_2}{e^{\alpha_3 \cdot t}} + \frac{V_1}{\alpha_3}
 		\end{cases}
 	\end{align*}
 	
