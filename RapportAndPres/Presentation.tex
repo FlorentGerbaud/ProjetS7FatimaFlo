@@ -891,6 +891,26 @@
 	
 	Clearly, the condition for a stable equilibrium is $\alpha_2 > 0$ and $V_2 > V_1$.
 	
+
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{0.40\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{VectorFIeld.png}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}{0.55\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{RealSol.png}
+		\end{subfigure}
+		\caption{\textbf{\underline{Visualisation of the equilibrium:}} On the left figure, you could see the vector field that converges onto the equilibrium point. On the right, the Approximation of the real Solutions of the system of ODEs.}
+		\label{fig:SE3}
+	\end{figure}
+	
+		Graphically, this can be observed in Figure \ref{fig:SE3}. On the left side of the figure, the phenomenon of convergence towards equilibrium can be demonstrated when the previously performed conditions are adhered to.
+	
+	On the right side, we depict the solutions of the system using Newell's equation. It is noticeable that over time, the distance between the two cars gradually increase at the beginning of the simulation, eventually approaching a constant value, which aligns with the equilibrium observed in the left figure.
 	
 	\textbf{\underline{The Study of the equilibrium for three cars : }} \newline\newline
 	
@@ -936,6 +956,30 @@
 	\]
 
 	The both condition are respected iff $\lambda_2>0, \lambda_3>0$
+	 \newline\newline
+	 
+	In the case of two cars, if the conditions are respected, we can observe graphically the convergence towards the equilibrium point. As the equations apply uniformly to all cars, the equilibrium exists under the same conditions, even for the n-th car.
+	
+	On the Figure \ref{fig:SE4}, the equilibrium point is represented by the coordinates corresponding to the equilibrium distance on the y-axis between car 2 and 3, and on the x-axis between car 1 and 2 on the figure \ref{fig:SE5}. This distance, similar to other cases, can be found on the figure \ref{fig:SE5} by calculating the difference between the positions of the cars.
+	
+	Similar to the previous scenario, the plotted solution is not the actual solution but an approximation using the Euler Explicit method because obtaining an analytical solution is impossible.
+	 
+	 
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=0.5\textwidth]{VectorField1.png}
+	 	\caption{\textbf{\underline{Field Of Vector for the Newell's Model (Stability): }} On this figure, you could see the field of vectors that converges from the equilibrium.}
+	 	\label{fig:SE4}
+	 \end{figure}
+	 
+	 \begin{figure}[H]
+	 	\centering
+	 	\includegraphics[width=0.8\textwidth]{RealSol1.png}
+	 	\caption{\textbf{\underline{Approximation of the real solution for the Newell's Model (Stability): }} On this figure, you could see the distance between the curves that converges.}
+	 	\label{fig:SE5}
+	 \end{figure}
+	
+	
 	
 	\section{Types of Simulations Performed with PDE models}
 	
