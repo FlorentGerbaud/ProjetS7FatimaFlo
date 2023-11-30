@@ -6,8 +6,8 @@ import random
 isBOundaryCOnd=False
 
 # Parameters for the simulation
-deltaX = 20.0   # Spatial step
-deltaT = 0.00001  # Time step
+deltaX = 1.0   # Spatial step
+deltaT = 0.01  # Time step
 T = 10.0       # Total simulation time
 L = 100.0     # Length of the domain
 #to first model
@@ -24,13 +24,13 @@ def u_0_x(x):
     # else:
     #     return 0.998
     #________________________________________________
-    #return 0.2 * np.sin(2 * np.pi *x / L) + 0.80 #mettre 0.3 pour modèle pourri
+    return 0.2 * np.sin(2 * np.pi *x*2 / L) + 0.80 #mettre 0.3 pour modèle pourri
     #________________________________________________
     #return np.where(x < L/2, 0.8, 0.2)
     #________________________________________________
-    #center = L / 2  # Centre de la gaussienne
-    #sigma = 0.1 * L  # Écart-type contrôlant la dispersion de la gaussienne
-    #return max(0.01,0.8*np.exp(-((x - center) ** 2) / (2 * sigma ** 2))) #intéressente pour montre le pb de pente
+    # center = L / 2  # Centre de la gaussienne
+    # sigma = 0.1 * L  # Écart-type contrôlant la dispersion de la gaussienne
+    # return max(0.01,1.0*np.exp(-((x - center) ** 2) / (2 * sigma ** 2))) #intéressente pour montre le pb de pente
     #return 0.5 * max(0.01, 0.8 * np.exp(-((x - center) ** 2) / (2 * sigma ** 2))) modèle pourri
     #________________________________________________
     #return np.where(x < L / 2, 1.0, 0.5)
@@ -38,8 +38,8 @@ def u_0_x(x):
     #return np.maximum(0, 1 - 0.2*np.abs((x - L / 2)) * 4 / L)
     #return np.maximum(0, 1 - 0.5*np.abs((x - L / 2)) * 4 / L) * 0.5 #modèle pourri
     #________________________________________________
-    center = L / 2  # Centre du pic
-    return np.where(np.abs(x - center) < L / 10, 1.0, 0.2) #mettre 0.5 pour modèle pourri
+    # center = L / 2  # Centre du pic
+    # return np.where(np.abs(x - center) < L / 10, 1.0, 0.2) #mettre 0.5 pour modèle pourri
     
 
 
@@ -86,12 +86,13 @@ def EulerExplicitTrafficFlow(u_0_x, deltaX, deltaT, T, L, Vmax, R):
                 v_i_n = vf(rho_i_n)
                 v_i_minus_1_n = vf(rho_i_minus_1_n)
                 
-                # Calculate rho_i_n_plus_1 using the explicit Euler method
-                #U[t, j] = rho_i_n - (deltaT / deltaX) * (rho_i_n * (v_i_n + p(rho_i_n)) - rho_i_minus_1_n * (v_i_minus_1_n + p(rho_i_minus_1_n)))
-                # if(U[t, j]>=1):
-                #     print("t ",t,", j",j)
-                #     print("U[t, j]",U[t, j])
-                U[t, j] = rho_i_n - ((deltaT / deltaX) * (rho_i_n * (v_i_n ) - rho_i_minus_1_n * (v_i_minus_1_n )))
+                
+                #U[t, j] = rho_i_n - ((deltaT / deltaX) * (rho_i_n * (v_i_n ) - rho_i_minus_1_n * (v_i_minus_1_n )))
+                if(j+1<maxL):
+                    U[t,j]=(1/2)*(U[t-1,j+1]+U[t-1,j-1]) - (deltaT/2*deltaX)*((U[t-1,j+1])*(1-U[t-1,j+1]/R)*Vmax-(U[t-1,j-1])*(1-U[t-1,j-1]/R)*Vmax)
+                else:
+                    U[t,j]=(1/2)*(U[t-1,0]+U[t-1,j-1]) - (deltaT/2*deltaX)*((U[t-1,0])*(1-U[t-1,0]/R)*Vmax-(U[t-1,j-1])*(1-U[t-1,j-1]/R)*Vmax)
+                
                 # if(U[t, j]>=1):
                 #     print("t ",t,", j",j)
                 #     print("U[t, j]",U[t, j])
