@@ -208,10 +208,19 @@
 			F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
 		\end{align*}
 		
-		\textbf{\underline{SMRT}} \newline\newline
-		SMRT means Simple road traffic simulation
+		\textbf{\underline{SMRT}} 
+		SMRT means Simple road traffic simulation \newline\newline
+		\textbf{\underline{microscopic simulation}} 
 		
-		\textbf{\underline{microscopic simulation}} \newline\newline
+		Microscopic simulation is a computer-based modeling technique that simulates the behavior of individual entities, such as vehicles or pedestrians, within a system. It focuses on detailed modeling of each entity's movements, interactions, and behaviors to understand and predict the dynamics of a larger system, like traffic flow or crowd movement. \newline\newline
+		
+		\textbf{\underline{Macroscopic simulation}} 
+		
+		Macroscopic simulation models systems at a higher, aggregated level, considering overall behaviors like traffic flow without detailing individual movements. It helps analyze system-level trends and capacities, useful for broader planning.
+		
+		The relation between microscopic and macroscopic simulation lies in their approach to studying systems. Microscopic simulation focuses on individual entities' detailed behaviors, while macroscopic simulation analyzes aggregated behaviors of the entire system without considering individual entities. They complement each other: microscopic for detailed insights into individual behaviors, and macroscopic for understanding overall system trends and capacities. \newline\newline
+		
+		If you are interested by these types of modelisation i suggest you to going to see this article \cite{dugois:tel-01505473}
 	
 	\subsection{Simple Road Traffic Modeling}
 	
@@ -714,21 +723,21 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{1W2_Acc1.png}
+			\includegraphics[width=0.5\textwidth]{1W2_Acc1.png}
 			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see on The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
 			\label{fig:1W2_ACC_1}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{1W2_Acc2.png}
+			\includegraphics[width=0.5\textwidth]{1W2_Acc2.png}
 			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the low reaction time of driver 2 implies an accident between two cars.}
 			\label{fig:1W2_ACC_2}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{1W2_Acc3.png}
+			\includegraphics[width=0.5\textwidth]{1W2_Acc3.png}
 			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the increasing of the maximum speed of car 2 implies an accident between two cars.}
 			\label{fig:1W2_ACC_3}
 		\end{figure}

@@ -1,6 +1,6 @@
-\contentsline {algorithm}{\numberline {1}{\ignorespaces $\dot {x_1}$\relax }}{8}{algorithm.1}%
+\contentsline {algorithm}{\numberline {1}{\ignorespaces $\dot {x_1}$\relax }}{9}{algorithm.1}%
 \contentsline {algorithm}{\numberline {2}{\ignorespaces $\dot {x_i}$\relax }}{9}{algorithm.2}%
-\contentsline {algorithm}{\numberline {3}{\ignorespaces sinusoidal\_model\relax }}{9}{algorithm.3}%
-\contentsline {algorithm}{\numberline {4}{\ignorespaces Update Positions and Velocities\relax }}{10}{algorithm.4}%
-\contentsline {algorithm}{\numberline {5}{\ignorespaces $\dot {x_i}$\relax }}{11}{algorithm.5}%
-\contentsline {algorithm}{\numberline {6}{\ignorespaces EulerExplicitTrafficFlow\relax }}{14}{algorithm.6}%
+\contentsline {algorithm}{\numberline {3}{\ignorespaces sinusoidal\_model\relax }}{10}{algorithm.3}%
+\contentsline {algorithm}{\numberline {4}{\ignorespaces Update Positions and Velocities\relax }}{11}{algorithm.4}%
+\contentsline {algorithm}{\numberline {5}{\ignorespaces $\dot {x_i}$\relax }}{12}{algorithm.5}%
+\contentsline {algorithm}{\numberline {6}{\ignorespaces EulerExplicitTrafficFlow\relax }}{15}{algorithm.6}%

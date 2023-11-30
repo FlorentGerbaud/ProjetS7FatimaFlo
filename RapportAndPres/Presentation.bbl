@@ -19,6 +19,43 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{dugois:tel-01505473}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=77423e88262779c2572c585945a72fae}{%
+           family={Dugois},
+           familyi={D\bibinitperiod},
+           given={Kévin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université de Bordeaux}%
+      }
+      \strng{namehash}{77423e88262779c2572c585945a72fae}
+      \strng{fullhash}{77423e88262779c2572c585945a72fae}
+      \strng{bibnamehash}{77423e88262779c2572c585945a72fae}
+      \strng{authorbibnamehash}{77423e88262779c2572c585945a72fae}
+      \strng{authornamehash}{77423e88262779c2572c585945a72fae}
+      \strng{authorfullhash}{77423e88262779c2572c585945a72fae}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{number}{2017BORD0011}
+      \field{title}{{Simulation à l'échelle microscopique et analyse macroscopique de l'imprégnation d'un matériau composite par un fluide chargé en particules}}
+      \field{type}{Theses}
+      \field{year}{2017}
+      \verb{file}
+      \verb https://theses.hal.science/tel-01505473v2/file/DUGOIS_KEVIN_2017.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://theses.hal.science/tel-01505473
+      \endverb
+      \verb{url}
+      \verb https://theses.hal.science/tel-01505473
+      \endverb
+      \keyw{Numerical simulation ; Finite volume method ; Cartesian meshing ; Non-Newtonian rheology ; Composite material ; Porous media ; Suspension flow ; Maillage cartésien ; Méthode aux volumes finis ; Simulation numérique ; Rhéologie non-newtonienne ; Matériau composite ; Milieu poreux ; Écoulement chargé}
+    \endentry
     \entry{JEIHANI2017164}{article}{}
       \name{author}{3}{}{%
         {{hash=cbfb87645d2cbd7f6a9ec6c45fd133c8}{%

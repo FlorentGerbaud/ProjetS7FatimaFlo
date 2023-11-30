@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [1] Config.pm:310> INFO - Logfile is 'Presentation.blg'
-[403] biber-MSWIN64:340> INFO - === 
-[557] Biber.pm:419> INFO - Reading 'Presentation.bcf'
-[697] Biber.pm:979> INFO - Found 2 citekeys in bib section 0
-[716] Biber.pm:4419> INFO - Processing section 0
-[757] Biber.pm:4610> INFO - Looking for bibtex file 'rapport.bib' for section 0
-[842] bibtex.pm:1713> INFO - LaTeX decoding ...
-[870] bibtex.pm:1519> INFO - Found BibTeX data source 'rapport.bib'
-[1014] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1015] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1015] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
-[1015] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
-[1094] bbl.pm:660> INFO - Writing 'Presentation.bbl' with encoding 'UTF-8'
-[1096] bbl.pm:763> INFO - Output to Presentation.bbl
+[231] biber-MSWIN64:340> INFO - === 
+[292] Biber.pm:419> INFO - Reading 'Presentation.bcf'
+[505] Biber.pm:979> INFO - Found 3 citekeys in bib section 0
+[527] Biber.pm:4419> INFO - Processing section 0
+[549] Biber.pm:4610> INFO - Looking for bibtex file 'rapport.bib' for section 0
+[654] bibtex.pm:1713> INFO - LaTeX decoding ...
+[673] bibtex.pm:1519> INFO - Found BibTeX data source 'rapport.bib'
+[796] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[796] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[796] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
+[796] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
+[823] bbl.pm:660> INFO - Writing 'Presentation.bbl' with encoding 'UTF-8'
+[830] bbl.pm:763> INFO - Output to Presentation.bbl
