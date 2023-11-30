@@ -439,6 +439,40 @@
 			\end{algorithm}
 			
 			\begin{algorithm}[H]
+				\caption{stochastic\_driver\_model}\label{alg:stochastic_driver_model}
+				\begin{algorithmic}
+					\State \textbf{Input:}
+					\begin{itemize}
+						\State $\text{mean} := \text{Mean value of the normal distribution}$
+						\State $\text{variance} := \text{Variance of the normal distribution}$
+						\State $t := \text{time}$
+						\State $\text{threshold} := \text{Threshold value for clipping noise (optional)}$
+					\end{itemize}
+					\State \textbf{Output:}
+					\begin{itemize}
+						\State $\text{noise}$: The generated random noise value.
+					\end{itemize}
+					\State \textbf{Algorithm:}
+					\begin{itemize}
+						\State Generate a random number $x$ using a normal distribution with $\mu$ and $\sqrt{\sigma^2}$ as parameters.
+						\State $\text{noise} \gets |x|$
+						\If{$\text{threshold} \neq \text{None}$}
+						\If{$\text{noise} < -\text{threshold}$}
+						\State $\text{noise} \gets -\text{threshold}$
+						\EndIf
+						\If{$\text{noise} > \text{threshold}$}
+						\State $\text{noise} \gets \text{threshold}$
+						\EndIf
+						\EndIf
+						\State \textbf{return} $\text{noise}$
+					\end{itemize}
+				\end{algorithmic}
+			\end{algorithm}
+			
+			
+			
+			
+			\begin{algorithm}[H]
 				\caption{Update Positions and Velocities}\label{alg:update_positions}
 				\begin{algorithmic}
 					\State \textbf{Input:} \\
@@ -453,7 +487,7 @@
 					\end{itemize}
 					\State \textbf{Output:} \\
 					\begin{itemize}
-						\item $x_1Pos$ \\
+						\item $x_1Pos$ 
 						\item $x_2Pos$
 					\end{itemize}
 					\begin{itemize}[]
