@@ -127,7 +127,6 @@ for t in range(1, n_steps):
 # # Display the subplots side by side
 # plt.tight_layout()
 # plt.show()
-import matplotlib.pyplot as plt
 
 if accident:
     # Plot the distance in the first subplot

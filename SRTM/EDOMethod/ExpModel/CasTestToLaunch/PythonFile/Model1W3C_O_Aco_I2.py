@@ -58,15 +58,18 @@ a2Val[0] = a2
 #_________________________________________________ Define the functions  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
-# sinusoidal_model :
-#input : W : Amplitude of the perturbation
-#        omega : Angular frequency
-#        t : time
-#        phi : Phase (in radians)
-# Return : This function return a value of acceleration which follows a sinusoidal model with random noise
+# stochastic_driver_model :
+# input : mean : mean of the acceleratio
+#         variance : variance of the acceleration
+#         t : time
+#         threshold : threshold of the acceleration
+# Return : This function returns the acceleration of the car
 
-def sinusoidal_model(W, omega, t, phi):
-    return abs(W * np.sin(omega * t + phi) + np.random.normal(0, 0.1)) #random noise
+def stochastic_driver_model(mean, variance, t, threshold=None):
+    noise = abs(np.random.normal(mean, np.sqrt(variance)))
+    if threshold is not None:
+        noise = np.clip(noise, -threshold, threshold)
+    return noise
 
 # x1_prime :
 # Return : This function returns the speed of x1
@@ -126,7 +129,7 @@ def VariationsOfComportment(criticalDistance, boringDistance,t):
         #a2 = 0.5
         #_______________________________________
         
-        a2=sinusoidal_model(W, omega, t, phi) 
+        a2=stochastic_driver_model(6.0, 0.002, t, 10.0) 
 
     if d2 <= criticalDistance:
         a3 = 0
