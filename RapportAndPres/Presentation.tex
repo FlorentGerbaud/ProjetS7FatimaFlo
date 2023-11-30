@@ -210,6 +210,8 @@
 		
 		\textbf{\underline{SMRT}} \newline\newline
 		SMRT means Simple road traffic simulation
+		
+		\textbf{\underline{microscopic simulation}} \newline\newline
 	
 	\subsection{Simple Road Traffic Modeling}
 	
@@ -246,14 +248,41 @@
 	\end{figure}
 	
 	\section{Project Objectives}
-	In this modeling, we will focus on the position and velocity of multiple vehicles following each other in a single lane. We will assume that vehicles accelerate when they have open space, do nothing when they are close to the vehicle in front, and brake more strongly as they get very close. We will arrange two and then three vehicles, one behind the other, with the first vehicle maintaining a constant velocity, and observe the behavior of the following vehicles.\newline
-	So, the main objectives of the project are: 
+	
+	This project could be decomposed into different parts. The primary objectives of the project were to conduct microscopic and macroscopic simulations.
+	
+	\subsection{Microscopic Simulation}
+	
+	
+	In the case of microscopic simulation, the objective was to simulate traffic flow phenomena using two types of models.
+	The first model was a linear approach that considered only the position of the car in front of it. This model, known as the 'Follow-the-Leader' model, simplistically replicates vehicle behavior by focusing solely on its proximity to the preceding car. It assumes that each vehicle adjusts its speed to maintain a safe following distance.
+	
+	The second model employed was Newell's method, which is more intricate and offers greater realism. Newell's model considers not only the preceding vehicle's position but also incorporates the speed and acceleration of adjacent vehicles. This method captures the interactions between neighboring cars, resulting in a more nuanced representation of traffic dynamics.
+	
+	In this modeling, we will focus on the position and velocity of multiple vehicles following each other in a single lane. We will assume that vehicles accelerate when they have open space, maintain their speed when they are close to the vehicle in front, and brake more strongly as they get very close. We will arrange two and then three vehicles, one behind the other, with the first vehicle maintaining a constant velocity, and observe the behavior of the following vehicles.
+	Once we done these simulations we are going to add conditions and behaviour a little bit different.
+	
+	\subsection{Macroscopic Simuation}
+	
+	In the second part of the project, we encountered the limitations of the Microscopic Model. We will delve deeper into these limitations shortly. In essence, it lacks realism and provides fewer details compared to the macroscopic simulation.
+	
+	To address this issue, we chose to employ Partial Differential Equations (PDEs). In this type of simulation, we do not solely focus on individual car behaviors but rather treat traffic as a fluid-like entity. This approach allows us to gain a better understanding of traffic flow simulation. Considering traffic as a fluid is justified by its collective behavior resembling fluid dynamics—vehicles move in a continuous flow, similar to how fluids move in pipes or channels. Thus, employing PDEs assists in capturing the overall flow dynamics.
+	
+	Consequently, we utilize a simplified form of the Navier-Stokes equation to tackle the problem.
+	
+	This enables us to refine our description of the previous simulations by providing a more comprehensive understanding of traffic dynamics within a fluid-like framework. \newline\newline
+	
+	In clear, the main objectives of the project are: 
 	\begin{itemize}
-		\item Modeling the behavior using coupled ordinary differential equations.
-		\item Implementing this simplistic modeling.
+		\item Modelling the behaviour using coupled ordinary differential equations.
+		\item Implementing this simplistic modelling.
+		\item Modelling the behaviour of traffic flow with PDE
 		\item Studying the outcomes based on different parameters.
 	\end{itemize}
+	
 	\subsection{Problems Encountered}
+	\subsubsection{Implementation of the Macroscopic model}
+	\subsubsection{The time}
 	
 	\section{The equation for SMRT}
 		\subsection{Differential Ordinary Equation }
