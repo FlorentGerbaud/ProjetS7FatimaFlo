@@ -177,57 +177,57 @@ for t in range(1, n_steps):
 #_________________________________________________ Plotting the results  ___________________________________________________
 #______________________________________________________________________________________________________________________________
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+# fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
 
-if accident:
-    # Plot the distance in the first subplot
-    ax1.plot(time[0:t+1], x1Pos[0:t+1], label='x1(t)')
-    ax1.plot(time[0:t+1], x2Pos[0:t+1], label='x2(t)')
-    ax1.plot(time[0:t+1], x3Pos[0:t+1], label='x3(t)')
-    ax1.set_xlabel('Time')
-    ax1.set_ylabel('Distance')
-    ax1.legend()
-    ax1.set_title(nameCaseToLaunch)
-    ax1.grid(True)
+# if accident:
+#     # Plot the distance in the first subplot
+#     ax1.plot(time[0:t+1], x1Pos[0:t+1], label='x1(t)')
+#     ax1.plot(time[0:t+1], x2Pos[0:t+1], label='x2(t)')
+#     ax1.plot(time[0:t+1], x3Pos[0:t+1], label='x3(t)')
+#     ax1.set_xlabel('Time')
+#     ax1.set_ylabel('Distance')
+#     ax1.legend()
+#     ax1.set_title(nameCaseToLaunch)
+#     ax1.grid(True)
 
-else:
-    # Plot the distance in the first subplot
-    ax1.plot(time, x1Pos, label='x1(t)')
-    ax1.plot(time, x2Pos, label='x2(t)')
-    ax1.plot(time, x3Pos, label='x3(t)')
-    ax1.set_xlabel('Time(s)')
-    ax1.set_ylabel('Distance(m)')
-    ax1.legend()
-    ax1.grid()
-    ax1.set_title(nameCaseToLaunch)
+# else:
+#     # Plot the distance in the first subplot
+#     ax1.plot(time, x1Pos, label='x1(t)')
+#     ax1.plot(time, x2Pos, label='x2(t)')
+#     ax1.plot(time, x3Pos, label='x3(t)')
+#     ax1.set_xlabel('Time(s)')
+#     ax1.set_ylabel('Distance(m)')
+#     ax1.legend()
+#     ax1.grid()
+#     ax1.set_title(nameCaseToLaunch)
  
 
-if(accident):
-    #print("There is an accident at time t = ", t*h, "s")
-    # Plot the speeds in the second subplot
-    ax2.plot(time[0:t+1], v1[0:t+1], label='Speed of x1(t)')
-    ax2.plot(time[0:t+1], v2[0:t+1], label='Speed of x2(t)')
-    ax2.plot(time[0:t+1], v3[0:t+1], label='Speed of x3(t)')
-    ax2.set_xlabel('Time(s)')
-    ax2.set_ylabel('Speed(m/s)')
-    ax2.legend()
-    ax2.set_title('Speed of Cars Over Time')
-    ax2.grid()
-else:
-    # Plot the speeds in the second subplot
-    ax2.plot(time, v1, label='Speed of x1(t)')
-    ax2.plot(time, v2, label='Speed of x2(t)')
-    ax2.plot(time, v3, label='Speed of x3(t)')
-    ax2.set_xlabel('Time')
-    ax2.set_ylabel('Speed(m/s)')
-    ax2.legend()
-    ax2.set_title('Speed of Cars Over Time')
-    ax2.grid(True)
+# if(accident):
+#     #print("There is an accident at time t = ", t*h, "s")
+#     # Plot the speeds in the second subplot
+#     ax2.plot(time[0:t+1], v1[0:t+1], label='Speed of x1(t)')
+#     ax2.plot(time[0:t+1], v2[0:t+1], label='Speed of x2(t)')
+#     ax2.plot(time[0:t+1], v3[0:t+1], label='Speed of x3(t)')
+#     ax2.set_xlabel('Time(s)')
+#     ax2.set_ylabel('Speed(m/s)')
+#     ax2.legend()
+#     ax2.set_title('Speed of Cars Over Time')
+#     ax2.grid()
+# else:
+#     # Plot the speeds in the second subplot
+#     ax2.plot(time, v1, label='Speed of x1(t)')
+#     ax2.plot(time, v2, label='Speed of x2(t)')
+#     ax2.plot(time, v3, label='Speed of x3(t)')
+#     ax2.set_xlabel('Time')
+#     ax2.set_ylabel('Speed(m/s)')
+#     ax2.legend()
+#     ax2.set_title('Speed of Cars Over Time')
+#     ax2.grid(True)
     
 
-# Display the subplots side by side
-plt.tight_layout()
-plt.show()
+# # Display the subplots side by side
+# plt.tight_layout()
+# plt.show()
 
 # Create a line plot
 if accident:
@@ -247,3 +247,27 @@ else:
     plt.legend()
     plt.show()
 
+if accident:
+    # Plot the distance in the first subplot
+    plt.plot(time[0:t+1], x1Pos[0:t+1], label='$x_1(t)$')
+    plt.plot(time[0:t+1], x2Pos[0:t+1], label='$x_2(t)$')
+    plt.plot(time[0:t+1], x3Pos[0:t+1], label='$x_3(t)$')
+    plt.xlabel('Time (s)')
+    plt.ylabel('Distance (m)')
+    plt.legend()
+    plt.title('Accident case')
+    plt.grid(True)
+
+else:
+    # Plot the distance in the first subplot
+    plt.plot(time, x1Pos, label='$x_1(t)$')
+    plt.plot(time, x2Pos, label='$x_2(t)$')
+    plt.plot(time, x3Pos, label='$x_3(t)$')
+    plt.xlabel('Time (s)')
+    plt.ylabel('Distance (m)')
+    plt.legend()
+    plt.grid()
+    plt.title('Position of the cars over time')
+
+# Display the plot
+plt.show()
