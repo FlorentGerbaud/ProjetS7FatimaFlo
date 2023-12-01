@@ -658,6 +658,21 @@
 		
 		The boundary condition for \(t=0\) is redefined iteratively during the process as it considers the density performing by Euler Explicit from the previous time step for the first spatial time.
 
+
+		\subsection{Lax-Friedrich Model}
+		
+		The problem with the previous scheme is that for a higher density, the solution becomes unstable and diverges towards infinity. To solve this problem, we decided to implement the Lax-Friedrich model. The theoretical model for the Lax-Friedrich method in the non-linear system is as follows:
+		
+		\begin{align}
+			\boxed{u_{i}^{n+1} = \frac{1}{2}(u_{i+1}^{n} + u_{i-1}^{n}) - \frac{\Delta t}{2\Delta x}(f(u_{i+1}^{n}) - f(u_{i-1}^{n}))}
+		\end{align}
+		
+		In the case of our equation the sheme to solve is the follwoing one : 
+		\begin{equation}
+			\boxed{
+				\rho_{j}^t = \frac{1}{2} \left(\rho_{j+1}^{t-1} + \rho_{j-1}^{t-1}\right) - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{j+1}^{t-1} \left(1 - \frac{\rho_{j+1}^{t-1}}{R}\right) \cdot V_{\text{max}} - \rho_{j-1}^{t-1} \left(1 - \frac{\rho_{j-1}^{t-1}}{R}\right) \cdot V_{\text{max}} \right)
+			}
+		\end{equation} \newpage
 	
 		
 		\textbf{\underline{Implementation:}} \newline\newline
@@ -674,7 +689,7 @@
 				\State $V_{\text{max}}$: Maximum velocity
 				\State $R$: Maximal density of the simulation
 				\State \textbf{Output:}
-				\State $U$: Matrix storing the density for each time step and time space 
+				\State $\rho$: Matrix storing the density for each time step and time space 
 				\State \textbf{Algorithm:}
 				\State $\text{maxT} \gets \lfloor  \frac{T}{\Delta_t} \rfloor  + 1$ \newline
 				\State $\text{maxL} \gets \lfloor  \frac{T}{\Delta_x} \rfloor  + 1$ \newline
@@ -682,11 +697,19 @@
 				\State $U[0, :] \gets \left[ \text{compute } u_{0_x}(x) \text{ for } x \text{ in } \text{range}(0, L) \right]$
 				\For{$t$ \textbf{in} $\text{range}(1, \text{maxT})$}
 				\For{$j$ \textbf{in} $\text{range}(0, \text{maxL})$}
+				\If{$\text{typeSimu} == "EE"$}
 				\State $\rho_i^n \gets U[t-1, j]$
 				\State $\rho_{i-1}^n \gets U[t-1, j-1]$
 				\State $v_i^n \gets \left( 1 - \frac{\rho_i^n}{R}\right)  \times V_{max}$ \newline
 				\State $v_{i-1}^n \gets \left( 1 - \frac{\rho_{i-1}^n}{R}\right)  \times V_{max}$
 				\State $U[t, j] \gets \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n\right)$
+				\ElsIf{$\text{typeSimu} == "LF"$}
+				\If{$j+1<\text{maxL}$}
+				\State $\boxed{\rho_{j}^t = \frac{1}{2} \left(\rho_{j+1}^{t-1} + \rho_{j-1}^{t-1}\right) - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{j+1}^{t-1} \left(1 - \frac{\rho_{j+1}^{t-1}}{R}\right) \cdot V_{\text{max}} - \rho_{j-1}^{t-1} \left(1 - \frac{\rho_{j-1}^{t-1}}{R}\right) \cdot V_{\text{max}} \right)}$
+				\Else
+				\State $\boxed{\rho_{j}^t = \frac{1}{2} \left(\rho_{0}^{t-1} + \rho_{j-1}^{t-1}\right) - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{0}^{t-1} \left(1 - \frac{\rho_{0}^{t-1}}{R}\right) \cdot V_{\text{max}} - \rho_{j-1}^{t-1} \left(1 - \frac{\rho_{j-1}^{t-1}}{R}\right) \cdot V_{\text{max}} \right)}$
+				\EndIf
+				\EndIf
 				\EndFor
 				\EndFor
 				\State \textbf{return} $U$
@@ -694,7 +717,9 @@
 		\end{algorithm}
 
 		
-		
+	
+	
+	
 	
 	\section{Types of Simulations Performed with ODE models}
 	
@@ -752,29 +777,38 @@
 		
 		\textbf{\underline{Simulation with the Newell's Model For Two cars}} \newline\newline
 		
-		In the three subsequent figures \ref{fig:1W2_ACC_1}, \ref{fig:1W2_ACC_2}, and \ref{fig:1W2_ACC_3}, we can observe a similar graph pattern to that of the linear model. However, in this scenario, we have the flexibility to vary additional parameters, such as the maximum speed of the cars (for instance, introducing a new car with a more powerful motor) and the safety distance, which is an inherent aspect of the Newell model. This variation allows us to witness accidents occurring at each curve intersection on the graph.
+		In the three subsequent figures \ref{fig:sub1}, \ref{fig:sub2}, and \ref{fig:sub3}, we can observe a similar graph pattern to that of the linear model. However, in this scenario, we have the flexibility to vary additional parameters, such as the maximum speed of the cars (for instance, introducing a new car with a more powerful motor) and the safety distance, which is an inherent aspect of the Newell model. This variation allows us to witness accidents occurring at each curve intersection on the graph.
 		
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.5\textwidth]{1W2_Acc1.png}
-			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see on The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
-			\label{fig:1W2_ACC_1}
+			\begin{subfigure}[b]{0.45\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{1W2_Acc1.png}
+				\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
+				\label{fig:sub1}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.45\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{1W2_Acc2.png}
+				\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the low reaction time of driver 2 implies an accident between two cars.}
+				\label{fig:sub2}
+			\end{subfigure}
+			
+			\vspace{1cm}
+			
+			\begin{subfigure}[b]{0.7\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{1W2_Acc3.png}
+				\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the increasing of the maximum speed of car 2 implies an accident between two cars.}
+				\label{fig:sub3}
+			\end{subfigure}
+			\caption{Simulation of Accident case between two cars}
+			\label{fig:accident_simulation}
 		\end{figure}
 		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.5\textwidth]{1W2_Acc2.png}
-			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the low reaction time of driver 2 implies an accident between two cars.}
-			\label{fig:1W2_ACC_2}
-		\end{figure}
 		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.5\textwidth]{1W2_Acc3.png}
-			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the increasing of the maximum speed of car 2 implies an accident between two cars.}
-			\label{fig:1W2_ACC_3}
-		\end{figure}
 		\subsection{Simulation with Drunk Drivers}
 		
 		In this type of simulation, we aimed to make the model more realistic by incorporating variations in the acceleration of the car.
@@ -787,13 +821,20 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{Model1W3C_O_Aco_D2.png}
+			\includegraphics[width=0.5\textwidth]{Model1W3C_O_Aco_D2.png}
 			\caption[Simulation of Traffic Flow with one drunk driver.]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead.}
 			\label{fig:Model1W3C_O_Aco_D2}
 		\end{figure}
 		
 		\subsection{Simulation with Unpredictable Drivers}
 		
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.5\textwidth]{Model1W3C_O_Aco_I2.png}
+			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the increasing of the maximum speed of car 2 implies an accident between two cars.}
+			\label{fig:Model1W3C_O_Aco_I2}
+		\end{figure}
 		
 		
 		
