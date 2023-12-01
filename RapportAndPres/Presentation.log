@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  1 DEC 2023 09:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  1 DEC 2023 09:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1523,17 +1523,17 @@ LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <20> not available
 \openout7 = `Presentation.toc'.
 
  [2] (Presentation.lof
-Overfull \hbox (0.5722pt too wide) in paragraph at lines 15--15
+Overfull \hbox (0.5722pt too wide) in paragraph at lines 16--16
  [][] [][]$[]$ \T1/cmr/m/n/10 On this fig-ure, you could 
  []
 
 
-Overfull \hbox (1.22482pt too wide) in paragraph at lines 19--19
+Overfull \hbox (1.22482pt too wide) in paragraph at lines 20--20
  [][] [][]$[]$ \T1/cmr/m/n/10 On this fig-ure, you could 
  []
 
 
-Overfull \hbox (6.70404pt too wide) in paragraph at lines 20--20
+Overfull \hbox (6.70404pt too wide) in paragraph at lines 21--21
  [][] [][]$[]$ \T1/cmr/m/n/10 On 
  []
 
@@ -1575,13 +1575,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 221--222
 
  []
 
-<intro.jpg, id=279, 1003.75pt x 501.875pt>
+<intro.jpg, id=281, 1003.75pt x 501.875pt>
 File: intro.jpg Graphic file (type jpg)
 <use intro.jpg>
 Package pdftex.def Info: intro.jpg  used on input line 234.
 (pdftex.def)             Requested size: 344.005pt x 172.00601pt.
 [4]
-<GitHub.jpg, id=289, 584.93532pt x 215.30438pt>
+<GitHub.jpg, id=291, 584.93532pt x 215.30438pt>
 File: GitHub.jpg Graphic file (type jpg)
 <use GitHub.jpg>
 Package pdftex.def Info: GitHub.jpg  used on input line 254.
@@ -1684,7 +1684,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 714--716
 
  []
 
-<Accordeon1.png, id=347, 722.7pt x 433.62pt>
+<Accordeon1.png, id=349, 722.7pt x 433.62pt>
 File: Accordeon1.png Graphic file (type png)
 <use Accordeon1.png>
 Package pdftex.def Info: Accordeon1.png  used on input line 721.
@@ -1699,7 +1699,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 726--727
 
  []
 
-<1W2_Accord.png, id=349, 462.528pt x 346.896pt>
+<1W2_Accord.png, id=351, 462.528pt x 346.896pt>
 File: 1W2_Accord.png Graphic file (type png)
 <use 1W2_Accord.png>
 Package pdftex.def Info: 1W2_Accord.png  used on input line 732.
@@ -1714,7 +1714,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 739--740
 
  []
 
-<Acc1.png, id=358, 722.7pt x 433.62pt>
+<Acc1.png, id=360, 722.7pt x 433.62pt>
 File: Acc1.png Graphic file (type png)
 <use Acc1.png>
 Package pdftex.def Info: Acc1.png  used on input line 748.
@@ -1729,164 +1729,170 @@ Underfull \hbox (badness 10000) in paragraph at lines 753--754
 
  []
 
-<1W2_Acc1.png, id=367, 462.528pt x 346.896pt>
+<1W2_Acc1.png, id=369, 462.528pt x 346.896pt>
 File: 1W2_Acc1.png Graphic file (type png)
 <use 1W2_Acc1.png>
 Package pdftex.def Info: 1W2_Acc1.png  used on input line 760.
 (pdftex.def)             Requested size: 215.0023pt x 161.25203pt.
 [18 <./Acc1.png>]
-<1W2_Acc2.png, id=373, 462.528pt x 346.896pt>
+<1W2_Acc2.png, id=375, 462.528pt x 346.896pt>
 File: 1W2_Acc2.png Graphic file (type png)
 <use 1W2_Acc2.png>
 Package pdftex.def Info: 1W2_Acc2.png  used on input line 767.
 (pdftex.def)             Requested size: 215.0023pt x 161.25203pt.
-<1W2_Acc3.png, id=374, 462.528pt x 346.896pt>
+<1W2_Acc3.png, id=376, 462.528pt x 346.896pt>
 File: 1W2_Acc3.png Graphic file (type png)
 <use 1W2_Acc3.png>
 Package pdftex.def Info: 1W2_Acc3.png  used on input line 774.
 (pdftex.def)             Requested size: 215.0023pt x 161.25203pt.
- [19 <./1W2_Acc1.png> <./1W2_Acc2.png>] [20 <./1W2_Acc3.png>]
-<RealisticCase.png, id=392, 722.7pt x 433.62pt>
+ [19 <./1W2_Acc1.png> <./1W2_Acc2.png>]
+<Model1W3C_O_Aco_D2.png, id=385, 462.528pt x 346.896pt>
+File: Model1W3C_O_Aco_D2.png Graphic file (type png)
+<use Model1W3C_O_Aco_D2.png>
+Package pdftex.def Info: Model1W3C_O_Aco_D2.png  used on input line 790.
+(pdftex.def)             Requested size: 344.005pt x 258.01701pt.
+ [20 <./1W2_Acc3.png>]
+[21 <./Model1W3C_O_Aco_D2.png>]
+<RealisticCase.png, id=401, 722.7pt x 433.62pt>
 File: RealisticCase.png Graphic file (type png)
 <use RealisticCase.png>
-Package pdftex.def Info: RealisticCase.png  used on input line 828.
+Package pdftex.def Info: RealisticCase.png  used on input line 839.
 (pdftex.def)             Requested size: 344.005pt x 206.4017pt.
-<RealSolCase.png, id=393, 722.7pt x 433.62pt>
+<RealSolCase.png, id=402, 722.7pt x 433.62pt>
 File: RealSolCase.png Graphic file (type png)
 <use RealSolCase.png>
-Package pdftex.def Info: RealSolCase.png  used on input line 835.
+Package pdftex.def Info: RealSolCase.png  used on input line 846.
 (pdftex.def)             Requested size: 344.005pt x 206.4017pt.
-
-[21 <./RealisticCase.png>]
-<Stability.png, id=403, 462.528pt x 346.896pt>
+ [22 <./RealisticCase.png>]
+<Stability.png, id=412, 462.528pt x 346.896pt>
 File: Stability.png Graphic file (type png)
 <use Stability.png>
-Package pdftex.def Info: Stability.png  used on input line 846.
+Package pdftex.def Info: Stability.png  used on input line 857.
 (pdftex.def)             Requested size: 344.005pt x 258.01701pt.
 
-Overfull \hbox (7.55797pt too wide) in paragraph at lines 847--847
-[]\T1/cmr/m/n/10 Figure 11: |$[]$Different
- []
-
-[22 <./RealSolCase.png>]
-<Unstability.png, id=409, 578.16pt x 433.62pt>
-File: Unstability.png Graphic file (type png)
-<use Unstability.png>
-Package pdftex.def Info: Unstability.png  used on input line 853.
-(pdftex.def)             Requested size: 344.005pt x 258.0038pt.
-
-Overfull \hbox (16.45302pt too wide) in paragraph at lines 854--854
+Overfull \hbox (7.55797pt too wide) in paragraph at lines 858--858
 []\T1/cmr/m/n/10 Figure 12: |$[]$Different
  []
 
-[23 <./Stability.png>]
-<FieldOfVector_CV.png, id=417, 578.16pt x 433.62pt>
+[23 <./RealSolCase.png>]
+<Unstability.png, id=418, 578.16pt x 433.62pt>
+File: Unstability.png Graphic file (type png)
+<use Unstability.png>
+Package pdftex.def Info: Unstability.png  used on input line 864.
+(pdftex.def)             Requested size: 344.005pt x 258.0038pt.
+
+Overfull \hbox (16.45302pt too wide) in paragraph at lines 865--865
+[]\T1/cmr/m/n/10 Figure 13: |$[]$Different
+ []
+
+[24 <./Stability.png>]
+<FieldOfVector_CV.png, id=426, 578.16pt x 433.62pt>
 File: FieldOfVector_CV.png Graphic file (type png)
 <use FieldOfVector_CV.png>
-Package pdftex.def Info: FieldOfVector_CV.png  used on input line 862.
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 873.
 (pdftex.def)             Requested size: 344.005pt x 258.0038pt.
- [24 <./Unstability.png>]
-<FieldOfVector_DV.png, id=423, 578.16pt x 433.62pt>
+ [25 <./Unstability.png>]
+<FieldOfVector_DV.png, id=433, 578.16pt x 433.62pt>
 File: FieldOfVector_DV.png Graphic file (type png)
 <use FieldOfVector_DV.png>
-Package pdftex.def Info: FieldOfVector_DV.png  used on input line 869.
+Package pdftex.def Info: FieldOfVector_DV.png  used on input line 880.
 (pdftex.def)             Requested size: 344.005pt x 258.0038pt.
- [25 <./FieldOfVector_CV.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 874--875
+ [26 <./FieldOfVector_CV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 885--886
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 874--875
+Underfull \hbox (badness 10000) in paragraph at lines 885--886
 
  []
 
-<FieldOfVector_CV2.png, id=432, 433.62pt x 433.62pt>
+<FieldOfVector_CV2.png, id=441, 433.62pt x 433.62pt>
 File: FieldOfVector_CV2.png Graphic file (type png)
 <use FieldOfVector_CV2.png>
-Package pdftex.def Info: FieldOfVector_CV2.png  used on input line 899.
+Package pdftex.def Info: FieldOfVector_CV2.png  used on input line 910.
 (pdftex.def)             Requested size: 193.50076pt x 193.49953pt.
-<AnalyticalSolution.png, id=433, 578.16pt x 433.62pt>
+<AnalyticalSolution.png, id=442, 578.16pt x 433.62pt>
 File: AnalyticalSolution.png Graphic file (type png)
 <use AnalyticalSolution.png>
-Package pdftex.def Info: AnalyticalSolution.png  used on input line 904.
+Package pdftex.def Info: AnalyticalSolution.png  used on input line 915.
 (pdftex.def)             Requested size: 193.50076pt x 145.11969pt.
-[26 <./FieldOfVector_DV.png>]
-<FieldOfVector_DV2.png, id=441, 433.62pt x 433.62pt>
+[27 <./FieldOfVector_DV.png>]
+<FieldOfVector_DV2.png, id=450, 433.62pt x 433.62pt>
 File: FieldOfVector_DV2.png Graphic file (type png)
 <use FieldOfVector_DV2.png>
-Package pdftex.def Info: FieldOfVector_DV2.png  used on input line 918.
+Package pdftex.def Info: FieldOfVector_DV2.png  used on input line 929.
 (pdftex.def)             Requested size: 193.50076pt x 193.49953pt.
-<AnalyticalSolution2.png, id=442, 578.16pt x 433.62pt>
+<AnalyticalSolution2.png, id=451, 578.16pt x 433.62pt>
 File: AnalyticalSolution2.png Graphic file (type png)
 <use AnalyticalSolution2.png>
-Package pdftex.def Info: AnalyticalSolution2.png  used on input line 923.
+Package pdftex.def Info: AnalyticalSolution2.png  used on input line 934.
 (pdftex.def)             Requested size: 193.50076pt x 145.11969pt.
- [27 <./FieldOfVector_CV2.png> <./AnalyticalSolution.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 934--935
+ [28 <./FieldOfVector_CV2.png> <./AnalyticalSolution.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 945--946
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 934--935
+Underfull \hbox (badness 10000) in paragraph at lines 945--946
 
  []
 
-[28 <./FieldOfVector_DV2.png> <./AnalyticalSolution2.png>]
-<VectorFIeld.png, id=456, 578.16pt x 433.62pt>
+[29 <./FieldOfVector_DV2.png> <./AnalyticalSolution2.png>]
+<VectorFIeld.png, id=465, 578.16pt x 433.62pt>
 File: VectorFIeld.png Graphic file (type png)
 <use VectorFIeld.png>
-Package pdftex.def Info: VectorFIeld.png  used on input line 981.
+Package pdftex.def Info: VectorFIeld.png  used on input line 992.
 (pdftex.def)             Requested size: 171.99922pt x 128.99527pt.
-<RealSol.png, id=457, 990.099pt x 433.62pt>
+<RealSol.png, id=466, 990.099pt x 433.62pt>
 File: RealSol.png Graphic file (type png)
 <use RealSol.png>
-Package pdftex.def Info: RealSol.png  used on input line 986.
+Package pdftex.def Info: RealSol.png  used on input line 997.
 (pdftex.def)             Requested size: 236.50385pt x 103.57468pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 996--997
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1008
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 996--997
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1008
 
  []
 
-[29 <./VectorFIeld.png> <./RealSol.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1041
+[30 <./VectorFIeld.png> <./RealSol.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1052
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1041
+Underfull \hbox (badness 10000) in paragraph at lines 1050--1052
 
  []
 
-<VectorField1.png, id=468, 578.16pt x 578.16pt>
+<VectorField1.png, id=477, 578.16pt x 578.16pt>
 File: VectorField1.png Graphic file (type png)
 <use VectorField1.png>
-Package pdftex.def Info: VectorField1.png  used on input line 1051.
+Package pdftex.def Info: VectorField1.png  used on input line 1062.
 (pdftex.def)             Requested size: 215.0023pt x 215.00095pt.
-[30]
-<RealSol1.png, id=473, 867.24pt x 289.08pt>
+[31]
+<RealSol1.png, id=483, 867.24pt x 289.08pt>
 File: RealSol1.png Graphic file (type png)
 <use RealSol1.png>
-Package pdftex.def Info: RealSol1.png  used on input line 1058.
+Package pdftex.def Info: RealSol1.png  used on input line 1069.
 (pdftex.def)             Requested size: 344.005pt x 114.66835pt.
- [31 <./VectorField1.png> <./RealSol1.png>] [32] [33] [34]
+ [32 <./VectorField1.png> <./RealSol1.png>] [33] [34] [35]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-221.
+232.
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-Overfull \hbox (0.34381pt too wide) in paragraph at lines 1223--1223
+Overfull \hbox (0.34381pt too wide) in paragraph at lines 1234--1234
 []\T1/cmr/m/n/10 Kévin Dugois. ``Sim-u-la-tion à l'échelle mi-cro-sco-pique et 
 ana-lyse mac-ro-sco-pique de l'imprégnation
  []
 
-[35] (Presentation.aux)
+[36] (Presentation.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
@@ -1901,10 +1907,10 @@ Package logreq Info: Writing requests to 'Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51524 strings out of 476331
- 1115189 string characters out of 5787766
- 1960088 words of memory out of 5000000
- 71152 multiletter control sequences out of 15000+600000
+ 51536 strings out of 476331
+ 1115465 string characters out of 5787766
+ 1960212 words of memory out of 5000000
+ 71161 multiletter control sequences out of 15000+600000
  530513 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,21n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1934,9 +1940,9 @@ lore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb><C:
 sfrm1200.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/c
 m-super/sfti1000.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/cm-super/sftt1000.pfb>
-Output written on Presentation.pdf (35 pages, 1680681 bytes).
+Output written on Presentation.pdf (36 pages, 1714609 bytes).
 PDF statistics:
- 626 PDF objects out of 1000 (max. 8388607)
- 102 named destinations out of 1000 (max. 500000)
- 413 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 104 named destinations out of 1000 (max. 500000)
+ 418 words of extra memory for PDF output out of 10000 (max. 10000000)
 
