@@ -19,11 +19,11 @@
 \contentsline {subsection}{\numberline {3.2}Partial Differential Equations}{13}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Euler Explicit}{13}{subsubsection.3.2.1}%
 \contentsline {section}{\numberline {4}Types of Simulations Performed with ODE models}{15}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Simulation with Drunk Drivers}{15}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Simulation with Unpredictable Drivers}{15}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Simulation with Drivers Reacting Similarly}{15}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Accordion Phenomenon}{15}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Accident Phenomenon For The Linear Model }{17}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.1}Simulation with Drivers Reacting Similarly}{15}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Accordion Phenomenon}{15}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Accident Phenomenon For The Linear Model }{17}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}Simulation with Drunk Drivers}{20}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Simulation with Unpredictable Drivers}{20}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{20}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{20}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{28}{subsubsection.4.4.2}%

@@ -697,9 +697,10 @@
 		
 	
 	\section{Types of Simulations Performed with ODE models}
-		\subsection{Simulation with Drunk Drivers}
-		\subsection{Simulation with Unpredictable Drivers}
-		\subsection{Simulation with Drivers Reacting Similarly}
+	
+	For the simulation, we conducted tests on both two cars and three cars to demonstrate the outcomes. In this section, we exclusively examine the variations in the position of the three cars, distinct from the analysis involving only two cars. Interestingly, the phenomenon observed remains consistent across both types of simulations. Nevertheless, the simulations with three cars are more intriguing. For simulations involving two cars, refer to the "Study of Stability" section.
+	
+	\subsection{Simulation with Drivers Reacting Similarly}
 		\subsubsection{Accordion Phenomenon}
 		
 		For this parts, we make the following assumptions:
@@ -715,13 +716,13 @@
 		
 		Similar to real-life situations, we observe that if the second car is too far behind the first one, it decelerates. Conversely, when it is adequately distant from the first car, it increases its speed.
 		
-			\begin{figure}[H]
-				\centering
-				\includegraphics[width=0.8\textwidth]{Accordeon1.png}
-				\caption[Simulation of accordion phenomenon]{\textbf{\underline{Simulation of accordion phenomenon : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see that orange graph behaves like a periodic accordion with respect to time.}
-				\label{fig:Aco1}
-			\end{figure}
-			
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{Accordeon1.png}
+			\caption[Simulation of accordion phenomenon]{\textbf{\underline{Simulation of accordion phenomenon : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see that orange graph behaves like a periodic accordion with respect to time.}
+			\label{fig:Aco1}
+		\end{figure}
+		
 		\textbf{\underline{Simulation with the Newell's Model For Two cars}} \newline\newline
 		
 		Similar to the previous case, applying Newell's method yields identical results. As depicted in Figure \ref{fig:1W2_ACCORD}, the graph illustrates the accordion phenomenon, featuring distinct periods of acceleration followed by deceleration.
@@ -733,7 +734,6 @@
 			\label{fig:1W2_ACCORD}
 		\end{figure}
 		
-			
 		\subsubsection{Accident Phenomenon For The Linear Model }
 		
 		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
@@ -775,6 +775,15 @@
 			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the increasing of the maximum speed of car 2 implies an accident between two cars.}
 			\label{fig:1W2_ACC_3}
 		\end{figure}
+		\subsection{Simulation with Drunk Drivers}
+		
+		In this type of simulation we make the model a little bit more realistic with variations of the acceleration of the car.
+		In fact in this part we consider that one of the drivers is drunk. So the accelleration of the drivers change over the time.
+		On the graph you could see that the accordion phenomenon that we just saw before is becoming no periodic and completely impermissible
+		
+		\subsection{Simulation with Unpredictable Drivers}
+		
+		
 		
 		
 		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
