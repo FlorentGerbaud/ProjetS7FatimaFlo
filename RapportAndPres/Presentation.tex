@@ -302,7 +302,7 @@
 		\subsection{Differential Ordinary Equation }
 		In this part, the idea is to resolve two types of systems of Ordinary Differential Equations (ODEs) that allow us to simulate traffic flow. To achieve this, we will use the Euler Explicit method to numerically solve the solutions.
 		The Euler Explicit method is given by the folowing eqution :
-		\begin{itemize}
+		\begin{itemize} 
 			\item EDO to solve: $\boxed{y'(t) = f{\bigl (}t, y(t){\bigr )}}$.
 			\item First step of the resolution: $\boxed{y_0 = y(t_0)}$.
 			\item Recursive process to find the n-th solution of the EDO: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
@@ -594,7 +594,7 @@
 		
 		The PDE model used is the LWR  (Lighthill-Whitham-Richards) equation system. This system allows us to simulate car traffic using more or less complex equations For further insights on this topic, explore how uncertainty in the LWR traffic model's fundamental diagram affects prediction reliability, showcasing increased location uncertainty over time while accurately predicting disturbance magnitude. \cite{article}. The equation is defined exactly as follows:
 		
-		\begin{align*}
+		\begin{align*}\label{eq:PDE}
 			\boxed{
 				\begin{aligned}
 					&\partial_t\rho + \partial_xF(\rho)=0, && x\in \Omega, t\ge 0,\\
@@ -1093,9 +1093,82 @@
 	
 	\section{Types of Simulations Performed with PDE models}
 	
+	In this section, the objective is to demonstrate an alternative method for simulating traffic flow on roads. To achieve this, we will employ PDEs, considering traffic flow as analogous to fluid dynamics.
 	
-	\subsection{Simulation Performed with Free Flow Model}
-
+	We conduct these simulations using the FDM with two types of models: the Euler Explicit and Lax-Friedrichs models. The Euler Explicit model demonstrates the simulation with free-flowing traffic, while the Lax-Friedrichs model depicts congested traffic scenarios.
+	
+	We are going to see why we don't do the same simulation with the two models in following part.
+	
+	
+	\subsection{Simulation Performed with Euler Explicit Model}
+	
+	For the simulation that we are going to do in this part, in the \ref{eq:PDE} we decide to take 
+	
+	\[
+	\boxed{
+		\begin{aligned}
+			&\rho_0(x)=0.2 \cdot \sin\left(2 \cdot \pi \cdot \frac{x}{L}\right) + 0.3 \\
+			&\Delta t = 0.01 \\
+			&\Delta x = 1
+		\end{aligned}
+	}
+	\]
+	
+	We decided to choose these parameters for some reasons. If interested in the function $\rho_0(x)$, we chose this function because, upon completing the simulation, we observed that for any time step, even an 'infinitely small time step,' the solution became unstable. Therefore, the function we selected allowed us to observe a phenomenon where we have peaks of density, thus enabling us to observe the creation of a 'traffic flow,' as well as its movement. More particularly, we empirically observed that the values of density at which the solutions become unstable occur when the density is greater than 0.5, indicating that the traffic flow reaches half of its capacity. Within the function, the coefficient 0.2 and the addition of 0.3 ensure that the function stays in the interval $[0, 0.5]$.
+	For the time step, we chose 0.01 because the simulation is sufficiently precise and does not require excessive resources. As for the time interval, we selected 1 because we aim to observe the evolution at each meter.
+	
+	Finally we decide to plot the solutions under two forms. The first is a Density Map, and the second is an animations that you could saw on the GitHub Link.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.65\textwidth]{traffic_flow_density_map.png}
+		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit:}} This figure illustrates the solution of the PDE at any time and position. Here is the link to the associated animation showing the movement of the traffic flow:  }
+		\label{fig:traffic_flow_density_map}
+	\end{figure}
+	
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{AniE1.jpg}
+			\caption{T=0.240}
+			\label{fig:graph1}
+		\end{subfigure}
+		\begin{subfigure}{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{AniE2.jpg}
+			\caption{T=1.260}
+			\label{fig:graph2}
+		\end{subfigure}
+		
+		\vspace{0.5cm}
+		
+		\begin{subfigure}{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{AniE3.jpg}
+			\caption{T=2.470}
+			\label{fig:graph3}
+		\end{subfigure}
+		\begin{subfigure}{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{AniE4.jpg}
+			\caption{T=5.400}
+			\label{fig:graph4}
+		\end{subfigure}
+		\caption[Graph of the Movement of the Traffic Flow]{\textbf{\underline{Graph of the Movement of the Traffic Flow:}} On this graph, you can see that the Traffic Flow is moving forward and that the information is propagating over time. There is the link to see the animation : \href{https://github.com/FlorentGerbaud/Simple-road-traffic-modeling/blob/Flo-PDE/SRTM/EDPMethod/CasTestToLaunch/TestToLaunch/Modele_IC_S/EulerExplicit/traffic_flow_animation.gif}{\textbf{\underline{Traffic Flow Simulation}}}}
+		\label{fig:four_graphs}
+	\end{figure}
+	
+	These two graphs are very interesting because we can observe some phenomena. The first phenomenon is the diffusive nature concerning the model. In fact, on Figure \ref{fig:traffic_flow_density_map}, you can see that each time the peak of density appears, the density of drivers decreases. On Figure \ref{fig:four_graphs}, this becomes evident as the solution to the equation diminishes progressively. If we continue the simulation for a longer period, we will observe the curve collapsing.
+	\newline\newline
+	The second phenomenon is the propagation of density over time. In fact, we can observe in Figure \ref{fig:traffic_flow_density_map} that density propagates both temporally and spatially. For instance, the initial peak of density begins at 0 meters and time 0, extending to 100 meters by 6 seconds. In the animation, you can also observe the movement of the peak. In Figure b of the animation, we witness the peak moving from 0 to 100 meters in approximately 6 seconds, as indicated by the Density map.
+	\newline\newline
+	Finally, the last phenomenon that we can observe is the creation of peaks in density. In fact, in the animation, you can see that when the density is relatively low, a peak is formed. This phenomenon occurs because when the density is lower, cars tend to travel faster, catching up with the cars already in a peak of density. So they need to slow down and it is for this reason that we could observe this peak.
+	\newline\newline
+	However, as discussed previously, we encounter a problem with this model. The limitation of this model is that for a density greater than 0.5, the model becomes unstable. Therefore, we need to utilize another model, the Lax-Friedrichs Model. This model is slightly more complex but resolves the issue of instability. With Jim's assistance, we will explore the behavior of high density scenarios.
+	\subsection{Simulation Performed with Lax-Friedrichs Model}
+	
 	
 	\section{Summary}
 	
