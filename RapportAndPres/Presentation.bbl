@@ -56,6 +56,33 @@
       \endverb
       \keyw{Numerical simulation ; Finite volume method ; Cartesian meshing ; Non-Newtonian rheology ; Composite material ; Porous media ; Suspension flow ; Maillage cartésien ; Méthode aux volumes finis ; Simulation numérique ; Rhéologie non-newtonienne ; Matériau composite ; Milieu poreux ; Écoulement chargé}
     \endentry
+    \entry{SMRT}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=805b390e9c3a59230b4a620846389f7b}{%
+           family={Florent},
+           familyi={F\bibinitperiod},
+           given={Gerbaud},
+           giveni={G\bibinitperiod}}}%
+        {{hash=6b45c6755296757f797f7d90a47460a6}{%
+           family={Rharrour},
+           familyi={R\bibinitperiod},
+           given={Fatima\bibnamedelima Ezzahra},
+           giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{fullhash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{bibnamehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{authorbibnamehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{authornamehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{authorfullhash}{2037d2922ca7fe48da011ead2175c672}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/FlorentGerbaud/Simple-road-traffic-modeling}}
+      \field{title}{Simple Road Traffic Simluation}
+      \field{year}{2023}
+    \endentry
     \entry{JEIHANI2017164}{article}{}
       \name{author}{3}{}{%
         {{hash=cbfb87645d2cbd7f6a9ec6c45fd133c8}{%

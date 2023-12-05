@@ -202,25 +202,30 @@
 	\newpage
 	\section{Presentation of the Subject}
 	\subsection{Useful Definition}
-		\textbf{\underline{Ordinary Differential Equation (ODE):}} \newline\newline
-		An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables. ODEs are commonly represented given a function F of x, y, and derivatives of y. Then, an equation of the form
-		\begin{align*}
-			F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
-		\end{align*}
+	\begin{enumerate}
+		\item \textbf{\underline{Ordinary Differential Equation (ODE):}} 
 		
-		\textbf{\underline{SMRT}} 
-		SMRT means Simple road traffic simulation \newline\newline
-		\textbf{\underline{microscopic simulation}} 
+		An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables. ODEs are commonly represented given a function \( F \) of \( x \), \( y \), and derivatives of \( y \). Then, an equation of the form
+		\[
+		F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
+		\]
 		
-		Microscopic simulation is a computer-based modeling technique that simulates the behavior of individual entities, such as vehicles or pedestrians, within a system. It focuses on detailed modeling of each entity's movements, interactions, and behaviors to understand and predict the dynamics of a larger system, like traffic flow or crowd movement. \newline\newline
+		\item \textbf{\underline{SMRT}}
 		
-		\textbf{\underline{Macroscopic simulation}} 
+		SMRT means Simple road traffic simulation.
+		
+		\item \textbf{\underline{Microscopic simulation}}
+		
+		Microscopic simulation is a computer-based modeling technique that simulates the behavior of individual entities, such as vehicles or pedestrians, within a system. It focuses on detailed modeling of each entity's movements, interactions, and behaviors to understand and predict the dynamics of a larger system, like traffic flow or crowd movement.
+		
+		\item \textbf{\underline{Macroscopic simulation}}
 		
 		Macroscopic simulation models systems at a higher, aggregated level, considering overall behaviors like traffic flow without detailing individual movements. It helps analyze system-level trends and capacities, useful for broader planning.
 		
-		The relation between microscopic and macroscopic simulation lies in their approach to studying systems. Microscopic simulation focuses on individual entities' detailed behaviors, while macroscopic simulation analyzes aggregated behaviors of the entire system without considering individual entities. They complement each other: microscopic for detailed insights into individual behaviors, and macroscopic for understanding overall system trends and capacities. \newline\newline
+		The relation between microscopic and macroscopic simulation lies in their approach to studying systems. Microscopic simulation focuses on individual entities' detailed behaviors, while macroscopic simulation analyzes aggregated behaviors of the entire system without considering individual entities. They complement each other: microscopic for detailed insights into individual behaviors, and macroscopic for understanding overall system trends and capacities.
 		
-		If you are interested by these types of modelisation i suggest you to going to see this article \cite{dugois:tel-01505473}
+		\item If you are interested in these types of modelizations, I suggest you go and see this article \cite{dugois:tel-01505473}.
+	\end{enumerate}
 	
 	\subsection{Simple Road Traffic Modeling}
 	
@@ -228,11 +233,11 @@
 		
 		Explore the integration of a driving simulator with a traffic simulator in Jeihani et al.'s study \cite{JEIHANI2017164}, revealing enhanced traffic density and Variable Message Sign (VMS) reliability. The findings suggest that integration positively influences compliance behavior and factors affecting route diversion.
 		
-		
+		\cite{SMRT}
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{intro.jpg}
-			\caption{\textbf{\underline{Road Traffic:}} An illustrative example of a road traffic phenomenon, which is the focus of our study.}
+			\caption[Road Traffic]{\textbf{\underline{Road Traffic:}} An illustrative example of a road traffic phenomenon, which is the focus of our study.}
 			\label{fig:intro}
 		\end{figure}
 	
@@ -252,7 +257,7 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.8\textwidth]{GitHub.jpg}
-		\caption{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
+		\caption[GitHub Branch]{\textbf{\underline{Road traffic : }} In this picture, you can see an example of a road traffic phenomenon that we could study}
 		\label{fig:GitHub}
 	\end{figure}
 	
@@ -590,15 +595,21 @@
 		The PDE model used is the LWR  (Lighthill-Whitham-Richards) equation system. This system allows us to simulate car traffic using more or less complex equations For further insights on this topic, explore how uncertainty in the LWR traffic model's fundamental diagram affects prediction reliability, showcasing increased location uncertainty over time while accurately predicting disturbance magnitude. \cite{article}. The equation is defined exactly as follows:
 		
 		\begin{align*}
-			\boxed{\partial_t\rho + \partial_xF(\rho)=0}
+			\boxed{
+				\begin{aligned}
+					&\partial_t\rho + \partial_xF(\rho)=0, && x\in \Omega, t\ge 0,\\
+					&\rho(x,0)=\rho_0(x), && x \in \Omega, \\
+					&\rho(0,t)=\rho(L,t), && t\ge 0
+			\end{aligned}}
 		\end{align*}
 		
 		\textbf{Where:}
 		\begin{align*}
-			& \rho(x,t) \text{ represents the traffic density at position } x \text{ and time } t. \\
-			& F(\rho) \text{ denotes the traffic flux as a function of density.} \\
-			& F(\rho) \text{ is often represented by a function modeling the relationship between traffic density and traffic velocity.} \\
-			& F(\rho) = V(\rho) \cdot \rho \text{, where } V(\rho) \text{ is the traffic velocity as a function of density.}
+			& \Omega := \left] 0,L\right[, \\
+			& \rho(x,t) \text{ represents the traffic density at position } x \text{ and time } t, \\
+			& F(\rho) \text{ denotes the traffic flux as a function of density,} \\
+			& F(\rho) \text{ is often represented by a function modeling the relationship between traffic density and traffic velocity,} \\
+			& F(\rho) = V(\rho) \cdot \rho, \text{ where } V(\rho) \text{ is the traffic velocity as a function of density}.
 		\end{align*}
 		
 		For the study, we choose two types of equations for LWR:
@@ -723,7 +734,7 @@
 	
 	\section{Types of Simulations Performed with ODE models}
 	
-	For the simulation, we conducted tests on both two cars and three cars to demonstrate the outcomes. In this section, we exclusively examine the variations in the position of the three cars, distinct from the analysis involving only two cars. Interestingly, the phenomenon observed remains consistent across both types of simulations. Nevertheless, the simulations with three cars are more intriguing. For simulations involving two cars, refer to the "Study of Stability" section.
+	For the simulation, we conducted tests on both two cars and three cars to demonstrate various outcomes. In this section, we will initially explore the simulation involving two cars to illustrate the 'accordion phenomenon,' where the acceleration remains constant throughout the simulations. Subsequently, we will analyze the positional variations of three cars, with a specific focus on the changing acceleration over time. Interestingly, the observed phenomenon remains consistent across both types of simulations. However, the simulations involving three cars are more intriguing. For simulations involving two cars, please refer to the 'Study of Stability' section or the Annex.
 	
 	\subsection{Simulation with Drivers Reacting Similarly}
 		\subsubsection{Accordion Phenomenon}
@@ -737,77 +748,26 @@
 		\end{itemize} 
 		
 		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
-		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we 
-		
-		Similar to real-life situations, we observe that if the second car is too far behind the first one, it decelerates. Conversely, when it is adequately distant from the first car, it increases its speed.
+		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we Similar to real-life situations, we observe that if the second car is too far behind the first one, it decelerates. Conversely, when it is adequately distant from the first car, it increases its speed.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{Accordeon1.png}
-			\caption[Simulation of accordion phenomenon]{\textbf{\underline{Simulation of accordion phenomenon : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see that orange graph behaves like a periodic accordion with respect to time.}
+			\caption[Simulation of accordion phenomenon with Linear Model]{\textbf{\underline{Simulation of accordion phenomenon with Linear Model : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see that orange graph behaves like a periodic accordion with respect to time.}
 			\label{fig:Aco1}
 		\end{figure}
 		
-		\textbf{\underline{Simulation with the Newell's Model For Two cars}} \newline\newline
 		
 		Similar to the previous case, applying Newell's method yields identical results. As depicted in Figure \ref{fig:1W2_ACCORD}, the graph illustrates the accordion phenomenon, featuring distinct periods of acceleration followed by deceleration.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{1W2_Accord.png}
-			\caption[Simulation of accordion phenomenon]{\textbf{\underline{Simulation of accordion phenomenon : }} In this picture, you can observe the positional evolutions of two cars. The first one (blue) maintains a constant speed, while the second one (orange) follows behind the first. It is evident that the orange graph behaves like a periodic accordion with respect to time. In the right figure, we can also see the evolutions of the car speeds, respectively represented by the same colors.}
+			\caption[Simulation of accordion phenomenon with Newell's Model]{\textbf{\underline{Simulation of accordion phenomenon with Newell's Model : }} In this picture, you can observe the positional evolutions of two cars. The first one (blue) maintains a constant speed, while the second one (orange) follows behind the first. It is evident that the orange graph behaves like a periodic accordion with respect to time. In the right figure, we can also see the evolutions of the car speeds, respectively represented by the same colors.}
 			\label{fig:1W2_ACCORD}
 		\end{figure}
 		
-		\subsubsection{Accident Phenomenon For The Linear Model }
-		
-		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
-		
-		For this case, the objectif is to show that if one driver have a bigger time reaction capacity, there is an accident.
-		Onto this case, we took the same assumptions than before, but with a capacity of accelleration a little bit lower and a highter time reaction. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=1.75$ and in the algorithm \ref{alg:update_positions} we took $h=1.5$
-		
-		On the figure \ref{fig:Acc1} accident is confirmed because there is a curve intersection (the position of the car number two (orange) is greater than the first car (blue)) So it means that the second car is crashed into the first car.
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.8\textwidth]{Acc1.png}
-			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see on The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
-			\label{fig:Acc1}
-		\end{figure}
-		
-		\textbf{\underline{Simulation with the Newell's Model For Two cars}} \newline\newline
-		
-		In the three subsequent figures \ref{fig:sub1}, \ref{fig:sub2}, and \ref{fig:sub3}, we can observe a similar graph pattern to that of the linear model. However, in this scenario, we have the flexibility to vary additional parameters, such as the maximum speed of the cars (for instance, introducing a new car with a more powerful motor) and the safety distance, which is an inherent aspect of the Newell model. This variation allows us to witness accidents occurring at each curve intersection on the graph.
-		
-		
-		\begin{figure}[H]
-			\centering
-			\begin{subfigure}[b]{0.45\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{1W2_Acc1.png}
-				\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
-				\label{fig:sub1}
-			\end{subfigure}
-			\hfill
-			\begin{subfigure}[b]{0.45\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{1W2_Acc2.png}
-				\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the low reaction time of driver 2 implies an accident between two cars.}
-				\label{fig:sub2}
-			\end{subfigure}
-			
-			\vspace{1cm}
-			
-			\begin{subfigure}[b]{0.7\textwidth}
-				\centering
-				\includegraphics[width=\textwidth]{1W2_Acc3.png}
-				\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the increasing of the maximum speed of car 2 implies an accident between two cars.}
-				\label{fig:sub3}
-			\end{subfigure}
-			\caption{Simulation of Accident case between two cars}
-			\label{fig:accident_simulation}
-		\end{figure}
-		
+		What we can conclude from these two graphs is that, in the linear model, the acceleration and deceleration are slightly less realistic compared to Newell's method. Specifically, in the linear model, we observe that when the car is too close to another, it almost doesn't move and remains near 0 km/h, then it accelerates very rapidly. Conversely, with Newell's model, we notice that the acceleration and deceleration are more realistic as they follow a more progressive pattern.
 		
 		\subsection{Simulation with Drunk Drivers}
 		
@@ -831,18 +791,34 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.5\textwidth]{Model1W3C_O_Aco_I2.png}
+			\includegraphics[width=0.8\textwidth]{Model1W3C_O_Aco_I2.png}
 			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the increasing of the maximum speed of car 2 implies an accident between two cars.}
 			\label{fig:Model1W3C_O_Aco_I2}
 		\end{figure}
 		
+		\subsubsection{Accident Phenomenon For The Linear Model }
 		
+		In this scenario, the objective is to demonstrate that if a driver has a longer reaction time, an accident may occur.
+		
+		In this particular case, we retained the same assumptions as before, except with a slightly lower acceleration capacity and a longer reaction time. In algorithm \ref{alg:xi_dot}, we used $\alpha_2=1.75$, and in algorithm \ref{alg:update_positions}, we used $h=1.5$.
+		
+		As depicted in figure \ref{fig:Acc1}, the accident is confirmed due to a curve intersection (the position of the second car (orange) surpasses that of the first car (blue)). This indicates that the second car collided with the first car.
+		
+		In this scenario, the aim is only to illustrate that an accident only becomes apparent when the distance to the preceding car is greater than that to the first car. However, in any simulation, the accident can be observed in the same way, so we are no longer particularly interested in this type of simulation For further graphical studies.
+		
+		If you wish to see other graph i invite you to see the figure in annexe or to go on the GitHub project.
+	
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.8\textwidth]{Acc1.png}
+			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see on The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
+			\label{fig:Acc1}
+		\end{figure}
 		
 		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
 		\subsubsection{System Stability and Equilibrium for the Linear Model}
-		In this section, the goal is to investigate the difference in distance between two cars to determine the stability of solutions and ascertain whether an equilibrium exists.
-		
-		To achieve this, we analyze the solutions of the following system of equations:
+		In this section, the goal is to investigate the difference in distance between two cars to determine the stability of solutions and ascertain whether an equilibrium exists. To achieve this, we analyze the solutions of the following system of equations:
 		\begin{align*}
 			\begin{cases}
 				\dot{d_1} &= V_1 - \alpha_2 \cdot d_1 \\
@@ -851,9 +827,7 @@
 			\end{cases}
 		\end{align*}
 		
-		In our context, two cars constitute a 1D system, whereas with 3 cars, we encounter a 2D system of equations.
-		
-		Now, let's delve into the system's stability and equilibrium:
+		In our context, two cars constitute a 1D system, whereas with 3 cars, we encounter a 2D system of equations. Now, let's delve into the system's stability and equilibrium: \newline
 		
 		\textbf{\underline{With 2 Cars}}:
 		
@@ -912,14 +886,14 @@
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{FieldOfVector_CV.png}
-			\caption{\textbf{\underline{Field Of Vector for the Linear Model (Stability): }} On this figure, you could see the field of vectors that converges to the equilibrium.}
+			\caption[Field Of Vector for the Linear Model (Stability)]{\textbf{\underline{Field Of Vector for the Linear Model (Stability): }} On this figure, you could see the field of vectors that converges to the equilibrium.}
 			\label{fig:FV1}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{FieldOfVector_DV.png}
-			\caption{\textbf{\underline{Field Of Vector for the Linear Model (Instability): }} On this figure, you could see the field of vectors that diverges from the equilibrium.}
+			\caption[Field Of Vector for the Linear Model (Instability)]{\textbf{\underline{Field Of Vector for the Linear Model (Instability): }} On this figure, you could see the field of vectors that diverges from the equilibrium.}
 			\label{fig:FV2}
 		\end{figure}
 		
@@ -940,7 +914,9 @@
 			&C_2=n-\frac{V_1}{\alpha_3} - C_1
 		\end{align*}
 		
-		In the scenario involving just three cars, our analysis of the formula's terms leads us to a critical observation: divergence occurs if the value of $\alpha_2$ is less than zero. This finding confirms our initial intuition. This phenomenon is rooted in the constancy of equations over time and the unchanged hypotheses, allowing us to extend this analytical process to a scenario involving 'n' cars.
+		In the scenario involving just three cars, our analysis of the formula's terms leads us to a critical observation: divergence occurs if the value of $\alpha_2$ or $\alpha_3$ is less than zero. This finding confirms our initial intuition.
+		
+		Given that the system of equation remains the same for 'n' cars, except for a constant, this analysis of equilibrium can extend to 'n' cars.
 		
 		The visual representation in Figure \ref{fig:SE1} elucidates the equilibrium dynamics. In the left subfigure, the vector field demonstrates convergence towards the equilibrium point. Simultaneously, the right subfigure presents the Analytical Solutions derived from the system of Ordinary Differential Equations (ODEs).
 		
@@ -955,7 +931,7 @@
 				\centering
 				\includegraphics[width=\linewidth]{AnalyticalSolution.png}
 			\end{subfigure}
-			\caption{\textbf{\underline{Visualisation of the equilibrium:}} On the left figure, you could see the vector field that converges onto the equilibrium point. On the right, the Analytical Solutions of the system of ODEs.}
+			\caption[Visualisation of the equilibrium]{\textbf{\underline{Visualisation of the equilibrium:}} On the left figure, you could see the vector field that converges onto the equilibrium point. On the right, the Analytical Solutions of the system of ODEs.}
 			\label{fig:SE1}
 		\end{figure}
 		
@@ -974,7 +950,7 @@
 				\centering
 				\includegraphics[width=\linewidth]{AnalyticalSolution2.png}
 			\end{subfigure}
-			\caption{\textbf{\underline{Visualisation of the Divergence:}} On the left figure, you could see the vector field that diverges from the theoretical equilibrium. On the right, the Analytical Solutions of the system of ODEs that completely diverge to infinity.}
+			\caption[Visualisation of the Divergence]{\textbf{\underline{Visualisation of the Divergence:}} On the left figure, you could see the vector field that diverges from the theoretical equilibrium. On the right, the Analytical Solutions of the system of ODEs that completely diverge to infinity.}
 			\label{fig:SE2}
 		\end{figure}
 		
@@ -1037,7 +1013,7 @@
 			\centering
 			\includegraphics[width=\linewidth]{RealSol.png}
 		\end{subfigure}
-		\caption{\textbf{\underline{Visualisation of the equilibrium:}} On the left figure, you could see the vector field that converges onto the equilibrium point. On the right, the Approximation of the real Solutions of the system of ODEs.}
+		\caption[Visualisation of the equilibrium]{\textbf{\underline{Visualisation of the equilibrium:}} On the left figure, you could see the vector field that converges onto the equilibrium point. On the right, the Approximation of the real Solutions of the system of ODEs.}
 		\label{fig:SE3}
 	\end{figure}
 	
@@ -1101,14 +1077,15 @@
 	 \begin{figure}[H]
 	 	\centering
 	 	\includegraphics[width=0.5\textwidth]{VectorField1.png}
-	 	\caption{\textbf{\underline{Field Of Vector for the Newell's Model (Stability): }} On this figure, you could see the field of vectors that converges from the equilibrium.}
+	 	\caption[Field Of Vector for the Newell's Model (Stability):]{\textbf{\underline{Field Of Vector for the Newell's Model (Stability):}} On this figure, you could see the field of vectors that converges from the equilibrium.}
 	 	\label{fig:SE4}
 	 \end{figure}
+	 
 	 
 	 \begin{figure}[H]
 	 	\centering
 	 	\includegraphics[width=0.8\textwidth]{RealSol1.png}
-	 	\caption{\textbf{\underline{Approximation of the real solution for the Newell's Model (Stability): }} On this figure, you could see the distance between the curves that converges.}
+	 	\caption[Approximation of the real solution for the Newell's Model (Stability)]{\textbf{\underline{Approximation of the real solution for the Newell's Model (Stability): }} On this figure, you could see the distance between the curves that converges.}
 	 	\label{fig:SE5}
 	 \end{figure}
 	
@@ -1266,6 +1243,39 @@
 		&C_1=\frac{m\alpha_2-V_1}{\alpha_3-\alpha_2} \\
 		&C_2=n-\frac{V_1}{\alpha_3} - C_1
 	\end{align*}
+	
+	\subsection{Accident Simulation with the Newell's Model For Two cars}
+	
+	In the three subsequent figures \ref{fig:sub1}, \ref{fig:sub2}, and \ref{fig:sub3}, we can observe a similar graph pattern to that of the linear model. However, in this scenario, we have the flexibility to vary additional parameters, such as the maximum speed of the cars (for instance, introducing a new car with a more powerful motor) and the safety distance, which is an inherent aspect of the Newell model. This variation allows us to witness accidents occurring at each curve intersection on the graph.
+	
+	
+	\begin{figure}[H]
+		\centering
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{1W2_Acc1.png}
+			\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
+			\label{fig:sub1}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{1W2_Acc2.png}
+			\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the low reaction time of driver 2 implies an accident between two cars.}
+			\label{fig:sub2}
+		\end{subfigure}
+		
+		\vspace{1cm}
+		
+		\begin{subfigure}[b]{0.7\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{1W2_Acc3.png}
+			\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the increasing of the maximum speed of car 2 implies an accident between two cars.}
+			\label{fig:sub3}
+		\end{subfigure}
+		\caption{Simulation of Accident case between two cars}
+		\label{fig:accident_simulation}
+	\end{figure}
 	
 	\newpage
 	
