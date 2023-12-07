@@ -22,8 +22,8 @@ h = float(sys.argv[2])
 d2 = float(sys.argv[3])
 d3= float(sys.argv[6])
 V1max=120*(1000/3600) #maximum speed of the first car
-V2max=160*(1000/3600) #maximum speed of the second car #maximum speed of the second car
-V3max=180*(1000/3600) #maximum speed of the third car #maximum speed of the second car
+V2max=220*(1000/3600) #maximum speed of the second car #maximum speed of the second car
+V3max=200*(1000/3600) #maximum speed of the third car #maximum speed of the second car
 nameCaseToLaunch=sys.argv[4]
 
 
@@ -112,7 +112,7 @@ def obstacle(t):
     return V1max
 
 def VariationsOfComportment(criticalDistance, boringDistance,t):
-    W = 15.0  # Amplitude de la perturbation
+    W = 1500.0  # Amplitude de la perturbation
     omega = 2.0  # Fréquence angulaire
     phi = np.pi / 4  # Phase (en radians)
     a2 = 0
