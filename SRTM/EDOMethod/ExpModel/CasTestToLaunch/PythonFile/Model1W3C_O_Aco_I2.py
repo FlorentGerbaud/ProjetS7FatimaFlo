@@ -28,7 +28,7 @@ nameCaseToLaunch=sys.argv[4]
 
 
 
-T = 100.0  # Total simulation time
+T = 50.0  # Total simulation time
 n_steps = int(T / h)  # Number of time steps
 
 #_________________________________________________ Initialise arrays to storing data  ___________________________________________________
