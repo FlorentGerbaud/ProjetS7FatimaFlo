@@ -274,7 +274,7 @@
 	The second model employed was Newell's method, which is more intricate and offers greater realism. Newell's model considers not only the preceding vehicle's position but also incorporates the speed and acceleration of adjacent vehicles. This method captures the interactions between neighboring cars, resulting in a more nuanced representation of traffic dynamics.
 	
 	In this modeling, we will focus on the position and velocity of multiple vehicles following each other in a single lane. We will assume that vehicles accelerate when they have open space, maintain their speed when they are close to the vehicle in front, and brake more strongly as they get very close. We will arrange two and then three vehicles, one behind the other, with the first vehicle maintaining a constant velocity, and observe the behavior of the following vehicles.
-	Once we done these simulations we are going to add conditions and behaviour a little bit different.
+	Once we have completed these simulations, we plan to introduce more complex and realistic conditions and behaviors, such as varying acceleration and encountering obstacles on the road.
 	
 	\subsection{Macroscopic Simuation}
 	
@@ -296,8 +296,15 @@
 	
 	\subsection{Problems Encountered}
 	\subsubsection{Implementation of the Macroscopic model}
+		During the phase of developing the Macroscopic models, the difficulties lie in the fact that it was not easy to determine if the graphs we obtained were as expected. To verify their accuracy, we sought feedback from Mr. Auroux and also consulted various websites to compare our results with those of others. Initially, we believed the graphs were correct. However, we later discovered errors in our implementation, which we subsequently rectified.
+		
+		One of the main problems we encountered was related to the boundary conditions. Initially, for each time step, we used constant boundary conditions. Consequently, the resulting graphs exhibited anomalies at the edges. To address this issue, we conducted research and sought advice from teachers to refine our approach.
+		
+		Additionally, understanding the models posed a challenge. While the model worked for some cases, it failed for others. This was attributed to the violation of the CFL condition. When the density was too high, the model became unstable. Through an empirical approach, we determined the threshold value and conducted appropriate tests to implement the second model correctly.
 	\subsubsection{The time}
-	
+		 One of the significant challenges we faced revolved around managing our time effectively. Balancing the demands of our project alongside preparing for exams posed a considerable obstacle. Juggling these concurrent commitments was undeniably demanding. Nonetheless, it presented an invaluable challenge that encouraged us to refine our time management skills and prioritize tasks efficiently. The primary difficulty lay in our inability to delve deeply enough into the subject matter. Due to the time constraints imposed by various commitments, we found it challenging to explore the topic to its fullest extent. Despite this limitation, navigating these time-related obstacles taught us valuable lessons about effective multitasking and the importance of allocating time judiciously to various responsibilities.
+	\subsubsection{The perfoming of Equlibrium}
+		Achieving equilibrium was relatively straightforward for the Linear Model. However, it proved to be somewhat arduous for Newell's method. Initially, our approach involved attempting to find Analytical Solutions. However, after spending several hours on this calculus and conducting research online, we came to realize that an analytical solution may not exist, and if it does, it could be exceedingly challenging to obtain. This led us to recall the ODE course from previous years, specifically the Lyapunov indirect theorem, which provides criteria to ascertain whether solutions converge or diverge.
 	\section{The equation for SMRT}
 		\subsection{Differential Ordinary Equation }
 		In this part, the idea is to resolve two types of systems of Ordinary Differential Equations (ODEs) that allow us to simulate traffic flow. To achieve this, we will use the Euler Explicit method to numerically solve the solutions.
@@ -341,6 +348,18 @@
 				\right.
 			\end{align*}
 			
+			
+			Finally the Sytem associated to the position of each car is : 
+			\begin{align*}
+				\left\{
+				\begin{array}{ll}
+					x_1(t + \Delta t) &= x_1(t) + \Delta t  \cdot V_1\\
+					x_2(t + \Delta t) &= x_2(t) + \Delta t  \cdot \alpha_2(x_1 - x_2) \\
+					&\vdots \\
+					x_n(t + \Delta t) &= x_n(t) + \Delta t \cdot  \alpha_n(x_{n-1} - x_n)
+				\end{array}
+				\right.
+			\end{align*}
 			These equations help us understand how traffic flows and how individual cars influence one another on the road.
 			
 			In the first part of the study, we consider $\alpha_i$ as a constant. However, in the next part of the simulation, we define some functions $\alpha_i(t)$.
@@ -378,7 +397,7 @@
 			\textbf{\underline{Implementation : }}
 			
 			\begin{algorithm}[H]
-				\caption{$\dot{x_1}$}\label{alg:x1_dot}
+				\caption{FirstCarSpeed}\label{alg:x1_dot}
 				\begin{algorithmic}
 					%\State \textbf{Input:} \\
 					%\begin{itemize}
@@ -395,9 +414,9 @@
 					\end{itemize}		
 				\end{algorithmic}
 			\end{algorithm}
-			
+			This algorithm allow to return the speed for the first car
 			\begin{algorithm}[H]
-				\caption{$\dot{x_i}$}\label{alg:xi_dot}
+				\caption{SpeedFOrCarNLinear}\label{alg:xi_dot}
 				\begin{algorithmic}
 					\State \textbf{Input:} \\
 					\begin{itemize}
@@ -417,7 +436,7 @@
 				\end{algorithmic}
 			\end{algorithm}
 			
-			This algorithm allows to define an orthonormed local reference frame and we delete the lines to eliminate for reducing matrix
+			This algorithm allows to return the speed given by the Linear Model for each car of the system
 			
 			\begin{algorithm}[H]
 				\caption{sinusoidal\_model}\label{alg:sinusoidal_model}
@@ -442,7 +461,7 @@
 					\end{itemize}
 				\end{algorithmic}
 			\end{algorithm}
-			
+			This algorithm allows for variations in acceleration that follow a sinusoidal model to simulate drunk drivers.
 			\begin{algorithm}[H]
 				\caption{stochastic\_driver\_model}\label{alg:stochastic_driver_model}
 				\begin{algorithmic}
@@ -473,12 +492,12 @@
 					\end{itemize}
 				\end{algorithmic}
 			\end{algorithm}
-			
+			This algorithm allows for variations in acceleration that follow a Stochastic model to simulate unpredictable drivers.
 			
 			
 			
 			\begin{algorithm}[H]
-				\caption{Update Positions and Velocities}\label{alg:update_positions}
+				\caption{UpdatePositionsAndVelocities}\label{alg:update_positions}
 				\begin{algorithmic}
 					\State \textbf{Input:} \\
 					\begin{itemize}
@@ -518,7 +537,7 @@
 					\State \textbf{Return} $x_1Pos$, $x_2Pos$
 				\end{algorithmic}
 			\end{algorithm}
-			
+			This algorithm enables the implementation of the Euler Explicit Method on the Linear Model.
 			
 			
 		\subsubsection{Newell's Model}
@@ -551,19 +570,20 @@
 		\begin{align*}
 			\left\{
 			\begin{array}{ll}
-				x_1(t + \Delta t) &= x_1(t) + \Delta t   V_1\\
-				x_2(t + \Delta t) &= x_2(t) + \Delta t  V_2(1-e^{-\frac{\lambda_2}{V_2}(x_{1}(t) - x_2(t) - d_2}) \\
+				x_1(t + \Delta t) &= x_1(t) + \Delta t \cdot  V_1\\
+				x_2(t + \Delta t) &= x_2(t) + \Delta t \cdot V_2(1-e^{-\frac{\lambda_2}{V_2}(x_{1}(t) - x_2(t) - d_2}) \\
 				&\vdots \\
-				x_n(t + \Delta t) &= x_n(t) + \Delta t  V_n(1-e^{-\frac{\lambda_n}{V_n}(x_{n-1}(t) - x_n(t) - d_n})
+				x_n(t + \Delta t) &= x_n(t) + \Delta t \cdot V_n(1-e^{-\frac{\lambda_n}{V_n}(x_{n-1}(t) - x_n(t) - d_n})
 			\end{array}
 			\right.
 		\end{align*}
+		\newpage
 		\textbf{\underline{Implementation:}} \newline\newline
 		
 		for $\dot{x_1}$, we use the same algorithm than for the Linear model., However, to calculate the $\dot{x_i}$ values we use the following algorithm.
 		
 		\begin{algorithm}[H]
-			\caption{$\dot{x_i}$}\label{alg:xi_dot}
+			\caption{SpeedFOrCarNNewell}\label{alg:xi_dot}
 			\begin{algorithmic}
 				\State \textbf{Input:} \\
 				\begin{itemize}
@@ -583,7 +603,9 @@
 				\end{itemize}		
 			\end{algorithmic}
 		\end{algorithm}
-		This algorithm determines the derivative of $x_i$ with respect to time, $\dot{x_i}$, based on the positions of the $i$th and $(i-1)$th cars, the safe following distance $d_i$, and the time step $t$. The result represents the velocity $V_i$ of the $i$th car.
+		This algorithm determines the derivative of $x_i$ with respect to time, $\dot{x_i}$, based on the positions of the $i$th and $(i-1)$th cars, the safe following distance $d_i$, and the time step $t$. The result represents the velocity $V_i$ of the $i$th car. \newline\newline
+		
+		For other implementations such as the Euler Explicit method or variations of acceleration, the algorithm remains exactly the same as used in the previous section.
 		\subsection{Partial Differential Equations}
 		
 		\subsubsection{Euler Explicit}
@@ -763,7 +785,7 @@
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{1W2_Accord.png}
-			\caption[Simulation of accordion phenomenon with Newell's Model]{\textbf{\underline{Simulation of accordion phenomenon with Newell's Model : }} In this picture, you can observe the positional evolutions of two cars. The first one (blue) maintains a constant speed, while the second one (orange) follows behind the first. It is evident that the orange graph behaves like a periodic accordion with respect to time. In the right figure, we can also see the evolutions of the car speeds, respectively represented by the same colors.}
+			\caption[Simulation of accordion phenomenon with Newell's Model]{\textbf{\underline{Simulation of accordion phenomenon with Newell's Model : }} In this picture, you can observe the positional evolutions of two cars. The first one (blue) maintains a constant speed, while the second one (orange) follows behind the first. It is evident that the orange graph behaves like a periodic accordion with respect to time.}
 			\label{fig:1W2_ACCORD}
 		\end{figure}
 		
@@ -781,8 +803,8 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.5\textwidth]{Model1W3C_O_Aco_D2.png}
-			\caption[Simulation of Traffic Flow with one drunk driver.]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead.}
+			\includegraphics[width=0.70\textwidth]{Model1W3C_O_Aco_D2.png}
+			\caption[Simulation of Traffic Flow with one drunk driver (Linear Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Linear Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead.}
 			\label{fig:Model1W3C_O_Aco_D2}
 		\end{figure}
 		
@@ -792,9 +814,10 @@
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{Model1W3C_O_Aco_I2.png}
-			\caption[Simulation of Accident case between two cars]{\textbf{\underline{Simulation of Accident case between two cars : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However the increasing of the maximum speed of car 2 implies an accident between two cars.}
+			\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
 			\label{fig:Model1W3C_O_Aco_I2}
 		\end{figure}
+		
 		
 		\subsubsection{Accident Phenomenon For The Linear Model }
 		

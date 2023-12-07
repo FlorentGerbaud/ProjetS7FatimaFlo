@@ -7,64 +7,78 @@
 \headcommand {\sectionentry {1}{Introduction:}{3}{Introduction:}{0}}
 \headcommand {\slideentry {1}{0}{1}{3/3}{}{0}}
 \headcommand {\beamer@framepages {3}{3}}
-\headcommand {\slideentry {1}{0}{2}{4/4}{}{0}}
+\headcommand {\beamer@subsectionpages {3}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Presentation of the subject}}
+\headcommand {\slideentry {1}{1}{0}{4/4}{}{0}}
 \headcommand {\beamer@framepages {4}{4}}
-\headcommand {\slideentry {1}{0}{3}{5/5}{}{0}}
+\headcommand {\slideentry {1}{1}{1}{5/5}{}{0}}
 \headcommand {\beamer@framepages {5}{5}}
-\headcommand {\slideentry {1}{0}{4}{6/6}{}{0}}
+\headcommand {\slideentry {1}{1}{2}{6/6}{}{0}}
 \headcommand {\beamer@framepages {6}{6}}
 \headcommand {\beamer@subsectionpages {3}{6}}
-\headcommand {\beamer@subsectionentry {0}{1}{1}{7}{Project Organization Overview}}
-\headcommand {\slideentry {1}{1}{0}{7/7}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{7}{Project organization overview}}
+\headcommand {\slideentry {1}{2}{0}{7/7}{}{0}}
 \headcommand {\beamer@framepages {7}{7}}
-\headcommand {\slideentry {1}{1}{1}{8/8}{}{0}}
+\headcommand {\beamer@subsectionpages {3}{7}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{8}{Useful definitions}}
+\headcommand {\slideentry {1}{3}{0}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
 \headcommand {\beamer@sectionpages {3}{8}}
 \headcommand {\beamer@subsectionpages {3}{8}}
-\headcommand {\sectionentry {2}{Study of the Discret Cas:}{9}{Study of the Discret Cas:}{0}}
+\headcommand {\sectionentry {2}{Study of the discret case:}{9}{Study of the discret case:}{0}}
 \headcommand {\slideentry {2}{0}{1}{9/9}{}{0}}
 \headcommand {\beamer@framepages {9}{9}}
 \headcommand {\beamer@subsectionpages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{10}{Differential Ordinary Equation:}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{10}{Ordinary Differential Equation}}
 \headcommand {\slideentry {2}{1}{0}{10/10}{}{0}}
 \headcommand {\beamer@framepages {10}{10}}
 \headcommand {\beamer@subsectionpages {9}{10}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{11}{Linear Model to represent velocity:}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{11}{Velocity modeling: The linear approach}}
 \headcommand {\slideentry {2}{2}{0}{11/11}{}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\beamer@subsubsectionentry {0}{2}{2}{1}{12}{Case of two cars:}}
 \headcommand {\slideentry {2}{2}{1}{12/12}{}{0}}
 \headcommand {\beamer@framepages {12}{12}}
-\headcommand {\beamer@subsubsectionentry {0}{2}{2}{2}{13}{Case of three cars:}}
 \headcommand {\beamer@subsectionpages {9}{12}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{13}{Special Model to represent velocity:}}
-\headcommand {\beamer@subsectionpages {13}{12}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{13}{Study of Equilibrium and Stability}}
-\headcommand {\beamer@subsubsectionentry {0}{2}{4}{1}{13}{Using linear model:}}
-\headcommand {\beamer@subsubsectionentry {0}{2}{4}{2}{13}{Using the special model}}
-\headcommand {\beamer@sectionpages {9}{12}}
-\headcommand {\beamer@subsectionpages {13}{12}}
-\headcommand {\sectionentry {3}{Study of the continuous model:}{13}{Study of the continuous model:}{0}}
-\headcommand {\slideentry {3}{0}{1}{13/13}{}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{3}{13}{Velocity Modeling: The Newell Approach}}
+\headcommand {\slideentry {2}{3}{0}{13/13}{}{0}}
 \headcommand {\beamer@framepages {13}{13}}
-\headcommand {\slideentry {3}{0}{2}{14/14}{}{0}}
+\headcommand {\slideentry {2}{3}{1}{14/14}{}{0}}
 \headcommand {\beamer@framepages {14}{14}}
-\headcommand {\beamer@sectionpages {13}{14}}
-\headcommand {\beamer@subsectionpages {13}{14}}
-\headcommand {\sectionentry {4}{Euler Explicit Method}{15}{Euler Explicit Method}{0}}
-\headcommand {\slideentry {4}{0}{1}{15/15}{}{0}}
+\headcommand {\beamer@subsectionpages {9}{14}}
+\headcommand {\beamer@subsectionentry {0}{2}{4}{15}{Simulations}}
+\headcommand {\slideentry {2}{4}{0}{15/15}{}{0}}
 \headcommand {\beamer@framepages {15}{15}}
-\headcommand {\slideentry {4}{0}{2}{16/16}{}{0}}
+\headcommand {\slideentry {2}{4}{1}{16/16}{}{0}}
 \headcommand {\beamer@framepages {16}{16}}
-\headcommand {\slideentry {4}{0}{3}{17/17}{}{0}}
+\headcommand {\slideentry {2}{4}{2}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\beamer@sectionpages {15}{17}}
-\headcommand {\beamer@subsectionpages {15}{17}}
-\headcommand {\sectionentry {5}{Conclusion}{18}{Conclusion}{0}}
-\headcommand {\slideentry {5}{0}{1}{18/18}{}{0}}
+\headcommand {\beamer@subsectionpages {9}{17}}
+\headcommand {\beamer@subsectionentry {0}{2}{5}{18}{Study of Equilibrium and Stability}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{5}{1}{18}{Using linear model:}}
+\headcommand {\beamer@subsubsectionentry {0}{2}{5}{2}{18}{Using the special model}}
+\headcommand {\beamer@sectionpages {9}{17}}
+\headcommand {\beamer@subsectionpages {18}{17}}
+\headcommand {\sectionentry {3}{Study of the continuous model:}{18}{Study of the continuous model:}{0}}
+\headcommand {\slideentry {3}{0}{1}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\beamer@partpages {1}{18}}
-\headcommand {\beamer@subsectionpages {18}{18}}
-\headcommand {\beamer@sectionpages {18}{18}}
-\headcommand {\beamer@documentpages {18}}
-\headcommand {\gdef \inserttotalframenumber {18}}
+\headcommand {\slideentry {3}{0}{2}{19/19}{}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\beamer@sectionpages {18}{19}}
+\headcommand {\beamer@subsectionpages {18}{19}}
+\headcommand {\sectionentry {4}{Euler Explicit Method}{20}{Euler Explicit Method}{0}}
+\headcommand {\slideentry {4}{0}{1}{20/20}{}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {4}{0}{2}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {4}{0}{3}{22/22}{}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\beamer@sectionpages {20}{22}}
+\headcommand {\beamer@subsectionpages {20}{22}}
+\headcommand {\sectionentry {5}{Conclusion}{23}{Conclusion}{0}}
+\headcommand {\slideentry {5}{0}{1}{23/23}{}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\beamer@partpages {1}{23}}
+\headcommand {\beamer@subsectionpages {23}{23}}
+\headcommand {\beamer@sectionpages {23}{23}}
+\headcommand {\beamer@documentpages {23}}
+\headcommand {\gdef \inserttotalframenumber {23}}

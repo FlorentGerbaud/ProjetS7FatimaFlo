@@ -12,29 +12,30 @@
 \contentsline {subsection}{\numberline {2.3}Problems Encountered}{8}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Implementation of the Macroscopic model}{8}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}The time}{8}{subsubsection.2.3.2}%
-\contentsline {section}{\numberline {3}The equation for SMRT}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Differential Ordinary Equation }{8}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.3}The perfoming of Equlibrium}{9}{subsubsection.2.3.3}%
+\contentsline {section}{\numberline {3}The equation for SMRT}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Differential Ordinary Equation }{9}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Linear Model}{9}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Newell's Model}{12}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Partial Differential Equations}{14}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Euler Explicit}{14}{subsubsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.3}Lax-Friedrich Model}{15}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Types of Simulations Performed with ODE models}{17}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Simulation with Drivers Reacting Similarly}{17}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Accordion Phenomenon}{17}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}Simulation with Drunk Drivers}{19}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Simulation with Unpredictable Drivers}{21}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Accident Phenomenon For The Linear Model }{21}{subsubsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{22}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{22}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{30}{subsubsection.4.4.2}%
-\contentsline {section}{\numberline {5}Types of Simulations Performed with PDE models}{33}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Simulation Performed with Euler Explicit Model}{34}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Simulation Performed with Lax-Friedrichs Model}{36}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Summary}{36}{section.6}%
-\contentsline {section}{\numberline {7}Annexe}{36}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Calculation of the Analytical solutions}{36}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Linear Model for Two Cars}{36}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Linear Model for Three Cars}{36}{subsubsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.2}Accident Simulation with the Newell's Model For Two cars}{38}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {3.1.2}Newell's Model}{13}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Partial Differential Equations}{15}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Euler Explicit}{15}{subsubsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.3}Lax-Friedrich Model}{17}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Types of Simulations Performed with ODE models}{19}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation with Drivers Reacting Similarly}{19}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Accordion Phenomenon}{19}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Simulation with Drunk Drivers}{21}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Simulation with Unpredictable Drivers}{23}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Accident Phenomenon For The Linear Model }{23}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{24}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{24}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{32}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Types of Simulations Performed with PDE models}{35}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Simulation Performed with Euler Explicit Model}{36}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Simulation Performed with Lax-Friedrichs Model}{38}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Summary}{38}{section.6}%
+\contentsline {section}{\numberline {7}Annexe}{38}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Calculation of the Analytical solutions}{38}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}Linear Model for Two Cars}{38}{subsubsection.7.1.1}%
+\contentsline {subsubsection}{\numberline {7.1.2}Linear Model for Three Cars}{38}{subsubsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.2}Accident Simulation with the Newell's Model For Two cars}{40}{subsection.7.2}%
 \contentsfinish 

@@ -1,14 +1,15 @@
 \beamer@sectionintoc {1}{Introduction:}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Project Organization Overview}{7}{0}{1}
-\beamer@sectionintoc {2}{Study of the Discret Cas:}{9}{0}{2}
-\beamer@subsectionintoc {2}{1}{Differential Ordinary Equation:}{10}{0}{2}
-\beamer@subsectionintoc {2}{2}{Linear Model to represent velocity:}{11}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{1}{Case of two cars:}{12}{0}{2}
-\beamer@subsubsectionintoc {2}{2}{2}{Case of three cars:}{13}{0}{2}
-\beamer@subsectionintoc {2}{3}{Special Model to represent velocity:}{13}{0}{2}
-\beamer@subsectionintoc {2}{4}{Study of Equilibrium and Stability}{13}{0}{2}
-\beamer@subsubsectionintoc {2}{4}{1}{Using linear model:}{13}{0}{2}
-\beamer@subsubsectionintoc {2}{4}{2}{Using the special model}{13}{0}{2}
-\beamer@sectionintoc {3}{Study of the continuous model:}{13}{0}{3}
-\beamer@sectionintoc {4}{Euler Explicit Method}{15}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{18}{0}{5}
+\beamer@subsectionintoc {1}{1}{Presentation of the subject}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Project organization overview}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{Useful definitions}{8}{0}{1}
+\beamer@sectionintoc {2}{Study of the discret case:}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{Ordinary Differential Equation}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Velocity modeling: The linear approach}{11}{0}{2}
+\beamer@subsectionintoc {2}{3}{Velocity Modeling: The Newell Approach}{13}{0}{2}
+\beamer@subsectionintoc {2}{4}{Simulations}{15}{0}{2}
+\beamer@subsectionintoc {2}{5}{Study of Equilibrium and Stability}{18}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{1}{Using linear model:}{18}{0}{2}
+\beamer@subsubsectionintoc {2}{5}{2}{Using the special model}{18}{0}{2}
+\beamer@sectionintoc {3}{Study of the continuous model:}{18}{0}{3}
+\beamer@sectionintoc {4}{Euler Explicit Method}{20}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{23}{0}{5}

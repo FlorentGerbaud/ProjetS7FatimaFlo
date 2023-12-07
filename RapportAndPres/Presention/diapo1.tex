@@ -5,7 +5,9 @@
 
 \usepackage{graphicx} 
 \usepackage{booktabs}
-
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{tikzmark}
 
 \title[2023-2024]{Simple Modeling of Road Traffic.} 
 
@@ -45,9 +47,13 @@ Supervisor: \\ % Your institution for the title page
 \section{Introduction:} 
 %------------------------------------------------
 \begin{frame}
-	\begin{center}
-		\frametitle{What is Road Traffic Modelling?}
-	\end{center}
+        \subsection{Presentation of the subject}
+	\frametitle{Presentation of the subject:}
+        \begin{center}
+        \textbf{What is Road Traffic Modelling?}
+         \end{center}
+	
+        
 	\begin{columns}
 		\column{0.6\textwidth}
 		\begin{itemize}
@@ -71,13 +77,13 @@ Supervisor: \\ % Your institution for the title page
 %******************************************************************************************
 \begin{frame}
         \frametitle{Presentation of the subject:}
-	\begin{block}{Key Benefits of Road Traffic Modeling}
+	\begin{block}{Key benefits of Road Traffic Modeling:}
 		\begin{itemize}
-	\item \textbf{Avoiding Traffic Jams:} Helps find solutions to prevent traffic jams on roads.
+	\item \textbf{Avoiding traffic jams:} Helps find solutions to prevent traffic jams on roads.
 	\item \textbf{Making Roads Better:} Finds ways to improve roads and make them work smoother.
-	\item \textbf{Understanding How Traffic Works:} Helps figure out how different things affect traffic and predict what might happen.
-	\item \textbf{Making Transportation Better:} Shows how well transportation works and helps make it even better.
-	\item \textbf{Saving Time and Money:} Aims to reduce time spent waiting in traffic and the money spent on each trip.
+	\item \textbf{Understanding how traffic works:} Helps figure out how different things affect traffic and predict what might happen.
+	\item \textbf{Making transportation better:} Shows how well transportation works and helps make it even better.
+	\item \textbf{Saving time and money:} Aims to reduce time spent waiting in traffic and the money spent on each trip.
 \end{itemize}
 	\end{block}
 \end{frame}
@@ -87,24 +93,26 @@ Supervisor: \\ % Your institution for the title page
 \end{frame}
 %******************************************************************************************
 \begin{frame}
-\subsection{Project Organization Overview}
-\frametitle{Project Organization Overview}
+\subsection{Project organization overview}
+\frametitle{Project organization overview}
 \begin{center}
     \includegraphics[width=1\textwidth]{org1.png} 
     \end{center}
 \end{frame}
 %******************************************************************************************
-\begin{frame}{Useful Definitions}
+
+\begin{frame}{Useful definitions:}
+        \subsection{Useful definitions}
 	\vspace{-0.2cm}
-	\begin{block}{Microscopic simulation}
+	\begin{block}{Microscopic simulation:}
 		Microscopic simulation is a computer-based modeling technique that simulates the behavior of individual entities, such as vehicles or pedestrians, within a system
 	\end{block}
 	\vspace{-0.2cm}
-	\begin{block}{Macroscopic simulation}
+	\begin{block}{Macroscopic simulation:}
 		Macroscopic simulation models systems at a higher, aggregated level, considering overall behaviors like traffic flow without detailing individual movements.
 	\end{block}
 	\vspace{-0.2cm}
-	\begin{block}{Ordinary Differential Equation}
+	\begin{block}{Ordinary Differential Equation (ODE) :}
 		An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables.
 		\[
 		F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
@@ -113,52 +121,173 @@ Supervisor: \\ % Your institution for the title page
 \end{frame}
 
 %------------------------------------------------
-\section{Study of the Discret Cas:}
+\section{Study of the discret case:}
 %------------------------------------------------
 
-\begin{frame}
-\subsection{Differential Ordinary Equation:}
-\frametitle{Differential Ordinary Equation (Theory):}
+\begin{frame}{Ordinary Differential Equation (Theory):}
+\subsection{Ordinary Differential Equation}
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{discret.png} 
     \caption{ Discret Model.}
 \end{figure}
+\begin{center}
+   ODE to solve:$\boxed{\mathbf{y'(t) = f{\bigl (}t, y(t){\bigr )}}}$
+\end{center}
+Euler Explicit method to numerically solve the solutions:
     \begin{itemize}
-			\item EDO to solve: $\boxed{y'(t) = f{\bigl (}t, y(t){\bigr )}}$.
+
 			\item First step of the resolution: $\boxed{y_0 = y(t_0)}$.
-			\item Recursive process to find the n-th solution of the EDO: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
+			\item Recursive process to find the n-th solution of the ODE: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
 		\end{itemize}
 \end{frame}
-
 \begin{frame}
-\subsection{Linear Model to represent velocity:}
-\frametitle{Linear Model to represent velocity:}
-Each car's movement is governed by a basic equation:
-			
-			\begin{align*}
-				\dot{x_i}(t) = V_i = \alpha_i(x_{i-1} - x_i)
-			\end{align*}
-\newline
-The system of equations for different cars is: 
-    \begin{align*}
-				\left\{
-				\begin{array}{ll}
-					\dot{x}_1 &= V_1 \\
-					\dot{x}_2(t) &= \alpha_2(x_1 - x_2) \\
-					&\vdots \\
-					\dot{x}_n(t) &= \alpha_n(x_{n-1} - x_n)
-				\end{array}
-				\right.
-			\end{align*}
-\end{frame}
-\subsubsection{Case of two cars:}  
-\begin{frame}
-\end{frame}
-%------------------------------------------------
-\subsubsection{Case of three cars:}  
+\subsection{Velocity modeling: The linear approach}
+\frametitle{Velocity modeling: The linear approach}
+\begin{center}
+    Each car's movement is governed by the basic equation:
+    \[
+\boxed{\dot{x_i}(t) = V_i = \alpha_i(x_{i-1} - x_i)}
+\]
+\end{center}
 
-\subsection{Special Model to represent velocity:}
+\vspace{5mm}
+
+\begin{center}
+    \begin{tabular}{l l}
+    Where:\\
+        \(\dot{x_i}(t)\): & Instantaneous velocity of the \(i\)-th car at time \(t\) \\
+        \(V_i\): & Current velocity of the \(i\)-th car \\
+        \(\alpha_i\): & Coefficient describing the behavior of the \(i\)-th car \\
+        \(x_{i-1}\): & Previous position of the \(i\)-th car \\
+        \(x_i\): & Current position of the \(i\)-th car
+    \end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Modeling Velocity: The Linear Approach}
+	\begin{block}{System of Equations for $N$ cars}
+		\[
+		\left\{
+		\begin{array}{ll}
+			\dot{x}_1 &= V_1 \\
+			\dot{x}_2(t) &= \alpha_2(x_1 - x_2) \\
+			&\vdots \\
+			\dot{x}_n(t) &= \alpha_n(x_{n-1} - x_n)
+		\end{array}
+		\right.
+		\]
+	\end{block}
+	
+	\begin{block}{Systems for Positions of N cars}
+		\begin{align*}
+			\left\{
+			\begin{array}{ll}
+				x_1(t + \Delta t) &= x_1(t) + \Delta t  \cdot V_1\\
+				x_2(t + \Delta t) &= x_2(t) + \Delta t  \cdot \alpha_2(x_1 - x_2) \\
+				&\vdots \\
+				x_n(t + \Delta t) &= x_n(t) + \Delta t \cdot  \alpha_n(x_{n-1} - x_n)
+			\end{array}
+			\right.
+		\end{align*}
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}{Velocity Modeling: The Newell Approach}
+\subsection{Velocity Modeling: The Newell Approach}
+\begin{center}
+    Each car's movement is described by the equation:
+    \[
+\boxed{\dot{x_i}(t) = V_i(1 - e^{-\frac{\lambda_i}{V_i}(x_{i-1}(t) - x_i(t) - d_i)})}
+\]
+\end{center}
+
+\vspace{5mm}
+
+\begin{center}
+    \begin{tabular}{l l}
+    Where:\\
+        \(V_i\): & the maximum velocity of the \(i\)th car \\
+        \(\lambda_i\): & the capacity of acceleration/deceleration \\
+        \(d_i\): & safe following distance associated with the \(i\)th car \\
+    \end{tabular}
+\end{center}
+\end{frame}
+\begin{frame}{Velocity Modeling: The Newell Approach}
+		\vspace{-0.3cm}
+    	\begin{block}{System of Equations for $N$ cars}
+    	\begin{align*}
+    		\left\{
+    		\begin{array}{ll}
+    			\dot{x}_1 &= V_1 \\
+    			\dot{x}_2(t) &= V_2(1-e^{-\frac{\lambda_2}{V_2}(x_{1}(t) - x_2(t) - d_2}) \\
+    			&\vdots \\
+    			\dot{x}_n(t) &= V_n(1-e^{-\frac{\lambda_n}{V_n}(x_{n-1}(t) - x_n(t) - d_n})
+    		\end{array}
+    		\right.
+    	\end{align*}
+    \end{block}
+    \vspace{-0.3cm}
+    \begin{block}{Systems for Positions of N cars}
+    	\begin{align*}
+    		\left\{
+    		\begin{array}{ll}
+    			x_1(t + \Delta t) &= x_1(t) + \Delta t \cdot  V_1\\
+    			x_2(t + \Delta t) &= x_2(t) + \Delta t \cdot V_2(1-e^{-\frac{\lambda_2}{V_2}(x_{1}(t) - x_2(t) - d_2}) \\
+    			&\vdots \\
+    			x_n(t + \Delta t) &= x_n(t) + \Delta t \cdot V_n(1-e^{-\frac{\lambda_n}{V_n}(x_{n-1}(t) - x_n(t) - d_n})
+    		\end{array}
+    		\right.
+    	\end{align*}
+    \end{block}
+\end{frame}
+\begin{frame}{Simulations of both approaches}
+	\subsection{Simulations}
+	\begin{center}
+		\textbf{Drivers reacting similarly (Accordion phenomenon):}
+	\end{center}
+	\begin{minipage}{0.48\textwidth}
+		\centering
+		\begin{figure}
+			\includegraphics[width=\textwidth]{Accordeon1.png}
+			\caption{With Linear Model}
+		\end{figure}
+	\end{minipage}\hfill
+	\begin{minipage}{0.48\textwidth}
+		\centering
+		\begin{figure}
+			\includegraphics[width=\textwidth]{1W2_Accord.png}
+			\caption{With Newell's Model}
+		\end{figure}
+	\end{minipage}
+	Interpretation to be added.
+\end{frame}
+\begin{frame}{Simulations of both approaches}
+	\begin{center}
+		\textbf{Drunk drivers (Real-life case):}
+	\end{center}
+	\begin{minipage}{0.40\textwidth}
+		\centering
+		\begin{figure}
+			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_D2.png}
+			\caption{Simulation of Traffic Flow with one drunk driver (Linear Model)}
+		\end{figure}
+	\end{minipage}\hfill
+	\begin{minipage}{0.51\textwidth}
+		\centering
+		\begin{figure}
+			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_I2.png}
+			\caption{[Simulation of Traffic Flow with one drunk driver (Newell's Model)}
+		\end{figure}
+	\end{minipage}
+\end{frame}
+
+\begin{frame}{Simulations of both approaches:}
+\begin{center}
+    \textbf{Accident phenomenon:}
+\end{center}
+\end{frame}
 %Cas des 3 voitures !!
 \subsection{Study of Equilibrium and Stability}
 \subsubsection{Using linear model:}
