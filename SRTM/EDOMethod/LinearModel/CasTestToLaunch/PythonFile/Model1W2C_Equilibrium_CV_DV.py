@@ -81,8 +81,8 @@ for t in range(1, n_steps):
 
 if(accident==True):
     plt.figure(figsize=(10, 6))
-    plt.plot(time[0:t+1], x1Pos[0:t+1], label='x1(t)')
-    plt.plot(time[0:t+1], x2Pos[0:t+1], label='x2(t)')
+    plt.plot(time[0:t+1], x1Pos[0:t+1], label='$x_1(t)$')
+    plt.plot(time[0:t+1], x2Pos[0:t+1], label='$x_2(t)$')
     plt.xlabel('Time (s)')
     plt.ylabel('Distance (m)')
     plt.legend()
@@ -92,8 +92,8 @@ if(accident==True):
 else:
     # Plot the results
     plt.figure(figsize=(10, 6))
-    plt.plot(time, x1Pos, label='x1(t)')
-    plt.plot(time, x2Pos, label='x2(t)')
+    plt.plot(time, x1Pos, label='$x_1(t)$')
+    plt.plot(time, x2Pos, label='$x_2(t)$')
     plt.xlabel('Time (s)')
     plt.ylabel('Distance (m)')
     plt.legend()
@@ -188,8 +188,8 @@ rc('text', usetex=True)
 plt.plot(t, x1_prime() / a2 * np.ones_like(t), 'r', label=f'$d_1(t)$ = $\\frac{{V_1}}{{\\alpha_2}}$ = {x1_prime() / a2}')
 rc('text', usetex=False)
 
-plt.xlabel('time (s)')
-plt.ylabel('distance (m)')
+plt.xlabel('Time (s)')
+plt.ylabel('Distance (m)')
 
 rc('text', usetex=True)
 plt.title('Vector Field for ' + r"$\dot{d}_1 = V_1 - \alpha_2 \cdot d_1$")

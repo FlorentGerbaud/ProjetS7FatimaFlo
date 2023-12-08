@@ -156,48 +156,50 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
 
 if accident:
     # Plot the distance in the first subplot
-    ax1.plot(time[0:t+1], x1Pos[0:t+1], label='x1(t)')
-    ax1.plot(time[0:t+1], x2Pos[0:t+1], label='x2(t)')
-    ax1.plot(time[0:t+1], x3Pos[0:t+1], label='x3(t)')
-    ax1.set_xlabel('Time')
-    ax1.set_ylabel('Distance')
+    ax1.plot(time[0:t+1], x1Pos[0:t+1], label='$x_1(t)$')
+    ax1.plot(time[0:t+1], x2Pos[0:t+1], label='$x_2(t)$')
+    ax1.plot(time[0:t+1], x3Pos[0:t+1], label='$x_3(t)$')
+    ax1.set_xlabel('Time (s)')
+    ax1.set_ylabel('Distance (m)')
     ax1.legend()
     ax1.set_title('Accident case')
     ax1.grid(True)
 
 else:
     # Plot the distance in the first subplot
-    ax1.plot(time, x1Pos, label='x1(t)')
-    ax1.plot(time, x2Pos, label='x2(t)')
-    ax1.plot(time, x3Pos, label='x3(t)')
-    ax1.set_xlabel('Time(s)')
-    ax1.set_ylabel('Distance(m)')
+    ax1.plot(time, x1Pos, label='$x_1(t)$')
+    ax1.plot(time, x2Pos, label='$x_2(t)$')
+    ax1.plot(time, x3Pos, label='$x_3(t)$')
+    ax1.set_xlabel('Time (s)')
+    ax1.set_ylabel('Distance (m)')
     ax1.legend()
     ax1.grid()
-    ax1.set_title('position of the cars over time')
+    ax1.set_title('Position of the cars over time')
  
 
 if(accident):
     #print("There is an accident at time t = ", t*h, "s")
     # Plot the speeds in the second subplot
-    ax2.plot(time[0:t+1], v1[0:t+1], label='Speed of x1(t)')
-    ax2.plot(time[0:t+1], v2[0:t+1], label='Speed of x2(t)')
-    ax2.plot(time[0:t+1], v3[0:t+1], label='Speed of x3(t)')
-    ax2.set_xlabel('Time(s)')
-    ax2.set_ylabel('Speed(m/s)')
+    ax2.plot(time[0:t+1], v1[0:t+1], label='Speed of $x_1(t)$')
+    ax2.plot(time[0:t+1], v2[0:t+1], label='Speed of $x_2(t)$')
+    ax2.plot(time[0:t+1], v3[0:t+1], label='Speed of $x_3(t)$')
+    ax2.set_xlabel('Time (s)')
+    ax2.set_ylabel('Speed ($\\frac{m}{s}$)')
     ax2.legend()
     ax2.set_title('Speed of Cars Over Time')
     ax2.grid()
 else:
     # Plot the speeds in the second subplot
-    ax2.plot(time, v1, label='Speed of x1(t)')
-    ax2.plot(time, v2, label='Speed of x2(t)')
-    ax2.plot(time, v3, label='Speed of x3(t)')
+    ax2.plot(time, v1, label='Speed of $x_1(t)$')
+    ax2.plot(time, v2, label='Speed of $x_2(t)$')
+    ax2.plot(time, v3, label='Speed of $x_3(t)$')
     ax2.set_xlabel('Time')
-    ax2.set_ylabel('Speed(m/s)')
+    ax2.set_ylabel('Speed ($\\frac{m}{s}$)')
     ax2.legend()
     ax2.set_title('Speed of Cars Over Time')
     ax2.grid(True)
+
+
 
 if isDebug:
     print("The distance between x1 and x2 is : ", x1Pos[-1] - x2Pos[-1], "m")
@@ -243,8 +245,8 @@ ax.set_facecolor('white')
 
 ax.quiver(X, Y, U, V, color='blue', angles='xy', scale_units='xy', scale=10)
 ax.plot(equilibrium_x, equilibrium_y, 'ro', label='Equilibrium Point')
-ax.set_xlabel('x')
-ax.set_ylabel('y')
+ax.set_xlabel('$d_1(t)$')
+ax.set_ylabel('$d_2(t)$')
 ax.set_title('Vector Field for ODE System with Equilibrium Point')
 ax.legend()
 ax.grid(True)
@@ -263,12 +265,12 @@ d2_t=d2(t_values,d2_0,a2,a3,v1,d1_0)
 
 # Plot the x and y values
 plt.figure(figsize=(8, 6))
-plt.plot(t_values, d1_t, label='x(t)')
-plt.plot(t_values, d2_t, label='y(t)')
-plt.xlabel('t')
-plt.ylabel('x(t) and y(t)')
+plt.plot(t_values, d1_t, label='$d_1(t)$')
+plt.plot(t_values, d2_t, label='$d_2(t)$')
+plt.xlabel('Time (s)')
+plt.ylabel('$d_1(t)$ and $d_2(t)$')
 plt.legend()
-plt.title('Plot of x(t) and y(t)')
+plt.title('Analytical Solution of the System')
 plt.grid(True)
 plt.show()
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  31 OCT 2023 17:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.5.1)  23 NOV 2023 15:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1377,7 +1377,20 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count500
 \@quotereset=\count501
-(Presentation.aux)
+(Presentation.aux
+
+LaTeX Warning: Label `alg:xi_dot' multiply defined.
+
+
+LaTeX Warning: Label `fig:OV' multiply defined.
+
+
+LaTeX Warning: Label `fig:NV' multiply defined.
+
+
+LaTeX Warning: Label `fig:GitHub' multiply defined.
+
+)
 \openout1 = `Presentation.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
@@ -1490,7 +1503,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count508
-<logo.png, id=18, 353.32pt x 143.53625pt>
+<logo.png, id=130, 353.32pt x 143.53625pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 177.
@@ -1500,15 +1513,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--179
 
  []
 
-<Polytech.png, id=20, 215.8464pt x 66.9702pt>
+<Polytech.png, id=132, 215.8464pt x 66.9702pt>
 File: Polytech.png Graphic file (type png)
 <use Polytech.png>
 Package pdftex.def Info: Polytech.png  used on input line 184.
 (pdftex.def)             Requested size: 170.71652pt x 52.9682pt.
 [1
 
-{C:/Users/flore/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./logo.png> 
-<./Polytech.png>]
+{C:/Users/flore/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/flor
+e/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./lo
+go.png> <./Polytech.png>]
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <20> not available
 (Font)              size <20.74> substituted on input line 197.
@@ -1526,50 +1540,296 @@ LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <20> not available
 \openout9 = `Presentation.loa'.
 
  [3]
-<intro.jpg, id=51, 1003.75pt x 501.875pt>
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
+
+ []
+
+<intro.jpg, id=231, 1003.75pt x 501.875pt>
 File: intro.jpg Graphic file (type jpg)
 <use intro.jpg>
-Package pdftex.def Info: intro.jpg  used on input line 206.
+Package pdftex.def Info: intro.jpg  used on input line 223.
 (pdftex.def)             Requested size: 344.005pt x 172.00601pt.
+[4 <./intro.jpg>]
+<GitHub.jpg, id=240, 584.93532pt x 215.30438pt>
+File: GitHub.jpg Graphic file (type jpg)
+<use GitHub.jpg>
+Package pdftex.def Info: GitHub.jpg  used on input line 243.
+(pdftex.def)             Requested size: 344.005pt x 126.62767pt.
+ [5 <./GitHub.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 273--275
+
+ []
+
+[6{C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-sup
+er-ts1.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+ []
 
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 210.
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
+
+ []
 
 
-LaTeX Warning: Empty bibliography on input line 218.
+Underfull \hbox (badness 10000) in paragraph at lines 317--319
 
-[4 <./intro.jpg>] (Presentation.aux)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
+
+ []
+
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 338.
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 459--460
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 483--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--485
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 527--529
+
+ []
+
+<Accordeon1.png, id=273, 722.7pt x 433.62pt>
+File: Accordeon1.png Graphic file (type png)
+<use Accordeon1.png>
+Package pdftex.def Info: Accordeon1.png  used on input line 534.
+(pdftex.def)             Requested size: 344.005pt x 206.4017pt.
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+<1W2_Accord.png, id=279, 1084.05pt x 433.62pt>
+File: 1W2_Accord.png Graphic file (type png)
+<use 1W2_Accord.png>
+Package pdftex.def Info: 1W2_Accord.png  used on input line 545.
+(pdftex.def)             Requested size: 344.005pt x 137.60335pt.
+[12 <./Accordeon1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+<Acc1.png, id=288, 722.7pt x 433.62pt>
+File: Acc1.png Graphic file (type png)
+<use Acc1.png>
+Package pdftex.def Info: Acc1.png  used on input line 562.
+(pdftex.def)             Requested size: 344.005pt x 206.4017pt.
+[13 <./1W2_Accord.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 567--568
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--568
+
+ []
+
+<1W2_Acc1.png, id=298, 1084.05pt x 433.62pt>
+File: 1W2_Acc1.png Graphic file (type png)
+<use 1W2_Acc1.png>
+Package pdftex.def Info: 1W2_Acc1.png  used on input line 574.
+(pdftex.def)             Requested size: 344.005pt x 137.60335pt.
+[14 <./Acc1.png>]
+<1W2_Acc2.png, id=304, 1084.05pt x 433.62pt>
+File: 1W2_Acc2.png Graphic file (type png)
+<use 1W2_Acc2.png>
+Package pdftex.def Info: 1W2_Acc2.png  used on input line 581.
+(pdftex.def)             Requested size: 344.005pt x 137.60335pt.
+<1W2_Acc3.png, id=305, 1084.05pt x 433.62pt>
+File: 1W2_Acc3.png Graphic file (type png)
+<use 1W2_Acc3.png>
+Package pdftex.def Info: 1W2_Acc3.png  used on input line 588.
+(pdftex.def)             Requested size: 344.005pt x 137.60335pt.
+ [15 <./1W2_Acc1.png> <./1W2_Acc2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--610
+
+ []
+
+[16 <./1W2_Acc3.png>]
+<RealisticCase.png, id=318, 722.7pt x 433.62pt>
+File: RealisticCase.png Graphic file (type png)
+<use RealisticCase.png>
+Package pdftex.def Info: RealisticCase.png  used on input line 637.
+(pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
+
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 637--638
+ [][] 
+ []
+
+<RealSolCase.png, id=319, 722.7pt x 433.62pt>
+File: RealSolCase.png Graphic file (type png)
+<use RealSolCase.png>
+Package pdftex.def Info: RealSolCase.png  used on input line 644.
+(pdftex.def)             Requested size: 301.0019pt x 180.59737pt.
+
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 644--645
+ [][] 
+ []
+
+<Stability.png, id=320, 462.528pt x 346.896pt>
+File: Stability.png Graphic file (type png)
+<use Stability.png>
+Package pdftex.def Info: Stability.png  used on input line 654.
+(pdftex.def)             Requested size: 301.0019pt x 225.76025pt.
+
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 654--655
+ [][] 
+ []
+
+<Unstability.png, id=321, 578.16pt x 433.62pt>
+File: Unstability.png Graphic file (type png)
+<use Unstability.png>
+Package pdftex.def Info: Unstability.png  used on input line 661.
+(pdftex.def)             Requested size: 301.0019pt x 225.74835pt.
+
+Overfull \hbox (85.9996pt too wide) in paragraph at lines 661--662
+ [][] 
+ []
+
+[17 <./RealisticCase.png> <./RealSolCase.png>]
+<FieldOfVector_CV.png, id=328, 578.16pt x 433.62pt>
+File: FieldOfVector_CV.png Graphic file (type png)
+<use FieldOfVector_CV.png>
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 669.
+(pdftex.def)             Requested size: 344.005pt x 258.0038pt.
+ [18 <./Stability.png> <./Unstability.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--675
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 680--681
+
+ []
+
+[19 <./FieldOfVector_CV.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 722--723
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--723
+
+ []
+
+[20]
+Overfull \hbox (44.62418pt too wide) detected at line 783
+[]
+ []
+
+[21] [22] [23] [24]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
+63.
+
+(C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+[25] (Presentation.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.74pt have occurred.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `Presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 0E286CAF3245F3FA41CC4CCE806B3E42;657.
+(rerunfilecheck)             Checksum: EC727CD72E8B099C6288E7C2C35B410F;6993.
+
+Package biblatex Warning: Please rerun LaTeX.
+
 Package logreq Info: Writing requests to 'Presentation.run.xml'.
 \openout1 = `Presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50862 strings out of 476331
- 1102293 string characters out of 5787766
- 1940361 words of memory out of 5000000
- 70616 multiletter control sequences out of 15000+600000
- 525412 words of font info for 58 fonts, out of 8000000 for 9000
+ 51384 strings out of 476331
+ 1112037 string characters out of 5787766
+ 1957666 words of memory out of 5000000
+ 71046 multiletter control sequences out of 15000+600000
+ 530513 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,12n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\flore\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
-1000.pk> <C:\Users\flore\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecbx2986.pk> <C:\Users\flore\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecrm1000.pk> <C:\Users\flore\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm1200.pk> <C:\Users\flore\AppData\Local\MiKTeX\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\flore\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\flore\AppData\Local\MiKTeX\fon
-ts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\flore\AppData\Local\MiKT
-eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk>
-Output written on Presentation.pdf (4 pages, 257602 bytes).
+ 117i,21n,118p,1615b,2453s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmex10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi5.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/flore/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/flore/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/flore/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/flore/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/fl
+ore/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/
+Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/s
+fbx1000.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm
+-super/sfbx1200.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/cm-super/sfbx1440.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/cm-super/sfbx1728.pfb><C:/Users/flore/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/cm-super/sfbx2488.pfb><C:/Users/flore/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/cm-super/sfbx2986.pfb><C:/Users/flore/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/cm-super/sfcc1000.pfb><C:/Users/flore/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm0700.pfb><C:/Users/f
+lore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm0900.pfb><C:
+/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1000
+.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/
+sfrm1200.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/c
+m-super/sfti1000.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/cm-super/sftt1000.pfb>
+Output written on Presentation.pdf (25 pages, 1286953 bytes).
 PDF statistics:
- 270 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 52 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 493 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
+ 336 words of extra memory for PDF output out of 10000 (max. 10000000)
 
