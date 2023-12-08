@@ -1,17 +1,23 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Set default values for the arguments
-set "a2=2.0"
+
+set "lambda2=10.0"
 set "h=1.0"
-set "a3=1.0"
-set "CaseToLaunch="Simulation of the Accordion Phenomenon""
+set "d2=1.0"
+set "nameCase="Simulation of the Accordion Phenomenon""
+set "lambda3=5.0"
+set "d3=2.0"
 
-if not "%~1"=="" set "a2=%~1"
+if not "%~1"=="" set "lambda2=%~1"
 if not "%~2"=="" set "h=%~2"
-if not "%~3"=="" set "a3=%~3"
-if not "%~4"=="" set "CaseToLaunch=%~4"
+if not "%~3"=="" set "d2=%~3"
+if not "%~4"=="" set "nameCase=%~4"
+if not "%~5"=="" set "lambda3=%~5"
+if not "%~6"=="" set "d3=%~6"
 
+python ../../../PythonFile/Model1W3C_Acc_Aco.py %lambda2% %h% %d2% %nameCase% %lambda3% %d3%
 
-python ../../../PythonFile/Modele1W3Cars_Aco.py %a2% %h% %a3% %CaseToLaunch%
 exit /b
+::pause
+

@@ -3,28 +3,31 @@
 
 import sys
 import numpy as np
-import random   
 import matplotlib.pyplot as plt
 isDebug=False
-# Check if the correct number of command-line arguments is provided
-if len(sys.argv) != 5:
-    print("Usage: python your_script_name.py a2 h")
+#______________________________________________________ Parameters ______________________________________________________
+#________________________________________________________________________________________________________________________
+
+if len(sys.argv) != 7:
+    print("Usage: python your_script_name.py a2 h a3")
     sys.exit(1)
-
-
-#_________________________________________________ Defining the parameters  ___________________________________________________
-#______________________________________________________________________________________________________________________________
 
 
 accident=False
 a2 = float(sys.argv[1])
-a3 = float(sys.argv[3])
+a3 = float(sys.argv[5])
 h = float(sys.argv[2])
+d2 = float(sys.argv[3])
+d3= float(sys.argv[6])
+V1max=120*(1000/3600) #maximum speed of the first car
+V2max=160*(1000/3600) #maximum speed of the second car #maximum speed of the second car
+V3max=180*(1000/3600) #maximum speed of the third car #maximum speed of the second car
 nameCaseToLaunch=sys.argv[4]
-T = 50.0  # Total simulation time
-V1max = 130 * (1000 / 3600)  # Maximum speed of x1
-n_steps = int(T / h)  # Number of time steps
 
+
+
+T = 100.0  # Total simulation time
+n_steps = int(T / h)  # Number of time steps
 
 #_________________________________________________ Initialise arrays to storing data  ___________________________________________________
 #______________________________________________________________________________________________________________________________
@@ -32,7 +35,6 @@ n_steps = int(T / h)  # Number of time steps
 x1Pos = np.zeros(n_steps)
 x2Pos = np.zeros(n_steps)
 x3Pos = np.zeros(n_steps)
-a2Val = np.zeros(n_steps)
 
 v1 = np.zeros(n_steps)
 v2 = np.zeros(n_steps)
@@ -45,23 +47,12 @@ accident = False
 #______________________________________________________________________________________________________________________________
 
 time[0] = 0.0  # Initial time
-x1Pos[0] = 80.0  # Initial value for x1 as specified
-x2Pos[0] = 1.0  # Initial value for x2 as specified
-x3Pos[0] = 0.5  # Initial value for x2 as specified
-a2Val[0] = a2
+x1Pos[0] = 6.0  # Initial value for x1 as specified
+x2Pos[0] = 4.0  # Initial value for x2 as specified
+x3Pos[0] = 1.0  # Initial value for x2 as specified
 
 #_________________________________________________ Define the functions  ___________________________________________________
 #______________________________________________________________________________________________________________________________
-
-# sinusoidal_model :
-#input : W : Amplitude of the perturbation
-#        omega : Angular frequency
-#        t : time
-#        phi : Phase (in radians)
-# Return : This function return a value of acceleration which follows a sinusoidal model with random noise
-
-def sinusoidal_model(W, omega, t, phi):
-    return abs(W * np.sin(omega * t + phi) + np.random.normal(0, 0.1)) #random noise
 
 # x1_prime :
 # Return : This function returns the speed of x1
@@ -69,19 +60,13 @@ def sinusoidal_model(W, omega, t, phi):
 def x1_prime():
     return V1max
 
-# x2_prime :
-#input : t : time
-# Return : This function returns the speed of x2 at time t
-
+# Definition of x2's speed function using a special exponential model
 def x2_prime(t):
-    return a2 * (x1Pos[t] - x2Pos[t])
+    return V2max*(1-np.exp((-a2/V2max)*(x1Pos[t]-x2Pos[t]-d2)))
 
-# x3_prime :
-#input : t : time
-# Return : This function returns the speed of x3 at time t
-
+# Definition of x3's speed function using a special exponential model
 def x3_prime(t):
-    return a3 * (x2Pos[t] - x3Pos[t])
+    return V3max*(1-np.exp((-a3/V3max)*(x2Pos[t]-x3Pos[t]-d3)))
 
 # isAccident :
 #input : t : time
@@ -90,67 +75,36 @@ def x3_prime(t):
 def isAccident(t):
     return (x2Pos[t] >= x1Pos[t] ) or (x3Pos[t] >= x2Pos[t]) 
 
-# obstacle :
-#input : t : time
-# Return : This function returns the new speed of x1 if there is an obstacle where the obstacle appears randomly
-
 def obstacle(t):
-    V1max_initial = 130 * (1000 / 3600)
-    base_interval = 10  # Durée de base entre les apparitions d'obstacles en secondes
-    reduction_factor = 0.4  # Facteur de réduction de la vitesse maximale
-
-    # Utiliser un générateur de nombres aléatoires pour introduire de l'aléatoire dans les intervalles
-    random.seed(t)  # Utilisez le temps actuel t comme graine
-
-    if random.random() < 0.2:  # 50% de chance d'avoir un obstacle
-        V1max = V1max_initial * reduction_factor
+    V1max=0
+    if (t%10==0):
+        V1max=V1max*0.40
     else:
-        V1max = V1max_initial
-
+        V1max=130 * (1000 / 3600)
     return V1max
 
-# VariationsOfComportment :
-#input : criticalDistance : critical distance between the cars
-#        boringDistance : distance when we can accelerate
-#        t : time
-# Return : This function returns the new values of a2 and a3 according to the distance between the cars
-
-def VariationsOfComportment(criticalDistance, boringDistance,t):
-    W = 1.1  # Amplitude de la perturbation
-    omega = 2.0  # Fréquence angulaire
-    phi = np.pi / 4  # Phase (en radians)
-    a2 = 0
-    a3 = 0
-    delta = 0.0008  # Calculate the increment per unit distance
-
-    d1 = x1Pos[t] - x2Pos[t]
-    d2 = x2Pos[t] - x3Pos[t]
-
-    if d1 <= criticalDistance:
-        a2 = 0
-    elif d1 >= boringDistance:
-        # model with constant acceleration :
-        #a2 = 0.5
-        #_______________________________________
-        
-        a2=sinusoidal_model(W, omega, t, phi) 
-
-    if d2 <= criticalDistance:
-        a3 = 0
-    elif d2 >= boringDistance:
-        a3=0.9
-        #a3=sinusoidal_model(0.9, omega, t, phi) 
-
-    if isDebug:
-        print("a2= ", a2)
-        print("a3= ", a3)
-
-    if isDebug:
-        print("d1= ", d1, "d2= ", d2)
-    a2Val[t]=a2
-
-    return a2, a3
-
+def VariationsOfComportment(criticalDistance,boringDistance):
+    a2=0
+    a3=0
+    if(x1Pos[t] - x2Pos[t] <= criticalDistance):
+        a2 = 15.0
+        if(isDebug):
+            print("a2= ", a2)
+    elif(x1Pos[t] - x2Pos[t] >= boringDistance):
+        a2 = 16.0
+        if(isDebug):
+            print("a2= ", a2)
+    elif(x2Pos[t] - x3Pos[t] <= criticalDistance):
+        a3 = 3.5
+        if(isDebug):
+            print("a3= ",a3)
+    elif(x2Pos[t] - x3Pos[t] >= boringDistance):
+        a3 = 4.0
+        if(isDebug):
+            print("a3= ",a3)
+    if(isDebug):
+        print("d1= ", x1Pos[t] - x2Pos[t], "d2= ",x2Pos[t] - x3Pos[t])
+    return a2,a3
 
 #_________________________________________________ Resolution of the position for each cars  ___________________________________________________
 #______________________________________________________________________________________________________________________________
@@ -162,7 +116,7 @@ for t in range(1, n_steps):
     
     if(isDebug):
         print("a2= ", a2, "a3= ", a3)
-    a2,a3=VariationsOfComportment(1,73,t)
+    a2,a3=VariationsOfComportment(1,20)
     V1max=obstacle(t)
     
     v1[t] = x1_prime()
@@ -223,29 +177,10 @@ for t in range(1, n_steps):
 #     ax2.legend()
 #     ax2.set_title('Speed of Cars Over Time')
 #     ax2.grid(True)
-    
 
 # # Display the subplots side by side
 # plt.tight_layout()
 # plt.show()
-
-# Create a line plot
-if accident:
-    plt.plot(time[0:t+1], a2Val[0:t+1], marker='o', linestyle='-', color='b', label='Alpha Values')
-    plt.xlabel('Time')
-    plt.ylabel('Alpha Values')
-    plt.title('Alpha Values Over Time')
-    plt.grid(True)
-    plt.legend()
-    plt.show()
-else:
-    plt.plot(time, a2Val, marker='o', linestyle='-', color='b', label='Alpha Values')
-    plt.xlabel('Time')
-    plt.ylabel('Alpha Values')
-    plt.title('Alpha Values Over Time')
-    plt.grid(True)
-    plt.legend()
-    plt.show()
 
 if accident:
     # Plot the distance in the first subplot

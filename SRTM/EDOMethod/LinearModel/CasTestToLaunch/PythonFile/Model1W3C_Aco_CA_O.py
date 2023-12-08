@@ -5,23 +5,27 @@ import sys
 import numpy as np
 import matplotlib.pyplot as plt
 isDebug=False
-# Check if the correct number of command-line arguments is provided
-if len(sys.argv) != 5:
-    print("Usage: python your_script_name.py a2 h")
+#______________________________________________________ Parameters ______________________________________________________
+#________________________________________________________________________________________________________________________
+
+if len(sys.argv) != 7:
+    print("Usage: python your_script_name.py a2 h a3")
     sys.exit(1)
 
 
-#_________________________________________________ Defining the parameters  ___________________________________________________
-#______________________________________________________________________________________________________________________________
-
-
 accident=False
-a2 = float(sys.argv[1])
-a3 = float(sys.argv[3])
+lambda_2 = float(sys.argv[1])
+lambda_3 = float(sys.argv[5])
 h = float(sys.argv[2])
+d2 = float(sys.argv[3])
+d3= float(sys.argv[6])
+x2_prime_max=160*(1000/3600) #maximum speed of the second car #maximum speed of the second car
+x3_prime_max=140*(1000/3600) #maximum speed of the third car #maximum speed of the second car
 nameCaseToLaunch=sys.argv[4]
-T = 50.0  # Total simulation time
-V1max = 130 * (1000 / 3600)  # Maximum speed of x1
+
+
+
+T = 10.0  # Total simulation time
 n_steps = int(T / h)  # Number of time steps
 
 #_________________________________________________ Initialise arrays to storing data  ___________________________________________________
