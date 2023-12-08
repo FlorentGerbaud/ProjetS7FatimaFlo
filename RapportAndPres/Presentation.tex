@@ -769,7 +769,6 @@
 			\item The acceleration of the second car is governed by a constant function, denoted as alpha, which remains fixed. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=2.0$
 		\end{itemize} 
 		
-		\textbf{\underline{Simulation with the Linear Model For Two cars}} \newline\newline
 		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we Similar to real-life situations, we observe that if the second car is too far behind the first one, it decelerates. Conversely, when it is adequately distant from the first car, it increases its speed.
 		
 		\begin{figure}[H]
@@ -795,28 +794,48 @@
 		
 		In this type of simulation, we aimed to make the model more realistic by incorporating variations in the acceleration of the car.
 		
-		Specifically, in this section, we consider a scenario where one of the drivers is intoxicated. Consequently, the driver's acceleration fluctuates over time.
-		
+		Specifically, in this section, we consider a scenario where one of the drivers is intoxicated. Consequently, the driver's acceleration fluctuates over time. The Hypotesis are the following one 
+		\begin{itemize}
+			\item The first car is traveling at a constant speed but is subject to some obstacles on the road at times.
+			\item The second car (orange) is erratic as it is driven by a drunk driver, causing completely random variations in its position.
+			\item The last one (blue) accelerates when it has distance and decelerates when it is too close.
+		\end{itemize}
 		The graph illustrates a noticeable departure from the periodic accordion phenomenon observed earlier. Instead, it becomes non-periodic and entirely unpredictable.
 		
-		In Figure \ref{fig:Model1W3C_O_Aco_D2}, we observe that compared to the standard model (without acceleration variations), the behavior of the car becomes entirely unpredictable and may lead to accidents. For instance, around time 20, the orange car nearly collided with the blue car. Since this model employs sinusoidal functions to simulate the erratic behavior of an intoxicated driver, instances of accidents can occasionally appear on the graph. Thus, this simulation becomes more interesting as it represents a real-life scenario.
+		In Figure \ref{fig:Model1W3C_O_Aco_D2_Linear}, we observe that compared to the standard model (without acceleration variations), the behavior of the car becomes entirely unpredictable and may lead to accidents. For instance, around time 20, the orange car nearly collided with the blue car. Since this model employs sinusoidal functions to simulate the erratic behavior of an intoxicated driver, instances of accidents can occasionally appear on the graph. Thus, this simulation becomes more interesting as it represents a real-life scenario.
+		
+		However, it is interesting to remark that compared to Newell's method (Figure \ref{fig:Model1W3C_O_Aco_D2_Newell}), the variations are very significant, potentially resulting in a lack of precision. In fact, in the Newell's model, the simulation is more realistic due to the smoothing of variations and much less abrupt changes in positions.
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.70\textwidth]{Model1W3C_O_Aco_D2.png}
+			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_D2_Linear.png}
 			\caption[Simulation of Traffic Flow with one drunk driver (Linear Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Linear Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead.}
-			\label{fig:Model1W3C_O_Aco_D2}
+			\label{fig:Model1W3C_O_Aco_D2_Linear}
 		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{Model1W3C_O_Aco_D2_Newell.png}
+		\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
+		\label{fig:Model1W3C_O_Aco_D2_Newell}
+	\end{figure}
 		
 		\subsection{Simulation with Unpredictable Drivers}
 		
-		
-		\begin{figure}[H]
+			\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{Model1W3C_O_Aco_I2.png}
+			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_I2_Linear.png}
 			\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
-			\label{fig:Model1W3C_O_Aco_I2}
+			\label{fig:Model1W3C_O_Aco_I2_Linear}
 		\end{figure}
+		
+			\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_I2_Newell.png}
+			\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
+			\label{fig:Model1W3C_O_Aco_I2_Newell}
+		\end{figure}
+	
 		
 		
 		\subsubsection{Accident Phenomenon For The Linear Model }

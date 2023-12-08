@@ -8,6 +8,12 @@
 \usepackage{tikz}
 \usepackage{amsmath}
 \usetikzlibrary{tikzmark}
+% Add necessary packages
+\usepackage{graphicx}
+
+% set captions with numbers
+\setbeamertemplate{caption}[numbered]
+
 
 \title[2023-2024]{Simple Modeling of Road Traffic.} 
 
@@ -131,41 +137,45 @@ Supervisor: \\ % Your institution for the title page
     \includegraphics[width=0.6\textwidth]{discret.png} 
     \caption{ Discret Model.}
 \end{figure}
-\begin{center}
-   ODE to solve:$\boxed{\mathbf{y'(t) = f{\bigl (}t, y(t){\bigr )}}}$
-\end{center}
-Euler Explicit method to numerically solve the solutions:
-    \begin{itemize}
+\vspace{-0.7cm}
+\begin{block}{ODE to solve}
+	\begin{center}
+		$\boxed{\mathbf{y'(t) = f{\bigl (}t, y(t){\bigr )}}}$
+	\end{center}
+	Euler Explicit method to numerically solve the solutions:
+	\begin{itemize}
+		\item First step of the resolution: $\boxed{y_0 = y(t_0)}$.
+		\item Recursive process to find the n-th solution of the ODE: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
+	\end{itemize}
+\end{block}
 
-			\item First step of the resolution: $\boxed{y_0 = y(t_0)}$.
-			\item Recursive process to find the n-th solution of the ODE: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
-		\end{itemize}
+
+    
 \end{frame}
 \begin{frame}
 \subsection{Velocity modeling: The linear approach}
 \frametitle{Velocity modeling: The linear approach}
-\begin{center}
-    Each car's movement is governed by the basic equation:
-    \[
-\boxed{\dot{x_i}(t) = V_i = \alpha_i(x_{i-1} - x_i)}
-\]
-\end{center}
 
-\vspace{5mm}
-
-\begin{center}
-    \begin{tabular}{l l}
-    Where:\\
-        \(\dot{x_i}(t)\): & Instantaneous velocity of the \(i\)-th car at time \(t\) \\
-        \(V_i\): & Current velocity of the \(i\)-th car \\
-        \(\alpha_i\): & Coefficient describing the behavior of the \(i\)-th car \\
-        \(x_{i-1}\): & Previous position of the \(i\)-th car \\
-        \(x_i\): & Current position of the \(i\)-th car
-    \end{tabular}
-\end{center}
+    \begin{alertblock}{Each car's movement is governed by the basic equation}
+    	\[
+    	\boxed{\dot{x_i}(t) = V_i = \alpha_i(x_{i-1} - x_i)}
+    	\]
+    \end{alertblock}
+    
+    \begin{block}{Where}
+    	\begin{center}
+    		\begin{tabular}{l l}
+    			\(\dot{x_i}(t)\): & Instantaneous velocity of the \(i\)-th car at time \(t\) \\
+    			\(V_i\): & Current velocity of the \(i\)-th car \\
+    			\(\alpha_i\): & Coefficient describing the behavior of the \(i\)-th car \\
+    			\(x_{i-1}\): & Previous position of the \(i\)-th car \\
+    			\(x_i\): & Current position of the \(i\)-th car
+    		\end{tabular}
+    	\end{center}
+    \end{block}
 \end{frame}
 
-\begin{frame}{Modeling Velocity: The Linear Approach}
+\begin{frame}{Velocity Modeling: The Linear Approach}
 	\begin{block}{System of Equations for $N$ cars}
 		\[
 		\left\{
@@ -196,23 +206,23 @@ Euler Explicit method to numerically solve the solutions:
 
 \begin{frame}{Velocity Modeling: The Newell Approach}
 \subsection{Velocity Modeling: The Newell Approach}
-\begin{center}
-    Each car's movement is described by the equation:
-    \[
-\boxed{\dot{x_i}(t) = V_i(1 - e^{-\frac{\lambda_i}{V_i}(x_{i-1}(t) - x_i(t) - d_i)})}
-\]
-\end{center}
 
-\vspace{5mm}
+\begin{alertblock}{Each car's movement is described by the equation}
+	\[
+	\boxed{\dot{x_i}(t) = V_i\left( 1 - e^{-\frac{\lambda_i}{V_i}(x_{i-1}(t) - x_i(t) - d_i)}\right) }
+	\]
+\end{alertblock}
 
-\begin{center}
-    \begin{tabular}{l l}
-    Where:\\
-        \(V_i\): & the maximum velocity of the \(i\)th car \\
-        \(\lambda_i\): & the capacity of acceleration/deceleration \\
-        \(d_i\): & safe following distance associated with the \(i\)th car \\
-    \end{tabular}
-\end{center}
+\begin{block}{Where}
+	\begin{center}
+		\begin{tabular}{l l}
+			\(V_i\): & the maximum velocity of the \(i\)th car \\
+			\(\lambda_i\): & the capacity of acceleration/deceleration \\
+			\(d_i\): & safe following distance associated with the \(i\)th car \\
+		\end{tabular}
+	\end{center}
+\end{block}
+
 \end{frame}
 \begin{frame}{Velocity Modeling: The Newell Approach}
 		\vspace{-0.3cm}
@@ -242,45 +252,48 @@ Euler Explicit method to numerically solve the solutions:
     	\end{align*}
     \end{block}
 \end{frame}
-\begin{frame}{Simulations of both approaches}
+\begin{frame}{Accordion phenomenon}
 	\subsection{Simulations}
-	\begin{center}
-		\textbf{Drivers reacting similarly (Accordion phenomenon):}
-	\end{center}
 	\begin{minipage}{0.48\textwidth}
 		\centering
 		\begin{figure}
 			\includegraphics[width=\textwidth]{Accordeon1.png}
-			\caption{With Linear Model}
+			\caption{Modelisation of the accordion phenomenon with The Linear Model}
+			\label{fig:AL}
 		\end{figure}
 	\end{minipage}\hfill
 	\begin{minipage}{0.48\textwidth}
 		\centering
 		\begin{figure}
 			\includegraphics[width=\textwidth]{1W2_Accord.png}
-			\caption{With Newell's Model}
+			\caption{Modelisation of the accordion phenomenon with The Newell's Model}
+			\label{fig:AN}
 		\end{figure}
 	\end{minipage}
-	Interpretation to be added.
+	\begin{block}{}
+		We could see the difference of modelisation and realism between the Linear model (figure \ref{fig:AL}) and the Newell's model (figure \ref{fig:AN})
+	\end{block}
 \end{frame}
-\begin{frame}{Simulations of both approaches}
-	\begin{center}
-		\textbf{Drunk drivers (Real-life case):}
-	\end{center}
-	\begin{minipage}{0.40\textwidth}
+\begin{frame}{Drunk drivers }
+	\begin{minipage}{0.49\textwidth}
 		\centering
 		\begin{figure}
-			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_D2.png}
+			\includegraphics[width=1.1\textwidth]{Model1W3C_O_Aco_D2_Linear.png}
 			\caption{Simulation of Traffic Flow with one drunk driver (Linear Model)}
+			\label{fig:DL}
 		\end{figure}
 	\end{minipage}\hfill
-	\begin{minipage}{0.51\textwidth}
+	\begin{minipage}{0.49\textwidth}
 		\centering
 		\begin{figure}
-			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_I2.png}
-			\caption{[Simulation of Traffic Flow with one drunk driver (Newell's Model)}
+			\includegraphics[width=1.1\textwidth]{Model1W3C_O_Aco_D2_Newell.png}
+			\caption{Simulation of Traffic Flow with one drunk driver (Newell's Model)}
+			\label{fig:DN}
 		\end{figure}
 	\end{minipage}
+	\begin{block}{}
+		It is interesting to note that with Newell's Method (Figure \ref{fig:DN}), the variations are "smoothed and much less significant than in the case of the linear method (\ref{fig:DL})."
+	\end{block}
 \end{frame}
 
 \begin{frame}{Simulations of both approaches:}
@@ -291,7 +304,47 @@ Euler Explicit method to numerically solve the solutions:
 %Cas des 3 voitures !!
 \subsection{Study of Equilibrium and Stability}
 \subsubsection{Using linear model:}
-\subsubsection{Using the special model}
+\begin{frame}{Analytical Solutions}
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[t]{0.49\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{Stability.png}
+			\caption{Stability Analysis for Three Cars}
+			\label{fig:StabilityAnalysis}
+		\end{minipage}
+		\begin{minipage}[t]{0.49\linewidth}
+			\centering
+			\includegraphics[width=\linewidth]{AnalyticalSolution.png}
+			\caption{Analytical Solution for Three Cars}
+			\label{fig:AnalyticalSolution}
+		\end{minipage}\hfill
+		\label{fig:CombinedFigures}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Equilibrium}
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{FieldOfVector_CV.png}
+		\end{minipage}
+		\hfill 
+		\begin{minipage}[t]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\linewidth]{FieldOfVector_CV2.png}
+			\caption{Field Of Vector for the Linear Model (Stability)}
+			\label{fig:FV1}
+		\end{minipage}
+		\caption{Combined Figures}
+		\label{fig:CombinedFigures}
+	\end{figure}
+\end{frame}
+
+
+
+\subsubsection{Using the Newell's model}
 \section{Study of the continuous model:}
 \begin{frame}{Mathematical Theory}
 	\begin{alertblock}{Conservation Law}

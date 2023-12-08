@@ -9,7 +9,7 @@
 \beamer@subsectionintoc {2}{4}{Simulations}{15}{0}{2}
 \beamer@subsectionintoc {2}{5}{Study of Equilibrium and Stability}{18}{0}{2}
 \beamer@subsubsectionintoc {2}{5}{1}{Using linear model:}{18}{0}{2}
-\beamer@subsubsectionintoc {2}{5}{2}{Using the special model}{18}{0}{2}
-\beamer@sectionintoc {3}{Study of the continuous model:}{18}{0}{3}
-\beamer@sectionintoc {4}{Euler Explicit Method}{20}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{23}{0}{5}
+\beamer@subsubsectionintoc {2}{5}{2}{Using the Newell's model}{20}{0}{2}
+\beamer@sectionintoc {3}{Study of the continuous model:}{20}{0}{3}
+\beamer@sectionintoc {4}{Euler Explicit Method}{22}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{25}{0}{5}

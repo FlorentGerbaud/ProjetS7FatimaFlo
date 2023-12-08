@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  7 DEC 2023 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  8 DEC 2023 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -900,33 +900,37 @@ Package: xparse 2023-02-02 L3 Experimental document command parser
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 14.
+(hyperref)                removing `\\' on input line 20.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 14.
+(hyperref)                removing `\\' on input line 20.
 
-(diapo1.aux)
+(diapo1.aux
+
+LaTeX Warning: Label `fig:CombinedFigures' multiply defined.
+
+)
 \openout1 = `diapo1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -988,63 +992,63 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 37.
  (diapo1.out) (diapo1.out)
 \@outlinefile=\write5
 \openout5 = `diapo1.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 31.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 31.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 31.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 31.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 31.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 31.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 31.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 31.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 31.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 31.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 31.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 31.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 31.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 31.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 31.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 31.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 31.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 31.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 31.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 31.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 37.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
-1.
+7.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 3
-1.
+7.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 31.
+ut line 37.
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/translator\translator-b
 asic-dictionary-English.dict
@@ -1070,10 +1074,10 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (diapo1.nav)
-<Polytech.png, id=105, 215.8464pt x 66.9702pt>
+<Polytech.png, id=107, 215.8464pt x 66.9702pt>
 File: Polytech.png Graphic file (type png)
 <use Polytech.png>
-Package pdftex.def Info: Polytech.png  used on input line 35.
+Package pdftex.def Info: Polytech.png  used on input line 41.
 (pdftex.def)             Requested size: 85.35826pt x 26.4841pt.
  [1{C:/Users/flore/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
@@ -1083,30 +1087,30 @@ Package pdftex.def Info: Polytech.png  used on input line 35.
 (diapo1.toc) [3
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
 
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 75.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
 
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 75.
+ut line 81.
 
 (C:\Users\flore\AppData\Local\Programs\MiKTeX\tex/latex/sansmathaccent\ot1mathk
 erncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<PIC1.jpg, id=305, 385.44pt x 257.0403pt>
+<PIC1.jpg, id=315, 385.44pt x 257.0403pt>
 File: PIC1.jpg Graphic file (type jpg)
 <use PIC1.jpg>
-Package pdftex.def Info: PIC1.jpg  used on input line 75.
+Package pdftex.def Info: PIC1.jpg  used on input line 81.
 (pdftex.def)             Requested size: 122.91406pt x 81.96826pt.
  [4
 
@@ -1115,10 +1119,10 @@ Package pdftex.def Info: PIC1.jpg  used on input line 75.
 ] [6
 
 ]
-<org1.png, id=453, 963.6pt x 542.025pt>
+<org1.png, id=469, 963.6pt x 542.025pt>
 File: org1.png Graphic file (type png)
 <use org1.png>
-Package pdftex.def Info: org1.png  used on input line 101.
+Package pdftex.def Info: org1.png  used on input line 107.
 (pdftex.def)             Requested size: 307.28987pt x 172.84778pt.
  [7
 
@@ -1127,19 +1131,19 @@ Package pdftex.def Info: org1.png  used on input line 101.
 ] (diapo1.toc) [9
 
 ]
-<discret.png, id=638, 963.6pt x 314.67563pt>
+<discret.png, id=660, 963.6pt x 314.67563pt>
 File: discret.png Graphic file (type png)
 <use discret.png>
-Package pdftex.def Info: discret.png  used on input line 143.
+Package pdftex.def Info: discret.png  used on input line 154.
 (pdftex.def)             Requested size: 184.3758pt x 60.20671pt.
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 143.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 154.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 143.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 154.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 143.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 154.
 
 
 [10
@@ -1153,65 +1157,110 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
 ] [14
 
 ]
-<Accordeon1.png, id=904, 722.7pt x 433.62pt>
+<Accordeon1.png, id=998, 722.7pt x 433.62pt>
 File: Accordeon1.png Graphic file (type png)
 <use Accordeon1.png>
-Package pdftex.def Info: Accordeon1.png  used on input line 265.
+Package pdftex.def Info: Accordeon1.png  used on input line 276.
 (pdftex.def)             Requested size: 147.49782pt x 88.49568pt.
-<1W2_Accord.png, id=905, 462.528pt x 346.896pt>
+<1W2_Accord.png, id=999, 462.528pt x 346.896pt>
 File: 1W2_Accord.png Graphic file (type png)
 <use 1W2_Accord.png>
-Package pdftex.def Info: 1W2_Accord.png  used on input line 265.
+Package pdftex.def Info: 1W2_Accord.png  used on input line 276.
 (pdftex.def)             Requested size: 147.49782pt x 110.62257pt.
  [15
 
  <./Accordeon1.png> <./1W2_Accord.png>]
-<Model1W3C_O_Aco_D2.png, id=951, 462.528pt x 346.896pt>
-File: Model1W3C_O_Aco_D2.png Graphic file (type png)
-<use Model1W3C_O_Aco_D2.png>
-Package pdftex.def Info: Model1W3C_O_Aco_D2.png  used on input line 284.
-(pdftex.def)             Requested size: 122.91406pt x 92.18106pt.
-<Model1W3C_O_Aco_I2.png, id=952, 988.6536pt x 586.8324pt>
-File: Model1W3C_O_Aco_I2.png Graphic file (type png)
-<use Model1W3C_O_Aco_I2.png>
-Package pdftex.def Info: Model1W3C_O_Aco_I2.png  used on input line 284.
-(pdftex.def)             Requested size: 156.71614pt x 93.01758pt.
- [16
+<Model1W3C_O_Aco_D2_Linear.png, id=1063, 1387.584pt x 698.8509pt>
+File: Model1W3C_O_Aco_D2_Linear.png Graphic file (type png)
+<use Model1W3C_O_Aco_D2_Linear.png>
+Package pdftex.def Info: Model1W3C_O_Aco_D2_Linear.png  used on input line 297.
 
- <./Model1W3C_O_Aco_D2.png> <./Model1W3C_O_Aco_I2.png>] [17
+(pdftex.def)             Requested size: 165.632pt x 83.41061pt.
 
-]
-(diapo1.toc) [18
-
-]
-Overfull \vbox (1.32411pt too high) detected at line 313
+Overfull \hbox (15.05829pt too wide) in paragraph at lines 297--297
+ [] 
  []
 
-[19
+<Model1W3C_O_Aco_D2_Newell.png, id=1064, 1387.584pt x 698.8509pt>
+File: Model1W3C_O_Aco_D2_Newell.png Graphic file (type png)
+<use Model1W3C_O_Aco_D2_Newell.png>
+Package pdftex.def Info: Model1W3C_O_Aco_D2_Newell.png  used on input line 297.
 
-] (diapo1.toc) [20
+(pdftex.def)             Requested size: 165.632pt x 83.41061pt.
 
-] [21
+Overfull \hbox (15.05829pt too wide) in paragraph at lines 297--297
+ [] 
+ []
+
+[16
+
+ <./Model1W3C_O_Aco_D2_Linear.png> <./Model1W3C_O_Aco_D2_Newell.png>]
+[17
 
 ]
-<traffic_flow_density_map.png, id=1287, 462.528pt x 346.896pt>
+<Stability.png, id=1173, 462.528pt x 346.896pt>
+File: Stability.png Graphic file (type png)
+<use Stability.png>
+Package pdftex.def Info: Stability.png  used on input line 324.
+(pdftex.def)             Requested size: 150.57372pt x 112.9304pt.
+<AnalyticalSolution.png, id=1174, 578.16pt x 433.62pt>
+File: AnalyticalSolution.png Graphic file (type png)
+<use AnalyticalSolution.png>
+Package pdftex.def Info: AnalyticalSolution.png  used on input line 324.
+(pdftex.def)             Requested size: 150.57372pt x 112.93042pt.
+ [18
+
+ <./Stability.png> <./AnalyticalSolution.png>]
+<FieldOfVector_CV.png, id=1227, 578.16pt x 433.62pt>
+File: FieldOfVector_CV.png Graphic file (type png)
+<use FieldOfVector_CV.png>
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 343.
+(pdftex.def)             Requested size: 138.2795pt x 103.70702pt.
+<FieldOfVector_CV2.png, id=1228, 433.62pt x 433.62pt>
+File: FieldOfVector_CV2.png Graphic file (type png)
+<use FieldOfVector_CV2.png>
+Package pdftex.def Info: FieldOfVector_CV2.png  used on input line 343.
+(pdftex.def)             Requested size: 138.2795pt x 138.27823pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:CombinedF
+igures}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.343 \end{frame}
+                  [19
+
+ <./FieldOfVector_CV.png> <./FieldOfVector_CV2.png>]
+(diapo1.toc) [20
+
+]
+Overfull \vbox (1.32411pt too high) detected at line 366
+ []
+
+[21
+
+] (diapo1.toc) [22
+
+] [23
+
+]
+<traffic_flow_density_map.png, id=1529, 462.528pt x 346.896pt>
 File: traffic_flow_density_map.png Graphic file (type png)
 <use traffic_flow_density_map.png>
-Package pdftex.def Info: traffic_flow_density_map.png  used on input line 340.
+Package pdftex.def Info: traffic_flow_density_map.png  used on input line 393.
 (pdftex.def)             Requested size: 199.73653pt x 149.80284pt.
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 340.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 393.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 340.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 393.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 340.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 393.
 
- [22
+ [24
 
  <./traffic_flow_density_map.png>] (diapo1.toc)
-[23
+[25
 
 ]
 \tf@nav=\write6
@@ -1224,14 +1273,17 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
 \openout8 = `diapo1.snm'.
 
  (diapo1.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `diapo1.out' has not changed.
 (rerunfilecheck)             Checksum: 169CA57BAE1A80E38C5780A625CC07F3;2395.
  ) 
 Here is how much of TeX's memory you used:
- 25797 strings out of 476331
- 530749 string characters out of 5787765
- 1879660 words of memory out of 5000000
- 45629 multiletter control sequences out of 15000+600000
+ 25891 strings out of 476331
+ 533624 string characters out of 5787765
+ 1880660 words of memory out of 5000000
+ 45707 multiletter control sequences out of 15000+600000
  525252 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,122p,525b,898s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1251,9 +1303,9 @@ sfonts/cm/cmssi8.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/flore/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on diapo1.pdf (23 pages, 1250555 bytes).
+Output written on diapo1.pdf (25 pages, 1603055 bytes).
 PDF statistics:
- 1469 PDF objects out of 1728 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 696 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1719 PDF objects out of 1728 (max. 8388607)
+ 75 named destinations out of 1000 (max. 500000)
+ 968 words of extra memory for PDF output out of 10000 (max. 10000000)
 
