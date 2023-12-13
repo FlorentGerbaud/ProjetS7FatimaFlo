@@ -1,0 +1,179 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{dugois:tel-01505473}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=77423e88262779c2572c585945a72fae}{%
+           family={Dugois},
+           familyi={D\bibinitperiod},
+           given={Kévin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Université de Bordeaux}%
+      }
+      \strng{namehash}{77423e88262779c2572c585945a72fae}
+      \strng{fullhash}{77423e88262779c2572c585945a72fae}
+      \strng{bibnamehash}{77423e88262779c2572c585945a72fae}
+      \strng{authorbibnamehash}{77423e88262779c2572c585945a72fae}
+      \strng{authornamehash}{77423e88262779c2572c585945a72fae}
+      \strng{authorfullhash}{77423e88262779c2572c585945a72fae}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{2}
+      \field{number}{2017BORD0011}
+      \field{title}{{Simulation à l'échelle microscopique et analyse macroscopique de l'imprégnation d'un matériau composite par un fluide chargé en particules}}
+      \field{type}{Theses}
+      \field{year}{2017}
+      \verb{file}
+      \verb https://theses.hal.science/tel-01505473v2/file/DUGOIS_KEVIN_2017.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://theses.hal.science/tel-01505473
+      \endverb
+      \verb{url}
+      \verb https://theses.hal.science/tel-01505473
+      \endverb
+      \keyw{Numerical simulation ; Finite volume method ; Cartesian meshing ; Non-Newtonian rheology ; Composite material ; Porous media ; Suspension flow ; Maillage cartésien ; Méthode aux volumes finis ; Simulation numérique ; Rhéologie non-newtonienne ; Matériau composite ; Milieu poreux ; Écoulement chargé}
+    \endentry
+    \entry{SMRT}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=805b390e9c3a59230b4a620846389f7b}{%
+           family={Florent},
+           familyi={F\bibinitperiod},
+           given={Gerbaud},
+           giveni={G\bibinitperiod}}}%
+        {{hash=6b45c6755296757f797f7d90a47460a6}{%
+           family={Rharrour},
+           familyi={R\bibinitperiod},
+           given={Fatima\bibnamedelima Ezzahra},
+           giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{fullhash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{bibnamehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{authorbibnamehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{authornamehash}{2037d2922ca7fe48da011ead2175c672}
+      \strng{authorfullhash}{2037d2922ca7fe48da011ead2175c672}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/FlorentGerbaud/Simple-road-traffic-modeling}}
+      \field{title}{Simple Road Traffic Simluation}
+      \field{year}{2023}
+    \endentry
+    \entry{JEIHANI2017164}{article}{}
+      \name{author}{3}{}{%
+        {{hash=cbfb87645d2cbd7f6a9ec6c45fd133c8}{%
+           family={Jeihani},
+           familyi={J\bibinitperiod},
+           given={Mansoureh},
+           giveni={M\bibinitperiod}}}%
+        {{hash=059b2e7b25e34f3d60221b0704c3e612}{%
+           family={NarooieNezhad},
+           familyi={N\bibinitperiod},
+           given={Shiva},
+           giveni={S\bibinitperiod}}}%
+        {{hash=006a1dd55cbf971f71f5dccf95026b0e}{%
+           family={Kelarestaghi},
+           familyi={K\bibinitperiod},
+           given={Kaveh\bibnamedelima Bakhsh},
+           giveni={K\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+      }
+      \strng{namehash}{6481db399ca625941d276c2e547d899c}
+      \strng{fullhash}{6481db399ca625941d276c2e547d899c}
+      \strng{bibnamehash}{6481db399ca625941d276c2e547d899c}
+      \strng{authorbibnamehash}{6481db399ca625941d276c2e547d899c}
+      \strng{authornamehash}{6481db399ca625941d276c2e547d899c}
+      \strng{authorfullhash}{6481db399ca625941d276c2e547d899c}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{For the first time, a driving simulator has been integrated with a traffic simulator at the network level to allow subjects to drive in a fairly realistic environment with a realistic traffic flow and density. A 10mi2 (25km2) network was developed in a driving simulator and then exported to a traffic simulator. About 30 subjects drove the simulator under different traffic and driving conditions and variable message sign (VMS) information, both with and without integration. Route guidance was available for the subjects. The challenges of the integration process are explained and its advantages investigated. The study concluded that traffic density, VMS reliability and compliance behavior are higher when driving and traffic simulators are integrated. To find factors affecting route diversion, researchers applied a binary logistic regression model. The results indicated that the original chosen route, displayed VMS information, subjects' attitude toward VMS information helpfulness, and their level of exposure to VMS affect route diversion. In addition, a multinomial logistic regression model was employed to investigate important factors in route choice. The results revealed that there is a significant correlation with driver route choice behavior and their actual travel time, the need for GPS, VMS exposure and also the designed scenarios. It should be noted that the paper was peer-reviewed by TRB and presented at the TRB Annual Meeting, Washington, D.C., January 2016.}
+      \field{issn}{0386-1112}
+      \field{journaltitle}{IATSS Research}
+      \field{number}{4}
+      \field{title}{Integration of a driving simulator and a traffic simulator case study: Exploring drivers' behavior in response to variable message signs}
+      \field{volume}{41}
+      \field{year}{2017}
+      \field{pages}{164\bibrangedash 171}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.iatssr.2017.03.001
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0386111217300304
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0386111217300304
+      \endverb
+      \keyw{Integration,Variable message sign,Compliance behavior,Driving simulator,Traffic simulator,Discrete choice analysis}
+    \endentry
+    \entry{article}{article}{}
+      \name{author}{4}{}{%
+        {{hash=508f0a4e80af71a1970f575437811489}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=19a4f2f3d51172063bcb4c6f543ee061}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Qian-Yong},
+           giveni={Q\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=e4cfde36f6c77ee05bbbd48cbd7d1522}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Haizhong},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c7dab6d626060307c36fbd797a700e1f}{%
+           family={Ni},
+           familyi={N\bibinitperiod},
+           given={Daiheng},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{fullhash}{b03c8a3e6d8aca777b1fd03fe15e888b}
+      \strng{bibnamehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{authorbibnamehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{authornamehash}{03f664a5ca00b955874d43028f1c2610}
+      \strng{authorfullhash}{b03c8a3e6d8aca777b1fd03fe15e888b}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transportmetrica}
+      \field{month}{01}
+      \field{title}{Analysis of LWR model with fundamental diagram subject to uncertainties}
+      \field{volume}{8}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1080/18128602.2010.521532
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
