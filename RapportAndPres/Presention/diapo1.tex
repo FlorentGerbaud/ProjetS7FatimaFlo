@@ -296,10 +296,15 @@ Supervisor: \\ % Your institution for the title page
 	\end{block}
 \end{frame}
 
-\begin{frame}{Simulations of both approaches:}
-\begin{center}
-    \textbf{Accident phenomenon:}
-\end{center}
+\begin{frame}{Accident phenomenon}
+    \begin{figure}
+    	\includegraphics[width=0.5\textwidth]{1W2_Acc2.png}
+    	\caption{Modelisation of the accordion phenomenon with The Newell's Model}
+    	\label{fig:ACC}
+    \end{figure}
+    \begin{block}{}
+    	On the figure \ref{fig:ACC}, you can see that when the curves intersect, there is an accident
+    \end{block}
 \end{frame}
 %Cas des 3 voitures !!
 \subsection{Study of Equilibrium and Stability}
@@ -365,7 +370,7 @@ Supervisor: \\ % Your institution for the title page
 	\end{block}
 \end{frame}
 
-\section{Euler Explicit Method}
+\subsection{Euler Explicit Method}
 \begin{frame}{Numerical Scheme for the resolution}
 	\begin{alertblock}{Numerical Scheme}
 		\begin{itemize}
@@ -388,6 +393,36 @@ Supervisor: \\ % Your institution for the title page
 		\centering
 		\includegraphics[width=0.65\textwidth]{traffic_flow_density_map.png}
 		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit:}} This figure illustrates the solution of the PDE at any time and position. Here is the link to the associated animation showing the movement of the traffic flow: \href{https://github.com/FlorentGerbaud/Simple-road-traffic-modeling/blob/Flo-PDE/SRTM/EDPMethod/CasTestToLaunch/TestToLaunch/Modele_IC_S/EulerExplicit/traffic_flow_animation.gif}{\textbf{\underline{Traffic Flow Simulation}}} }
+		\label{fig:traffic_flow_density_map}
+	\end{figure}
+\end{frame}
+
+\subsection{Lax-Friedrichs method}
+\begin{frame}{Numerical Scheme for the resolution}
+	\begin{alertblock}{Numerical Scheme}
+		\begin{equation*}
+			\begin{split}
+				\rho_{j}^t &= \frac{1}{2} \left(\rho_{j+1}^{t-1} + \rho_{j-1}^{t-1}\right) 
+			 - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{j+1}^{t-1} \left(1 - \frac{\rho_{j+1}^{t-1}}{\rho_{max}}\right) \cdot V_{\text{max}} \right. \\
+				&\quad \left. - \rho_{j-1}^{t-1} \left(1 - \frac{\rho_{j-1}^{t-1}}{\rho_{max}}\right) \cdot V_{\text{max}} \right)
+			\end{split}
+		\end{equation*}
+		
+	\end{alertblock}
+	enrichir la slide. Peut-être ajouter le modèle dans la théorie et dire que quand on l'applique on obtient ça ou alors mettre une image qui explique le schéma de Euler explicite ? 
+	
+	%slide: 
+	%Partie Math EDP
+	%Equation + cond au bord
+	%petite définition de ce qu’il y a dans l’équation
+\end{frame}
+
+
+\begin{frame}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.65\textwidth]{traffic_flow_density_map_LF.png}
+		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit:}} This figure illustrates the solution of the PDE at any time and position. Here is the link to the associated animation showing the movement of the traffic flow: \href{https://github.com/FlorentGerbaud/Simple-road-traffic-modeling/blob/Flo-PDE/SRTM/EDPMethod/CasTestToLaunch/TestToLaunch/Modele_IC_S/LaxFriedrichs/traffic_flow_animation.gif}{\textbf{\underline{Traffic Flow Simulation}}} }
 		\label{fig:traffic_flow_density_map}
 	\end{figure}
 \end{frame}

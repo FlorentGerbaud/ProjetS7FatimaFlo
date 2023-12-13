@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  8 DEC 2023 21:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2023.4.23)  13 DEC 2023 22:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,6 +910,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Warning: Label `fig:CombinedFigures' multiply defined.
 
+
+LaTeX Warning: Label `fig:traffic_flow_density_map' multiply defined.
+
 )
 \openout1 = `diapo1.aux'.
 
@@ -1074,7 +1077,7 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (diapo1.nav)
-<Polytech.png, id=107, 215.8464pt x 66.9702pt>
+<Polytech.png, id=111, 215.8464pt x 66.9702pt>
 File: Polytech.png Graphic file (type png)
 <use Polytech.png>
 Package pdftex.def Info: Polytech.png  used on input line 41.
@@ -1107,7 +1110,7 @@ erncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<PIC1.jpg, id=315, 385.44pt x 257.0403pt>
+<PIC1.jpg, id=322, 385.44pt x 257.0403pt>
 File: PIC1.jpg Graphic file (type jpg)
 <use PIC1.jpg>
 Package pdftex.def Info: PIC1.jpg  used on input line 81.
@@ -1119,7 +1122,7 @@ Package pdftex.def Info: PIC1.jpg  used on input line 81.
 ] [6
 
 ]
-<org1.png, id=469, 963.6pt x 542.025pt>
+<org1.png, id=476, 963.6pt x 542.025pt>
 File: org1.png Graphic file (type png)
 <use org1.png>
 Package pdftex.def Info: org1.png  used on input line 107.
@@ -1131,7 +1134,7 @@ Package pdftex.def Info: org1.png  used on input line 107.
 ] (diapo1.toc) [9
 
 ]
-<discret.png, id=660, 963.6pt x 314.67563pt>
+<discret.png, id=668, 963.6pt x 314.67563pt>
 File: discret.png Graphic file (type png)
 <use discret.png>
 Package pdftex.def Info: discret.png  used on input line 154.
@@ -1157,12 +1160,12 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
 ] [14
 
 ]
-<Accordeon1.png, id=998, 722.7pt x 433.62pt>
+<Accordeon1.png, id=1006, 722.7pt x 433.62pt>
 File: Accordeon1.png Graphic file (type png)
 <use Accordeon1.png>
 Package pdftex.def Info: Accordeon1.png  used on input line 276.
 (pdftex.def)             Requested size: 147.49782pt x 88.49568pt.
-<1W2_Accord.png, id=999, 462.528pt x 346.896pt>
+<1W2_Accord.png, id=1007, 462.528pt x 346.896pt>
 File: 1W2_Accord.png Graphic file (type png)
 <use 1W2_Accord.png>
 Package pdftex.def Info: 1W2_Accord.png  used on input line 276.
@@ -1170,7 +1173,7 @@ Package pdftex.def Info: 1W2_Accord.png  used on input line 276.
  [15
 
  <./Accordeon1.png> <./1W2_Accord.png>]
-<Model1W3C_O_Aco_D2_Linear.png, id=1063, 1387.584pt x 698.8509pt>
+<Model1W3C_O_Aco_D2_Linear.png, id=1071, 1387.584pt x 698.8509pt>
 File: Model1W3C_O_Aco_D2_Linear.png Graphic file (type png)
 <use Model1W3C_O_Aco_D2_Linear.png>
 Package pdftex.def Info: Model1W3C_O_Aco_D2_Linear.png  used on input line 297.
@@ -1181,7 +1184,7 @@ Overfull \hbox (15.05829pt too wide) in paragraph at lines 297--297
  [] 
  []
 
-<Model1W3C_O_Aco_D2_Newell.png, id=1064, 1387.584pt x 698.8509pt>
+<Model1W3C_O_Aco_D2_Newell.png, id=1072, 1387.584pt x 698.8509pt>
 File: Model1W3C_O_Aco_D2_Newell.png Graphic file (type png)
 <use Model1W3C_O_Aco_D2_Newell.png>
 Package pdftex.def Info: Model1W3C_O_Aco_D2_Newell.png  used on input line 297.
@@ -1195,72 +1198,93 @@ Overfull \hbox (15.05829pt too wide) in paragraph at lines 297--297
 [16
 
  <./Model1W3C_O_Aco_D2_Linear.png> <./Model1W3C_O_Aco_D2_Newell.png>]
+<1W2_Acc2.png, id=1136, 462.528pt x 346.896pt>
+File: 1W2_Acc2.png Graphic file (type png)
+<use 1W2_Acc2.png>
+Package pdftex.def Info: 1W2_Acc2.png  used on input line 308.
+(pdftex.def)             Requested size: 153.64493pt x 115.23296pt.
+
 [17
 
-]
-<Stability.png, id=1173, 462.528pt x 346.896pt>
+ <./1W2_Acc2.png>]
+<Stability.png, id=1197, 462.528pt x 346.896pt>
 File: Stability.png Graphic file (type png)
 <use Stability.png>
-Package pdftex.def Info: Stability.png  used on input line 324.
+Package pdftex.def Info: Stability.png  used on input line 329.
 (pdftex.def)             Requested size: 150.57372pt x 112.9304pt.
-<AnalyticalSolution.png, id=1174, 578.16pt x 433.62pt>
+<AnalyticalSolution.png, id=1198, 578.16pt x 433.62pt>
 File: AnalyticalSolution.png Graphic file (type png)
 <use AnalyticalSolution.png>
-Package pdftex.def Info: AnalyticalSolution.png  used on input line 324.
+Package pdftex.def Info: AnalyticalSolution.png  used on input line 329.
 (pdftex.def)             Requested size: 150.57372pt x 112.93042pt.
  [18
 
  <./Stability.png> <./AnalyticalSolution.png>]
-<FieldOfVector_CV.png, id=1227, 497.9403pt x 390.9807pt>
+<FieldOfVector_CV.png, id=1251, 497.9403pt x 390.9807pt>
 File: FieldOfVector_CV.png Graphic file (type png)
 <use FieldOfVector_CV.png>
-Package pdftex.def Info: FieldOfVector_CV.png  used on input line 343.
+Package pdftex.def Info: FieldOfVector_CV.png  used on input line 348.
 (pdftex.def)             Requested size: 141.3554pt x 110.98918pt.
-<FieldOfVector_CV2.png, id=1228, 393.8715pt x 393.8715pt>
+<FieldOfVector_CV2.png, id=1252, 393.8715pt x 393.8715pt>
 File: FieldOfVector_CV2.png Graphic file (type png)
 <use FieldOfVector_CV2.png>
-Package pdftex.def Info: FieldOfVector_CV2.png  used on input line 343.
+Package pdftex.def Info: FieldOfVector_CV2.png  used on input line 348.
 (pdftex.def)             Requested size: 141.04356pt x 141.04237pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:CombinedF
 igures}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.343 \end{frame}
+l.348 \end{frame}
                   [19
 
  <./FieldOfVector_CV.png> <./FieldOfVector_CV2.png>]
 (diapo1.toc) [20
 
 ]
-Overfull \vbox (1.32411pt too high) detected at line 366
+Overfull \vbox (1.32411pt too high) detected at line 371
  []
 
 [21
 
-] (diapo1.toc) [22
-
-] [23
+] [22
 
 ]
-<traffic_flow_density_map.png, id=1529, 462.528pt x 346.896pt>
+<traffic_flow_density_map.png, id=1495, 462.528pt x 346.896pt>
 File: traffic_flow_density_map.png Graphic file (type png)
 <use traffic_flow_density_map.png>
-Package pdftex.def Info: traffic_flow_density_map.png  used on input line 393.
+Package pdftex.def Info: traffic_flow_density_map.png  used on input line 398.
 (pdftex.def)             Requested size: 199.73653pt x 149.80284pt.
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <10> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 393.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 398.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <7> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 393.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 398.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 393.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 398.
 
- [24
+ [23
 
- <./traffic_flow_density_map.png>] (diapo1.toc)
-[25
+ <./traffic_flow_density_map.png>] [24
+
+]
+<traffic_flow_density_map_LF.png, id=1604, 462.528pt x 346.896pt>
+File: traffic_flow_density_map_LF.png Graphic file (type png)
+<use traffic_flow_density_map_LF.png>
+Package pdftex.def Info: traffic_flow_density_map_LF.png  used on input line 42
+8.
+(pdftex.def)             Requested size: 199.73653pt x 149.80284pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{fig:traffic_f
+low_density_map}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.428 \end{frame}
+                  [25
+
+ <./traffic_flow_density_map_LF.png>] (diapo1.toc)
+[26
 
 ]
 \tf@nav=\write6
@@ -1277,16 +1301,16 @@ LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `diapo1.out' has not changed.
-(rerunfilecheck)             Checksum: 169CA57BAE1A80E38C5780A625CC07F3;2395.
+(rerunfilecheck)             Checksum: E484A94CC22B9D20DD141D608DA02BDA;2577.
  ) 
 Here is how much of TeX's memory you used:
- 25891 strings out of 476331
- 533624 string characters out of 5787765
- 1880660 words of memory out of 5000000
- 45707 multiletter control sequences out of 15000+600000
+ 25926 strings out of 476331
+ 534546 string characters out of 5787765
+ 1881660 words of memory out of 5000000
+ 45738 multiletter control sequences out of 15000+600000
  525252 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,20n,122p,525b,898s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,24n,122p,525b,898s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmex10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -1303,9 +1327,9 @@ sfonts/cm/cmssi8.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb><C:/Users/flore/AppData/Local/Programs/MiKTeX/fon
 ts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/flore/AppData/Local/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on diapo1.pdf (25 pages, 1599117 bytes).
+Output written on diapo1.pdf (26 pages, 1714615 bytes).
 PDF statistics:
- 1719 PDF objects out of 1728 (max. 8388607)
- 75 named destinations out of 1000 (max. 500000)
- 968 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1796 PDF objects out of 2073 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
+ 1058 words of extra memory for PDF output out of 10000 (max. 10000000)
 
