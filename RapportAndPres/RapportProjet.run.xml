@@ -41,13 +41,13 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Presentation.bcf</file>
+      <file>RapportProjet.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>Presentation.bbl</file>
+      <file>RapportProjet.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -61,23 +61,23 @@
       <file>british.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>Presentation</infile>
+      <infile>RapportProjet</infile>
     </cmdline>
     <input>
-      <file>Presentation.bcf</file>
+      <file>RapportProjet.bcf</file>
     </input>
     <output>
-      <file>Presentation.bbl</file>
+      <file>RapportProjet.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Presentation.bbl</file>
+      <file>RapportProjet.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Presentation.bcf</file>
+      <file>RapportProjet.bcf</file>
     </requires>
     <requires type="editable">
       <file>rapport.bib</file>
