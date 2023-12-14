@@ -14,6 +14,14 @@
 % set captions with numbers
 \setbeamertemplate{caption}[numbered]
 
+% Page numbering setup
+\setbeamertemplate{footline}{%
+	\hspace*{\fill}%
+	\usebeamercolor[fg]{page number in head/foot}%
+	\usebeamerfont{page number in head/foot}%
+	\insertframenumber\,/\,\inserttotalframenumber\kern1em\vskip2pt%
+}
+
 
 \title[2023-2024]{Simple Modeling of Road Traffic.} 
 
@@ -94,9 +102,7 @@ Supervisor: \\ % Your institution for the title page
 	\end{block}
 \end{frame}
 %******************************************************************************************
-\begin{frame}{Presentation of the subject}
-    Animation à ajouter ??
-\end{frame}
+
 %******************************************************************************************
 \begin{frame}
 \subsection{Project organization overview}
@@ -331,16 +337,16 @@ Supervisor: \\ % Your institution for the title page
 \begin{frame}{Equilibrium}
 	\begin{figure}[H]
 		\centering
-		\begin{minipage}[t]{0.46\textwidth}
-			\centering
-			\includegraphics[width=1\linewidth]{FieldOfVector_CV.png}
-			\caption{Field Of Vector for the Newell's Model (Stability)}
+		\begin{minipage}[t]{0.53\textwidth}
+				\centering
+				\includegraphics[width=\linewidth]{VectorFIeld.png}
+				\caption{Field Of Vector for the Newell's Model (Stability for 2 cars)}
 		\end{minipage}
 		\hfill 
-		\begin{minipage}[t]{0.51\textwidth}
+		\begin{minipage}[t]{0.44\textwidth}
 			\centering
 			\includegraphics[width=0.9\linewidth]{FieldOfVector_CV2.png}
-			\caption{Field Of Vector for the Linear Model (Stability)}
+			\caption{Field Of Vector for the Newell's Model (Stability for 3 cars)}
 			\label{fig:FV1}
 		\end{minipage}
 		\label{fig:CombinedFigures}
@@ -363,9 +369,6 @@ Supervisor: \\ % Your institution for the title page
 			\item $\rho(0,t) = \rho(L,t), \quad t \geq 0$
 			\item $\Omega := \left] 0,L\right[, $
 			\item $\rho(x,t)$ represents the traffic density at position $x$ and time $t$, 
-			\item $F(\rho)$ denotes the traffic flux as a function of density,
-			\item $F(\rho)$ is often represented by a function modeling the relationship between traffic density and traffic velocity,
-			\item $F(\rho) = V(\rho) \cdot \rho,$ where $V(\rho)$ is the traffic velocity as a function of density.
 		\end{itemize}
 	\end{block}
 \end{frame}
@@ -380,8 +383,17 @@ Supervisor: \\ % Your institution for the title page
 			\item $v_i^n = \left( 1 - \frac{\rho_i^n}{\rho_{max}}\right)  \times V_{max}$
 		\end{itemize}
 	\end{alertblock}
-	enrichir la slide. Peut etre ajouter le modèle dans la théorie et dire que quand on l'applique on obtient ca ou alors mettre une iage qui explique le shéma de Euler explicit ? 
-
+	\begin{block}{Initial Condition and Discretization}
+		\[
+		\boxed{
+			\begin{aligned}
+				&\rho_0(x)=0.2 \cdot \sin\left(2 \cdot \pi \cdot \frac{x}{L}\right) + 0.3 \\
+				&\Delta t = 0.01 \\
+				&\Delta x = 1
+			\end{aligned}
+		}
+		\]
+	\end{block}
 	%slide : 
 %Partie Math EDP
 %Equation + cond au bord
@@ -409,7 +421,17 @@ Supervisor: \\ % Your institution for the title page
 		\end{equation*}
 		
 	\end{alertblock}
-	enrichir la slide. Peut-être ajouter le modèle dans la théorie et dire que quand on l'applique on obtient ça ou alors mettre une image qui explique le schéma de Euler explicite ? 
+	\begin{block}{Initial Condition and Discretization}
+		\[
+		\boxed{
+			\begin{aligned}
+				&\rho_0(x)=0.2 \cdot \sin\left(2 \cdot \pi \cdot \frac{x}{L}\right) + 0.8 \\
+				&\Delta t = 0.01 \\
+				&\Delta x = 1
+			\end{aligned}
+		}
+		\]
+	\end{block}
 	
 	%slide: 
 	%Partie Math EDP
