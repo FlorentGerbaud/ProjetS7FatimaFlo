@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'Presentation.blg'
+[202] biber-MSWIN64:340> INFO - === 
+[272] Biber.pm:419> INFO - Reading 'Presentation.bcf'
+[398] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[415] Biber.pm:4419> INFO - Processing section 0
+[439] Biber.pm:4610> INFO - Looking for bibtex file 'rapport.bib' for section 0
+[489] bibtex.pm:1713> INFO - LaTeX decoding ...
+[509] bibtex.pm:1519> INFO - Found BibTeX data source 'rapport.bib'
+[594] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[594] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[594] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
+[594] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
+[625] bbl.pm:660> INFO - Writing 'Presentation.bbl' with encoding 'UTF-8'
+[628] bbl.pm:763> INFO - Output to Presentation.bbl
