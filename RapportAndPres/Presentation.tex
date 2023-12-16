@@ -782,22 +782,22 @@
 			\item The acceleration of the second car is governed by a constant function, denoted as alpha, which remains fixed. In the algorithm \ref{alg:xi_dot} we took $\alpha_2=2.0$
 		\end{itemize} 
 		
-		The initial simulation we aimed to conduct was intended to demonstrate and illustrate the behavior of drivers in real-life scenarios. Figure \ref{fig:Aco1} accurately depicts this phenomenon. Specifically, we Similar to real-life situations, we observe that if the second car is too far behind the first one, it decelerates. Conversely, when it is adequately distant from the first car, it increases its speed.
+		The initial simulation we wanted to carry out was intended to demonstrate and illustrate driver behavior in real-life scenarios. Figure \ref{fig:Aco1} faithfully represents this phenomenon. Specifically, we observe that if the second car is too far from the first, it decelerates. Conversely, when it is far enough away from the first car, it increases its speed.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{Accordeon1.png}
-			\caption[Simulation of accordion phenomenon with Linear Model]{\textbf{\underline{Simulation of accordion phenomenon with Linear Model : }} In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. We could see that orange graph behaves like a periodic accordion with respect to time.}
+			\caption[Simulation of accordion phenomenon with Linear Model]{\textbf{\underline{Simulation of accordion phenomenon with Linear Model : }} In this image, you can see how the positions of two cars change over time. The blue car maintains a steady speed, while the orange car trails behind the blue car. The graph representing the orange car's movement appears to fluctuate periodically, resembling an accordion expanding and contracting over time.}
 			\label{fig:Aco1}
 		\end{figure}
 		
-		
-		Similar to the previous case, applying Newell's method yields identical results. As depicted in Figure \ref{fig:1W2_ACCORD}, the graph illustrates the accordion phenomenon, featuring distinct periods of acceleration followed by deceleration.
+		\newpage
+		Just like in the Linear Model, using Newell's method produces the same type of outcomes. As shown in Figure \ref{fig:1W2_ACCORD}, the graph demonstrates the accordion effect, displaying cycles of acceleration succeeded by deceleration.
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{1W2_Accord.png}
-			\caption[Simulation of accordion phenomenon with Newell's Model]{\textbf{\underline{Simulation of accordion phenomenon with Newell's Model : }} In this picture, you can observe the positional evolutions of two cars. The first one (blue) maintains a constant speed, while the second one (orange) follows behind the first. It is evident that the orange graph behaves like a periodic accordion with respect to time.}
+			\caption[Simulation of accordion phenomenon with Newell's Model]{\textbf{\underline{Simulation of accordion phenomenon with Newell's Model : }} In this image, you can see how the positions of two cars change over time. The blue car maintains a steady speed, while the orange car trails behind the blue car. The graph representing the orange car's movement appears to fluctuate periodically, resembling an accordion expanding and contracting over time.}
 			\label{fig:1W2_ACCORD}
 		\end{figure}
 		
@@ -829,7 +829,7 @@
 		\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth]{Model1W3C_O_Aco_D2_Newell.png}
-		\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
+		\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe that the variations of position is more constant than in the linear model.}
 		\label{fig:Model1W3C_O_Aco_D2_Newell}
 	\end{figure}
 		
@@ -896,25 +896,27 @@
 			\boxed{d_1(t) = \frac{{V_1 - V_1 \cdot e^{-\alpha_2(t-t_0)} + \alpha_2 \cdot d_1(t_0) \cdot e^{-\alpha_2(t-t_0)}}}{\alpha_2}}
 		\end{align*}
 		
-		Initially, the intuition was that if \(\alpha_2 < 0\), the solution would diverge as one car moves backward and the other forward. However, upon studying the equation, we observe that the terms \(V_1\) and \(\alpha_2 \cdot d_1(t_0)\) are constant and less significant.
+		Initially, the assumption was that if $\alpha_2 < 0$, the solution would diverge, with one car moving backwards and the other forwards. Analyzing the equation, we see that the terms $V_1$ and $\alpha_2 \cdot d_1(t_0)$ remain constant and have less influence.
 		
-		Nevertheless, both terms, \(e^{-\alpha_2(t-t_0)}\), represent exponential functions of time. For negative \(\alpha_2\), these exponentials grow exponentially over time.
+		Nevertheless, both terms, $e^{-\alpha_2(t-t_0)}$, represent exponential functions of time. When $\alpha_2$ is negative, these exponentials grow exponentially with time.
 		
-		Thus, the equation is stable and converges to the equilibrium \(\boxed{d_1(t)=\frac{V_1}{\alpha_2}}\) if \(\alpha_2 > 0\).
+		Consequently, the equation remains stable and converges to equilibrium $\boxed{d_1(t)=\frac{V_1}{\alpha_2}}$ if $\alpha_2 > 0$.
 		
-		Graphically, these observations are depicted in figures \ref{fig:RC1} and \ref{fig:RS1}. Notably, across all figures, there's no occurrence of solution explosion. Specifically, in figure \ref{fig:RC1}, the car's position exhibits periodic behavior concerning time. Meanwhile, in figure \ref{fig:RS1}, the depiction illustrates the convergence of the distance between two cars towards an equilibrium state.
+		These results are shown graphically in figures \ref{fig:RC1} and \ref{fig:RS1}. It's important to note that in all figures, there is no explosion of the solution. In particular, in figure \ref{fig:RC1}, the car's position exhibits periodic behavior as a function of time. Furthermore, in figure \ref{fig:RS1}, the illustration shows the convergence of the distance between the two cars towards an equilibrium state.
+		
+			
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\linewidth]{RealisticCase.png}
-			\caption[Realistic Case for the Linear Model with Two Cars]{\textbf{\underline{Realistic Case for the Linear Model with Two Cars: }}This simulation illustrates real-life behavior, characterized by a reaction time of approximately 1 second, achieved using a time step of 1 second instead of smaller increments in the algorithm.}
+			\caption[Realistic Case for the Linear Model with Two Cars]{\textbf{\underline{Realistic Case for the Linear Model with Two Cars: }}This simulation illustrates real-life behavior, characterized by a reaction time of approximately 1 second, achieved using a time step of 1 second instead of smaller increments in the algorithm. The solution is obtained with the Euler-Explicit method}
 			\label{fig:RC1}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\linewidth]{RealSolCase.png}
-			\caption[Real Solution for the Linear Model with Two Cars]{\textbf{\underline{Real Solution for the Linear Model with Two Cars: }}This simulation depicts the accurate solution of the ODE (Ordinary Differential Equation), portraying an infinitesimally small reaction time through the use of smaller time increments in the algorithm, rather than representing real-life scenarios.}
+			\caption[Real Solution for the Linear Model with Two Cars]{\textbf{\underline{Real Solution for the Linear Model with Two Cars: }}This simulation depicts the accurate solution of the ODE (Ordinary Differential Equation), portraying an infinitesimally small reaction time through the use of smaller time increments in the algorithm, rather than representing real-life scenarios. The solution is obtained with the Euler-Explicit method}
 			\label{fig:RS1}
 		\end{figure}
 		
