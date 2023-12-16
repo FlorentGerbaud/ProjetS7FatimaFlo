@@ -971,9 +971,9 @@
 			&C_2=n-\frac{V_1}{\alpha_3} - C_1
 		\end{align*}
 		
-		In the scenario involving just three cars, our analysis of the formula's terms leads us to a critical observation: divergence occurs if the value of $\alpha_2$ or $\alpha_3$ is less than zero. This finding confirms our initial intuition.
+		In a scenario involving just three cars, examination of the formula's components leads us to a crucial observation: a divergence situation occurs when the value of $\alpha_2$ or $\alpha_3$ is less than zero. This result is in line with our initial expectations.
 		
-		Given that the system of equation remains the same for 'n' cars, except for a constant, this analysis of equilibrium can extend to 'n' cars.
+		As the equations governing the system remain consistent in the case of "n" cars, with the exception of the constant $\alpha_i$, this equilibrium analysis can be applied to any number of cars ("n").
 		
 		The visual representation in Figure \ref{fig:SE1} elucidates the equilibrium dynamics. In the left subfigure, the vector field demonstrates convergence towards the equilibrium point. Simultaneously, the right subfigure presents the Analytical Solutions derived from the system of Ordinary Differential Equations (ODEs).
 		
@@ -1011,7 +1011,7 @@
 			\label{fig:SE2}
 		\end{figure}
 		
-		Figure \ref{fig:SE2} visually portrays this divergence phenomenon. The left subfigure illustrates the vector field diverging from the theoretical equilibrium point. Meanwhile, the right subfigure showcases the Analytical Solutions derived from the set of ODEs, demonstrating a complete divergence leading to infinity. This divergence pattern is consistent with the negative acceleration scenario, echoing the lack of attainable solutions, akin to the three-car case.
+		Figure \ref{fig:SE2} provides a visual illustration of this divergence phenomenon. The left-hand sub-figure illustrates the divergence of the vector field from the theoretical equilibrium point. At the same time, the right-hand sub-figure shows the analytical solutions derived from the set of EDOs, demonstrating complete divergence leading to infinity. This divergence pattern is consistent with the negative acceleration scenario, echoing the absence of feasible solutions.
 		
 		
 	\subsubsection{System Stability and Equilibrium for the Newell's Model}
@@ -1048,8 +1048,8 @@
 	In the context of 1D analysis, we begin by calculating $f'(d_1, t)$, which results in:
 	
 	\[
-	f'(d_1, t) = -\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}
-	\]
+		\boxed{f'(d_1, t) = -\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}}
+		\]
 	
 	It is evident that $f'(d_1, t)$ is negative for all values of $\alpha_2$ greater than zero. Therefore, in our specific scenario, the equilibrium remains stable at all times, as negative acceleration is not considered.
 	
@@ -1061,14 +1061,14 @@
 	
 	\begin{figure}[H]
 		\centering
-		\begin{subfigure}{0.40\textwidth}
+		\begin{subfigure}{0.54\textwidth}
 			\centering
 			\includegraphics[width=\linewidth]{VectorFIeld.png}
 		\end{subfigure}
 		\hfill
-		\begin{subfigure}{0.55\textwidth}
+		\begin{subfigure}{0.44\textwidth}
 			\centering
-			\includegraphics[width=\linewidth]{RealSol.png}
+			\includegraphics[width=\linewidth]{RealSolModif.png}
 		\end{subfigure}
 		\caption[Visualisation of the equilibrium]{\textbf{\underline{Visualisation of the equilibrium:}} On the left figure, you could see the vector field that converges onto the equilibrium point. On the right, the Approximation of the real Solutions of the system of ODEs.}
 		\label{fig:SE3}
@@ -1076,9 +1076,12 @@
 	
 		Graphically, this can be observed in Figure \ref{fig:SE3}. On the left side of the figure, the phenomenon of convergence towards equilibrium can be demonstrated when the previously performed conditions are adhered to.
 	
-	On the right side, we depict the solutions of the system using Newell's equation. It is noticeable that over time, the distance between the two cars gradually increase at the beginning of the simulation, eventually approaching a constant value, which aligns with the equilibrium observed in the left figure.
+	On the right, we show the approximate solutions (Euler-Explicit) of the equation system given by the Newell model. We can see that, over time, the distance between the two cars reaches a constant value, corresponding to the equilibrium observed in the figure on the left. \newline\newline
 	
 	\textbf{\underline{The Study of the equilibrium for three cars : }} \newline\newline
+	
+	In the case of three cars, we obtain the following system of equations:
+	
 	
 	\begin{align*}
 		&\begin{cases}
@@ -1087,27 +1090,26 @@
 				&\dot{d_2}(t) = \dot{x_2}(t)-\dot{x_3}(t) = V_2 - V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} - V_3 + V_3 \cdot e^{-\frac{\alpha_3}{V_3}(d_2 - d_{3}^{sec})}
 			\end{aligned}
 		\end{cases}
-		 \\
+		 \\ \\
+		 \text{Where : } \\ \\
 		&\left\{
 		\begin{aligned}
 			V_1 &:= \text{Maximum speed for car number 1}, \\
 			V_2 &:= \text{Maximum speed for car number 2}, \\
-			\alpha_2 &:= \text{capacity of acceleration for car number 2}, \\
-			d_{2}^{sec} &:= \text{security distance that car number 2 maintains}.
+			\alpha_i &:= \text{capacity of acceleration for car number i}, \\
+			d_{i}^{sec} &:= \text{security distance that car number i maintains}.
 		\end{aligned}
 		\right.
 	\end{align*}
+	\\
 	
-	again, we apply Lyapunov's Indirect Theorem to investigate the equilibrium.
-	
-	
-	We are going to calculkate the Jacobienne matrix : 
+
 	
 	\begin{align*}
-		J_{\bar{x}}=\begin{pmatrix}
+	\boxed{	J_{\bar{d}}=\begin{pmatrix}
 			-\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} & 0 & \\
 			\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} & -\alpha_3e^{-\frac{\alpha_3}{V_3}(d_2 - d_{3}^{sec})} &
-		\end{pmatrix}
+	\end{pmatrix}}
 	\end{align*}
 	
 	However, in the 2D case, Lyapunov tells us that the equilibrium is stable if:
@@ -1115,8 +1117,8 @@
 	\[
 	\boxed{
 		\begin{aligned}
-			Tr(J_{\bar{x}}) &< 0 \\
-			\det(J_{\bar{x}}) &> 0
+			Tr(J_{\bar{d}}) &< 0 \\
+			\det(J_{\bar{d}}) &> 0
 		\end{aligned}
 	}
 	\]
@@ -1124,11 +1126,9 @@
 	The both condition are respected iff $\lambda_2>0, \lambda_3>0$
 	 \newline\newline
 	 
-	In the case of two cars, if the conditions are respected, we can observe graphically the convergence towards the equilibrium point. As the equations apply uniformly to all cars, the equilibrium exists under the same conditions, even for the n-th car.
+	In the case of two cars, if the conditions are met, convergence to the equilibrium point can be observed graphically. As the equations apply uniformly to all cars, equilibrium exists under the same conditions, even for the nth car.
 	
-	On the Figure \ref{fig:SE4}, the equilibrium point is represented by the coordinates corresponding to the equilibrium distance on the y-axis between car 2 and 3, and on the x-axis between car 1 and 2 on the figure \ref{fig:SE5}. This distance, similar to other cases, can be found on the figure \ref{fig:SE5} by calculating the difference between the positions of the cars.
-	
-	Similar to the previous scenario, the plotted solution is not the actual solution but an approximation using the Euler Explicit method because obtaining an analytical solution is impossible.
+	In figure \ref{fig:SE4}, the equilibrium point is represented by coordinates corresponding to the equilibrium distance between cars 2 and 3 on the $d_2$ axis, and between cars 1 and 2 on the $d_1$ axis. This distance, as in other cases, can be found on figure \ref{fig:SE5} by calculating the difference between the positions of the cars. As in the previous scenario, the solution plotted is not the real solution but an approximation using Euler's explicit method because it is impossible to obtain an analytical solution.
 	 
 	 
 	 \begin{figure}[H]
