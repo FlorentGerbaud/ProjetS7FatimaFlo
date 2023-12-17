@@ -131,7 +131,7 @@
 \renewcommand{\cfttoctitlefont}{\hfill\large\bfseries\fontsize{20}{24}\selectfont}
 \renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
 
-\definecolor{mydarkyellow}{HTML}{87CEEB}
+\definecolor{mydarkyellow}{RGB}{105, 105, 105}
 \definecolor{lightblue}{RGB}{173,216,230}
 \definecolor{lightyellow}{RGB}{255,255,204}
 \definecolor{yellow}{RGB}{255,255,0}
@@ -218,6 +218,11 @@
 		
 		Microscopic simulation is a computer-based modeling technique that simulates the behavior of individual entities, such as vehicles or pedestrians, within a system. It focuses on detailed modeling of each entity's movements, interactions, and behaviors to understand and predict the dynamics of a larger system, like traffic flow or crowd movement.
 		
+		\item \textbf{\underline{FDM}}
+		
+		The Finite Difference Method (FDM) is a numerical technique used to approximate solutions to differential equations by discretizing the derivatives into finite differences at discrete points within a domain. It transforms continuous equations into a system of algebraic equations, making it computationally feasible to solve problems in various fields such as physics, engineering, and finance.
+		Explore the Finite Difference Method—a powerful numerical technique revolutionizing problem-solving in diverse fields. Kumar's concise study delves into its applications, transforming complex differential equations into solvable algebraic systems. \cite{article}
+		
 		\item \textbf{\underline{Macroscopic simulation}}
 		
 		Macroscopic simulation models systems at a higher, aggregated level, considering overall behaviors like traffic flow without detailing individual movements. It helps analyze system-level trends and capacities, useful for broader planning.
@@ -233,7 +238,7 @@
 		
 		Explore the integration of a driving simulator with a traffic simulator in Jeihani et al.'s study \cite{JEIHANI2017164}, revealing enhanced traffic density and Variable Message Sign (VMS) reliability. The findings suggest that integration positively influences compliance behavior and factors affecting route diversion.
 		
-		\cite{SMRT}
+		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{intro.jpg}
@@ -813,11 +818,7 @@
 			\item The second car (orange) is erratic as it is driven by a drunk driver, causing completely random variations in its position.
 			\item The last one (blue) accelerates when it has distance and decelerates when it is too close.
 		\end{itemize}
-		The graph illustrates a noticeable departure from the periodic accordion phenomenon observed earlier. Instead, it becomes non-periodic and entirely unpredictable.
-		
-		In Figure \ref{fig:Model1W3C_O_Aco_D2_Linear}, we observe that compared to the standard model (without acceleration variations), the behavior of the car becomes entirely unpredictable and may lead to accidents. For instance, around time 20, the orange car nearly collided with the blue car. Since this model employs sinusoidal functions to simulate the erratic behavior of an intoxicated driver, instances of accidents can occasionally appear on the graph. Thus, this simulation becomes more interesting as it represents a real-life scenario.
-		
-		However, it is interesting to remark that compared to Newell's method (Figure \ref{fig:Model1W3C_O_Aco_D2_Newell}), the variations are very significant, potentially resulting in a lack of precision. In fact, in the Newell's model, the simulation is more realistic due to the smoothing of variations and much less abrupt changes in positions.
+		The graph illustrates a noticeable departure from the periodic accordion phenomenon observed earlier. Instead, it becomes non-periodic and entirely unpredictable. In Figure \ref{fig:Model1W3C_O_Aco_D2_Linear}, we observe that compared to the standard model (without acceleration variations), the behavior of the car becomes entirely unpredictable and may lead to accidents. For instance, around time 20, the orange car nearly collided with the blue car. Since this model employs sinusoidal functions to simulate the erratic behavior of an intoxicated driver, instances of accidents can occasionally appear on the graph. Thus, this simulation becomes more interesting as it represents a real-life scenario. However, it is interesting to remark that compared to Newell's method (Figure \ref{fig:Model1W3C_O_Aco_D2_Newell}), the variations are very significant, potentially resulting in a lack of precision. In fact, in the Newell's model, the simulation is more realistic due to the smoothing of variations and much less abrupt changes in positions.
 		
 		\begin{figure}[H]
 			\centering
@@ -834,6 +835,15 @@
 	\end{figure}
 		
 		\subsection{Simulation with Unpredictable Drivers}
+		
+			In this simulation incorporating another type of variations in the acceleration of the car. Specifically, in this section, we consider a scenario where one of the drivers is unpredictable. Consequently, the driver's acceleration fluctuates over time. The Hypotesis are the following one 
+			\begin{itemize}
+				\item The first car is traveling at a constant speed but is subject to some obstacles on the road at times.
+				\item The second car (orange) is a dangerous driver du to unpredictable comportment.
+				\item The last one (blue) accelerates when it has distance and decelerates when it is too close.
+			\end{itemize}
+			
+			In these figures, we observe a new phenomenon. Firstly, it is noticeable in Figure \ref{fig:Model1W3C_O_Aco_D2_Linear} that the drivers exhibit very risky behavior, as sometimes they move very slowly and other times they accelerate significantly. Even though this model is similar to the Drunk Drivers model, it remains interesting because it better demonstrates the effect of the Newell method. Specifically, as shown in Figure \ref{fig:Model1W3C_O_Aco_I2_Newell}, the graph appears smoother because the accelerations are more realistic, being linear. We also notice that the phases of unpredictability are more numerous than in the linear model. However, the drivers exhibit only two types of behavior (it moving or it stop is car). This can be interpreted in two ways. The first interpretation is that it increases the danger posed by the drivers because they repeatedly stop and then accelerate, which can be hazardous for preceding vehicles. Another interpretation could be the limitation of the Newell model in this specific case. In reality, for a more accurate model, it lacks a phase where the car moves but at a slow pace. This aspect is intriguing. A better model could combine these two phenomena: more unpredictable phases (With linear acceleration or polynomial acceleration, but controlled to achieve a more realistic outcome.), as shown in Figure \ref{fig:Model1W3C_O_Aco_I2_Newell}, with the presence of phases where the driver moves very slowly.
 		
 			\begin{figure}[H]
 			\centering
@@ -853,13 +863,7 @@
 		
 		\subsubsection{Accident Phenomenon For The Linear Model }
 		
-		In this scenario, the objective is to demonstrate that if a driver has a longer reaction time, an accident may occur.
-		
-		In this particular case, we retained the same assumptions as before, except with a slightly lower acceleration capacity and a longer reaction time. In algorithm \ref{alg:xi_dot}, we used $\alpha_2=1.75$, and in algorithm \ref{alg:update_positions}, we used $h=1.5$.
-		
-		As depicted in figure \ref{fig:Acc1}, the accident is confirmed due to a curve intersection (the position of the second car (orange) surpasses that of the first car (blue)). This indicates that the second car collided with the first car.
-		
-		In this scenario, the aim is only to illustrate that an accident only becomes apparent when the distance to the preceding car is greater than that to the first car. However, in any simulation, the accident can be observed in the same way, so we are no longer particularly interested in this type of simulation For further graphical studies.
+		In this scenario, the objective is to demonstrate that if a driver has a longer reaction time, an accident may occur. In this particular case, we retained the same assumptions as before, except with a slightly lower acceleration capacity and a longer reaction time. In algorithm \ref{alg:xi_dot}, we used $\alpha_2=1.75$, and in algorithm \ref{alg:update_positions}, we used $h=1.5$. As depicted in figure \ref{fig:Acc1}, the accident is confirmed due to a curve intersection (the position of the second car (orange) surpasses that of the first car (blue)). This indicates that the second car collided with the first car. In this scenario, the aim is only to illustrate that an accident only becomes apparent when the distance to the preceding car is greater than that to the first car. However, in any simulation, the accident can be observed in the same way, so we are no longer particularly interested in this type of simulation For further graphical studies.
 		
 		If you wish to see other graph i invite you to see the figure in annexe or to go on the GitHub project.
 	
@@ -942,14 +946,14 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{FieldOfVector_CV.png}
+			\includegraphics[width=0.7\textwidth]{FieldOfVector_CV.png}
 			\caption[Field Of Vector for the Linear Model (Stability)]{\textbf{\underline{Field Of Vector for the Linear Model (Stability): }} On this figure, you could see the field of vectors that converges to the equilibrium.}
 			\label{fig:FV1}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{FieldOfVector_DV.png}
+			\includegraphics[width=0.7\textwidth]{FieldOfVector_DV.png}
 			\caption[Field Of Vector for the Linear Model (Instability)]{\textbf{\underline{Field Of Vector for the Linear Model (Instability): }} On this figure, you could see the field of vectors that diverges from the equilibrium.}
 			\label{fig:FV2}
 		\end{figure}
@@ -1031,21 +1035,13 @@
 			d_{2}^{sec} &:= \text{security distance that car number 2 maintains}.
 		\end{aligned}
 		\right.
-	\end{align*}
-	
-	Firstly, let's determine the equilibrium:
+	\end{align*} \\ Firstly, after performing this calculus \ref{Equilibre:2}, we determine that the Equilibrium point is the following one : 
 	
 	\begin{align*}
-		V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= 0 \\
-		e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= \frac{V_2-V_1}{V_2} \\
-		e^{-\frac{\alpha_2}{V_2}d_1} &= \frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \\
-		-\frac{\lambda_2}{V_2}d_1 &= \ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right) \\
-		d_1^* &= -\frac{V_2}{\lambda_2}\ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right)
+		\boxed{d_1^* = -\frac{V_2}{\alpha_2}\ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right)}
 	\end{align*}
 	
-	The challenge with this equation is the inability to find an analytical solution. Consequently, we apply Lyapunov's Indirect Theorem to investigate the equilibrium.
-	
-	In the context of 1D analysis, we begin by calculating $f'(d_1, t)$, which results in:
+	The challenge with this equation is the inability to find an analytical solution. Consequently, we apply Lyapunov's Indirect Theorem to investigate the equilibrium. In the context of 1D analysis, we begin by calculating $f'(d_1, t)$, which results in:
 	
 	\[
 		\boxed{f'(d_1, t) = -\alpha_2e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})}}
@@ -1101,7 +1097,13 @@
 		\end{aligned}
 		\right.
 	\end{align*}
-	\\
+	
+	By using the same method as for the simulation with two cars, we could find that the equilibrium follows the following formula :
+	\begin{align*}
+		d_1^* &= -\frac{V_2}{\lambda_2}\ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right) \\
+		d_2^* &= -\frac{V_3}{\alpha_3}\ln \left(\frac{-V_3+V_2-V_2e^{\frac{-\alpha_2}{V_2}d_1}e^{\frac{\alpha_2}{V_2}d_2^{sec}}}{-V_3}e^{-\alpha_3 d_3^{sec}} \right)
+	\end{align*}
+	
 	
 
 	
@@ -1159,7 +1161,7 @@
 	
 	\subsection{Simulation Performed with Euler Explicit Model}
 	
-	For the simulation that we are going to do in this part, in the \ref{eq:PDE} we decide to take 
+	For the simulation in this section, we have decided to utilize the equation \ref{eq:PDE}, incorporating the following initial function and discretization:
 	
 	\[
 	\boxed{
@@ -1171,15 +1173,18 @@
 	}
 	\]
 	
-	We decided to choose these parameters for some reasons. If interested in the function $\rho_0(x)$, we chose this function because, upon completing the simulation, we observed that for any time step, even an 'infinitely small time step,' the solution became unstable. Therefore, the function we selected allowed us to observe a phenomenon where we have peaks of density, thus enabling us to observe the creation of a 'traffic flow,' as well as its movement. More particularly, we empirically observed that the values of density at which the solutions become unstable occur when the density is greater than 0.5, indicating that the traffic flow reaches half of its capacity. Within the function, the coefficient 0.2 and the addition of 0.3 ensure that the function stays in the interval $[0, 0.5]$.
-	For the time step, we chose 0.01 because the simulation is sufficiently precise and does not require excessive resources. As for the time interval, we selected 1 because we aim to observe the evolution at each meter.
+	We selected specific parameters for distinct reasons. The function $\rho_0(x)$ was chosen because it allows us to observe a particular phenomenon: the emergence of density peaks and the formation as well as movement of a 'traffic flow.' However, after completing the simulation, we noticed an instability in the solution for any time step, even those infinitesimally small, in one specific case.
+	
+	Empirical observation revealed that instability occurs when the density surpasses 0.5, indicating that the traffic flow reaches half of its capacity. To maintain stability, we constrained the function within the range of $[0, 0.5]$ by employing a coefficient of 0.2 and adding 0.3.
+	
+	We settled on a time step of 0.01, as it provides sufficient precision without imposing excessive resource demands. As for the time interval, we opted for one unit to observe the evolution at each meter.
 	
 	Finally we decide to plot the solutions under two forms. The first is a Density Map, and the second is an animations that you could saw on the GitHub Link.
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.65\textwidth]{traffic_flow_density_map.png}
-		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit:}} This figure illustrates the solution of the PDE at any time and position.}
+		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit Method:}} This figure illustrates the solution of the PDE at any time and position. The pattern of the density peak is repeated due to boundary conditions (BC). We observe a diffusion effect in the model and the movement of traffic. }
 		\label{fig:traffic_flow_density_map}
 	\end{figure}
 	
@@ -1216,17 +1221,19 @@
 		\caption[Graph of the Movement of the Traffic Flow]{\textbf{\underline{Graph of the Movement of the Traffic Flow:}} On this graph, you can see that the Traffic Flow is moving forward and that the information is propagating over time. There is the link to see the animation : \href{https://github.com/FlorentGerbaud/Simple-road-traffic-modeling/blob/Flo-PDE/SRTM/EDPMethod/CasTestToLaunch/TestToLaunch/Modele_IC_S/EulerExplicit/traffic_flow_animation.gif}{\textbf{\underline{Traffic Flow Simulation}}}}
 		\label{fig:four_graphs}
 	\end{figure}
-	
-	These two graphs are very interesting because we can observe some phenomena. The first phenomenon is the diffusive nature concerning the model. In fact, on Figure \ref{fig:traffic_flow_density_map}, you can see that each time the peak of density appears, the density of drivers decreases. On Figure \ref{fig:four_graphs}, this becomes evident as the solution to the equation diminishes progressively. If we continue the simulation for a longer period, we will observe the curve collapsing.
+	These two graphs are very interesting because we can observe some phenomena. 
+	\newline\newline\textbf{\underline{Diffusivity of the Model :}} The first phenomenon is the diffusive nature concerning the model. In fact, on Figure \ref{fig:traffic_flow_density_map}, you can see that each time the peak of density appears, the density of drivers decreases. On Figure \ref{fig:four_graphs}, this becomes evident as the solution to the equation diminishes progressively. If we continue the simulation for a longer period, we will observe the curve collapsing.
 	\newline\newline
-	The second phenomenon is the propagation of density over time. In fact, we can observe in Figure \ref{fig:traffic_flow_density_map} that density propagates both temporally and spatially. For instance, the initial peak of density begins at 0 meters and time 0, extending to 100 meters by 6 seconds. In the animation, you can also observe the movement of the peak. In Figure b of the animation, we witness the peak moving from 0 to 100 meters in approximately 6 seconds, as indicated by the Density map.
+	\textbf{\underline{The Propagation of Density Over Time :}} We can observe in Figure \ref{fig:traffic_flow_density_map} that density propagates both temporally and spatially. For instance, the initial peak of density begins at 0 meters and time 0, extending to 100 meters by 6 seconds. In the animation, you can also observe the movement of the peak. In Figure \ref{fig:four_graphs} , we witness the peak moving from 20 to 90 meters in approximately 5.5 seconds, as indicated by the Density map.
 	\newline\newline
-	Finally, the last phenomenon that we can observe is the creation of peaks in density. In fact, in the animation, you can see that when the density is relatively low, a peak is formed. This phenomenon occurs because when the density is lower, cars tend to travel faster, catching up with the cars already in a peak of density. So they need to slow down and it is for this reason that we could observe this peak.
+	\textbf{\underline{Creation of Peaks of Density :}}
+	The last phenomenon that we can observe is the creation of peaks of density. In fact, in the animation, you can see that when the density is relatively low, a peak is formed. This phenomenon occurs because when the density is lower, cars tend to travel faster, catching up with the cars already in a peak of density. So they need to slow down and it is for this reason that we could observe this peak.
 	\newline\newline
+	\textbf{\underline{Limit of this model :}}
 	However, as discussed previously, we encounter a problem with this model. The limitation of this model is that for a density greater than 0.5, the model becomes unstable. Therefore, we need to utilize another model, the Lax-Friedrichs Model. This model is slightly more complex but resolves the issue of instability. With Jim's assistance, we will explore the behavior of high density scenarios.
 	\subsection{Simulation Performed with Lax-Friedrichs Model}
 	
-		For the simulation that we are going to do in this part, in the \ref{eq:PDE} we decide to take 
+	For the simulation in this section, we have decided to utilize the equation \ref{eq:PDE}, incorporating the following initial function and discretization:
 	
 	\[
 	\boxed{
@@ -1238,16 +1245,12 @@
 	}
 	\]
 	
-	As we observed earlier, the model was unable to accurately simulate high density. Consequently, the aim now is to accurately simulate this particular scenario. To do this, in the function $\rho_0(x)$, the inclusion of a coefficient of 0.8 ensures that the function, represents a high density for the initial conditions, allowing us to simulate this new phenomenon.
-	
-	For the time step and space step, we have opted for values identical to those used in the previous Euler Explicite method, for the same underlying reasons.
-	
-	Finally, we have chosen to represent the solutions in two different forms. The first form is a density map, while the second is an animation that can be viewed via the GitHub link provided.
+	As we observed earlier, the model was unable to accurately simulate high density. Consequently, the aim now is to accurately simulate this particular scenario. To do this, in the function $\rho_0(x)$, the inclusion of a coefficient of 0.8 ensures that the function, represents a high density for the initial conditions, allowing us to simulate this new phenomenon. For the time step and space step, we have opted for values identical to those used in the previous Euler Explicite method, for the same underlying reasons. Finally, we have chosen to represent the solutions in two different forms. The first form is a density map, while the second is an animation that can be viewed via the GitHub link provided.
 	
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.65\textwidth]{traffic_flow_density_map_LF.png}
-		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit:}} This figure illustrates the solution of the PDE at any time and position.}
+		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit:}} This figure illustrates the solution of the PDE at any time and position. You can notice that the peak of density is set back. The model exhibits both diffusive and dispersive properties. The periodic boundary conditions allow the phenomenon to repeat over time.}
 		\label{fig:traffic_flow_density_map_LF}
 	\end{figure}
 	
@@ -1291,15 +1294,17 @@
 		\label{fig:Dis}
 	\end{figure}
 	
-	This simulation is quite intriguing because despite some similarities with the previous one, we observed several interesting phenomena.
-	
-	The first two phenomena pertain to the scheme itself. As depicted in Figure \ref{fig:traffic_flow_density_map_LF} and in Simulation \ref{fig:GraphLF}, the density decreases over time and space. This illustrates that the scheme is a diffusive model. Furthermore, the animation \ref{fig:Dis} also demonstrates oscillations in the curve towards the end of the simulation. These oscillations may be explained by the model also being a dispersive one. Hence, we can conclude that this scheme might not be well-suited for this type of equation. Nevertheless, for short simulations like the ones we conducted, this is not problematic.
-	
-	The second notable phenomenon is similar to the Euler-Explicit method: the formation of traffic jams. Observing the animation, each time the density is lower than the maximum density, a traffic jam reappears. This occurrence could be explained by cars accelerating when the density decreases. However, they catch up with the car in front of them, resulting in a traffic jam.
-	
-	Finally, the most intriguing phenomenon is the appearance of upside-down traffic jams. In the animation, we can see the curves moving from right to left. For example, at time t=0, the maximum density is between 15m and 35m. However, at t=1, the maximum density moves towards 0m. This backward movement can be explained by the fact that people at the head of the traffic jam can accelerate, as it's the end of the jam. Conversely, those at the rear of the traffic jam become the tail end. After a while, they become the head of the traffic jam and can accelerate out of it.
+	This simulation is quite intriguing because despite some similarities with the previous one, we observed several interesting phenomena.\\ \\ \textbf{\underline{Diffusivity and Dispersivity of the Model :}}
+	The first two phenomena pertain to the scheme itself. As depicted in Figure \ref{fig:traffic_flow_density_map_LF} and in Simulation \ref{fig:GraphLF}, the density decreases over time and space. This illustrates that the scheme is a diffusive model. Furthermore, the animation \ref{fig:Dis} also demonstrates oscillations in the curve towards the end of the simulation. These oscillations may be explained by the model also being a dispersive one. Hence, we can conclude that this scheme might not be well-suited for this type of equation. Nevertheless, for short simulations like the ones we conducted, this is not problematic. \\ \\
+	\textbf{\underline{Creation of Peaks of Density :}} The second notable phenomenon is similar to the Euler-Explicit method: the formation of traffic jams. Observing the animation, each time the density is lower than the maximum density, a traffic jam reappears. This occurrence could be explained by cars accelerating when the density decreases. However, they catch up with the car in front of them, resulting in a traffic jam. \\ \\ \textbf{\underline{Receding Traffic Jam : }} Finally, the most intriguing phenomenon is the appearance of upside-down traffic jams. In the animation, we can see the curves moving from right to left. if you look the DensityMap, at time t=0, the maximum density is between 15m and 35m. However, at t=1, the maximum density moves towards 0m. This backward movement can be explained by the fact that people at the head of the traffic jam can accelerate, as it's the end of the jam. Conversely, those at the rear of the traffic jam become the tail end. After a while, they become the head of the traffic jam and can accelerate out of it.
 	\section{Summary}
 	
+	This project was a great and enriching experience in both human and scholarly aspects. Humanly, we learned and strengthened our teamwork, collaborated, communicated, sought help, and leveraged each other's competencies when needed. From an academic perspective, we were able to apply our new knowledge in Partial Differential Equations (PDEs) and Ordinary Differential Equations (ODEs) to practical scenarios, comprehending new phenomena. Additionally, we improved our English proficiency as the entire project was conducted in English. We learned to adapt to situations where progress may not always be swift, to write efficient code, grasp new concepts through research and collaborative efforts, and utilize Git effectively.
+	
+	Moreover, the Project's subject was captivating as it provided extensive learning about road traffic simulations and their study, contributing to a better understanding of fluid mechanics due to their interconnectedness. It also helped affirm or reconsider our specialization choices for our final year at Polytech.
+	
+	This report contains only a few graphics. If you wish to view more visuals or access the code, I invite you to visit the GitHub Project \cite{SMRT}.
+	\newpage
 	\section{Annexe}
 	
 	\subsection{Calculation of the Analytical solutions}
@@ -1445,38 +1450,27 @@
 		&C_2=n-\frac{V_1}{\alpha_3} - C_1
 	\end{align*}
 	
-	\subsection{Accident Simulation with the Newell's Model For Two cars}
+	\subsection{Calculation of the Equilibrium point}
+	\subsubsection{Newell's Method for two cars} \label{Equilibre:2}
+	\begin{align*}
+		V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= 0 \\
+		e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= \frac{V_2-V_1}{V_2} \\
+		e^{-\frac{\alpha_2}{V_2}d_1} &= \frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \\
+		-\frac{\alpha_2}{V_2}d_1 &= \ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right) \\
+		d_1^* &= -\frac{V_2}{\alpha_2}\ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right)
+	\end{align*}
 	
-	In the three subsequent figures \ref{fig:sub1}, \ref{fig:sub2}, and \ref{fig:sub3}, we can observe a similar graph pattern to that of the linear model. However, in this scenario, we have the flexibility to vary additional parameters, such as the maximum speed of the cars (for instance, introducing a new car with a more powerful motor) and the safety distance, which is an inherent aspect of the Newell model. This variation allows us to witness accidents occurring at each curve intersection on the graph.
+	\subsubsection{Newell's Method for three cars}
 	
+	\begin{align*}
+		&\dot{d_2}=V_2-V_2e^{\frac{-\alpha_2}{V_2}d_1}e^{\frac{\alpha_2}{V_2}d_2^{sec}}-V_3+V_3e^{\frac{-\alpha_3}{V_3}d_2}e^{\frac{\alpha_3}{V_3}d_2^{ sec}} \\
+		&\dot{d_2}=0 \\
+		&V_2-V_2e^{\frac{-\alpha_2}{V_2}d_1+\frac{\alpha_2}{V_2}d_2^{sec}}-V_3+V_3e^{\frac{-\alpha_3}{V_3}d_2+\frac{\alpha_3}{V_3}d_3^{sec}} \\
+		&\frac{V_2-V_2e^{\frac{-\alpha_2}{V_2}d_1+\frac{\alpha_2}{V_2}d_2^{sec}}-V_3}{-V_3}=e^{\frac{-\alpha_3}{V_3}d_2+\frac{\alpha_3}{V_3}d_3^{sec}} \\
+		&\frac{V_2-V_2e^{\frac{-\alpha_2}{V_2}d_1+\frac{\alpha_2}{V_2}d_2^{sec}}-V_3}{-V_3}e^{\frac{-\alpha_3}{V_3}d_3^{sec}} =e^{\frac{-\alpha_3}{V_3}d_2} \\
+		&d_2^* = -\frac{V_3}{\alpha_3}\ln \left(\frac{-V_3+V_2-V_2e^{\frac{-\alpha_2}{V_2}d_1}e^{\frac{\alpha_2}{V_2}d_2^{sec}}}{-V_3}e^{-\alpha_3 d_3^{sec}} \right)
+	\end{align*}
 	
-	\begin{figure}[H]
-		\centering
-		\begin{subfigure}[b]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{1W2_Acc1.png}
-			\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. The graph shows that the acceleration of the orange car is too large. This implies an accident between two cars.}
-			\label{fig:sub1}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.45\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{1W2_Acc2.png}
-			\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the low reaction time of driver 2 implies an accident between two cars.}
-			\label{fig:sub2}
-		\end{subfigure}
-		
-		\vspace{1cm}
-		
-		\begin{subfigure}[b]{0.7\textwidth}
-			\centering
-			\includegraphics[width=\textwidth]{1W2_Acc3.png}
-			\caption{In this picture, you can observe the position evolutions of two cars, the first one (blue) maintaining a constant speed, and the second one (orange) following behind the first one. However, the increasing of the maximum speed of car 2 implies an accident between two cars.}
-			\label{fig:sub3}
-		\end{subfigure}
-		\caption{Simulation of Accident case between two cars}
-		\label{fig:accident_simulation}
-	\end{figure}
 	
 	\newpage
 	
