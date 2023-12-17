@@ -43,10 +43,10 @@ def u_0_x(x):
     
     center = L / 2
     sigma = 0.1 * L
-    if typeSimu=="FF":
-        return 0.5 * max(0.01, 0.8 * np.exp(-((x - center) ** 2) / (2 * sigma ** 2)))
-    elif typeSimu=="CF":
-        return max(0.01,0.8*np.exp(-((x - center) ** 2) / (2 * sigma ** 2)))   
+    if typeSimu=="EE":
+            return 0.5 * max(0.01, 0.8 * np.exp(-((x - center) ** 2) / (2 * sigma ** 2)))
+    elif typeSimu=="LF":
+        return max(0.01,1.0*np.exp(-((x - center) ** 2) / (2 * sigma ** 2))) 
 
 #vf :
     #input : rho (density of the car at the position x and at the time t)
@@ -85,10 +85,13 @@ def EulerExplicitTrafficFlow(u_0_x, deltaX, deltaT, T, L, Vmax, R):
             v_i_n = vf(rho_i_n)
             v_i_minus_1_n = vf(rho_i_minus_1_n)
             
-            if typeSimu=="FF":
+            if typeSimu=="EE":
                 U[t, j] = rho_i_n - ((deltaT / deltaX) * (rho_i_n * (v_i_n ) - rho_i_minus_1_n * (v_i_minus_1_n )))
-            elif typeSimu=="CF":
-                U[t, j] = rho_i_n - (deltaT / deltaX) * (rho_i_n * (v_i_n + p(rho_i_n)) - rho_i_minus_1_n * (v_i_minus_1_n + p(rho_i_minus_1_n)))
+            elif typeSimu=="LF":
+                if(j+1<maxL):
+                    U[t,j]=(1/2)*(U[t-1,j+1]+U[t-1,j-1]) - (deltaT/2*deltaX)*((U[t-1,j+1])*(1-U[t-1,j+1]/R)*Vmax-(U[t-1,j-1])*(1-U[t-1,j-1]/R)*Vmax)
+                else:
+                    U[t,j]=(1/2)*(U[t-1,0]+U[t-1,j-1]) - (deltaT/2*deltaX)*((U[t-1,0])*(1-U[t-1,0]/R)*Vmax-(U[t-1,j-1])*(1-U[t-1,j-1]/R)*Vmax)
     return U
 
 #update :
@@ -100,9 +103,9 @@ def update(frame):
     ax.clear()  # Clear the previous plot
     ax.grid()
     ax.plot(x, U[frame, :])
-    ax.set_xlabel('Position (x)')
-    ax.set_ylabel('Density (rho)')
-    ax.set_title('Traffic Flow Simulation - Time Step {}'.format(time_steps[frame]))
+    ax.set_xlabel('Position (m)')
+    ax.set_ylabel('Density ($\\rho$)')
+    ax.set_title('Traffic Flow Simulation - Time Step {:.3f}'.format(time_steps[frame]))
     return ax
     
 
@@ -126,20 +129,18 @@ time_steps = np.linspace(0, T, maxT + 1)
 
 
 fig, ax = plt.subplots()
-ax.set_xlabel('Position (x)')
-ax.set_ylabel('Time')
+ax.set_xlabel('Position (m)')
+ax.set_ylabel('Time (s)')
 ax.set_title('Traffic Flow Simulation - Density Heatmap')
 ax.grid()
 
-
 time_steps_mesh, space_mesh = np.meshgrid(time_steps, x)
 
-
-im = ax.imshow(U.T, aspect='auto', origin='lower', cmap='plasma', extent=[0, T, 0, L])
-
+# Plot the density map with position on x-axis and time on y-axis
+im = ax.imshow(U, aspect='auto', origin='lower', cmap='plasma', extent=[0, L, 0, T])
 
 cbar = plt.colorbar(im)
-cbar.set_label('Density (rho)')
+cbar.set_label('Density ($\\rho$)')
 
 if isSave:
     if folder_selected:  # If a directory is selected
@@ -156,8 +157,8 @@ plt.show()
 
 #_________________________________________________ Plotting the animation  ___________________________________________________
 fig, ax = plt.subplots()
-ax.set_xlabel('Position (x)')
-ax.set_ylabel('Density (rho)')
+ax.set_xlabel('Position (m)')
+ax.set_ylabel('Density ($\\rho$)')
 ax.set_title('Traffic Flow Simulation')
 ax.grid()
 
