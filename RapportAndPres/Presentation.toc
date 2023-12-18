@@ -1,43 +1,42 @@
 \babel@toc {british}{}\relax 
-\contentsline {section}{\numberline {1}Presentation of the Subject}{5}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Useful Definition}{5}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Simple Road Traffic Modeling}{5}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}The Objective of SMRT}{6}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Use Case to Explain the Interest of These Simulations}{6}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}Field of Application}{6}{subsubsection.1.2.3}%
-\contentsline {subsubsection}{\numberline {1.2.4}Using GitHub for Project Management}{7}{subsubsection.1.2.4}%
-\contentsline {section}{\numberline {2}Project Objectives}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Microscopic Simulation}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Macroscopic Simuation}{8}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Problems Encountered}{8}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Implementation of the Macroscopic model}{8}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}The time}{9}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}The perfoming of Equlibrium}{9}{subsubsection.2.3.3}%
-\contentsline {section}{\numberline {3}The equation for SMRT}{9}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Differential Ordinary Equation }{9}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Linear Model}{10}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Newell's Model}{15}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Partial Differential Equations}{17}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Euler Explicit}{17}{subsubsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.3}Lax-Friedrich Model}{18}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Types of Simulations Performed with ODE models}{21}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Simulation with Drivers Reacting Similarly}{21}{subsection.4.1}%
-\contentsline {subsubsection}{\numberline {4.1.1}Accordion Phenomenon}{21}{subsubsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.2}Simulation with Drunk Drivers}{23}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Simulation with Unpredictable Drivers}{25}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Accident Phenomenon For The Linear Model }{27}{subsubsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.4}Study of Equilibrium, Stability, and Instability of the Solution}{28}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}System Stability and Equilibrium for the Linear Model}{28}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}System Stability and Equilibrium for the Newell's Model}{35}{subsubsection.4.4.2}%
-\contentsline {section}{\numberline {5}Types of Simulations Performed with PDE models}{39}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Simulation Performed with Euler Explicit Model}{39}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Simulation Performed with Lax-Friedrichs Model}{42}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Summary}{46}{section.6}%
-\contentsline {section}{\numberline {7}Annexe}{47}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Calculation of the Analytical solutions}{47}{subsection.7.1}%
-\contentsline {subsubsection}{\numberline {7.1.1}Linear Model for Two Cars}{47}{subsubsection.7.1.1}%
-\contentsline {subsubsection}{\numberline {7.1.2}Linear Model for Three Cars}{47}{subsubsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.2}Calculation of the Equilibrium point}{49}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Newell's Method for two cars}{49}{subsubsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.2}Newell's Method for three cars}{49}{subsubsection.7.2.2}%
+\contentsline {section}{\numberline {1}Introduction}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Simple Road Traffic Modeling}{5}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Project goals}{5}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Project applications}{5}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Essential terms definition}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}GitHub Project Organization}{6}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Main Project Objectives}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Microscopic Approach}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Macroscopic Approach}{8}{subsection.2.2}%
+\contentsline {section}{\numberline {3}The equation of SMRT}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Ordinary Differential Equations (ODE) }{8}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Linear model}{9}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Newell's model}{14}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Partial Differential Equations (PDE)}{16}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Euler's Explicit method}{16}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Lax-Friedrich's model}{18}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {4}Simulations performed with ODE models}{21}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Simulation with drivers reacting similarly}{21}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Accordion phenomenon}{21}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}Simulation with drunk drivers}{22}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Simulation with unpredictable drivers}{24}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Accident phenomenon of the linear model }{26}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.4}Study of equilibrium, stability, and instability of the solution}{27}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}System stability and equilibrium of the linear model}{27}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}System stability and equilibrium of Newell's Model}{33}{subsubsection.4.4.2}%
+\contentsline {section}{\numberline {5}Simulations performed with PDE models}{36}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Simulation performed with Euler's Explicit method}{37}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Simulation performed with Lax-Friedrich's model}{39}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Main challenges}{43}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Implementaing the macroscopic model}{43}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Managing time}{43}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Achieving equlibrium}{43}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Summary}{43}{section.7}%
+\contentsline {section}{\numberline {8}Annexe}{45}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Calculation of the analytical solutions}{45}{subsection.8.1}%
+\contentsline {subsubsection}{\numberline {8.1.1}Linear model for two cars}{45}{subsubsection.8.1.1}%
+\contentsline {subsubsection}{\numberline {8.1.2}Linear model for three cars}{45}{subsubsection.8.1.2}%
+\contentsline {subsection}{\numberline {8.2}Calculation of the equilibrium point}{47}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Newell's method for two cars}{47}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Newell's method for three cars}{47}{subsubsection.8.2.2}%
 \contentsfinish 

@@ -150,8 +150,8 @@
 	}
 }
 
-\title{\textbf{\Huge Project Report}\\[1cm]
-	\textbf{\LARGE Polytech Nice}\\[2cm]
+\title{\textbf{\Huge Project report}\\[1cm]
+	\textbf{\LARGE Polytech Nice-Sophia}\\[2cm]
 	\hrule height 1pt
 	\vspace{0.5cm}
 	\textbf{\Large Simple Road Traffic Modeling}\\[0.5cm]
@@ -161,8 +161,10 @@
 
 \author{
 	\begin{tabular}{c}
-		Gerbaud Florent \\ Fatima Rharrour \\ \\
-		9-th october to 20-th December september 2023\\
+		Florent Gerbaud \\ Fatima Ezzahra Rharrour \\ \\
+  MAM4
+  \\ \\
+		9-th october to 18-th December 2023\\
 		\\ Academic tutor : Didier Auroux
 	\end{tabular}
 }
@@ -200,85 +202,75 @@
 	
 	\listofalgorithms
 	\newpage
-	\section{Presentation of the Subject}
-	\subsection{Useful Definition}
-	\begin{enumerate}
-		\item \textbf{\underline{Ordinary Differential Equation (ODE):}} 
-		
-		An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables. ODEs are commonly represented given a function \( F \) of \( x \), \( y \), and derivatives of \( y \). Then, an equation of the form
-		\[
-		F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
-		\]
-		
-		\item \textbf{\underline{SMRT}}
-		
-		SMRT means Simple road traffic simulation.
-		
-		\item \textbf{\underline{Microscopic simulation}}
-		
-		Microscopic simulation is a computer-based modeling technique that simulates the behavior of individual entities, such as vehicles or pedestrians, within a system. It focuses on detailed modeling of each entity's movements, interactions, and behaviors to understand and predict the dynamics of a larger system, like traffic flow or crowd movement.
-		
-		\item \textbf{\underline{FDM}}
-		
-		The Finite Difference Method (FDM) is a numerical technique used to approximate solutions to differential equations by discretizing the derivatives into finite differences at discrete points within a domain. It transforms continuous equations into a system of algebraic equations, making it computationally feasible to solve problems in various fields such as physics, engineering, and finance.
-		Explore the Finite Difference Method—a powerful numerical technique revolutionizing problem-solving in diverse fields. Kumar's concise study delves into its applications, transforming complex differential equations into solvable algebraic systems. \cite{article}
-		
-		\item \textbf{\underline{Macroscopic simulation}}
-		
-		Macroscopic simulation models systems at a higher, aggregated level, considering overall behaviors like traffic flow without detailing individual movements. It helps analyze system-level trends and capacities, useful for broader planning.
-		
-		The relation between microscopic and macroscopic simulation lies in their approach to studying systems. Microscopic simulation focuses on individual entities' detailed behaviors, while macroscopic simulation analyzes aggregated behaviors of the entire system without considering individual entities. They complement each other: microscopic for detailed insights into individual behaviors, and macroscopic for understanding overall system trends and capacities.
-		
-		\item If you are interested in these types of modelizations, I suggest you go and see this article \cite{dugois:tel-01505473}.
-	\end{enumerate}
-	
+	\section{Introduction}
 	\subsection{Simple Road Traffic Modeling}
 	
-		Road traffic modeling involves studying how vehicles behave on road networks, with the aim of simulating and analyzing aspects such as traffic flow, congestion, and driver behavior. This field employs mathematical and computer models to understand and predict traffic patterns, playing a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (as shown in Figure \ref{fig:intro}). 
+		Road traffic modeling involves studying how vehicles behave on road networks, with the aim of simulating and analyzing aspects such as traffic flow, congestion, and driver behavior. This field employs mathematical and computer models to understand and predict traffic patterns, playing a crucial role in urban planning, traffic management, and the development of intelligent transportation systems (The figure \ref{fig:intro} illustrates a case where the traffic flow is fluid.). 
 		
-		Explore the integration of a driving simulator with a traffic simulator in Jeihani et al.'s study \cite{JEIHANI2017164}, revealing enhanced traffic density and Variable Message Sign (VMS) reliability. The findings suggest that integration positively influences compliance behavior and factors affecting route diversion.
+		Explore the integration of a driving simulator with a traffic simulator in this article \cite{JEIHANI2017164}, revealing enhanced traffic density and Variable Message Sign (VMS) reliability. The findings suggest that integration positively influences compliance behavior and factors affecting route diversion.
 		
 		
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.8\textwidth]{intro.jpg}
-			\caption[Road Traffic]{\textbf{\underline{Road Traffic:}} An illustrative example of a road traffic phenomenon, which is the focus of our study.}
+			\caption[Road Traffic]{An illustrative example of a road traffic phenomenon.}
 			\label{fig:intro}
 		\end{figure}
 	
 		
-		\subsubsection{The Objective of SMRT}
-		The primary goal of simple road simulation is to analyze and understand vehicle behavior in a controlled and reproducible environment. Researchers and engineers use these simulations to study the impact of various factors on traffic flow, safety, and efficiency. This contributes to the development and testing of traffic management strategies and vehicle control systems, providing insights into the dynamic interactions between vehicles and the road environment.
+		\subsubsection{Project goals}
+		The primary goal of the simple road simulation is to analyze and understand vehicle behavior in a controlled and reproducible environment. Researchers and engineers use these simulations to study the impact of various factors on traffic flow, safety, and efficiency. This contributes to the development and the test of traffic management strategies and vehicle control systems, providing insights into the dynamic interactions between vehicles and the road environment.
 		
-		\subsubsection{Use Case to Explain the Interest of These Simulations}
-		Simple road simulations find applications in various fields, including urban planning, transportation engineering, and autonomous vehicle development. For instance, they can assess the effectiveness of new traffic signal timings, study the implications of road design changes, or test the performance of autonomous vehicles in different traffic scenarios. These simulations offer a cost-effective and risk-free way to evaluate real-world interventions and innovations, enhancing decision-making processes and supporting the development of sustainable and efficient transportation systems.
+		\subsubsection{Project applications}
+		Simple road simulation is applied across a wide range of fields, including transportation research, traffic engineering, and urban planning. It plays a crucial role in the development and the validation of autonomous vehicle technologies. The ability to model and simulate various road conditions helps researchers and practitioners make informed decisions, improving the design and management of transportation systems. Simple road simulation serves as a powerful tool for enhancing our understanding of traffic dynamics and contributes to the ongoing evolution of smart and adaptive transportation systems.
+ \subsection{Essential terms definition}
+	\begin{enumerate}
+		\item \textbf{\underline{Ordinary Differential Equation (ODE):}} 
 		
-		\subsubsection{Field of Application}
-		Simple road simulation is applied across a wide range of fields, including transportation research, traffic engineering, and urban planning. It plays a crucial role in the development and validation of autonomous vehicle technologies. The ability to model and simulate various road conditions helps researchers and practitioners make informed decisions, improving the design and management of transportation systems. Simple road simulation serves as a powerful tool for enhancing our understanding of traffic dynamics and contributes to the ongoing evolution of smart and adaptive transportation systems.
+		An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables. ODEs are commonly represented given a function \( F \) of \( x \), \( y \), and derivatives of \( y \). The general form of an ODE is as follows:
+		\[
+		F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
+		\]
 		
-	
-	\subsubsection{Using GitHub for Project Management}
+		\item \textbf{\underline{Microscopic simulation}}
+		
+		Microscopic simulation is a computer-based modeling technique that simulates the behavior of individual entities, such as vehicles or pedestrians, within a system. It focuses on detailed modeling of each entity's movements, interactions, and behaviors to understand and predict the dynamics of a larger system, like traffic flow or crowd movement.
+        \item \textbf{\underline{Macroscopic simulation}}
+		
+		Macroscopic simulation models systems at a higher, aggregated level, considering overall behaviors like traffic flow without detailing individual movements. It helps to analyze the system-level trends and capacities, useful for broader planning.
+		
+		The relation between microscopic and macroscopic simulation lies in their approach to studying systems. Microscopic simulation focuses on individual entities detailed behaviors, while macroscopic simulation analyzes aggregated behaviors of the entire system without considering individual entities. They complement each other: microscopic for detailed insights into individual behaviors, and macroscopic for understanding overall system trends and capacities.
+		
+		\item \textbf{\underline{FDM}}
+		
+		The Finite Difference Method (FDM) is a numerical technique used to approximate solutions to differential equations by discretizing the derivatives into finite differences at discrete points within a domain. It transforms continuous equations into a system of algebric equations, making it computationally feasible to solve problems in various fields such as physics, engineering, and finance.
+	Explore the Finite Difference Method a powerful numerical technique revolutionizing problem-solving in diverse fields. Kumar's concise study delves into its applications, transforming complex differential equations into solvable algebraic systems. \cite{article}
+		
+		
+		
+		\item If you are interested in these types of modelizations, I suggest you go and see this article \cite{dugois:tel-01505473}.
+	\end{enumerate}
+\subsection{GitHub Project Organization}
 	In this project, we selected GitHub as the primary management tool to facilitate our collaboration, track changes, and manage the source code. The following representation provides an overview of our collaborative use of GitHub as a pair throughout the project.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.8\textwidth]{GitHub.jpg}
-		\caption[Git branching principle]{\textbf{\underline{Git branching principle : }} In this picture, you can see an example of two branches to separate two distinct task }
+		\caption[Git Branching Principle]{\textbf{\underline{Git branching principle}:} (In this picture, you can see an example of two branches to separate two distinct task) .}
 		\label{fig:GitHub}
 	\end{figure}
 	
 	GitHub's branch feature enabled the two of us to work on different aspects of the project simultaneously without impacting the main codebase. It facilitated the creation of separate environments tailored to specific tasks, allowing for parallel development while maintaining a distinct separation between various project components. This approach significantly improved our collaborative workflow, reducing conflicts and boosting overall productivity.
 	
-	Furthermore, the issues feature on GitHub played a pivotal role in task management and issue tracking. We utilized this functionality to efficiently create, assign, and monitor tasks. Each issue provided a dedicated space for discussing specific problems, enhancements, or new features, fostering a structured approach to problem-solving and enabling seamless communication between the two of us. This not only helped us maintain a clear overview of pending tasks but also cultivated a collaborative environment where discussions and resolutions were centralized.
+	Furthermore, the issues feature on GitHub played a pivotal role in task management and issue tracking. We used this functionality to efficiently create, assign, and monitor tasks. Each issue provided a dedicated space for discussing specific problems, enhancements, or new features, fostering a structured approach to problem-solving and enabling seamless communication between the two of us. This not only helped us maintain a clear overview of pending tasks but also cultivated a collaborative environment where discussions and resolutions were centralized.
+	\section{Main Project Objectives}
 	
-	\section{Project Objectives}
-	
-	This project could be decomposed into different parts. The primary objectives of the project were to conduct microscopic and then the macroscopic simulations.
-	
-	\subsection{Microscopic Simulation}
+	This project could be decomposed into different parts. The primary objectives of the project were to conduct microscopic simulations and then the macroscopic simulations.
+
+	\subsection{Microscopic Approach}
 	
 	
 	In the case of microscopic simulation, the objective was to simulate traffic flow phenomena using two types of models.
-	The first model was a linear approach that considered only the position of the car in front of it. This model, known as the 'Follow-the-Leader' model, simplistically replicates vehicle behavior by focusing solely on its proximity to the preceding car. It assumes that each vehicle adjusts its speed to maintain a safe following distance.
+	The first model was a linear approach that considered only the position of the car in front of it. This model, known as the 'Follow-the-Leader' model, simplistically replicates vehicle behavior by focusing on its proximity to the preceding car. It assumes that each vehicle adjusts its speed to maintain a safe following distance.
 	
 	The second model employed was Newell's method, which is more intricate and offers greater realism. Newell's model considers not only the preceding vehicle's position but also incorporates the speed and acceleration of adjacent vehicles. This method captures the interactions between neighboring cars, resulting in a more nuanced representation of traffic dynamics.
 	\newline\newline
@@ -286,37 +278,32 @@
 	 In this modeling, we will focus on the position and velocity of multiple vehicles following each other in a single lane. As a first approach we will assume that vehicles accelerate when they have open space, maintain their speed when they are close to the vehicle in front, and brake more strongly as they get very close. We will arrange two and then three vehicles, one behind the other, with the first vehicle maintaining a constant velocity, and observe the behavior of the other vehicles.
 	 Once we have completed these simulations, we plan to introduce more complex and realistic conditions and behaviors, such as varying acceleration and encountering obstacles on the road.
 	
-	\subsection{Macroscopic Simuation}
+	\subsection{Macroscopic Approach}
 	
 	In the second part of the project, we encountered the limitations of the Microscopic Model. We will delve deeper into these limitations shortly. In essence, it lacks realism and provides fewer details compared to the macroscopic simulation.
 	
 	To address this issue, we chose to employ Partial Differential Equations (PDEs). In this type of simulation, we do not solely focus on individual car behaviors but rather treat traffic as a fluid-like entity. This approach allows us to gain a better understanding of traffic flow simulation. Considering traffic as a fluid is justified by its collective behavior resembling fluid dynamics—vehicles move in a continuous flow, similar to how fluids move in pipes or channels. Thus, employing PDEs assists in capturing the overall flow dynamics.
 	
-	Consequently, we utilize a simplified form of the Navier-Stokes equation to tackle the problem.
+	Consequently, we use a simplified form of the Navier-Stokes equation to tackle the problem.
 	
 	This enables us to refine our description of the previous simulations by providing a more comprehensive understanding of traffic dynamics within a fluid-like framework. \newline\newline
 	
-	In clear, the main objectives of the project are: 
+	To sum up, the main objectives of the project are: 
 	\begin{itemize}
-		\item Modelling the behaviour using coupled ordinary differential equations.
-		\item Implementing this simplistic modelling.
+		\item Modelling the behaviour using coupled ODEs.
+		\item Implementing this simple modelling.
 		\item Modelling the behaviour of traffic flow with PDE
 		\item Studying the outcomes based on different parameters.
 	\end{itemize}
 	
-	\subsection{Problems Encountered}
-	\subsubsection{Implementation of the Macroscopic model}
-		During the phase of developing the Macroscopic models, the difficulties lie in the fact that it was not easy to determine if the graphs we obtained were as expected. To verify their accuracy, we sought feedback from Mr. Auroux and also consulted various websites to compare our results with those of others. Initially, we believed the graphs were correct. However, we later discovered errors in our implementation, which we subsequently rectified.
-		
-		One of the main problems we encountered was related to the boundary conditions. Initially, for each time step, we used constant boundary conditions. Consequently, the resulting graphs exhibited anomalies at the edges. To address this issue, we conducted research and sought advice from teachers to refine our approach.
-		
-		Additionally, understanding the models posed a challenge. While the model worked for some cases, it failed for others. This was attributed to the violation of the CFL condition. When the density was too high, the model became unstable. Through an empirical approach, we determined the threshold value and conducted appropriate tests to implement the second model correctly.
-	\subsubsection{The time}
-		 One of the significant challenges we faced revolved around managing our time effectively. Balancing the demands of our project alongside preparing for exams posed a considerable obstacle. Juggling these concurrent commitments was undeniably demanding. Nonetheless, it presented an invaluable challenge that encouraged us to refine our time management skills and prioritize tasks efficiently. The primary difficulty lay in our inability to delve deeply enough into the subject matter. Due to the time constraints imposed by various commitments, we found it challenging to explore the topic to its fullest extent. Despite this limitation, navigating these time-related obstacles taught us valuable lessons about effective multitasking and the importance of allocating time judiciously to various responsibilities.
-	\subsubsection{The perfoming of Equlibrium}
-		Achieving equilibrium was relatively straightforward for the Linear Model. However, it proved to be somewhat arduous for Newell's method. Initially, our approach involved attempting to find Analytical Solutions. However, after spending several hours on this calculus and conducting research online, we came to realize that an analytical solution may not exist, and if it does, it could be exceedingly challenging to obtain. This led us to recall the ODE course from previous years, specifically the Lyapunov indirect theorem, which provides criteria to ascertain whether solutions converge or diverge.
-	\section{The equation for SMRT}
-		\subsection{Differential Ordinary Equation }
+	
+	\section{The equation of  SMRT}
+
+    \textbf{SMRT:} \textbf{S}imple \textbf{R}oad \textbf{T}raffic \textbf{M}odeling.
+
+
+ 
+		\subsection{Ordinary Differential Equations (ODE) }
 		In this part, the idea is to resolve two types of systems of Ordinary Differential Equations (ODEs) that allow us to simulate traffic flow. To achieve this, we will use the Euler Explicit method to numerically solve the solutions.
 		The Euler Explicit method is given by the folowing equation :
 		\begin{itemize} 
@@ -324,28 +311,17 @@
 			\item First step of the resolution: $\boxed{y_0 = y(t_0)}$.
 			\item Recursive process to find the n-th solution of the EDO: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
 		\end{itemize}
-		
-		
-		
-		
-		
-		\subsubsection{Linear Model}
+		\subsubsection{Linear model}
 			\textbf{\underline{Mathematical Theory:}}
 			\newline
 			
-			In this section, we're going to explain the math behind our model for understanding how cars behave in traffic. To make things simple, we use a discrete model, which means we look at cars one at a time and how they interact on the road.
-			
-			Each car's movement is governed by a basic equation:
+			In this section, we're going to explain the math behind our model for understanding how cars behave in traffic. To make things simple, we use a discrete model, which means we look at cars one at a time and how they interact on the road. Each car's movement is governed by a basic equation:
 			
 			\begin{align*}
 				\boxed{\dot{x_i}(t) = V_i = \alpha_i(x_{i-1} - x_i)}
 			\end{align*}
 			
-			In this equation, \(x_i(t)\) represents where the \(i\)-th car is at a given time, \(V_i\) is how fast the \(i\)-th car is going, and \(\alpha_i\) is a number that describes how that car behaves. The right side of the equation, \(\alpha_i(x_{i-1} - x_i)\), tells us how the car's speed changes based on how close it is to the car in front.
-			
-			When we put this equation to work for all the cars, we end up with a bunch of equations (one for each car), which helps us understand how they all move together in traffic. These equations give us a dynamic view of how cars influence each other as they drive.
-			
-			The system of equations is written like this for each car, where \(i\) can be 1, 2, and so on, up to the number of cars:
+			In this equation, \(x_i(t)\) represents where the \(i\)-th car is at a given time, \(V_i\) is how fast the \(i\)-th car is going, and \(\alpha_i\) is a number that describes how that car behaves. The right side of the equation, \(\alpha_i(x_{i-1} - x_i)\), tells us how the car's speed changes based on how close it is to the car in front. When we put this equation to work for all the cars, we end up with a bunch of equations (one for each car), which helps us understand how they all move together in traffic. These equations give us a dynamic view of how cars influence each other as they drive. The system of equations is written like this for each car, where \(i\) can be 1, 2, and so on, up to the number of cars:
 			
 			\begin{align*}
 				\left\{
@@ -359,7 +335,7 @@
 			\end{align*}
 			
 			
-			Finally the Sytem associated to the position of each car is : 
+			Finally the sytem associated to the position of each car is : 
 			\begin{align*}
 				\left\{
 				\begin{array}{ll}
@@ -370,11 +346,7 @@
 				\end{array}
 				\right.
 			\end{align*}
-			These equations help us understand how traffic flows and how individual cars influence one another on the road.
-			
-			Initially, in the study's initial phase, we treated $\alpha_i$ as a constant. However, as we progressed to the simulation's subsequent phase, we introduced functions $\alpha_i(t)$.
-			
-			Considering $\alpha_i(t)$ as a constant confines us to a specific model. Yet, our objective is to investigate various behavioral patterns. This motivated us to incorporate three distinct functions capable of altering the values of $\alpha_i(t)$. \newline\newline
+			These equations help us to understand how traffic flows and how individual cars influence one another on the road. Initially, in the study's initial phase, we treated $\alpha_i$ as a constant. However, as we progressed to the simulation's subsequent phase, we introduced functions $\alpha_i(t)$. Considering $\alpha_i(t)$ as a constant confines us to a specific model. Yet, our objective is to investigate various behavioral patterns. This motivated us to incorporate three distinct functions capable of altering the values of $\alpha_i(t)$. \newline\newline
 			
 			1. \textbf{\underline{Constant value:}}
 			\[
@@ -388,17 +360,8 @@
 			
 			3. \textbf{\underline{Stochastic Driver Model:}} \newline \newline
 			This function generates random noise represented by the variable \( \text{Noise} \). The noise follows a normal distribution, with its mean determined by the parameter \texttt{mean} and its variability controlled by the \texttt{spread} parameter. Mathematically, this can be expressed as:
-			
 			\[ \text{Noise} = \lvert \mathcal{N}(\text{mean}, \sqrt{\text{spread}}) \rvert \]
-			
-			Here, \( \mathcal{N}(\text{mean}, \sqrt{\text{spread}}) \) represents a normally distributed random variable with a mean  and a standard deviation \( \sqrt{\text{spread}} \). The absolute value function \( \lvert \cdot \rvert \) ensures that the noise is always positive.
-			
-			Additionally, if a \texttt{threshold} value is provided, the function constrains the noise within a specific range defined by \( -\text{threshold} \) and \( \text{threshold} \) 
-			
-			
-			The threshold ensures that the noise values do not exceed the range specified by \( -\text{threshold} \) and \( \text{threshold} \). Any noise value falling outside this range is adjusted to the nearest limit defined by the threshold. \newline \newline
-			
-			\textbf{Mathematically, we can express this as:}
+			Here, \( \mathcal{N}(\text{mean}, \sqrt{\text{spread}}) \) represents a normally distributed random variable with a mean  and a standard deviation \( \sqrt{\text{spread}} \). The absolute value function \( \lvert \cdot \rvert \) ensures that the noise is always positive. Additionally, if a \texttt{threshold} value is provided, the function constrains the noise within a specific range defined by \( -\text{threshold} \) and \( \text{threshold} \).  The threshold ensures that the noise values do not exceed the range specified by \( -\text{threshold} \) and \( \text{threshold} \). Any noise value falling outside this range is adjusted to the nearest limit defined by the threshold. \newline \newline \textbf{Mathematically, we can express this as:}
 		
 			
 			\[
@@ -409,13 +372,10 @@
 			\end{cases}
 			\]
 			
-			Here, \( \text{average} \) signifies the mean of the acceleration, and \( \text{spread} \) stands for the acceleration's spread. The limit is defined to prevent or create specific situations, like accidents, depending on the desired result. \newpage
-			
-			
-			\textbf{\underline{Implementation : }}
+			Here, \( \text{average} \) signifies the mean of the acceleration, and \( \text{spread} \) stands for the acceleration's spread. The limit is defined to prevent or create specific situations, like accidents, depending on the desired result. \newpage \textbf{\underline{Implementation : }}
 			
 			\begin{algorithm}[H]
-				\caption{FirstCarSpeed}\label{alg:x1_dot}
+				\caption{First's car speed}\label{alg:x1_dot}
 				\begin{algorithmic}
 					%\State \textbf{Input:} \\
 					%\begin{itemize}
@@ -432,13 +392,13 @@
 					\end{itemize}		
 				\end{algorithmic}
 			\end{algorithm}
-			This algorithm allow to return the speed for the first car
+			This algorithm allows to return the speed for the first car
 			\begin{algorithm}[H]
-				\caption{SpeedFOrCarNLinear}\label{alg:xi_dot}
+				\caption{The linear model of the speed}\label{alg:xi_dot}
 				\begin{algorithmic}
 					\State \textbf{Input:} \\
 					\begin{itemize}
-					\State $t:=\text{"time  step"}$
+					\State $t:=\text{Time  step}$
 					\State$x_i:=\text{Table of position for the i-th Car}$
 					\State$x_{i-1}:=\text{Table of position for the (i-1)-th Car}$
 					\end{itemize}
@@ -457,14 +417,14 @@
 			This algorithm allows to return the speed given by the Linear Model for each car of the system
 			
 			\begin{algorithm}[H]
-				\caption{sinusoidal\_model}\label{alg:sinusoidal_model}
+				\caption{SinusoidalModel}\label{alg:sinusoidal_model}
 				\begin{algorithmic}
 					\State \textbf{Input:} \\
 					\begin{itemize}
-						\State $W := \text{"Amplitude of the perturbation"}$
-						\State $\omega := \text{"Angular frequency"}$
-						\State $t := \text{"time"}$
-						\State $\phi := \text{"Phase (in radians)"}$
+						\State $W := \text{Amplitude of the perturbation}$
+						\State $\omega := \text{Angular frequency}$
+						\State $t := \text{Time}$
+						\State $\phi := \text{Phase (in radians)}$
 					\end{itemize}
 					\State \textbf{Output:} \\
 					\begin{itemize}
@@ -474,20 +434,20 @@
 					\State \textbf{Algorithm:} \\
 					\begin{itemize}
 						\State $ \alpha_i(t) = \left| W \cdot \sin(\omega \cdot t + \phi) + N \right|$ 
-						\State \text{$N$:="random noise such as N $\sim$ $\mathcal{N}(0,0.01)$"}
+						\State \text{$N$:=Random noise such as N $\sim$ $\mathcal{N}(0,0.01)$}
 						\State \Return $\alpha_i(t)$
 					\end{itemize}
 				\end{algorithmic}
 			\end{algorithm}
-			This algorithm allows for variations in acceleration that follow a sinusoidal model to simulate drunk drivers.
+			This algorithm allows for variations of acceleration that follows a sinusoidal model to simulate drunk drivers.
 			\begin{algorithm}[H]
-				\caption{stochastic\_driver\_model}\label{alg:stochastic_driver_model}
+				\caption{StochasticDriverModel}\label{alg:stochastic_driver_model}
 				\begin{algorithmic}
 					\State \textbf{Input:}
 					\begin{itemize}
-						\State $\mu := \text{mean of the acceleration}$
-						\State $\sqrt{\sigma^2} := \text{acceleration's spread}$
-						\State $t := \text{time}$
+						\State $\mu := \text{Mean of the acceleration}$
+						\State $\sqrt{\sigma^2} := \text{Acceleration's spread}$
+						\State $t := \text{Time}$
 						\State $\text{threshold} := \text{Threshold value for clipping noise (optional)}$
 					\end{itemize}
 					\State \textbf{Output:}
@@ -520,10 +480,10 @@
 					\State \textbf{Input:} \\
 					\begin{itemize}
 						\State $t:=\text{time step}$
-						\State $x_1Pos:=\text{Table of position for the 1st Car}$
-						\State $x_2Pos:=\text{Table of position for the 2nd Car}$
-						\State $v_1:=\text{Table of velocity for the 1st Car}$
-						\State $v_2:=\text{Table of velocity for the 2nd Car}$
+						\State $x_1Pos:=\text{Table of position for the 1st car}$
+						\State $x_2Pos:=\text{Table of position for the 2nd car}$
+						\State $v_1:=\text{Table of velocity for the 1st car}$
+						\State $v_2:=\text{Table of velocity for the 2nd car}$
 						\State $time:=\text{Table of time values}$
 						\State $h:=\text{time step size}$
 					\end{itemize}
@@ -555,10 +515,10 @@
 					\State \textbf{Return} $x_1Pos$, $x_2Pos$
 				\end{algorithmic}
 			\end{algorithm}
-			This algorithm enables the implementation of the Euler Explicit Method on the Linear Model.
+			This algorithm enables the implementation of the Euler's Explicit Method on the Linear Model.
 			
 		\newpage
-		\subsubsection{Newell's Model} 
+		\subsubsection{Newell's model} 
 		\textbf{\underline{Mathematical Theory:}}
 		In this section, we model the velocity using an exponential model, so the movement of each car is given by:
 		\begin{align*}
@@ -623,11 +583,11 @@
 		\end{algorithm}
 		This algorithm determines the derivative of $x_i$ with respect to time, $\dot{x_i}$, based on the positions of the $i$th and $(i-1)$th cars, the safe following distance $d_i$, and the time step $t$. The result represents the velocity $V_i$ of the $i$th car. \newline\newline
 		
-		For other implementations such as the Euler Explicit method or variations of acceleration, the algorithm remains exactly the same as used in the previous section.
+		For other implementations such as the Euler's Explicit method or variations of acceleration, the algorithm remains exactly the same as used in the previous section.
 		\newpage
-		\subsection{Partial Differential Equations}
+		\subsection{Partial Differential Equations (PDE)}
 		
-		\subsubsection{Euler Explicit}
+		\subsubsection{Euler's Explicit method}
 		
 		\textbf{\underline{Mathematical Theory:}} \newline\newline
 		
@@ -653,7 +613,7 @@
 			& F(\rho) = V(\rho) \cdot \rho, \text{ where } V(\rho) \text{ is the traffic velocity as a function of density}.
 		\end{align*}
 		\newline
-		
+		For the initial condition, we have chosen periodic boundary conditions for the simplicity of the model. In our study, the objective is to observe the behavior of the phenomenon rather than aiming for extreme realism. To achieve a more realistic simulation, we could, for example, introduce morning and evening peaks in density, reflecting people commuting to and from work, among other phenomena. However, the current focus remains on understanding the behavior of the phenomenon itself. \newline
 		For the study, we choose to take the following model : 
 		\begin{align}
 			\boxed{\partial_t\rho + \partial_x\left[ \rho\left( 1-\frac{\rho}{\rho_{\text{max}}}\right) \cdot V_{\text{max}}\right] = 0 }
@@ -661,13 +621,13 @@
 	
 		
 		The first step to doing some simulation was to define a numerical model to calculate the appoximation of the solution.
-		We choose the mzthod the most usual. Euler excplit method.
+		We choose the method the most usual. Euler excplit method.
 		So for the Free Flow model, the shem is given by : 
 		\begin{align*}
 			\boxed{\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right)
 				=0}
 		\end{align*}
-		\textbf{\underline{Where : }}
+		\textbf{Where : }
 		\begin{align*}
 			\boxed{v_i^n = \left( 1 - \frac{\rho_i^n}{\rho_{max}}\right)  \times V_{max}}
 		\end{align*}
@@ -705,12 +665,10 @@
 		\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right) = 0
 		\]
 		
-		It's important to understand that for each spatial step where x=0 at time step i, the condition is initialized with the last value realized at time i-1.
-		
-		The matrix shows an example. For time step $2\cdot \Delta_t$, the first value is initialized with the last value of time $\Delta_t$. Once we have these initial values, we calculate the other values for the current time step using the previous formula.
+		It's important to understand that for each spatial step where x=0 at time step i, the condition is initialized with the last value realized at time i-1.The matrix shows an example. For time step $2\cdot \Delta_t$, the first value is initialized with the last value of time $\Delta_t$. Once we have these initial values, we calculate the other values for the current time step using the previous formula.
 
 
-		\subsection{Lax-Friedrich Model}
+		\subsubsection{Lax-Friedrich's model}
 		
 		The problem with the previous scheme is that for a density higher than 0.5, the solution becomes unstable and diverges towards infinity. To solve this problem, we decided to implement the Lax-Friedrich model. The theoretical model for the Lax-Friedrich method in the non-linear system is as follows:
 		
@@ -729,36 +687,37 @@
 		\textbf{\underline{Implementation:}} \newline\newline
 		
 		\begin{algorithm}[H]
-			\caption{EulerExplicitTrafficFlow}\label{alg:euler_traffic_flow}
+			\caption{ResolvePDETrafficFlow}\label{alg:euler_traffic_flow}
 			\begin{algorithmic}
 				\State \textbf{Input:}
+				%\State $U \gets \text{Matrix of size}(\text{maxT}, \text{maxL}) \text{ to Store the $\rho$ values}$
 				\State $u_{0_x}$: Initial condition function for $x$
 				\State $\Delta_x$: Spatial step size
 				\State $\Delta_t$: Time step size
 				\State $T$: Total time of Simulation
-				\State $L$: TOtal space for the Simulation
+				\State $L$: Total space for the Simulation
 				\State $V_{\text{max}}$: Maximum velocity
 				\State $R$: Maximal density of the simulation
 				\State \textbf{Output:}
-				\State $\rho$: Matrix storing the density for each time step and time space 
+				\State $U \gets \text{Matrix of size}(\text{maxT}, \text{maxL}) \text{ to Store the $\rho$ values}$
 				\State \textbf{Algorithm:}
 				\State $\text{maxT} \gets \lfloor  \frac{T}{\Delta_t} \rfloor  + 1$ \newline
 				\State $\text{maxL} \gets \lfloor  \frac{T}{\Delta_x} \rfloor  + 1$ \newline
-				\State $U \gets \text{Matrix of size}(\text{maxT}, \text{maxL})$
 				\State $U[0, :] \gets \left[ \text{compute } u_{0_x}(x) \text{ for } x \text{ in } \text{range}(0, L) \right]$
 				\For{$t$ \textbf{in} $\text{range}(1, \text{maxT})$}
 				\For{$j$ \textbf{in} $\text{range}(0, \text{maxL})$}
+				\State $\rho_{i-1}^n \gets U[t-1, j-1]$
 				\If{$\text{typeSimu} == "EE"$}
 				\State $\rho_i^n \gets U[t-1, j]$
-				\State $\rho_{i-1}^n \gets U[t-1, j-1]$
 				\State $v_i^n \gets \left( 1 - \frac{\rho_i^n}{R}\right)  \times V_{max}$ \newline
 				\State $v_{i-1}^n \gets \left( 1 - \frac{\rho_{i-1}^n}{R}\right)  \times V_{max}$
-				\State $\rho_{j}^t \gets \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n\right)$
+				\State $U[j,t] \gets \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n\right)$
 				\ElsIf{$\text{typeSimu} == "LF"$}
 				\If{$j+1<\text{maxL}$}
-				\State $\boxed{\rho_{j}^t = \frac{1}{2} \left(\rho_{j+1}^{t-1} + \rho_{j-1}^{t-1}\right) - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{j+1}^{t-1} \left(1 - \frac{\rho_{j+1}^{t-1}}{R}\right) \cdot V_{\text{max}} - \rho_{j-1}^{t-1} \left(1 - \frac{\rho_{j-1}^{t-1}}{R}\right) \cdot V_{\text{max}} \right)}$
+				\State $\rho_{i+1}^n \gets U[t-1, j+1]$
+				\State $\boxed{U[j,t] = \frac{1}{2} \left(\rho_{i+1}^{n-1} + \rho_{i-1}^{n-1}\right) - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{i+1}^{n-1} \left(1 - \frac{\rho_{i+1}^{n-1}}{R}\right) \cdot V_{\text{max}} - \rho_{i-1}^{n-1} \left(1 - \frac{\rho_{i-1}^{n-1}}{R}\right) \cdot V_{\text{max}} \right)}$
 				\Else
-				\State $\boxed{\rho_{j}^t = \frac{1}{2} \left(\rho_{0}^{t-1} + \rho_{j-1}^{t-1}\right) - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{0}^{t-1} \left(1 - \frac{\rho_{0}^{t-1}}{R}\right) \cdot V_{\text{max}} - \rho_{j-1}^{t-1} \left(1 - \frac{\rho_{j-1}^{t-1}}{R}\right) \cdot V_{\text{max}} \right)}$
+				\State $\boxed{U[j,t] = \frac{1}{2} \left(\rho_{0}^{n-1} + \rho_{i-1}^{n-1}\right) - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{0}^{n-1} \left(1 - \frac{\rho_{0}^{n-1}}{R}\right) \cdot V_{\text{max}} - \rho_{i-1}^{n-1} \left(1 - \frac{\rho_{i-1}^{n-1}}{R}\right) \cdot V_{\text{max}} \right)}$
 				\EndIf
 				\EndIf
 				\EndFor
@@ -772,12 +731,12 @@
 	
 	
 	
-	\section{Types of Simulations Performed with ODE models}
+	\section{Simulations performed with ODE models}
 	
 	For the simulation, we ran two-car and three-car tests to demonstrate different results. In this section, we will first study the simulation involving two cars to illustrate the "accordion phenomenon", where acceleration remains constant throughout the simulations. Next, we'll analyze the position variations of three cars, focusing in particular on the evolution of acceleration over time. Interestingly, the observed phenomenon remains constant in both types of simulation. However, simulations involving three cars are more interesting. For simulations involving two cars, please refer to the "Stability study" section or to the appendix.
 	
-	\subsection{Simulation with Drivers Reacting Similarly}
-		\subsubsection{Accordion Phenomenon}
+	\subsection{Simulation with drivers reacting similarly}
+		\subsubsection{Accordion phenomenon}
 		
 		For this parts, we make the following assumptions:
 		
@@ -791,8 +750,8 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{Accordeon1.png}
-			\caption[Simulation of accordion phenomenon with Linear Model]{\textbf{\underline{Simulation of accordion phenomenon with Linear Model : }} In this image, you can see how the positions of two cars change over time. The blue car maintains a steady speed, while the orange car trails behind the blue car. The graph representing the orange car's movement appears to fluctuate periodically, resembling an accordion expanding and contracting over time.}
+			\includegraphics[width=0.75\textwidth]{Accordeon1.png}
+			\caption[Simulation of accordion phenomenon with Linear Model]{\textbf{\underline{Simulation of accordion phenomenon with Linear Model : }} In this image,the positions of two cars change over time. The blue car maintains a steady speed, while the orange car trails behind the blue car. The graph representing the orange car's movement appears to fluctuate periodically, resembling an accordion expanding and contracting over time.}
 			\label{fig:Aco1}
 		\end{figure}
 		
@@ -801,18 +760,18 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\textwidth]{1W2_Accord.png}
-			\caption[Simulation of accordion phenomenon with Newell's Model]{\textbf{\underline{Simulation of accordion phenomenon with Newell's Model : }} In this image, you can see how the positions of two cars change over time. The blue car maintains a steady speed, while the orange car trails behind the blue car. The graph representing the orange car's movement appears to fluctuate periodically, resembling an accordion expanding and contracting over time.}
+			\includegraphics[width=0.60\textwidth]{1W2_Accord.png}
+			\caption[Simulation of accordion phenomenon with Newell's Model]{\textbf{\underline{Simulation of accordion phenomenon with Newell's Model : }} In this image, the positions of two cars change over time. The blue car maintains a steady speed, while the orange car trails behind the blue car. The graph representing the orange car's movement appears to fluctuate periodically, resembling an accordion expanding and contracting over time.}
 			\label{fig:1W2_ACCORD}
 		\end{figure}
 		
-		What we can conclude from these two graphs is that, in the linear model, the acceleration and deceleration are slightly less realistic compared to Newell's method. Specifically, in the linear model, we observe that when the car is too close to another, it almost doesn't move and remains near 0 km/h, then it accelerates very rapidly. Conversely, with Newell's model, we notice that the acceleration and deceleration are more realistic as they follow a more progressive pattern.
+		From the two previous graphs we conclude that, in the linear model, the acceleration and deceleration are slightly less realistic compared to Newell's method. Specifically, in the linear model, we observe that when the car is too close to another, it almost doesn't move and remains near 0 km/h, then it accelerates very rapidly. Conversely, with Newell's model, we notice that the acceleration and deceleration are more realistic as they follow a more progressive pattern.
 		
-		\subsection{Simulation with Drunk Drivers}
+		\subsection{Simulation with drunk drivers}
 		
 		In this type of simulation, we aimed to make the model more realistic by incorporating variations in the acceleration of the car.
 		
-		Specifically, in this section, we consider a scenario where one of the drivers is intoxicated. Consequently, the driver's acceleration fluctuates over time. The Hypotesis are the following one 
+		Specifically, in this section, we consider a scenario where one of the drivers is intoxicated. Consequently, the driver's acceleration fluctuates over time. The hypotesis are: 
 		\begin{itemize}
 			\item The first car is traveling at a constant speed but is subject to some obstacles on the road at times.
 			\item The second car (orange) is erratic as it is driven by a drunk driver, causing completely random variations in its position.
@@ -834,12 +793,12 @@
 		\label{fig:Model1W3C_O_Aco_D2_Newell}
 	\end{figure}
 		
-		\subsection{Simulation with Unpredictable Drivers}
+		\subsection{Simulation with unpredictable drivers}
 		
-			In this simulation incorporating another type of variations in the acceleration of the car. Specifically, in this section, we consider a scenario where one of the drivers is unpredictable. Consequently, the driver's acceleration fluctuates over time. The Hypotesis are the following one 
+			In this simulation incorporating another type of variations in the acceleration of the car. Specifically, in this section, we consider a scenario where one of the drivers is unpredictable. Consequently, the driver's acceleration fluctuates over time. The hypotesis are:
 			\begin{itemize}
 				\item The first car is traveling at a constant speed but is subject to some obstacles on the road at times.
-				\item The second car (orange) is a dangerous driver du to unpredictable comportment.
+				\item The second car (orange) is a dangerous driver due to unpredictable comportment.
 				\item The last one (blue) accelerates when it has distance and decelerates when it is too close.
 			\end{itemize}
 			
@@ -848,24 +807,22 @@
 			\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_I2_Linear.png}
-			\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
+			\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but unpredictable faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
 			\label{fig:Model1W3C_O_Aco_I2_Linear}
 		\end{figure}
 		
 			\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth]{Model1W3C_O_Aco_I2_Newell.png}
-			\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is intoxicated. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
+			\caption[Simulation of Traffic Flow with one drunk driver (Newell's Model).]{\textbf{\underline{Simulation of Traffic Flow with one drunk driver (Newell's Model) : }} In this picture, you can observe the positional changes of three cars. The first one (blue) maintains a constant speed but occasionally faces obstacles on the road. The second one (orange) follows behind the first car with a driver who is unpredictable. The last car slows down when it gets too close to the orange car and accelerates if it has enough space ahead. You could observe thath the variations of position is more constant than in the linear model.}
 			\label{fig:Model1W3C_O_Aco_I2_Newell}
 		\end{figure}
 	
 		
 		
-		\subsubsection{Accident Phenomenon For The Linear Model }
+		\subsubsection{Accident phenomenon of the linear model }
 		
-		In this scenario, the objective is to demonstrate that if a driver has a longer reaction time, an accident may occur. In this particular case, we retained the same assumptions as before, except with a slightly lower acceleration capacity and a longer reaction time. In algorithm \ref{alg:xi_dot}, we used $\alpha_2=1.75$, and in algorithm \ref{alg:update_positions}, we used $h=1.5$. As depicted in figure \ref{fig:Acc1}, the accident is confirmed due to a curve intersection (the position of the second car (orange) surpasses that of the first car (blue)). This indicates that the second car collided with the first car. In this scenario, the aim is only to illustrate that an accident only becomes apparent when the distance to the preceding car is greater than that to the first car. However, in any simulation, the accident can be observed in the same way, so we are no longer particularly interested in this type of simulation For further graphical studies.
-		
-		If you wish to see other graph i invite you to see the figure in annexe or to go on the GitHub project.
+		In this scenario, the objective is to demonstrate that if a driver has a longer reaction time, an accident may occur. In this particular case, we retained the same assumptions as in the accordion simulation, except with a slightly lower acceleration capacity and a longer reaction time. In algorithm \ref{alg:xi_dot}, we used $\alpha_2=1.75$, and in algorithm \ref{alg:update_positions}, we used $h=1.5$. As depicted in figure \ref{fig:Acc1}, the accident is confirmed due to a curve intersection (the position of the second car (orange) surpasses that of the first car (blue)). This indicates that the second car collided with the first car. In this scenario, the aim is only to illustrate that an accident only becomes apparent when the distance to the preceding car is greater than that to the first car. However, in any simulation, the accident can be observed in the same way, so we are no longer particularly interested in this type of simulation for further graphical studies.If you wish to see other graph I invite you to see the figure in annexe or to go on the GitHub project.
 	
 		
 		\begin{figure}[H]
@@ -875,8 +832,8 @@
 			\label{fig:Acc1}
 		\end{figure}
 		
-		\subsection{Study of Equilibrium, Stability, and Instability of the Solution}
-		\subsubsection{System Stability and Equilibrium for the Linear Model}
+		\subsection{Study of equilibrium, stability, and instability of the solution}
+		\subsubsection{System stability and equilibrium of the linear model}
 		In this section, the goal is to investigate the difference in distance between two cars to determine the stability of solutions and ascertain whether an equilibrium exists. To achieve this, we analyze the solutions of the following system of equations:
 		\begin{align*}
 			\begin{cases}
@@ -900,13 +857,7 @@
 			\boxed{d_1(t) = \frac{{V_1 - V_1 \cdot e^{-\alpha_2(t-t_0)} + \alpha_2 \cdot d_1(t_0) \cdot e^{-\alpha_2(t-t_0)}}}{\alpha_2}}
 		\end{align*}
 		
-		Initially, the assumption was that if $\alpha_2 < 0$, the solution would diverge, with one car moving backwards and the other forwards. Analyzing the equation, we see that the terms $V_1$ and $\alpha_2 \cdot d_1(t_0)$ remain constant and have less influence.
-		
-		Nevertheless, both terms, $e^{-\alpha_2(t-t_0)}$, represent exponential functions of time. When $\alpha_2$ is negative, these exponentials grow exponentially with time.
-		
-		Consequently, the equation remains stable and converges to equilibrium $\boxed{d_1(t)=\frac{V_1}{\alpha_2}}$ if $\alpha_2 > 0$.
-		
-		These results are shown graphically in figures \ref{fig:RC1} and \ref{fig:RS1}. It's important to note that in all figures, there is no explosion of the solution. In particular, in figure \ref{fig:RC1}, the car's position exhibits periodic behavior as a function of time. Furthermore, in figure \ref{fig:RS1}, the illustration shows the convergence of the distance between the two cars towards an equilibrium state.
+		Initially, the assumption was that if $\alpha_2 < 0$, the solution would diverge, with one car moving backwards and the other forwards. Analyzing the equation, we see that the terms $V_1$ and $\alpha_2 \cdot d_1(t_0)$ remain constant and have less influence. Nevertheless, both terms, $e^{-\alpha_2(t-t_0)}$, represent exponential functions of time. When $\alpha_2$ is negative, these exponentials grow exponentially with time. Consequently, the equation remains stable and converges to equilibrium $\boxed{d_1(t)=\frac{V_1}{\alpha_2}}$ if $\alpha_2 > 0$.These results are shown graphically in figures \ref{fig:RC1} and \ref{fig:RS1}. It's important to note that in all figures, there is no explosion of the solution. In particular, in figure \ref{fig:RC1}, the car's position exhibits periodic behavior as a function of time. Furthermore, in figure \ref{fig:RS1}, the illustration shows the convergence of the distance between the two cars towards an equilibrium state. The two graph are the same but with a different time step.
 		
 			
 		
@@ -930,14 +881,14 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\linewidth]{Stability.png}
+			\includegraphics[width=0.65\linewidth]{Stability.png}
 			\caption[Analytical Solutions for the Linear Model with Two Cars]{\textbf{\underline{Analytical Solutions for the Linear Model with Two Cars (Stability): }}Different plots displaying the Analytical Solutions for various acceleration values.}
 			\label{fig:AS1}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.8\linewidth]{Unstability.png}
+			\includegraphics[width=0.65\linewidth]{Unstability.png}
 			\caption[Analytical Solutions for the Linear Model with Two Cars]{\textbf{\underline{Analytical Solutions for the Linear Model with Two Cars (Instability): }}Different plots displaying the Analytical Solutions for various acceleration values.}
 			\label{fig:AS2}
 		\end{figure}
@@ -946,14 +897,14 @@
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{FieldOfVector_CV.png}
+			\includegraphics[width=0.65\textwidth]{FieldOfVector_CV.png}
 			\caption[Field Of Vector for the Linear Model (Stability)]{\textbf{\underline{Field Of Vector for the Linear Model (Stability): }} On this figure, you could see the field of vectors that converges to the equilibrium.}
 			\label{fig:FV1}
 		\end{figure}
 		
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{FieldOfVector_DV.png}
+			\includegraphics[width=0.65\textwidth]{FieldOfVector_DV.png}
 			\caption[Field Of Vector for the Linear Model (Instability)]{\textbf{\underline{Field Of Vector for the Linear Model (Instability): }} On this figure, you could see the field of vectors that diverges from the equilibrium.}
 			\label{fig:FV2}
 		\end{figure}
@@ -983,12 +934,12 @@
 		
 		\begin{figure}[H]
 			\centering
-			\begin{subfigure}{0.45\textwidth}
+			\begin{subfigure}{0.43\textwidth}
 				\centering
 				\includegraphics[width=\linewidth]{FieldOfVector_CV2.png}
 			\end{subfigure}
 			\hfill
-			\begin{subfigure}{0.45\textwidth}
+			\begin{subfigure}{0.51\textwidth}
 				\centering
 				\includegraphics[width=\linewidth]{AnalyticalSolution.png}
 			\end{subfigure}
@@ -1002,12 +953,12 @@
 		
 		\begin{figure}[H]
 			\centering
-			\begin{subfigure}{0.45\textwidth}
+			\begin{subfigure}{0.43\textwidth}
 				\centering
 				\includegraphics[width=\linewidth]{FieldOfVector_DV2.png}
 			\end{subfigure}
 			\hfill
-			\begin{subfigure}{0.45\textwidth}
+			\begin{subfigure}{0.51\textwidth}
 				\centering
 				\includegraphics[width=\linewidth]{AnalyticalSolution2.png}
 			\end{subfigure}
@@ -1018,7 +969,7 @@
 		Figure \ref{fig:SE2} provides a visual illustration of this divergence phenomenon. The left-hand sub-figure illustrates the divergence of the vector field from the theoretical equilibrium point. At the same time, the right-hand sub-figure shows the analytical solutions derived from the set of EDOs, demonstrating complete divergence leading to infinity. This divergence pattern is consistent with the negative acceleration scenario, echoing the absence of feasible solutions.
 		
 		
-	\subsubsection{System Stability and Equilibrium for the Newell's Model}
+	\subsubsection{System stability and equilibrium of Newell's Model}
 	
 	\textbf{\underline{The Study of the equilibrium for two cars : }} \newline\newline
 	
@@ -1135,7 +1086,7 @@
 	 
 	 \begin{figure}[H]
 	 	\centering
-	 	\includegraphics[width=0.5\textwidth]{VectorField1.png}
+	 	\includegraphics[width=0.40\textwidth]{VectorField1.png}
 	 	\caption[Field Of Vector for the Newell's Model (Stability):]{\textbf{\underline{Field Of Vector for the Newell's Model (Stability):}} On this figure, you could see the field of vectors that converges from the equilibrium.}
 	 	\label{fig:SE4}
 	 \end{figure}
@@ -1150,16 +1101,12 @@
 	
 	
 	
-	\section{Types of Simulations Performed with PDE models}
+	\section{Simulations performed with PDE models}
 	
-	In this section, the objective is to demonstrate an alternative method for simulating traffic flow on roads. To achieve this, we will employ PDEs, considering traffic flow as analogous to fluid dynamics.
-	
-	We conduct these simulations using the FDM with two types of models: the Euler Explicit and Lax-Friedrichs models. The Euler Explicit model demonstrates the simulation with free-flowing traffic, while the Lax-Friedrichs model depicts congested traffic scenarios.
-	
-	We are going to see why we don't do the same simulation with the two models in following part.
+	In this section, the objective is to demonstrate an alternative method for simulating traffic flow on roads. To achieve this, we will employ PDEs, considering traffic flow as analogous to fluid dynamics. We conduct these simulations using the FDM with two types of models: the Euler Explicit and Lax-Friedrichs models. The Euler Explicit model demonstrates the simulation with free-flowing traffic, while the Lax-Friedrichs model depicts congested traffic scenarios. We are going to see why we don't do the same simulation with the two models in following part.
 	
 	
-	\subsection{Simulation Performed with Euler Explicit Model}
+	\subsection{Simulation performed with Euler's Explicit method}
 	
 	For the simulation in this section, we have decided to utilize the equation \ref{eq:PDE}, incorporating the following initial function and discretization:
 	
@@ -1183,7 +1130,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.65\textwidth]{traffic_flow_density_map.png}
+		\includegraphics[width=0.60\textwidth]{traffic_flow_density_map.png}
 		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit Method:}} This figure illustrates the solution of the PDE at any time and position. The pattern of the density peak is repeated due to boundary conditions (BC). We observe a diffusion effect in the model and the movement of traffic. }
 		\label{fig:traffic_flow_density_map}
 	\end{figure}
@@ -1220,8 +1167,7 @@
 		\end{subfigure}
 		\caption[Graph of the Movement of the Traffic Flow]{\textbf{\underline{Graph of the Movement of the Traffic Flow:}} On this graph, you can see that the Traffic Flow is moving forward and that the information is propagating over time. There is the link to see the animation : \href{https://github.com/FlorentGerbaud/Simple-road-traffic-modeling/blob/Flo-PDE/SRTM/EDPMethod/CasTestToLaunch/TestToLaunch/Modele_IC_S/EulerExplicit/traffic_flow_animation.gif}{\textbf{\underline{Traffic Flow Simulation}}}}
 		\label{fig:four_graphs}
-	\end{figure}
-	These two graphs are very interesting because we can observe some phenomena. 
+	\end{figure} These two graphs are very interesting because we can observe some phenomena. 
 	\newline\newline\textbf{\underline{Diffusivity of the Model :}} The first phenomenon is the diffusive nature concerning the model. In fact, on Figure \ref{fig:traffic_flow_density_map}, you can see that each time the peak of density appears, the density of drivers decreases. On Figure \ref{fig:four_graphs}, this becomes evident as the solution to the equation diminishes progressively. If we continue the simulation for a longer period, we will observe the curve collapsing.
 	\newline\newline
 	\textbf{\underline{The Propagation of Density Over Time :}} We can observe in Figure \ref{fig:traffic_flow_density_map} that density propagates both temporally and spatially. For instance, the initial peak of density begins at 0 meters and time 0, extending to 100 meters by 6 seconds. In the animation, you can also observe the movement of the peak. In Figure \ref{fig:four_graphs} , we witness the peak moving from 20 to 90 meters in approximately 5.5 seconds, as indicated by the Density map.
@@ -1230,8 +1176,8 @@
 	The last phenomenon that we can observe is the creation of peaks of density. In fact, in the animation, you can see that when the density is relatively low, a peak is formed. This phenomenon occurs because when the density is lower, cars tend to travel faster, catching up with the cars already in a peak of density. So they need to slow down and it is for this reason that we could observe this peak.
 	\newline\newline
 	\textbf{\underline{Limit of this model :}}
-	However, as discussed previously, we encounter a problem with this model. The limitation of this model is that for a density greater than 0.5, the model becomes unstable. Therefore, we need to utilize another model, the Lax-Friedrichs Model. This model is slightly more complex but resolves the issue of instability. With Jim's assistance, we will explore the behavior of high density scenarios.
-	\subsection{Simulation Performed with Lax-Friedrichs Model}
+	However, as discussed previously, we encounter a problem with this model. The limitation of this model is that for a density greater than 0.5, the model becomes unstable. Therefore, we need to utilize another model, the Lax-Friedrichs Model. This model is slightly more complex but resolves the issue of instability. 
+	\subsection{Simulation performed with Lax-Friedrich's model}
 	
 	For the simulation in this section, we have decided to utilize the equation \ref{eq:PDE}, incorporating the following initial function and discretization:
 	
@@ -1249,7 +1195,7 @@
 	
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.65\textwidth]{traffic_flow_density_map_LF.png}
+		\includegraphics[width=0.60\textwidth]{traffic_flow_density_map_LF.png}
 		\caption[Traffic Flow Simulation With Euler Explicit]{\textbf{\underline{Traffic Flow Simulation With Euler Explicit:}} This figure illustrates the solution of the PDE at any time and position. You can notice that the peak of density is set back. The model exhibits both diffusive and dispersive properties. The periodic boundary conditions allow the phenomenon to repeat over time.}
 		\label{fig:traffic_flow_density_map_LF}
 	\end{figure}
@@ -1290,16 +1236,28 @@
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=0.5\textwidth]{AniE5_LF.jpg}
-		\caption[scheme dispersivity]{This graph allows to highlight  the oscillation of the graph that show the dispersivity of the scheme}
+		\caption[Scheme Dispersivity]{This graph allows to highlight  the oscillation of the graph that show the dispersivity of the scheme}
 		\label{fig:Dis}
 	\end{figure}
 	
 	This simulation is quite intriguing because despite some similarities with the previous one, we observed several interesting phenomena.\\ \\ \textbf{\underline{Diffusivity and Dispersivity of the Model :}}
 	The first two phenomena pertain to the scheme itself. As depicted in Figure \ref{fig:traffic_flow_density_map_LF} and in Simulation \ref{fig:GraphLF}, the density decreases over time and space. This illustrates that the scheme is a diffusive model. Furthermore, the animation \ref{fig:Dis} also demonstrates oscillations in the curve towards the end of the simulation. These oscillations may be explained by the model also being a dispersive one. Hence, we can conclude that this scheme might not be well-suited for this type of equation. Nevertheless, for short simulations like the ones we conducted, this is not problematic. \\ \\
 	\textbf{\underline{Creation of Peaks of Density :}} The second notable phenomenon is similar to the Euler-Explicit method: the formation of traffic jams. Observing the animation, each time the density is lower than the maximum density, a traffic jam reappears. This occurrence could be explained by cars accelerating when the density decreases. However, they catch up with the car in front of them, resulting in a traffic jam. \\ \\ \textbf{\underline{Receding Traffic Jam : }} Finally, the most intriguing phenomenon is the appearance of upside-down traffic jams. In the animation, we can see the curves moving from right to left. if you look the DensityMap, at time t=0, the maximum density is between 15m and 35m. However, at t=1, the maximum density moves towards 0m. This backward movement can be explained by the fact that people at the head of the traffic jam can accelerate, as it's the end of the jam. Conversely, those at the rear of the traffic jam become the tail end. After a while, they become the head of the traffic jam and can accelerate out of it.
+
+    \section{Main challenges}
+	\subsection{Implementaing the macroscopic model}
+		During the phase of developing the Macroscopic models, the difficulties lie in the fact that it was not easy to determine if the graphs we obtained were as expected. To verify their accuracy, we sought feedback from Mr. Auroux and also consulted various websites to compare our results with those of others. Initially, we believed the graphs were correct. However, we later discovered errors in our implementation, which we subsequently rectified.
+		
+		One of the main problems we encountered was related to the boundary conditions. Initially, for each time step, we used constant boundary conditions. Consequently, the resulting graphs exhibited anomalies at the edges. To address this issue, we conducted research and sought advice from teachers to refine our approach.
+		
+		Additionally, understanding the models posed a challenge. While the model worked for some cases, it failed for others. This was attributed to the violation of the CFL condition. When the density was too high, the model became unstable. Through an empirical approach, we determined the threshold value and conducted appropriate tests to implement the second model correctly.
+	\subsection{Managing time}
+		 One of the significant challenges we faced revolved around managing our time effectively. Balancing the demands of our project alongside preparing for exams posed a considerable obstacle. Juggling these concurrent commitments was undeniably demanding. Nonetheless, it presented an invaluable challenge that encouraged us to refine our time management skills and prioritize tasks efficiently. The primary difficulty lay in our inability to delve deeply enough into the subject matter. Due to the time constraints imposed by various commitments, we found it challenging to explore the topic to its fullest extent. Despite this limitation, navigating these time-related obstacles taught us valuable lessons about effective multitasking and the importance of allocating time judiciously to various responsibilities.
+	\subsection{Achieving equlibrium}
+		Achieving equilibrium was relatively straightforward for the Linear Model. However, it proved to be somewhat arduous for Newell's method. Initially, our approach involved attempting to find Analytical Solutions. However, after spending several hours on this calculus and conducting research online, we came to realize that an analytical solution may not exist, and if it does, it could be exceedingly challenging to obtain. This led us to recall the ODE course from previous years, specifically the Lyapunov indirect theorem, which provides criteria to ascertain whether solutions converge or diverge.
 	\section{Summary}
 	
-	This project was a great and enriching experience in both human and scholarly aspects. Humanly, we learned and strengthened our teamwork, collaborated, communicated, sought help, and leveraged each other's competencies when needed. From an academic perspective, we were able to apply our new knowledge in Partial Differential Equations (PDEs) and Ordinary Differential Equations (ODEs) to practical scenarios, comprehending new phenomena. Additionally, we improved our English proficiency as the entire project was conducted in English. We learned to adapt to situations where progress may not always be swift, to write efficient code, grasp new concepts through research and collaborative efforts, and utilize Git effectively.
+	This project was a great and enriching experience in both human and scholarly aspects. Humanly, we learned and strengthened our teamwork, collaborated, communicated, sought help, and leveraged each other's competencies when needed. From an academic perspective, we were able to apply our new knowledge in Partial Differential Equations (PDEs) and Ordinary Differential Equations (ODEs) to practical scenarios, comprehending new phenomenons. Additionally, we improved our English proficiency as the entire project was conducted in English. We learned to adapt to situations where progress may not always be swift, to write efficient code, grasp new concepts through research and collaborative efforts, and utilize Git effectively.
 	
 	Moreover, the Project's subject was captivating as it provided extensive learning about road traffic simulations and their study, contributing to a better understanding of fluid mechanics due to their interconnectedness. It also helped affirm or reconsider our specialization choices for our final year at Polytech.
 	
@@ -1307,15 +1265,15 @@
 	\newpage
 	\section{Annexe}
 	
-	\subsection{Calculation of the Analytical solutions}
+	\subsection{Calculation of the analytical solutions}
 	
-	\subsubsection{Linear Model for Two Cars}
+	\subsubsection{Linear model for two cars}
 	
 	\label{eq:EDO1}
 	\begin{align*} 
 		\dot{d_1}(t) = V_1 - \alpha_2 \cdot d_1
 	\end{align*}
-	We use the variable separation method to Solve this EDO, so we obtain : 
+	We use the variable separation method to solve this EDO, so we obtain : 
 	\begin{align*} 
 		&\int_{x(t_0)}^{x(t_f)} \frac{1}{V_1 - \alpha_2 \cdot d_1(t)} d \ d_1(t) = \int_{t_0}^{t_f} dt \\
 		&-\frac{1}{\lambda_2} \left[ \ln\left| V_1 - \alpha_2 \cdot d_1(t) \right| \right]_{x(t_0)}^{x(t_f)} = t_f-t_0 \\
@@ -1332,7 +1290,7 @@
 		}
 	\end{align*}
 
-	\subsubsection{Linear Model for Three Cars}
+	\subsubsection{Linear model for three cars}
 	\label{eq:EDO2}
 	The system under matricial form coul be write like that :
 	
@@ -1450,8 +1408,8 @@
 		&C_2=n-\frac{V_1}{\alpha_3} - C_1
 	\end{align*}
 	
-	\subsection{Calculation of the Equilibrium point}
-	\subsubsection{Newell's Method for two cars} \label{Equilibre:2}
+	\subsection{Calculation of the equilibrium point}
+	\subsubsection{Newell's method for two cars} \label{Equilibre:2}
 	\begin{align*}
 		V_1 - V_2 + V_2 \cdot e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= 0 \\
 		e^{-\frac{\alpha_2}{V_2}(d_1 - d_{2}^{sec})} &= \frac{V_2-V_1}{V_2} \\
@@ -1460,7 +1418,7 @@
 		d_1^* &= -\frac{V_2}{\alpha_2}\ln \left(\frac{V_2-V_1}{V_2}e^{-\frac{\alpha_2}{V_2}d_2} \right)
 	\end{align*}
 	
-	\subsubsection{Newell's Method for three cars}
+	\subsubsection{Newell's method for three cars}
 	
 	\begin{align*}
 		&\dot{d_2}=V_2-V_2e^{\frac{-\alpha_2}{V_2}d_1}e^{\frac{\alpha_2}{V_2}d_2^{sec}}-V_3+V_3e^{\frac{-\alpha_3}{V_3}d_2}e^{\frac{\alpha_3}{V_3}d_2^{ sec}} \\

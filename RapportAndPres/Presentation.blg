@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'Presentation.blg'
-[225] biber-MSWIN64:340> INFO - === 
-[301] Biber.pm:419> INFO - Reading 'Presentation.bcf'
-[432] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
-[450] Biber.pm:4419> INFO - Processing section 0
-[477] Biber.pm:4610> INFO - Looking for bibtex file 'rapport.bib' for section 0
-[527] bibtex.pm:1713> INFO - LaTeX decoding ...
-[549] bibtex.pm:1519> INFO - Found BibTeX data source 'rapport.bib'
-[640] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[640] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
-[640] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
-[640] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
-[678] bbl.pm:660> INFO - Writing 'Presentation.bbl' with encoding 'UTF-8'
-[681] bbl.pm:763> INFO - Output to Presentation.bbl
-[681] Biber.pm:131> WARN - Duplicate entry key: 'article' in file 'rapport.bib', skipping ...
-[681] Biber.pm:133> INFO - WARNINGS: 1
+[218] biber-MSWIN64:340> INFO - === 
+[298] Biber.pm:419> INFO - Reading 'Presentation.bcf'
+[438] Biber.pm:979> INFO - Found 4 citekeys in bib section 0
+[455] Biber.pm:4419> INFO - Processing section 0
+[482] Biber.pm:4610> INFO - Looking for bibtex file 'rapport.bib' for section 0
+[534] bibtex.pm:1713> INFO - LaTeX decoding ...
+[555] bibtex.pm:1519> INFO - Found BibTeX data source 'rapport.bib'
+[647] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'variable = shifted' with 'variable = non-ignorable'
+[647] UCollate.pm:68> INFO - Overriding locale 'en-GB' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[647] Biber.pm:4239> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-GB'
+[647] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-GB'
+[682] bbl.pm:660> INFO - Writing 'Presentation.bbl' with encoding 'UTF-8'
+[686] bbl.pm:763> INFO - Output to Presentation.bbl
+[686] Biber.pm:131> WARN - Duplicate entry key: 'article' in file 'rapport.bib', skipping ...
+[686] Biber.pm:133> INFO - WARNINGS: 1
