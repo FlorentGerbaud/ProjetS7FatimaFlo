@@ -1,9 +1,9 @@
-\beamer@sectionintoc {1}{Introduction:}{3}{0}{1}
-\beamer@sectionintoc {2}{Study of the discret case:}{7}{0}{2}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{Study of the discret case}{7}{0}{2}
 \beamer@subsectionintoc {2}{1}{Ordinary Differential Equation}{8}{0}{2}
-\beamer@subsectionintoc {2}{2}{Simulations}{11}{0}{2}
+\beamer@subsectionintoc {2}{2}{Simulations and Results}{11}{0}{2}
 \beamer@subsectionintoc {2}{3}{Study of Equilibrium and Stability}{14}{0}{2}
-\beamer@sectionintoc {3}{Study of the continuous model:}{16}{0}{3}
-\beamer@subsectionintoc {3}{1}{Euler Explicit Method}{18}{0}{3}
+\beamer@sectionintoc {3}{Study of the continuous case}{16}{0}{3}
+\beamer@subsectionintoc {3}{1}{Euler's Explicit Method}{18}{0}{3}
 \beamer@subsectionintoc {3}{2}{Lax-Friedrichs method}{20}{0}{3}
 \beamer@sectionintoc {4}{Conclusion}{22}{0}{4}

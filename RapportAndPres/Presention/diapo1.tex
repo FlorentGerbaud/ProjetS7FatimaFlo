@@ -61,7 +61,7 @@ Supervisor: \\ % Your institution for the title page
 %----------------------------------------------------------------------------------------
 
 %------------------------------------------------
-\section{Introduction:} 
+\section{Introduction} 
 %------------------------------------------------
 \begin{frame}{What is Road Traffic Modelling?}
 	\begin{columns}
@@ -115,7 +115,7 @@ Supervisor: \\ % Your institution for the title page
 
 
 %------------------------------------------------
-\section{Study of the discret case:}
+\section{Study of the discret case}
 %------------------------------------------------
 \subsection{Ordinary Differential Equation}
 \begin{frame}{Ordinary Differential Equation (Theory):}
@@ -130,7 +130,7 @@ Supervisor: \\ % Your institution for the title page
 	\begin{center}
 		$\boxed{\mathbf{y'(t) = f{\bigl (}t, y(t){\bigr )}}}$
 	\end{center}
-	Euler Explicit method to numerically solve the solutions:
+	Euler's Explicit method to numerically solve the solutions:
 	\begin{itemize}
 		\item First step of the resolution: $\boxed{y_0 = y(t_0)}$.
 		\item Recursive process to find the n-th solution of the ODE: $\boxed{y_{n+1} = y_{n} + hf(t_{n}, y_{n})}$
@@ -154,14 +154,14 @@ Supervisor: \\ % Your institution for the title page
 			\includegraphics[width=1.0\textwidth]{test2.png}
 		\end{figure}
 \end{frame}
-\subsection{Simulations}
+\subsection{Simulations and Results}
 \begin{frame}{Accordion phenomenon}
 	%\subsection{Simulations}
 	\begin{minipage}{0.48\textwidth}
 		\centering
 		\begin{figure}
 			\includegraphics[width=\textwidth]{Accordeon1.png}
-			\caption{Modelisation of the accordion phenomenon with The Linear Model}
+			\caption{The Linear Model}
 			\label{fig:AL}
 		\end{figure}
 	\end{minipage}\hfill
@@ -169,7 +169,7 @@ Supervisor: \\ % Your institution for the title page
 		\centering
 		\begin{figure}
 			\includegraphics[width=\textwidth]{1W2_Accord.png}
-			\caption{Modelisation of the accordion phenomenon with The Newell's Model}
+			\caption{The Newell Model}
 			\label{fig:AN}
 		\end{figure}
 	\end{minipage}
@@ -177,12 +177,12 @@ Supervisor: \\ % Your institution for the title page
 		We could see the difference of modelisation and realism between the Linear model (figure \ref{fig:AL}) and the Newell's model (figure \ref{fig:AN})
 	\end{block}
 \end{frame}
-\begin{frame}{Drunk drivers }
+\begin{frame}{One Drunk driver}
 	\begin{minipage}{0.49\textwidth}
 		\centering
 		\begin{figure}
-			\includegraphics[width=1.0\textwidth]{Model1W3C_O_Aco_D2_Linear.png}
-			\caption{Simulation of Traffic Flow with one drunk driver (Linear Model)}
+			\includegraphics[width=1.1\textwidth]{Model1W3C_O_Aco_D2_Linear.png}
+			\caption{The Linear Model}
 			\label{fig:DL}
 		\end{figure}
 	\end{minipage}\hfill
@@ -190,19 +190,19 @@ Supervisor: \\ % Your institution for the title page
 		\centering
 		\begin{figure}
 			\includegraphics[width=1.1\textwidth]{Model1W3C_O_Aco_D2_Newell.png}
-			\caption{Simulation of Traffic Flow with one drunk driver (Newell's Model)}
+			\caption{The Newell Model}
 			\label{fig:DN}
 		\end{figure}
 	\end{minipage}
 	\begin{block}{}
-		It is interesting to note that with Newell's Method (Figure \ref{fig:DN}), the variations are "smoothed and much less significant than in the case of the linear method (\ref{fig:DL})."
+		On the Newell's Method (Figure \ref{fig:DN}), the variations are smoother and much less significant than in the case of the linear method (\ref{fig:DL}).
 	\end{block}
 \end{frame}
 
 \begin{frame}{Accident phenomenon}
     \begin{figure}
     	\includegraphics[width=0.5\textwidth]{1W2_Acc2.png}
-    	\caption{Modelisation of the accordion phenomenon with The Newell's Model}
+    	\caption{The Newell Model}
     	\label{fig:ACC}
     \end{figure}
     \begin{block}{}
@@ -251,7 +251,7 @@ Supervisor: \\ % Your institution for the title page
 
 
 
-\section{Study of the continuous model:}
+\section{Study of the continuous case}
 \begin{frame}{Model used in the Macroscopic Model}
 	\begin{alertblock}{Conservation Law}
 		\begin{itemize}
@@ -260,17 +260,17 @@ Supervisor: \\ % Your institution for the title page
 	\end{alertblock}
 	\begin{block}{Initial and Boundary Conditions}
 		\begin{itemize}
+			\item $\rho(x,t)$ represents the traffic density at position $x$ and time $t$,
 			\item $\rho(x,0) = \rho_0(x), \quad x \in \Omega,$
-			\item $\rho(0,t) = \rho(L,t), \quad t \geq 0$
-			\item $\Omega := \left] 0,L\right[, $
-			\item $\rho(x,t)$ represents the traffic density at position $x$ and time $t$, 
+			\item $\rho(0,t) = \rho(L,t), \quad t \geq 0$,
+			\item $\Omega := \left] 0,L\right[ $.
 		\end{itemize}
 	\end{block}
 \end{frame}
 
-\subsection{Euler Explicit Method}
+\subsection{Euler's Explicit Method}
 \begin{frame}{First Numerical Scheme to perform the Solution of the Equation}
-	\begin{alertblock}{Euler-Explicit Scheme}
+	\begin{alertblock}{Euler's Explicit Scheme}
 		\begin{itemize}
 			\item $\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right)
 					=0$
@@ -283,8 +283,8 @@ Supervisor: \\ % Your institution for the title page
 		\boxed{
 			\begin{aligned}
 				&\rho_0(x)=0.2 \cdot \sin\left(2 \cdot \pi \cdot \frac{x}{L}\right) + 0.3 \\
-				&\Delta t = 0.01 \\
-				&\Delta x = 1
+				&\Delta t = 0.01s \\
+				&\Delta x = 1m
 			\end{aligned}
 		}
 		\]
@@ -295,13 +295,13 @@ Supervisor: \\ % Your institution for the title page
 %petite def de ce qu’il y a dans l’équation
 \end{frame}
 
-\begin{frame}{Results obtained with the Euler-Explicit Method}
+\begin{frame}{Results obtained with the Euler's Explicit Method}
 	\vspace{-0.5cm}
 	\begin{minipage}[t]{0.48\linewidth}
 		\begin{figure}
 			\centering
 			\includegraphics[width=\linewidth]{traffic_flow_density_map.png}
-			\caption[Traffic Flow Simulation With Euler Explicit]{ This figure illustrates the solution of the PDE at any time and position.}
+			\caption[Traffic Flow Simulation With Euler's Explicit]{ The solution of the PDE at any time and position.}
 			\label{fig:traffic_flow_density_map}
 		\end{figure}
 	\end{minipage}
@@ -310,7 +310,7 @@ Supervisor: \\ % Your institution for the title page
 		\begin{figure}
 			\centering
 			\animategraphics[loop,width=\linewidth]{20}{AnimEE/EE-}{0}{1000}
-			\caption{The Animation for the simulation with Euler-Explicit Method}
+			\caption{The Animation for the simulation with Euler's Explicit Method}
 			\label{fig:euler_explicit_animation}
 		\end{figure}
 	\end{minipage}
@@ -344,7 +344,7 @@ Supervisor: \\ % Your institution for the title page
 		\begin{figure}
 			\centering
 		\includegraphics[width=\linewidth]{traffic_flow_density_map_LF.png}
-		\caption{ This figure illustrates the solution of the PDE at any time and position.}
+		\caption{ The solution of the PDE at any time and position.}
 		\label{fig:traffic_flow_density_map_LF}
 		\end{figure}
 	\end{minipage}
@@ -373,5 +373,30 @@ Supervisor: \\ % Your institution for the title page
 \end{frame}
 
 \section{Conclusion}
+
+\begin{frame}{Conclusion}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\vspace{-1.4cm}
+		\begin{block}{Main challenges}
+			\begin{itemize}
+				\item Implementing Macroscopic model
+				\item Managing time
+				\item Achieving equilibrium
+			\end{itemize}
+		\end{block}
+		
+		\column{0.5\textwidth}
+		\begin{block}{New abilities that we learned}
+			\begin{itemize}
+				\item Modelizing fluid equations
+				\item Understanding the behavior of traffic flow
+				\item Applying our theoretical knowledge to concrete cases
+				\item Strengthening teamworking abilities
+			\end{itemize}
+		\end{block}
+	\end{columns}
+\end{frame}
+
 
 \end{document}
