@@ -101,14 +101,14 @@ Supervisor: \\ % Your institution for the title page
 %******************************************************************************************
 \begin{frame}{Project organization overview and Useful Definition}
 	\begin{center}
-    	\includegraphics[width=0.7\textwidth]{org1.png} 
+    	\includegraphics[width=0.9\textwidth]{org1.png} 
     \end{center}
-    \begin{block}{Ordinary Differential Equation (ODE) :}
-    	An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables.
-    	\[
-    	F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
-    	\]
-    \end{block}
+    %\begin{block}{Ordinary Differential Equation (ODE) :}
+    	%An ODE is a mathematical equation that relates a function to its derivatives with respect to one or more independent variables.
+    	%\[
+    	%F\left(x,y,y',\ldots ,y^{(n-1)}\right)=y^{(n)}
+    	%\]
+    %\end{block}
 \end{frame}
 %******************************************************************************************
 
@@ -270,7 +270,7 @@ Supervisor: \\ % Your institution for the title page
 
 \subsection{Euler Explicit Method}
 \begin{frame}{First Numerical Scheme to perform the Solution of the Equation}
-	\begin{alertblock}{Numerical Scheme}
+	\begin{alertblock}{Euler-Explicit Scheme}
 		\begin{itemize}
 			\item $\rho_{i}^{n+1} = \rho_i^n - \frac{\Delta t}{\Delta x} \cdot \left(\rho_i^n \cdot v_i^n - \rho_{i-1}^n \cdot v_{i-1}^n \right)
 					=0$
@@ -331,32 +331,10 @@ Supervisor: \\ % Your institution for the title page
 
 \subsection{Lax-Friedrichs method}
 \begin{frame}{A new Scheme to Represent the High Density of the Traffic.}
-	\begin{alertblock}{Numerical Scheme}
-		\begin{equation*}
-			\begin{split}
-				\rho_{j}^t &= \frac{1}{2} \left(\rho_{j+1}^{t-1} + \rho_{j-1}^{t-1}\right) 
-			 - \frac{\Delta t}{2 \cdot \Delta x} \left( \rho_{j+1}^{t-1} \left(1 - \frac{\rho_{j+1}^{t-1}}{\rho_{max}}\right) \cdot V_{\text{max}} \right. \\
-				&\quad \left. - \rho_{j-1}^{t-1} \left(1 - \frac{\rho_{j-1}^{t-1}}{\rho_{max}}\right) \cdot V_{\text{max}} \right)
-			\end{split}
-		\end{equation*}
-		
-	\end{alertblock}
-	\begin{block}{Initial Condition and Discretization}
-		\[
-		\boxed{
-			\begin{aligned}
-				&\rho_0(x)=0.2 \cdot \sin\left(2 \cdot \pi \cdot \frac{x}{L}\right) + 0.8 \\
-				&\Delta t = 0.01 \\
-				&\Delta x = 1
-			\end{aligned}
-		}
-		\]
-	\end{block}
-	
-	%slide: 
-	%Partie Math EDP
-	%Equation + cond au bord
-	%petite définition de ce qu’il y a dans l’équation
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\textwidth]{test3.png}
+	\end{figure}
 \end{frame}
 
 
